@@ -1,0 +1,183 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body{margin: 0;padding: 0;}
+#half_box_1
+{
+    width: 50%;
+    height: 100vh;
+    background-color: #FFAEAB;
+}
+#half_box_2
+{
+    width: 50%;
+    height: 100vh;
+    background-color: #C4C0FF;
+}
+
+div
+{
+    /*border: 2px solid yellow;*/
+}
+.row
+{
+    margin-bottom: 0px;
+}
+#z_index_box_1
+{
+    position: absolute;
+    padding: 20px;
+    left: 1px;
+    top: 1px;
+    height: 25vh;
+    z-index: 2;
+    font-family: impact;
+    width: 100%;
+    font-size: 100px;
+}
+#z_index_box_2
+{
+    padding-top:  80px;
+    color: white;
+    height:50%;
+    position: absolute;
+    top: 25%;
+    z-index: 2;
+    font-size: 100px;
+    font-family: impact;
+    width: 100%;
+}
+#z_index_box_3
+{
+    z-index: 2;
+    position: absolute;
+    top: 85%;
+    font-family: impact;
+    font-size: 100px;
+    width: 98%;
+}
+#push_right
+{
+    text-align: right;
+    width: 100%;
+}
+#following_div
+{
+    height: 60%;
+    width: 100% ;
+    background-color:#C9FFB0;
+}
+#about_me
+{
+    padding: 40px;
+    font-family: impact;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+#contain_the_bio
+{
+    /*border: 5px solid red;*/
+    margin-bottom: 90px;
+}
+#kd_bio
+{
+    font-family: 'PT Mono', monospace;
+    font-size: 30px;
+}
+
+#cyber_punk
+{
+    color: #FF4747;
+}
+#lunatic
+{
+    color:#FAFF47;
+}
+
+#the_photo_place
+{
+    height: 60vh;
+    width: 100%;
+    background-color: #9EBAFF ;
+}
+#img_1_box
+{
+    padding: 50px;
+    width: 100%;
+}
+#img_1
+{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+#caption
+{
+    color: white;
+    font-size: 40px;
+    font-family: 'Caveat', cursive;
+}
+#social_media_tab
+{
+    padding: 50px;
+    width: 100%;
+    height: 40vh;
+    background-color: #C4D84D;
+    text-align: : center;
+    /*border:2px solid red;*/
+}
+#gmail
+{
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+#insta
+{
+    padding: 30px;
+    text-align: center;
+    font-size: 50px;
+
+}
