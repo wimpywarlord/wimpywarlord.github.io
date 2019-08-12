@@ -71,7 +71,7 @@ div
     top: 1px;
     height: 25vh;
     z-index: 2;
-    font-family: impact;
+   font-family: 'Anton', sans-serif;
     width: 100%;
     font-size: 100px;
 }
@@ -84,7 +84,7 @@ div
     top: 25%;
     z-index: 2;
     font-size: 100px;
-    font-family: impact;
+    font-family: 'Anton', sans-serif;
     width: 100%;
 }
 #z_index_box_3
@@ -92,7 +92,7 @@ div
     z-index: 2;
     position: absolute;
     top: 85%;
-    font-family: impact;
+    font-family: 'Anton', sans-serif;
     font-size: 100px;
     width: 98%;
 }
@@ -110,7 +110,7 @@ div
 #about_me
 {
     padding: 40px;
-    font-family: impact;
+    font-family: 'Anton', sans-serif;
     font-size: 100px;
     color: white;
     text-align: center;
