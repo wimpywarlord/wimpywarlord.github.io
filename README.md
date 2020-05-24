@@ -3,17 +3,13 @@
 
 **I pump iron during the day and smash my keyboard in the night.🐙** 
 
-## Good morning Girlfriend 🐕
+## My Portfolio Website. 🐕
 
-“Does your **girlfriend** complain about you not wishing them **goodmorning** or **goodnight** ? Are you loosing the **spark** in your relationship ? Or have you just become too **lazy** to type a **long** ass message every morning and night?”  
-  
-Well not anymore ! Get delicately drafted messages on a tap distance away. Subscribe to the Pro version for wishing your loved one each day everyday hassle free with no efforts what so ever (Yet to be released).  
-  
-A smarter way to a longlasting relationship.
+This is an attempt to explain the very complex being I am through the language of binary. 
 
 ## Getting Started 🎧
 
-This project utilized the benefits of multiple technologies such as node , vue.js.
+This project utilized the benefits of multiple technologies such as javascript , HTML5 , css , scss.
 Its better if we familiarize ourselves with these technologies. 
 ### Prerequisites
 [![Stay Motivated](https://img.shields.io/badge/Stay-Motivated-teal.svg?style=for-the-badge)](https://www.instagram.com/kshitij_dhyani/) [![Think Big](https://img.shields.io/badge/Think-Big-orange.svg?style=for-the-badge)](https://www.linkedin.com/in/kshitijdhyani/) [![Work Hard](https://img.shields.io/badge/Work-Hard-blue.svg?style=for-the-badge)](https://github.com/wimpywarlord)
@@ -28,24 +24,16 @@ Its pretty straightforward :
 git clone <repository Url>
 ```
 
-**Install all dependencies** 
-```
-npm install
-```
-
 ## Deployment 💡
 [![THINK](https://img.shields.io/badge/Stay-Motivated-teal.svg?style=for-the-badge)](https://github.com/wimpywarlord/Mess_It_Up) [![MAKE](https://img.shields.io/badge/Think-Big-orange.svg?style=for-the-badge)](https://www.linkedin.com/in/kshitijdhyani/) [![SELL](https://img.shields.io/badge/Work-Hard-blue.svg?style=for-the-badge)](https://github.com/wimpywarlord)
 
 **Run the application** 
 ```
-npm run dev
+Use live server extention in vscode.
 ```
 
 ## Built With 🎯
 **A lot of love and a little JavaScript**
-
-* [Node.js](https://nodejs.org/en/) - The web framework used
-* [Vue.js](https://vuejs.org/) - Dependency Management
 
 ## Contributing 
 
