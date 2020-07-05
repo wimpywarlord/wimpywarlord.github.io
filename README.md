@@ -7,6 +7,8 @@
 
 This is an attempt to explain the very complex being I am through the language of binary. 
 
+**Link to the website** : http://wimpywarlord.codes/
+
 ## Getting Started 🎧
 
 This project utilized the benefits of multiple technologies such as javascript , HTML5 , css , scss.
