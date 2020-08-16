@@ -16,7 +16,9 @@ This is an attempt to explain the very complex being that I am, through the lang
 ## Getting Started 🎧
 
 This project utilized the benefits of multiple technologies such as javascript , HTML5 , css , scss.
+
 Its better if we familiarize ourselves with these technologies. 
+
 ### Prerequisites
 [![Stay Motivated](https://img.shields.io/badge/Stay-Motivated-teal.svg?style=for-the-badge)](https://www.instagram.com/kshitij_dhyani/) [![Think Big](https://img.shields.io/badge/Think-Big-orange.svg?style=for-the-badge)](https://www.linkedin.com/in/kshitijdhyani/) [![Work Hard](https://img.shields.io/badge/Work-Hard-blue.svg?style=for-the-badge)](https://github.com/wimpywarlord)
 
