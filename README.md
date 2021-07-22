@@ -1,18 +1,24 @@
+# Kshitij Dhyani  
+
+![My Banner](/banner_wimpy.jfif)
+
 # Wimpy Warlord 👽
 ![Follow Github](https://img.shields.io/github/followers/wimpywarlord?color=%2317202A&label=Follow%20wimpywarlord&logo=github&style=for-the-badge) ![Follow Twitter](https://img.shields.io/twitter/follow/kshitij_dhyani?color=%2317202A&label=Follow%20kshitij_dhyani&logo=twitter&style=for-the-badge) ![GitHub stars](https://img.shields.io/github/stars/wimpywarlord/Github_readme_template?color=%2317202A&label=STARS%20%F0%9F%8C%9F&logo=github&style=for-the-badge) 
 
-**I pump iron during the day and smash my keyboard in the night.🐙** 
+**I pump iron during the day and smash my keyboard in the night🐙.** 
 
 ## My Portfolio Website. 🐕
 
-This is an attempt to explain the very complex being I am through the language of binary. 
+This is an attempt to explain the very complex being that I am, through the language of binary. 
 
-**Link to the website** : http://wimpywarlord.codes/
+**Link to the website** : 
 
 ## Getting Started 🎧
 
 This project utilized the benefits of multiple technologies such as javascript , HTML5 , css , scss.
+
 Its better if we familiarize ourselves with these technologies. 
+
 ### Prerequisites
 [![Stay Motivated](https://img.shields.io/badge/Stay-Motivated-teal.svg?style=for-the-badge)](https://www.instagram.com/kshitij_dhyani/) [![Think Big](https://img.shields.io/badge/Think-Big-orange.svg?style=for-the-badge)](https://www.linkedin.com/in/kshitijdhyani/) [![Work Hard](https://img.shields.io/badge/Work-Hard-blue.svg?style=for-the-badge)](https://github.com/wimpywarlord)
 
