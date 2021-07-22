@@ -11,7 +11,9 @@
 
 This is an attempt to explain the very complex being that I am, through the language of binary. 
 
-**Link to the website** : 
+![My Banner](/Myportfolio.jfif)
+
+**Link to the website** : https://kshitijdhyani.com/
 
 ## Getting Started 🎧
 
