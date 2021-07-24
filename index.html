@@ -30,6 +30,9 @@
 				align-items: center;
 				justify-content: center;
 			}
+			.project_img:hover {
+				transform: scale(1.15);
+			}
 		</style>
 
 		<title>Kshitij Dhyani</title>
@@ -456,13 +459,14 @@
 							</li>
 							<li class="l-section section">
 								<div class="hire">
-									<h2>Skill Set</h2>
+									<h2>Explore</h2>
 									<!-- checkout formspree.io for easy form setup -->
 									<form class="work-request">
 										<div class="work-request--options">
 											<span class="options-a">
 												<input
 													id="opt-1"
+													onclick="modal_projects()"
 													type="checkbox"
 													value="app design"
 												/>
@@ -489,10 +493,11 @@
 															/>
 														</g>
 													</svg>
-													Web Development
+													Projects
 												</label>
 												<input
 													id="opt-2"
+													onclick="modal_research_publication_patents()"
 													type="checkbox"
 													value="graphic design"
 												/>
@@ -519,10 +524,11 @@
 															/>
 														</g>
 													</svg>
-													Video Editing
+													Publication
 												</label>
 												<input
 													id="opt-3"
+													onclick="modal_coding()"
 													type="checkbox"
 													value="motion design"
 												/>
@@ -549,12 +555,13 @@
 															/>
 														</g>
 													</svg>
-													App Development
+													Coding
 												</label>
 											</span>
 											<span class="options-b">
 												<input
 													id="opt-4"
+													onclick="modal_academics_and_achievements()"
 													type="checkbox"
 													value="ux design"
 												/>
@@ -581,10 +588,11 @@
 															/>
 														</g>
 													</svg>
-													UX Design
+													Achievements
 												</label>
 												<input
 													id="opt-5"
+													onclick="modal_work_ex()"
 													type="checkbox"
 													value="webdesign"
 												/>
@@ -611,10 +619,11 @@
 															/>
 														</g>
 													</svg>
-													Webdesign
+													Work-Ex
 												</label>
 												<input
 													id="opt-6"
+													onclick="modal_extra_curricular()"
 													type="checkbox"
 													value="marketing"
 												/>
@@ -641,7 +650,7 @@
 															/>
 														</g>
 													</svg>
-													Marketing
+													Extra Curr
 												</label>
 											</span>
 										</div>
@@ -695,7 +704,65 @@
 				/>
 			</div>
 		</a>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<!-- SWEET ALERT 2 -->
+		<link
+			href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+			rel="stylesheet"
+		/>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<script>
+			function modal_projects() {
+				setTimeout(() => {
+					document.getElementById("opt-1").checked = false;
+				}, 350);
+				Swal.fire({
+					title: "<strong>My Projects</strong>",
+					html:
+						`<a href="https://deceptiform.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/google-forms.png" height="50px" style="margin:5px"></a>` +
+						`<a href="https://study-buddy-vit.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/introduction.png" height="50px" style="margin:5px"></a>` +
+						`<a href="https://easyvezy.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/etherum.png" height="50px" style="margin:5px"></a>` +
+						`<a href="https://sembuddy.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/open-book.png" height="50px" style="margin:5px"></a>` +
+						`<a href="https://goodmorning-girlfriend.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/work-metiew-smith.jpg" height="50px" style="margin:5px; border-radius:50%;"></a>` +
+						`<a href="https://amigos-icebreaker.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/iceberg.png" height="50px" style="margin:5px"></a>`,
+					showCloseButton: true,
+					focusConfirm: false,
+					confirmButtonText: "Great!",
+					confirmButtonAriaLabel: "Thumbs up, great!",
+				});
+				console.log("MODAL PROJECT");
+			}
+			function modal_research_publication_patents() {
+				setTimeout(() => {
+					document.getElementById("opt-2").checked = false;
+				}, 350);
+
+				console.log("MODAL RESEARCH");
+			}
+			function modal_coding() {
+				setTimeout(() => {
+					document.getElementById("opt-3").checked = false;
+				}, 350);
+				console.log("MODAL CODING");
+			}
+			function modal_academics_and_achievements(params) {
+				setTimeout(() => {
+					document.getElementById("opt-4").checked = false;
+				}, 350);
+				console.log("MODAL ACADEMICS");
+			}
+			function modal_work_ex(params) {
+				setTimeout(() => {
+					document.getElementById("opt-5").checked = false;
+				}, 350);
+				console.log("MODAL WORK EX");
+			}
+			function modal_extra_curricular(params) {
+				setTimeout(() => {
+					document.getElementById("opt-6").checked = false;
+				}, 350);
+				console.log("MODAL EXTRA CURRICULAR");
+			}
+		</script>
 		<script>
 			window.jQuery ||
 				document.write(
