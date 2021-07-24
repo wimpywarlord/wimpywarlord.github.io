@@ -654,7 +654,7 @@
 												</label>
 											</span>
 										</div>
-										<div class="work-request--information">
+										<!-- <div class="work-request--information">
 											<div class="information-name">
 												<input
 													id="name"
@@ -671,11 +671,37 @@
 												/>
 												<label for="email">Email</label>
 											</div>
-										</div>
-										<input
-											type="submit"
-											value="Send Request"
+										</div> -->
+										<img
+											src="./assets/img/coffee.png"
+											height="100px"
+											alt="Coffe Logo"
 										/>
+										<br />
+										<p>Let's have coffee Together</p>
+										<a
+											href="https://calendly.com/kshitijdhyani"
+											rel="noopener noreferrer"
+											style="text-decoration: none"
+										>
+											<input
+												style="
+													color: white;
+													padding: 10px;
+													padding-left: 30px;
+													padding-right: 30px;
+													font-size: large;
+													border: 2px solid blue;
+													box-shadow: 0 14px 28px
+															rgba(0, 0, 0, 0.25),
+														0 10px 10px
+															rgba(0, 0, 0, 0.22);
+													background-color: blue;
+												"
+												type="Button"
+												value="When?"
+											/>
+										</a>
 									</form>
 								</div>
 							</li>
@@ -735,31 +761,106 @@
 				setTimeout(() => {
 					document.getElementById("opt-2").checked = false;
 				}, 350);
-
+				Swal.fire({
+					title: "<strong>My Research Publication</strong>",
+					width: 900,
+					html:
+						`<small>All papers have been provided with hyperlink.</small>` +
+						`<a href="https://drive.google.com/file/d/1Qqf5acfVeAd-EOqBxOtmclXYV0KFmQrZ/view?usp=sharing" target="_blank" style="text-decoration: none; color:white;"><p>🔹 The Smart Pill Sticker: Introducing a Smart Pill Management system based on Touch-point Technology</p></a>` +
+						`<a href="https://drive.google.com/file/d/1XiWuoDBlEKg_5FiVrvJFzUFniU4zHmY-/view?usp=sharing" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Brief Insight into the Applications of IoT and Cloud Computing</p></a>` +
+						`<a href="https://drive.google.com/file/d/1j4O5AuZrlw7Z1OYIsv5Jw87BG-Eq-SU0/view?usp=sharing" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Study of Gene Characteristics and Their Applications using Deep Learning</p></a>` +
+						`<a href="https://drive.google.com/file/d/1uqGd0rJ8iI8r938TanEV5hBCtETtnXbR/view?usp=sharing" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Blockchain-Based Document Verification System for Employers</p></a>` +
+						`<a href="https://drive.google.com/file/d/1XmZjUTU3YTIp3O1Jf1ovcYaYU8lNYBdR/view?usp=sharing" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Novel Survey On Ubiquitous Computing</p></a>` +
+						`<a href="http://sersc.org/journals/index.php/IJAST/article/view/30448" target="_blank" style="text-decoration: none; color:white;"><p>🔹 Study for the Best Provisional Storage Technology</p></a>`,
+					showCloseButton: true,
+					focusConfirm: false,
+					confirmButtonText: "Great!",
+					confirmButtonAriaLabel: "Thumbs up, great!",
+				});
 				console.log("MODAL RESEARCH");
 			}
 			function modal_coding() {
 				setTimeout(() => {
 					document.getElementById("opt-3").checked = false;
 				}, 350);
+				Swal.fire({
+					title: "<strong>My Research Publication</strong>",
+					html:
+						`<a href="https://www.hackerearth.com/@wimpy" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/hackerearth.png" height="50px" style="margin:5px"></a>` +
+						`<a href="https://www.hackerrank.com/wimpywarlord" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/hackerrank.png" height="50px" style="margin:5px"></a>` +
+						`<a href="https://www.codechef.com/users/wimpywarlord" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/codechef.jfif" height="50px" style="margin:5px; border-radius:50%;"></a>` +
+						`<a href="https://stackoverflow.com/users/10118061/kshitij-dhyani" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/stackoverflow.png" height="50px" style="margin:5px; border-radius:50%;"></a>` +
+						`<a href="https://devpost.com/wimpywarlord" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/devpost.svg" height="50px" style="margin:5px; border-radius:50%;"></a>`,
+					showCloseButton: true,
+					focusConfirm: false,
+					confirmButtonText: "Great!",
+					confirmButtonAriaLabel: "Thumbs up, great!",
+				});
 				console.log("MODAL CODING");
 			}
 			function modal_academics_and_achievements(params) {
 				setTimeout(() => {
 					document.getElementById("opt-4").checked = false;
 				}, 350);
+				Swal.fire({
+					title: "<strong>Academics & Achievements</strong>",
+					width: 650,
+					html:
+						`<div>` +
+						`<small>All statements can be verified on <a style="color:blue;" href="https://www.linkedin.com/in/kshitijdhyani/" target="_blank">Linkedin</a>.</small>` +
+						`<p>🔴 B.Tech IT Graduate from VIT with a 9.21 CGPA</p>` +
+						`<p>🔴 Recognized as a Merit Scholar and Special Achiever.</p>` +
+						`<p>🔴 Two patents filed under the Indian Patent Office.</p>` +
+						`<p>🔴 Top 1.5% scorer in entire nation in 12th Standard.</p>` +
+						`</div>`,
+					showCloseButton: true,
+					focusConfirm: false,
+					confirmButtonText: "Great!",
+					confirmButtonAriaLabel: "Thumbs up, great!",
+				});
 				console.log("MODAL ACADEMICS");
 			}
 			function modal_work_ex(params) {
 				setTimeout(() => {
 					document.getElementById("opt-5").checked = false;
 				}, 350);
+				Swal.fire({
+					title: "<strong>Academics & Achievements</strong>",
+					width: 650,
+					html:
+						`<div>` +
+						`<small>All statements can be verified on <a style="color:blue;" href="https://www.linkedin.com/in/kshitijdhyani/" target="_blank">Linkedin</a>.</small>` +
+						`<p>🔴 Web Developer at Ezyschooling - Delhi's Biggest Educational Startup</p>` +
+						`<p>🔴 Project Lead and President at VinnovateIT - Technical Society of VIT</p>` +
+						`<p>🔴 Picked up and Finished multiple free lance projects.</p>` +
+						`<p>🔴 Worked at Teach for India NGO and taught the under-privileged.</p>` +
+						`</div>`,
+					showCloseButton: true,
+					focusConfirm: false,
+					confirmButtonText: "Great!",
+					confirmButtonAriaLabel: "Thumbs up, great!",
+				});
 				console.log("MODAL WORK EX");
 			}
 			function modal_extra_curricular(params) {
 				setTimeout(() => {
 					document.getElementById("opt-6").checked = false;
 				}, 350);
+				Swal.fire({
+					title: "<strong>Academics & Achievements</strong>",
+					width: 650,
+					html:
+						`<div>` +
+						`<p>🔴 Keen interest in Blockchain Technologies and Cryptocurrency.</p>` +
+						`<p>🔴 Inclination Towards OpenSource, Competitive Coding, DSA, and Research.</p>` +
+						`<p>🔴 Learning new things is my dose of dopamine.</p>` +
+						`<p>🔴 Hobbies include Gym, Stock Trading, Beatboxing, Rubix Cube etc.</p>` +
+						`</div>`,
+					showCloseButton: true,
+					focusConfirm: false,
+					confirmButtonText: "Great!",
+					confirmButtonAriaLabel: "Thumbs up, great!",
+				});
 				console.log("MODAL EXTRA CURRICULAR");
 			}
 		</script>
