@@ -1,758 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>👋 Tjay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-167856909-4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-167856909-4");
-    </script>
+    <!-- … your existing tags … -->
     <style>
-      #resume_download_button {
-        position: absolute;
-        color: black;
-        right: 20px;
-        bottom: 20px;
-        background-color: white;
-        border-radius: 50%;
-        height: 60px;
-        width: 60px;
-        border: 4px solid rgb(220, 220, 220);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      /* Use the font everywhere and fall back to any sans-serif if it can't be loaded */
+      body {
+        font-family: "Noto Sans Display", sans-serif;
       }
 
-      .project_img:hover {
-        transform: scale(1.15);
+      /* reset global link styles */
+      a {
+        color: inherit;
+        /* use the parent element's colour */
+        text-decoration: none;
+        /* remove the underline */
+      }
+
+      /* optional: keep underline on hover/focus for accessibility */
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+      }
+
+      /* ——— tooltip container ——— */
+      .tooltip {
+        position: relative;
+        /* create a containing block for the bubble */
+        cursor: help;
+        /* shows the "?" cursor */
+        display: inline-block;
+      }
+
+      /* ——— the bubble itself ——— */
+      .tooltip>.tooltip-text {
+        position: absolute;
+        left: 50%;
+        translate: -50% -120%;
+        /* centre above and lift it */
+        background: oklch(0.1 0 0);
+        /* dark bubble */
+        color: oklch(0.985 0 0);
+        /* your light foreground */
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.4rem;
+        font-size: 0.8rem;
+        line-height: 1.2;
+        white-space: nowrap;
+        pointer-events: none;
+        /* bubble never steals the click */
+        opacity: 0;
+        /* start hidden */
+        transition: opacity 0.15s;
+        z-index: 10;
+      }
+
+      /* ——— reveal on hover or keyboard focus ——— */
+      .tooltip:hover>.tooltip-text,
+      .tooltip:focus-visible>.tooltip-text {
+        opacity: 1;
+      }
+
+      /* ——— inline copy-to-clipboard email style ——— */
+      .copy-email {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: oklch(0.18 0 0 / 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.15rem 0.45rem 0.15rem 0.35rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        user-select: all;
+        transition: background 0.15s;
+      }
+
+      .copy-email.copied {
+        background: oklch(0.3 0 0 / 0.6);
+      }
+
+      /* toggle icons inside the code pill */
+      .copy-email .check-icon {
+        display: none;
+      }
+
+      .copy-email.copied .copy-icon {
+        display: none;
+      }
+
+      .copy-email.copied .check-icon {
+        display: inline;
+      }
+
+      /* ——— social/music badges ——— */
+      .badge {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: oklch(0.18 0 0 / 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.15rem 0.45rem 0.15rem 0.35rem;
+        border-radius: 0.25rem;
+        font-size: 0.85rem;
+        transition: background 0.15s;
+      }
+
+      .badge:hover {
+        background: oklch(0.25 0 0 / 0.5);
+      }
+
+      /* ——— animated music icon ——— */
+      .music-icon {
+        animation: musicPulse 2s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes musicPulse {
+
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.1);
+        }
       }
     </style>
-
-    <title>Kshitij Dhyani</title>
-    <meta charset="utf-8" />
-    <link rel="icon" href="assets/img/target.png" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Software Developer - Techno lunatic during the day , cyber punk over the night."
-    />
-    <meta
-      name="keywords"
-      content="kshitij, dhyani , wimpywarlord , software developer"
-    />
-    <meta name="author" content="Kshitij Dhyani" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="http://kshitijdhyani.com/" />
-    <meta name=" twitter:title" content="Kshitij Dhyani" />
-    <meta
-      name="twitter:description"
-      content="Software Developer - Techno lunatic during the day , cyber punk over the night."
-    />
-    <meta name="twitter:image" content="assets/img/target.png" />
-    <meta property="og:title" content="Kshitij Dhyani" />
-    <meta property="og:url" content="http://kshitijdhyani.com/" />
-    <meta
-      property="og:description"
-      content="Techno lunatic during the day , cyber punk over the night."
-    />
-    <meta
-      property="og:image"
-      itemprop="image"
-      content="assets/img/target.png"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
+</head>
 
-  <body>
-    <!-- notification for small viewports and landscape oriented smartphones -->
-    <div class="device-notification">
-      <a class="device-notification--logo" href="#0">
-        <img
-          height="50px"
-          width="50px"
-          src="assets/img/target.png"
-          alt="Global"
-        />
-        <p>Kshitij Dhyani</p>
-      </a>
-      <p class="device-notification--message">
-        Techno Lunatic during the day , cyber punk over the night
-      </p>
-    </div>
+<body style="background-color: oklch(0.269 0 0); color:oklch(0.985 0 0);">
+  <div style="
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+      ">
+    <div style="
+          width: 70vw;
+          display: flex;
+          justify-content: start;
+          padding-top: 6rem;
+        ">
+      <div>
+        <h2 style="padding:0; margin:0;">👋 This is Tjay</h4>
+          <p style="font-size: smaller; padding:0; margin:0;">Still discovering my value system...</p>
 
-    <div class="perspective effect-rotate-left">
-      <div class="container">
-        <div class="outer-nav--return"></div>
-        <div id="viewport" class="l-viewport">
-          <div class="l-wrapper">
-            <header class="header">
-              <a class="header--logo" href="#0">
-                <img
-                  height="50px"
-                  width="50px"
-                  src="assets/img/target.png"
-                  alt="Global"
-                />
-                <p>Kshitij Dhyani</p>
-              </a>
-              <button class="header--cta cta">Hire Me</button>
-              <div class="header--nav-toggle">
-                <span></span>
-              </div>
-            </header>
-            <nav class="l-side-nav">
-              <ul class="side-nav">
-                <li class="is-active"><span>Home</span></li>
-                <li><span>Projects</span></li>
-                <li><span>About</span></li>
-                <li><span>Contact</span></li>
-                <li><span>Hire Me</span></li>
-              </ul>
-            </nav>
-            <ul class="l-main-content main-content">
-              <li class="l-section section section--is-active">
-                <div class="intro">
-                  <div class="intro--banner">
-                    <h1>Learning<br />till<br />oblivion.</h1>
-                    <button class="cta">
-                      Hire Me
-                      <svg
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px"
-                        y="0px"
-                        viewBox="0 0 150 118"
-                        style="enable-background: new 0 0 150 118"
-                        xml:space="preserve"
-                      >
-                        <g
-                          transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)"
-                        >
-                          <path
-                            d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"
-                          />
-                        </g>
-                      </svg>
-                      <span class="btn-background"></span>
-                    </button>
-                    <img src="assets/img/me.png" alt="Welcome" />
-                  </div>
-                  <div class="intro--options">
-                    <a href="#0">
-                      <h3>Kshitij Dhyani</h3>
-                      <p>
-                        Techno Lunatic during the day , cyber punk over the
-                        night.
-                      </p>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li class="l-section section">
-                <div class="work">
-                  <h2>My Projects</h2>
-                  <div class="work--lockup">
-                    <ul class="slider">
-                      <li class="slider--item slider--item-left">
-                        <a
-                          href="https://btech-blueprint.onrender.com/"
-                          target="_blank"
-                        >
-                          <div class="slider--item-image">
-                            <img src="assets/img/open-book.png" alt="Victory" />
-                          </div>
-                          <p class="slider--item-title">B.Tech Blueprint</p>
-                          <p class="slider--item-description">
-                            A delicately Curated Guide to nailing your B.Tech
-                            Degree.
-                          </p>
-                        </a>
-                      </li>
-                      <li class="slider--item slider--item-center">
-                        <a
-                          href="https://amigos-cord.onrender.com/"
-                          target="_blank"
-                        >
-                          <div class="slider--item-image">
-                            <img
-                              src="assets/img/iceberg.png"
-                              alt="Alex Nowak"
-                            />
-                          </div>
-                          <p class="slider--item-title">Amigos</p>
-                          <p class="slider--item-description">
-                            The ice-breaker for freshmen in college.
-                          </p>
-                        </a>
-                      </li>
-                      <li class="slider--item slider--item-right">
-                        <a
-                          target="_blank"
-                          href="https://synthcorn-k0az.onrender.com/"
-                        >
-                          <div class="slider--item-image">
-                            <img
-                              src="assets/img/work-metiew-smith.jpg"
-                              alt="Synth Corn Placeholder"
-                            />
-                          </div>
-                          <p class="slider--item-title">SynthCorn</p>
-                          <p class="slider--item-description">
-                            Artificially Intelligent Only Fans (OF) Models.
-                          </p>
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="slider--prev">
-                      <svg
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px"
-                        y="0px"
-                        viewBox="0 0 150 118"
-                        style="enable-background: new 0 0 150 118"
-                        xml:space="preserve"
-                      >
-                        <g
-                          transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)"
-                        >
-                          <path
-                            d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                    <div class="slider--next">
-                      <svg
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px"
-                        y="0px"
-                        viewBox="0 0 150 118"
-                        style="enable-background: new 0 0 150 118"
-                        xml:space="preserve"
-                      >
-                        <g
-                          transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)"
-                        >
-                          <path
-                            d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="l-section section">
-                <div class="about">
-                  <div class="about--banner">
-                    <h2>
-                      I am<br />more than<br />just a<br />software engineer.
-                    </h2>
-                    <a
-                      target="_blank"
-                      href="https://www.linkedin.com/in/kshitijdhyani/"
-                      >More
-                      <span>
-                        <svg
-                          version="1.1"
-                          id="Layer_1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          x="0px"
-                          y="0px"
-                          viewBox="0 0 150 118"
-                          style="enable-background: new 0 0 150 118"
-                          xml:space="preserve"
-                        >
-                          <g
-                            transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)"
-                          >
-                            <path
-                              d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"
-                            />
-                          </g>
-                        </svg>
-                      </span>
-                    </a>
-                    <img src="assets/img/about-visual.png" alt="About Us" />
-                  </div>
-                  <div class="about--options">
-                    <a href="#0">
-                      <h3>Leader.</h3>
-                    </a>
-                    <a href="#0">
-                      <h3>PowerLifter.</h3>
-                    </a>
-                    <a href="#0">
-                      <h3>Mentor.</h3>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li class="l-section section">
-                <div class="contact">
-                  <div class="contact--lockup">
-                    <div class="modal">
-                      <div class="modal--information">
-                        <p>Tempe, Arizona U.S.A</p>
-                        <a href="mailto:ouremail@gmail.com"
-                          >emailofkshitijdhyani@gmail.com</a
-                        >
-                        <!-- <a href="tel:+148126287560">+1 623-268-9886 | +91 9650797489</a> -->
-                      </div>
-                      <ul class="modal--options">
-                        <li>
-                          <a
-                            target="_blank"
-                            href="https://twitter.com/kshitij_dhyani"
-                            ><img
-                              src="./assets/img/twitter.png"
-                              alt="Twitter logo"
-                              style="height: 10px"
-                            />
-                            Twitter</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            target="_blank"
-                            href="https://github.com/wimpywarlord"
-                            ><img
-                              src="./assets/img/github.png"
-                              alt="Github logo"
-                              style="height: 10px"
-                            />
-                            <span>Github</span></a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            target="_blank"
-                            href="https://www.linkedin.com/in/kshitijdhyani/"
-                          >
-                            <span
-                              ><img
-                                src="./assets/img/linkedin.png"
-                                alt="Linkedin Logo"
-                                style="height: 10px"
-                            /></span>
+          <br>
+          <div style="font-size:0.8rem">
+            I read (but not reply to) every email:
+            <code class="copy-email" tabindex="0">
+            <span class="email-text">emailofkshitijdhyani@gmail.com</span>
+            <!-- copy icon -->
+            <svg class="lucide lucide-copy-icon copy-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            <!-- check icon -->
+            <svg class="lucide lucide-check-check-icon check-icon" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>
+          </code>
+          </div>
+          <br>
 
-                            Linkedin</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+          <div style="font-size:1rem">Building <a target="_blank" style="text-decoration: none;"
+              href="https://gradbro.com/"><span style="color:#bd93f9; font-weight: 600;">Gradbro</span></a> to 1M MRR.
+          </div>
+          <div style="font-size:1rem">Started coding to help my gradfather fight <span class="tooltip" tabindex="0"
+              style="font-style: italic; text-decoration: underline;">
+              Alzheimer's
+              <span class="tooltip-text">
+                A progressive, degenerative disease of the brain that causes
+                memory loss and cognitive decline.
+              </span>
+            </span> - built <a href="https://journals.sagepub.com/doi/epub/10.1177/14604582211052848"
+              target="_blank"><span style="color:#ff79c6;">this</span></a>.</div>
+          <div style="font-size:1rem">
+            Cooked up:
+            <ul>
+              <li>AI agent that plays - <a target="_blank" style="text-decoration: none; color:#f1fa8c;;"
+                  href="https://www.reddit.com/r/BlackMythWukong/comments/1jtb5oi/irl_friends_are_not_gamers_so_i_built_an_ai/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1"><em>Black
+                    Myth Wukong</em></a>.</li>
+              <li>Social deduction AI game - <a target="_blank" style="text-decoration: none; color:#8be9fd;"
+                  href="https://www.linkedin.com/posts/kshitijdhyani_joined-ego-yc-w24-in-january-bringing-activity-7308904504999976960-4piP?utm_source=share&utm_medium=member_desktop&rcm=ACoAACf1ogoBOCDJsTeRsVecnp_X_ZXNDOjip80"><em>Accomplice</em></a>.
               </li>
-              <li class="l-section section">
-                <div class="hire">
-                  <h2>Explore</h2>
-                  <!-- checkout formspree.io for easy form setup -->
-                  <form class="work-request">
-                    <div class="work-request--options">
-                      <span class="options-a">
-                        <input
-                          id="opt-1"
-                          onclick="modal_projects()"
-                          type="checkbox"
-                          value="app design"
-                        />
-                        <label for="opt-1">
-                          <svg
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 150 111"
-                            style="enable-background: new 0 0 150 111"
-                            xml:space="preserve"
-                          >
-                            <g
-                              transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)"
-                            >
-                              <path
-                                d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"
-                              />
-                            </g>
-                          </svg>
-                          Projects
-                        </label>
-                        <input
-                          id="opt-2"
-                          onclick="modal_research_publication_patents()"
-                          type="checkbox"
-                          value="graphic design"
-                        />
-                        <label for="opt-2">
-                          <svg
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 150 111"
-                            style="enable-background: new 0 0 150 111"
-                            xml:space="preserve"
-                          >
-                            <g
-                              transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)"
-                            >
-                              <path
-                                d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"
-                              />
-                            </g>
-                          </svg>
-                          Publication
-                        </label>
-                        <input
-                          id="opt-3"
-                          onclick="modal_coding()"
-                          type="checkbox"
-                          value="motion design"
-                        />
-                        <label for="opt-3">
-                          <svg
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 150 111"
-                            style="enable-background: new 0 0 150 111"
-                            xml:space="preserve"
-                          >
-                            <g
-                              transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)"
-                            >
-                              <path
-                                d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"
-                              />
-                            </g>
-                          </svg>
-                          Coding
-                        </label>
-                      </span>
-                      <span class="options-b">
-                        <input
-                          id="opt-4"
-                          onclick="modal_academics_and_achievements()"
-                          type="checkbox"
-                          value="ux design"
-                        />
-                        <label for="opt-4">
-                          <svg
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 150 111"
-                            style="enable-background: new 0 0 150 111"
-                            xml:space="preserve"
-                          >
-                            <g
-                              transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)"
-                            >
-                              <path
-                                d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"
-                              />
-                            </g>
-                          </svg>
-                          Achievements
-                        </label>
-                        <input
-                          id="opt-5"
-                          onclick="modal_work_ex()"
-                          type="checkbox"
-                          value="webdesign"
-                        />
-                        <label for="opt-5">
-                          <svg
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 150 111"
-                            style="enable-background: new 0 0 150 111"
-                            xml:space="preserve"
-                          >
-                            <g
-                              transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)"
-                            >
-                              <path
-                                d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"
-                              />
-                            </g>
-                          </svg>
-                          Work-Ex
-                        </label>
-                        <input
-                          id="opt-6"
-                          onclick="modal_extra_curricular()"
-                          type="checkbox"
-                          value="marketing"
-                        />
-                        <label for="opt-6">
-                          <svg
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 150 111"
-                            style="enable-background: new 0 0 150 111"
-                            xml:space="preserve"
-                          >
-                            <g
-                              transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)"
-                            >
-                              <path
-                                d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"
-                              />
-                            </g>
-                          </svg>
-                          Extra Curr
-                        </label>
-                      </span>
-                    </div>
-                    <!-- <div class="work-request--information">
-											<div class="information-name">
-												<input
-													id="name"
-													type="text"
-													spellcheck="false"
-												/>
-												<label for="name">Name</label>
-											</div>
-											<div class="information-email">
-												<input
-													id="email"
-													type="email"
-													spellcheck="false"
-												/>
-												<label for="email">Email</label>
-											</div>
-										</div> -->
-                    <img
-                      src="./assets/img/coffee.png"
-                      height="100px"
-                      alt="Coffe Logo"
-                    />
-                    <br />
-                    <p>Let's have coffee Together</p>
-                    <a
-                      href="https://calendly.com/kshitijdhyani"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      style="text-decoration: none"
-                    >
-                      <input
-                        style="
-                          color: white;
-                          padding: 10px;
-                          padding-left: 30px;
-                          padding-right: 30px;
-                          font-size: large;
-                          border: 2px solid blue;
-                          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-                            0 10px 10px rgba(0, 0, 0, 0.22);
-                          background-color: blue;
-                        "
-                        type="Button"
-                        value="When?"
-                      />
-                    </a>
-                  </form>
-                </div>
+              <li>Campus utility app for my university - <a target="_blank"
+                  style="text-decoration: none; color:#50fa7b;"
+                  href="https://play.google.com/store/apps/details?id=com.vinnovateit.messit&hl=en_US&pli=1"><em>MessIt</em></a>.
               </li>
             </ul>
+            <!-- </div>
+        <div style="font-size:1rem">
+          <a href="https://www.youtube.com/watch?v=sADmwWhU5ZM" target="_blank" class="badge">
+            <svg class="music-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            Listening to
+          </a>
+        </div> -->
+            <div style="font-size:0.9rem">Delhi - Phoenix - San Francisco</div>
+            <div style="font-size:0.8rem">[VIT] [<span style="color:#f3316e ; font-weight: 700;">ASU</span>] [<span
+                style="color:#ffa500 ; font-weight: 700;">Rivian</span>] [<span
+                style="color:#ff6532; font-weight: 700;">YC</span>] [<span
+                style="color:#ee3b00; font-weight: 700;">Illumio</span>]</div>
+            <hr style="margin:0.5rem 0;">
+            <div style="display:flex; flex-direction: row; gap:0.2rem;">
+              <div>
+                <a style="font-size:0.7rem;" href="https://x.com/kshitij_dhyani" target="_blank" class="badge">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                  </svg>
+                  @kshitij_dhyani
+                </a>
+              </div>
+              <div>
+                <a style="font-size:0.7rem;" href="https://github.com/wimpywarlord" target="_blank" class="badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                    <path d="M9 18c-4.51 2-5-2-7-2" />
+                  </svg>
+                  @wimpywarlord
+                </a>
+              </div>
+              <div>
+                <a style="font-size:0.7rem;" href="https://www.linkedin.com/in/kshitijdhyani/" target="_blank" class="badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                  @kshitijdhyani
+                </a>
+              </div>
+              <div>
+                <a style="font-size:0.7rem;" href="KSHITIJ_DHYANI.pdf" download class="badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14,2 14,8 20,8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10,9 9,9 8,9" />
+                  </svg>
+                  Resume
+                </a>
+              </div>
+            </div>
+            <div style="font-size:1rem; margin-top:1rem;">
+              Meditations:
+              <ul>
+                <li>
+                  <a href="#" target="_blank" style="text-decoration: none; font-size:0.875rem;">
+                    <span style="color:#ffb86c;">[Coming Soon]:</span> How to make an LLM play Red Dead Redemption 2
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
       </div>
-      <ul class="outer-nav">
-        <li class="is-active">Home</li>
-        <li>Projects</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Hire Me</li>
-      </ul>
     </div>
-    <a href="./assets/KSHITIJ_CV.pdf" target="_blank" rel="noopener noreferrer">
-      <div id="resume_download_button">
-        <img src="./assets/img/cv.png" alt="Resume logo" style="height: 40px" />
-      </div>
-    </a>
-    <!-- SWEET ALERT 2 -->
-    <link
-      href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
-      rel="stylesheet"
-    />
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
     <script>
-      function modal_projects() {
-        setTimeout(() => {
-          document.getElementById("opt-1").checked = false;
-        }, 350);
-        Swal.fire({
-          title: "<strong>My Projects</strong>",
-          html:
-            // `<a href="https://deceptiform.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/google-forms.png" height="50px" style="margin:5px"></a>` +
-            `<a href="https://study-buddy-ngq6.onrender.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/introduction.png" height="50px" style="margin:5px"></a>` +
-            // `<a href="https://easyvezy.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/etherum.png" height="50px" style="margin:5px"></a>` +
-            `<a href="https://btech-blueprint.onrender.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/open-book.png" height="50px" style="margin:5px"></a>` +
-            `<a href="https://synthcorn-k0az.onrender.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/work-metiew-smith.jpg" height="50px" style="margin:5px; border-radius:50%;"></a>` +
-            `<a href="https://amigos-cord.onrender.com/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/iceberg.png" height="50px" style="margin:5px"></a>`,
-          showCloseButton: true,
-          focusConfirm: false,
-          confirmButtonText: "Great!",
-          confirmButtonAriaLabel: "Thumbs up, great!",
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.copy-email').forEach(el => {
+          el.addEventListener('click', () => {
+            const email = el.querySelector('.email-text')?.textContent ?? el.textContent;
+            navigator.clipboard.writeText(email.trim()).then(() => {
+              el.classList.add('copied');
+              setTimeout(() => el.classList.remove('copied'), 1200);
+            });
+          });
         });
-        // console.log("MODAL PROJECT");
-      }
-      function modal_research_publication_patents() {
-        setTimeout(() => {
-          document.getElementById("opt-2").checked = false;
-        }, 350);
-        Swal.fire({
-          title: "<strong>My Research Publication</strong>",
-          width: 900,
-          html:
-            `<small>All papers have been provided with hyperlink.</small>` +
-            `<a href="https://journals.sagepub.com/doi/10.1177/14604582211052848" target="_blank" style="text-decoration: none; color:white;"><p>🔹 The Smart Pill Sticker: Introducing a Smart Pill Management system based on Touch-point Technology</p></a>` +
-            `<a href="https://link.springer.com/chapter/10.1007/978-3-031-05528-7_11" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Brief Insight into the Applications of IoT and Cloud Computing</p></a>` +
-            `<a href="https://link.springer.com/chapter/10.1007/978-981-16-9158-4_4" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Study of Gene Characteristics and Their Applications using Deep Learning</p></a>` +
-            `<a href="https://link.springer.com/chapter/10.1007/978-981-16-7182-1_11" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Blockchain-Based Document Verification System for Employers</p></a>` +
-            `<a href="https://link.springer.com/chapter/10.1007/978-981-16-6460-1_8" target="_blank" style="text-decoration: none; color:white;"><p>🔹 A Novel Survey On Ubiquitous Computing</p></a>` +
-            `<a href="http://sersc.org/journals/index.php/IJAST/article/view/30448" target="_blank" style="text-decoration: none; color:white;"><p>🔹 Study for the Best Provisional Storage Technology</p></a>`,
-          showCloseButton: true,
-          focusConfirm: false,
-          confirmButtonText: "Great!",
-          confirmButtonAriaLabel: "Thumbs up, great!",
-        });
-        // console.log("MODAL RESEARCH");
-      }
-      function modal_coding() {
-        setTimeout(() => {
-          document.getElementById("opt-3").checked = false;
-        }, 350);
-        Swal.fire({
-          title: "<strong>My Coding Footprint</strong>",
-          html:
-            `<a href="https://www.hackerearth.com/@wimpy" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/hackerearth.png" height="50px" style="margin:5px"></a>` +
-            `<a href="https://www.hackerrank.com/wimpywarlord" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/hackerrank.png" height="50px" style="margin:5px"></a>` +
-            `<a href="https://www.codechef.com/users/wimpywarlord" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/codechef.jfif" height="50px" style="margin:5px; border-radius:50%;"></a>` +
-            `<a href="https://stackoverflow.com/users/10118061/kshitij-dhyani" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/stackoverflow.png" height="50px" style="margin:5px; border-radius:50%;"></a>` +
-            `<a href="https://devpost.com/wimpywarlord" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/devpost.svg" height="50px" style="margin:5px; border-radius:50%;"></a>` +
-            `<a href="https://github.com/wimpywarlord" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/githubblue.png" height="50px" style="margin:5px; border-radius:50%;"></a>` +
-            `<a href="https://leetcode.com/wimpywarlord/" target="_blank" rel="noopener noreferrer"><img class="project_img" src="./assets/img/leetcode.png" height="50px" style="margin:5px; border-radius:50%;"></a>`,
-          showCloseButton: true,
-          focusConfirm: false,
-          confirmButtonText: "Great!",
-          confirmButtonAriaLabel: "Thumbs up, great!",
-        });
-        // console.log("MODAL CODING");
-      }
-      function modal_academics_and_achievements(params) {
-        setTimeout(() => {
-          document.getElementById("opt-4").checked = false;
-        }, 350);
-        Swal.fire({
-          title: "<strong>Academics & Achievements</strong>",
-          width: 650,
-          html:
-            `<div>` +
-            `<small>All statements can be verified on <a style="color:blue;" href="https://www.linkedin.com/in/kshitijdhyani/" target="_blank">Linkedin</a>.</small>` +
-            `<p>🔴 B.Tech IT Graduate from VIT with a 9.21 CGPA</p>` +
-            `<p>🔴 Recognized as a Merit Scholar and Special Achiever.</p>` +
-            `<p>🔴 Two patents filed under the Indian Patent Office.</p>` +
-            `<p>🔴 Top 1.5% scorer in entire nation in 12th Standard.</p>` +
-            `</div>`,
-          showCloseButton: true,
-          focusConfirm: false,
-          confirmButtonText: "Great!",
-          confirmButtonAriaLabel: "Thumbs up, great!",
-        });
-        // console.log("MODAL ACADEMICS");
-      }
-      function modal_work_ex(params) {
-        setTimeout(() => {
-          document.getElementById("opt-5").checked = false;
-        }, 350);
-        Swal.fire({
-          title: "<strong>Academics & Achievements</strong>",
-          width: 650,
-          html:
-            `<div>` +
-            `<small>All statements can be verified on <a style="color:blue;" href="https://www.linkedin.com/in/kshitijdhyani/" target="_blank">Linkedin</a>.</small>` +
-            `<p>🔴 Software Developer at Decision Theater - ASU</p>` +
-            `<p>🔴 Software Developer at Bluesapling Technology Pvt. Ltd.</p>` +
-            `<p>🔴 President at VinnovateIT - Technical Society of VIT</p>` +
-            `<p>🔴 Web Developer at Ezyschooling - Delhi's Biggest Educational Startup</p>` +
-            `</div>`,
-          showCloseButton: true,
-          focusConfirm: false,
-          confirmButtonText: "Great!",
-          confirmButtonAriaLabel: "Thumbs up, great!",
-        });
-        // console.log("MODAL WORK EX");
-      }
-      function modal_extra_curricular(params) {
-        setTimeout(() => {
-          document.getElementById("opt-6").checked = false;
-        }, 350);
-        Swal.fire({
-          title: "<strong>Extra Curricular</strong>",
-          width: 650,
-          html:
-            `<div>` +
-            `<p>🔴 Keen interest in Blockchain Technologies and Cryptocurrency.</p>` +
-            `<p>🔴 Inclination Towards OpenSource, Competitive Coding, DSA, and Research.</p>` +
-            `<p>🔴 Learning new things is my dose of dopamine.</p>` +
-            `<p>🔴 Hobbies include Gym, Nature, Beatboxing, Rubix Cube etc.</p>` +
-            `</div>`,
-          showCloseButton: true,
-          focusConfirm: false,
-          confirmButtonText: "Great!",
-          confirmButtonAriaLabel: "Thumbs up, great!",
-        });
-        // console.log("MODAL EXTRA CURRICULAR");
-      }
+      });
     </script>
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>'
-        );
-    </script>
-    <script src="assets/js/functions-min.js"></script>
-  </body>
+</body>
+
 </html>
