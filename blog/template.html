@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOG_TITLE - Tjay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Base styles matching main site */
+    body {
+      font-family: "Noto Sans Display", sans-serif;
+      background-color: oklch(0.269 0 0);
+      color: oklch(0.985 0 0);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Reset link styles */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Navigation */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: oklch(0.7 0 0);
+      margin-bottom: 2rem;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover {
+      color: oklch(0.985 0 0);
+    }
+
+    /* Blog post styles */
+    .blog-post {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid oklch(0.3 0 0);
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-date {
+      font-size: 0.85rem;
+      color: oklch(0.6 0 0);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .post-status {
+      font-size: 0.75rem;
+      background: oklch(0.18 0 0 / 0.4);
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      color: #ffb86c;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .post-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1rem 0 1.5rem 0;
+      line-height: 1.2;
+      color: oklch(0.985 0 0);
+    }
+
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      background: oklch(0.18 0 0 / 0.4);
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      color: oklch(0.7 0 0);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      transition: background 0.15s;
+    }
+
+    .tag:hover {
+      background: oklch(0.25 0 0 / 0.5);
+    }
+
+    /* Post content */
+    .post-content {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: oklch(0.9 0 0);
+    }
+
+    .post-content h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1rem 0;
+      color: oklch(0.985 0 0);
+    }
+
+    .post-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 2rem 0 0.8rem 0;
+      color: oklch(0.985 0 0);
+    }
+
+    .post-content p {
+      margin: 1.2rem 0;
+    }
+
+    .post-content ul, .post-content ol {
+      margin: 1.2rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .post-content li {
+      margin: 0.5rem 0;
+    }
+
+    .post-content a {
+      color: #ffb86c;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .post-content a:hover {
+      color: #ffa500;
+    }
+
+    .post-content code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: oklch(0.18 0 0 / 0.4);
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.2rem;
+      font-size: 0.9em;
+    }
+
+    .post-content pre {
+      background: oklch(0.15 0 0);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid oklch(0.3 0 0);
+    }
+
+    .post-content pre code {
+      background: none;
+      padding: 0;
+      color: oklch(0.9 0 0);
+    }
+
+    .post-content blockquote {
+      border-left: 4px solid #ffb86c;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: oklch(0.8 0 0);
+    }
+
+    .post-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Post footer */
+    .post-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid oklch(0.3 0 0);
+    }
+
+    .post-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      color: oklch(0.7 0 0);
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover {
+      color: oklch(0.985 0 0);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .post-title {
+        font-size: 2rem;
+      }
+      
+      .post-content {
+        font-size: 1rem;
+      }
+      
+      .post-content h2 {
+        font-size: 1.5rem;
+      }
+      
+      .post-content h3 {
+        font-size: 1.2rem;
+      }
+      
+      .post-navigation {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      
+      .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="back-link">← Back to Home</a>
+    </nav>
+    
+    <article class="blog-post">
+      <header class="post-header">
+        <div class="post-meta">
+          <span class="post-date">POST_DATE</span>
+          <span class="post-status">POST_STATUS</span>
+        </div>
+        <h1 class="post-title">BLOG_TITLE</h1>
+        <div class="post-tags">
+          <span class="tag">TAG1</span>
+          <span class="tag">TAG2</span>
+          <span class="tag">TAG3</span>
+        </div>
+      </header>
+
+      <div class="post-content">
+        <!-- YOUR BLOG CONTENT GOES HERE -->
+        <p>This is where your blog content will go. Replace this section with your actual article content.</p>
+        
+        <h2>Example Section</h2>
+        <p>You can use headings, paragraphs, lists, code blocks, and more.</p>
+        
+        <ul>
+          <li>Example list item 1</li>
+          <li>Example list item 2</li>
+          <li>Example list item 3</li>
+        </ul>
+        
+        <h3>Code Example</h3>
+        <pre><code>// Your code examples here
+console.log("Hello, World!");</code></pre>
+        
+        <blockquote>
+          This is an example blockquote for important notes or quotes.
+        </blockquote>
+      </div>
+
+      <footer class="post-footer">
+        <div class="post-navigation">
+          <a href="../index.html" class="nav-link">← Back to Home</a>
+        </div>
+      </footer>
+    </article>
+  </div>
+</body>
+
+</html> 
