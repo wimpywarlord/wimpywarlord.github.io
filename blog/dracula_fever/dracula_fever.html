@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dracula Fever - Tjay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/gif" href="/assets/meow_party.gif" />
+    <style>
+      /* Base styles matching main site (copied from llm_wukong.html) */
+      body {
+        font-family: "Noto Sans Display", sans-serif;
+        background-color: #282a36;
+        color: #f8f8f2;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #6272a4;
+        margin-bottom: 2rem;
+        transition: color 0.15s;
+      }
+      .back-link:hover {
+        color: #f8f8f2;
+      }
+      .blog-post {
+        max-width: 700px;
+        margin: 6rem auto;
+      }
+      .post-header {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #44475a;
+      }
+      .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .post-date {
+        font-size: 0.85rem;
+        color: #6272a4;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      .post-status {
+        font-size: 0.75rem;
+        background: #44475a;
+        padding: 0.15rem 0.45rem;
+        border-radius: 0.25rem;
+        color: #ffb86c;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      .post-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.2;
+        color: #f8f8f2;
+      }
+      .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        font-size: 0.75rem;
+        background: #44475a;
+        padding: 0.15rem 0.45rem;
+        border-radius: 0.25rem;
+        color: #6272a4;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        transition: background 0.15s;
+      }
+      .tag:hover {
+        background: #6272a4;
+      }
+      .post-content {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #f8f8f2;
+      }
+      .post-content h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.8rem 0;
+        color: #f8f8f2;
+      }
+      .post-content h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 1.2rem 0 0.6rem 0;
+        color: #f8f8f2;
+      }
+      .post-content p {
+        margin: 0.8rem 0;
+      }
+      .post-content ul,
+      .post-content ol {
+        margin: 0.8rem 0;
+        padding-left: 1.5rem;
+      }
+      .post-content li {
+        margin: 0.3rem 0;
+      }
+      .post-content a {
+        color: #ffb86c;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+      .post-content a:hover {
+        color: #ffa500;
+      }
+      .post-content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: #44475a;
+        padding: 0.1rem 0.3rem;
+        border-radius: 0.2rem;
+        font-size: 0.9em;
+      }
+      .post-content pre {
+        background: #282a36;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin: 1rem 0;
+        border: 1px solid #44475a;
+      }
+      .post-content pre code {
+        background: none;
+        padding: 0;
+        color: #f8f8f2;
+      }
+      .post-content blockquote {
+        border-left: 4px solid #ffb86c;
+        padding-left: 1rem;
+        margin: 1rem 0;
+        font-style: italic;
+        color: #6272a4;
+      }
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+      }
+      .post-footer {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid #44475a;
+      }
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-link {
+        font-size: 0.9rem;
+        color: #6272a4;
+        transition: color 0.15s;
+      }
+      .nav-link:hover {
+        color: #f8f8f2;
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+        .post-title {
+          font-size: 1.3rem;
+        }
+        .post-content {
+          font-size: 0.9rem;
+        }
+        .post-content h2 {
+          font-size: 1.1rem;
+        }
+        .post-content h3 {
+          font-size: 0.95rem;
+        }
+        .post-navigation {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start;
+        }
+        .post-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+      .wallpaper-container {
+        position: relative;
+        flex: 1 1 48%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .wallpaper-download-link {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(40, 42, 54, 0.95);
+        padding: 0.25em 0.9em;
+        border-radius: 0.4em;
+        color: #8be9fd;
+        font-size: 0.95em;
+        text-decoration: underline;
+        transition: opacity 0.15s;
+        opacity: 0.95;
+        z-index: 2;
+      }
+      .wallpaper-container:hover .wallpaper-download-link,
+      .wallpaper-container:focus-within .wallpaper-download-link {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav></nav>
+      <article class="blog-post">
+        <header class="post-header">
+          <div class="post-meta">
+            <span class="post-date">28 July 2025</span>
+          </div>
+          <h1 class="post-title">
+            Dracula Fever: The Ultimate Guide to Theming Your macOS Setup
+          </h1>
+        </header>
+        <div class="post-content">
+          <p>
+            I'll walk you through how to turn your macOS setup—and your favorite
+            apps—into
+            <a href="https://draculatheme.com/" target="_blank">Dracula theme</a
+            >. We'll cover everything from your terminal to your browser, code
+            editor, and even Discord. Let's get spooky!
+          </p>
+
+          <h2>Step 1: Theming Your Browser &amp; Web Apps</h2>
+          <h3>Stylus: The Powerhouse for Custom Styles</h3>
+          <p>
+            <a href="https://add0n.com/stylus.html" target="_blank">Stylus</a>
+            is a browser extension that lets you apply custom CSS themes to
+            websites. It’s available for Chrome, Firefox, and Edge. Once
+            installed, you can grab Dracula themes for your favorite sites from
+            <a href="https://userstyles.world/" target="_blank"
+              >userstyles.world</a
+            >
+            or GitHub.
+          </p>
+          <ul>
+            <li>
+              <strong>Twitter/X:</strong>
+              Modified
+              <a
+                href="https://userstyles.world/style/18258/twitter-catppuccin"
+                target="_blank"
+                >Catppuccin</a
+              >
+              into custom
+              <a
+                href="assets/twitter-dracula.user.css"
+                download
+                style="color: #8be9fd; text-decoration: underline"
+                >Dracula for Twitter</a
+              >.<br />
+              <img
+                src="assets/CleanShot_2025-07-28_at_14.20.512x.png"
+                alt="Dracula Twitter Screenshot"
+              />
+            </li>
+            <li>
+              <strong>GitHub:</strong>
+              <a
+                href="https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-github.css"
+                target="_blank"
+                >Dracula for GitHub</a
+              >.<br /><img
+                src="assets/CleanShot_2025-07-28_at_14.26.262x.png"
+                alt="Dracula GitHub Screenshot"
+              />
+            </li>
+            <li>
+              <strong>YouTube:</strong>
+              <a
+                href="https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-youtube.css"
+                target="_blank"
+                >Dracula for YouTube</a
+              >.<br /><img
+                src="assets/CleanShot_2025-07-28_at_14.27.332x.png"
+                alt="Dracula YouTube Screenshot"
+              />
+            </li>
+            <li>
+              <strong>Reddit:</strong>
+              <a
+                href="https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-reddit.css"
+                target="_blank"
+                >Dracula for Reddit</a
+              >.<br /><img
+                src="assets/CleanShot_2025-07-28_at_14.25.542x.png"
+                alt="Dracula Reddit Screenshot"
+              />
+            </li>
+          </ul>
+          <p>
+            To install a style, just click the link, hit “Install Style”, and
+            you’re done! You can also tweak the CSS if you want to personalize
+            your look.
+          </p>
+          <h2>Step 2: Theming Your Code &amp; Notes</h2>
+          <h3>Obsidian: Dracula Gemini</h3>
+          <p>
+            <a href="https://obsidian.md/" target="_blank">Obsidian</a> is a
+            powerful note-taking app for markdown lovers. The
+            <a href="https://github.com/clbn/dracula-gemini" target="_blank"
+              >Dracula Gemini</a
+            >
+            theme brings the Dracula palette to your notes, making your second
+            brain look as good as it works.
+          </p>
+          <img
+            src="assets/CleanShot_2025-07-28_at_14.31.352x.png"
+            alt="Obsidian Dracula Screenshot"
+          />
+          <h2>Step 3: iTerm2 &amp; Shell</h2>
+          <h3>iTerm2 + Dracula + Powerlevel10k + Oh My Zsh</h3>
+          <p>
+            <a href="https://iterm2.com/" target="_blank">iTerm2</a> is the
+            go-to terminal for macOS power users. Pair it with the
+            <a href="https://draculatheme.com/iterm" target="_blank"
+              >official Dracula theme</a
+            >,
+            <a href="https://github.com/romkatv/powerlevel10k" target="_blank"
+              >Powerlevel10k</a
+            >
+            for a stunning prompt, and
+            <a href="https://ohmyz.sh/" target="_blank">Oh My Zsh</a> for plugin
+            magic.
+          </p>
+          <img
+            src="assets/CleanShot_2025-07-28_at_14.35.402x.png"
+            alt="iTerm2 Dracula Screenshot"
+          />
+          <ul>
+            <li>
+              Download the Dracula iTerm2 color scheme and import it via
+              <strong>iTerm2 → Preferences → Profiles → Colors</strong>.
+            </li>
+            <li>
+              Install Oh My Zsh:
+              <code
+                >sh -c "$(curl -fsSL
+                https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code
+              >
+            </li>
+            <li>
+              Install Powerlevel10k:
+              <code
+                >git clone --depth=1
+                https://github.com/romkatv/powerlevel10k.git
+                ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</code
+              >
+            </li>
+            <li>
+              Set <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code> in your
+              <code>.zshrc</code>.
+            </li>
+          </ul>
+          <h2>Step 4: Discord</h2>
+          <h3>BetterDiscord + Refactor Midnight</h3>
+          <p>
+            <a href="https://betterdiscord.app/" target="_blank"
+              >BetterDiscord</a
+            >
+            is a client mod that lets you add custom themes and plugins to
+            Discord. For Dracula vibes, try
+            <a href="https://www.refact0r.dev/projects/midnight" target="_blank"
+              >Refactor Midnight</a
+            >
+            and add your own custom CSS for extra flair.
+          </p>
+          <img
+            src="assets/CleanShot_2025-07-28_at_14.42.552x.png"
+            alt="Discord Dracula Screenshot"
+          />
+          <a
+            href="assets/discord-dracula.user.css"
+            download
+            style="color: #8be9fd; text-decoration: underline"
+            >Download Custom Dracula Discord CSS here</a
+          >
+          <pre><code>/* DEMO CSS */
+button[aria-label],
+button.button-38aScr,
+button.buttonWrapper-3YFQGJ {
+  color: #ff79c6 !important;
+  fill: #ff79c6 !important;
+}
+</code></pre>
+          <h2>Step 5: Wallpapers</h2>
+          <p>
+            No theme is complete without a matching wallpaper. Here are some
+            Dracula-inspired options:
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem">
+            <div class="wallpaper-container">
+              <img
+                src="assets/dracula_mac_wallpaper.png"
+                alt="Dracula Mac Wallpaper"
+                style="max-width: 100%"
+              />
+              <a
+                href="assets/dracula_mac_wallpaper.png"
+                download
+                class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+            <div class="wallpaper-container">
+              <img
+                src="assets/Dracula.png"
+                alt="Dracula Wallpaper"
+                style="max-width: 100%"
+              />
+              <a
+                href="assets/Dracula.png"
+                download
+                class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+            <div class="wallpaper-container">
+              <img
+                src="assets/Ghost.png"
+                alt="Ghost Wallpaper"
+                style="max-width: 100%"
+              />
+              <a
+                href="assets/Ghost.png"
+                download
+                class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+            <div class="wallpaper-container">
+              <img
+                src="assets/Hand.png"
+                alt="Hand Wallpaper"
+                style="max-width: 100%"
+              />
+              <a href="assets/Hand.png" download class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+            <div class="wallpaper-container">
+              <img
+                src="assets/Kraken.png"
+                alt="Kraken Wallpaper"
+                style="max-width: 100%"
+              />
+              <a
+                href="assets/Kraken.png"
+                download
+                class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+            <div class="wallpaper-container">
+              <img
+                src="assets/Rainbow_1.png"
+                alt="Rainbow Wallpaper"
+                style="max-width: 100%"
+              />
+              <a
+                href="assets/Rainbow_1.png"
+                download
+                class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+            <div class="wallpaper-container">
+              <img
+                src="assets/Tree.png"
+                alt="Tree Wallpaper"
+                style="max-width: 100%"
+              />
+              <a href="assets/Tree.png" download class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+            <div class="wallpaper-container">
+              <img
+                src="assets/Waves_1.png"
+                alt="Waves Wallpaper"
+                style="max-width: 100%"
+              />
+              <a
+                href="assets/Waves_1.png"
+                download
+                class="wallpaper-download-link"
+                >Download</a
+              >
+            </div>
+          </div>
+          <p>
+            Find even more at
+            <a href="https://github.com/aynp/dracula-wallpapers" target="_blank"
+              >aynp/dracula-wallpapers</a
+            >.
+          </p>
+          <h2>Step 6: macOS UI Customization</h2>
+          <h3>SketchyBar &amp; JankyBorders</h3>
+          <p>
+            For advanced users,
+            <a href="https://github.com/FelixKratz/SketchyBar" target="_blank"
+              >SketchyBar</a
+            >
+            lets you create a fully custom, scriptable macOS status bar. Pair it
+            with
+            <a href="https://github.com/FelixKratz/JankyBorders" target="_blank"
+              >JankyBorders</a
+            >
+            for window borders that match your Dracula vibe. Check out
+            <a
+              href="https://github.com/FelixKratz/SketchyBar/discussions/47"
+              target="_blank"
+              >community configs</a
+            >
+            for inspiration.
+          </p>
+          <img
+            src="assets/CleanShot_2025-07-28_at_15.20.012x.png"
+            alt="SketchyBar Screenshot"
+          />
+          <h2>Resources &amp; More Dracula</h2>
+          <ul>
+            <li>
+              <a href="https://userstyles.world/" target="_blank"
+                >userstyles.world</a
+              >
+              — Find and share user styles for all your favorite sites.
+            </li>
+            <li>
+              <a
+                href="https://github.com/druxorey/dracula-for-stylus/tree/main/styles"
+                target="_blank"
+                >Dracula for Stylus (Brave, gemini, google drive/docs, leetcode,
+                whatsapp, wikipedia)</a
+              >
+            </li>
+          </ul>
+          <h3 style="margin-top: 2.5rem">Dracula Color Palette</h3>
+          <p>The Dracula theme color palette - reference:</p>
+          <table style="margin: 2rem auto; text-align: center">
+            <thead>
+              <tr>
+                <th style="padding: 0.5rem 1rem">Palette</th>
+                <th style="padding: 0.5rem 1rem">Hex</th>
+                <th style="padding: 0.5rem 1rem">Color</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Background</td>
+                <td><code>#282a36</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #282a36;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Current Line</td>
+                <td><code>#44475a</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #44475a;
+                      border: 1px solid #282a36;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Selection</td>
+                <td><code>#44475a</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #44475a;
+                      border: 1px solid #282a36;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Foreground</td>
+                <td><code>#f8f8f2</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #f8f8f2;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Comment</td>
+                <td><code>#6272a4</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #6272a4;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Cyan</td>
+                <td><code>#8be9fd</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #8be9fd;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Green</td>
+                <td><code>#50fa7b</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #50fa7b;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Orange</td>
+                <td><code>#ffb86c</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #ffb86c;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Pink</td>
+                <td><code>#ff79c6</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #ff79c6;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Purple</td>
+                <td><code>#bd93f9</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #bd93f9;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Red</td>
+                <td><code>#ff5555</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #ff5555;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Yellow</td>
+                <td><code>#f1fa8c</code></td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      border-radius: 4px;
+                      background: #f1fa8c;
+                      border: 1px solid #44475a;
+                    "
+                  ></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote>
+            Dracula isn’t just a color scheme—it’s a vibe. Once you start,
+            you’ll want everything to match. Happy theming!
+          </blockquote>
+        </div>
+        <footer class="post-footer">
+          <div class="post-navigation">
+            <a href="../../index.html" class="nav-link">← Back to Home</a>
+          </div>
+        </footer>
+      </article>
+    </div>
+    <style>
+      .masonry-gallery {
+        column-count: 3;
+        column-gap: 1.2rem;
+        margin: 2.5rem 0 2.5rem 0;
+      }
+      .masonry-gallery img {
+        width: 100%;
+        margin-bottom: 1.2rem;
+        border-radius: 0.7rem;
+        box-shadow: 0 2px 12px 0 rgba(40, 42, 54, 0.13);
+        display: block;
+        break-inside: avoid;
+      }
+      @media (max-width: 900px) {
+        .masonry-gallery {
+          column-count: 2;
+        }
+      }
+      @media (max-width: 600px) {
+        .masonry-gallery {
+          column-count: 1;
+        }
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+/* Make chat input buttons pink */
+button[aria-label],
+button.button-38aScr,
+button.buttonWrapper-3YFQGJ {
+  color: #ff79c6 !important;
+  fill: #ff79c6 !important;
+}
+
+/* Specifically target input icons */
+.attachButtonPlus-3IYelE,
+.buttonContainer-28fw2U svg,
+.button-2fCJ0o svg,
+.button-ejjZWC svg,
+.button-2fCJ0o path,
+.button-ejjZWC path,
+.stickerButton-3OEgwj svg,
+.emojiButton-3FRTuj svg,
+.giftIcon-2kmxGZ,
+.icon-3cZ1F_ {
+  color: #ff79c6 !important;
+  fill: #ff79c6 !important;
+}
+
+/* Optional: make hover state a brighter pink or white */
+button[aria-label]:hover,
+.button-2fCJ0o:hover svg,
+.button-ejjZWC:hover svg {
+  color: #ffaedb !important;
+  fill: #ffaedb !important;
+} 

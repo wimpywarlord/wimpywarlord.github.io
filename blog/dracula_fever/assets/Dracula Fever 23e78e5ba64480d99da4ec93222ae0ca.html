@@ -1,0 +1,2517 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Dracula Fever</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="23e78e5b-a644-80d9-9da4-ec93222ae0ca" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💶</span></div><h1 class="page-title">Dracula Fever</h1><p class="page-description"></p></header><div class="page-body"><p id="23e78e5b-a644-80d7-a6bf-f2e166f890a9" class="">X / Twitter</p><figure id="23e78e5b-a644-80a1-bf8e-dbbdf9885aac" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.20.512x.png"><img style="width:2932px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.20.512x.png"/></a></figure><p id="23e78e5b-a644-805b-8f9a-d9cd343fb721" class="">Modified Catppuccin: <a href="https://userstyles.world/style/18258/twitter-catppuccin">https://userstyles.world/style/18258/twitter-catppuccin</a></p><ul id="23e78e5b-a644-8032-a7a7-e9699ff79897" class="toggle"><li><details open=""><summary>X  / Twitter - Stylus</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="23e78e5b-a644-8071-b227-cdc4f4efa76a" class="code"><code class="language-JavaScript">/* ==UserStyle==
+@name Twitter Dracula
+@namespace github.com/dracula/userstyles/styles/twitter
+@homepageURL https://github.com/dracula/dracula-theme
+@version 1.0.0
+@supportURL https://github.com/dracula/dracula-theme/issues
+@description Dark theme for Twitter inspired by Dracula
+@author Dracula Theme
+@license MIT
+@preprocessor less
+@var select accentColor &quot;Accent&quot; [&quot;purple:Purple*&quot;, &quot;pink:Pink&quot;, &quot;cyan:Cyan&quot;, &quot;green:Green&quot;, &quot;orange:Orange&quot;, &quot;red:Red&quot;, &quot;yellow:Yellow&quot;]
+@var checkbox colorizeLogo &quot;Colorize Logo&quot; 0
+@var checkbox darkenShadows &quot;Darken Shadows&quot; 1
+==/UserStyle== */
+
+@-moz-document domain(&quot;twitter.com&quot;), domain(&quot;x.com&quot;) {
+  :root {
+    #dracula(@accentColor);
+  }
+  
+  #dracula(@accent) {
+    // Dracula color palette
+    @background: #282a36;
+    @current-line: #44475a;
+    @foreground: #f8f8f2;
+    @comment: #6272a4;
+    @cyan: #8be9fd;
+    @green: #50fa7b;
+    @orange: #ffb86c;
+    @pink: #ff79c6;
+    @purple: #bd93f9;
+    @red: #ff5555;
+    @yellow: #f1fa8c;
+    
+    // Additional shades for better theming
+    @darker-bg: #21222c;
+    @selection: #44475a;
+    @subtle: rgba(68, 71, 90, 0.5);
+    @border: #44475a;
+    @hover: rgba(68, 71, 90, 0.8);
+    @accent-color: @dracula[@@accent];
+    
+    color-scheme: dark;
+    
+    ::selection {
+      background-color: @selection;
+    }
+    
+    input, textarea {
+      &amp;::placeholder {
+        color: @comment !important;
+      }
+    }
+    
+    body.LightsOut {
+      --border-color: @border;
+      --color: @comment;
+      --color-emphasis: @foreground;
+      --hover-bg-color: @current-line;
+      
+      // shadows
+      .r-qo02w8, .r-15ce4ve {
+        @default-shadow: rgba(0, 0, 0, 0.4) 0 0 15px, rgba(0, 0, 0, 0.35) 0 0 3px 1px;
+        box-shadow: @default-shadow;
+        &amp; when (@darkenShadows = 1) {
+          box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px, rgba(0, 0, 0, 0.55) 0 0 3px 1px;
+        }
+      }
+      
+      .r-1tbvlxk {
+        @default-shadow: drop-shadow(rgba(0, 0, 0, 0.5) 1px -1px 1px);
+        filter: @default-shadow;
+        &amp; when (@darkenShadows = 1) {
+          filter: drop-shadow(rgba(0, 0, 0, 0.7) 1px -1px 1px);
+        }
+      }
+      
+      .r-1uusn97 {
+        @default-shadow: rgba(0, 0, 0, 0.4) 0 0 5px, rgba(0, 0, 0, 0.35) 0 1px 4px 1px;
+        box-shadow: @default-shadow;
+        &amp; when (@darkenShadows = 1) {
+          box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px, rgba(0, 0, 0, 0.55) 0 1px 4px 1px;
+        }
+      }
+    }
+    
+    body, .PageContainer, #placeholder {
+      background-color: @background !important;
+      color: @foreground;
+    }
+    
+    #ScriptLoadFailure span {
+      color: @foreground;
+    }
+    
+    [style*=&quot;scrollbar-color: rgb(62, 65, 68) rgb(22, 24, 28)&quot;] {
+      scrollbar-color: @accent-color transparent !important;
+      scrollbar-width: thin;
+    }
+    
+    // bg color
+    [data-testid=&quot;primaryColumn&quot;], .r-kemksi {
+      background-color: @background;
+    }
+    
+    // arrow on account switcher
+    .r-cqee49 {
+      color: @background;
+    }
+    
+    // top nav bg color
+    .r-5zmot {
+      background-color: fade(@background, 75%);
+    }
+    
+    // element hover (when on base)
+    .r-1hdo0pc, .r-pjtv4k {
+      background-color: @hover;
+    }
+    
+    // element active (when on base)
+    .r-11gmi9o {
+      background-color: @current-line;
+    }
+    
+    .r-1cuuowz {
+      background-color: fade(@foreground, 3%);
+    }
+    
+    // text
+    .r-1nao33i {
+      color: @foreground;
+    }
+    
+    // white text, seems to appear on accent colors
+    .r-jwli3a {
+      color: @darker-bg;
+      // cw svg
+      &amp;:has(path[d=&quot;M3.693 21.707l-1.414-1.414 2.429-2.429c-2.479-2.421-3.606-5.376-3.658-5.513l-.131-.352.131-.352c.133-.353 3.331-8.648 10.937-8.648 2.062 0 3.989.621 5.737 1.85l2.556-2.557 1.414 1.414L3.693 21.707zm-.622-9.706c.356.797 1.354 2.794 3.051 4.449l2.417-2.418c-.361-.609-.553-1.306-.553-2.032 0-2.206 1.794-4 4-4 .727 0 1.424.192 2.033.554l2.263-2.264C14.953 5.434 13.512 5 11.986 5c-5.416 0-8.258 5.535-8.915 7.001zM11.986 10c-1.103 0-2 .897-2 2 0 .178.023.352.067.519l2.451-2.451c-.167-.044-.341-.067-.519-.067zm10.951 1.647l.131.352-.131.352c-.133.353-3.331 8.648-10.937 8.648-.709 0-1.367-.092-2-.223v-2.047c.624.169 1.288.27 2 .27 5.415 0 8.257-5.533 8.915-7-.252-.562-.829-1.724-1.746-2.941l1.438-1.438c1.53 1.971 2.268 3.862 2.33 4.027z&quot;]) {
+        color: @foreground;
+      }
+    }
+    
+    // borders
+    .r-1kqtdi0, .r-1roi411 {
+      border-color: @border;
+    }
+    
+    .r-1igl3o0 {
+      border-bottom-color: @border;
+    }
+    
+    .r-2sztyj {
+      border-top-color: @border;
+    }
+    
+    .r-1aihyag {
+      border-right-color: @border;
+    }
+    
+    .r-1wyyjkm {
+      border-left-color: @comment;
+    }
+    
+    // is this post relevant to you?
+    .r-1ccsd61, .r-xzxzvz {
+      border-color: @current-line;
+    }
+    
+    .r-gu4em3, .r-1bnu78o, .r-z32n2g, .r-1m3jxhj {
+      background-color: @current-line;
+    }
+    
+    // base color border
+    .r-1xc7w19 {
+      border-color: @background;
+    }
+    
+    // active border for dms
+    .r-1pbtemp {
+      border-right-color: @accent-color;
+    }
+    
+    // accent color borders
+    .r-vhj8yc {
+      border-color: @accent-color;
+    }
+    
+    // magnifying glass in search bar
+    .r-1bwzh9t {
+      color: @comment;
+    }
+    
+    // right side content
+    .r-g2wdr4 {
+      background-color: @darker-bg;
+    }
+    
+    .r-14wv3jr {
+      border-color: @darker-bg;
+    }
+    
+    // bg color accent
+    .r-l5o3uw {
+      background-color: @accent-color;
+      .r-jwli3a {
+        color: @darker-bg;
+      }
+    }
+    
+    // accent element when hovered
+    .r-1vtznih {
+      background-color: darken(@accent-color, 10%);
+      .r-jwli3a {
+        color: @darker-bg;
+      }
+    }
+    
+    .r-1peqgm7 {
+      background-color: fade(@accent-color, 10%);
+    }
+    
+    // accent element when active
+    .r-yuvema {
+      background-color: darken(@accent-color, 15%);
+      .r-jwli3a {
+        color: @darker-bg;
+      }
+    }
+    
+    .r-r18ze4 {
+      background-color: fade(@accent-color, 20%);
+    }
+    
+    // white elements when hovered
+    .r-jc7xae {
+      background-color: darken(@foreground, 4%);
+    }
+    
+    // white elements when active
+    .r-6wtuen {
+      background-color: darken(@foreground, 8%);
+    }
+    
+    // tooltips
+    .r-1pr99xn {
+      background-color: @current-line;
+    }
+    
+    // new notifications
+    .r-1eltapf {
+      background-color: fade(@cyan, 10%);
+    }
+    
+    // polls
+    .r-eok2q2 {
+      background-color: fade(@accent-color, 60%);
+    }
+    
+    // box shadow around active poll input box
+    .r-9cip40 {
+      box-shadow: @accent-color 0 0 0 1px;
+    }
+    
+    // spaces
+    .r-1blqq69 {
+      border-color: @purple;
+    }
+    
+    // reactions on dms
+    .r-qazpri {
+      color: @comment;
+    }
+    
+    @keyframes r-1wvy3k1 {
+      0% { box-shadow: fade(@purple, 40%) 0; }
+      100% { box-shadow: fade(@purple, 0%) 0; }
+    }
+    
+    [style=&quot;background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);&quot;] {
+      background-image: linear-gradient(61.63deg, @cyan -15.05%, @purple 104.96%) !important;
+    }
+    
+    // tweet textbox placeholder
+    .draftjs-styles_0 .public-DraftEditorPlaceholder-root {
+      color: @comment;
+    }
+    
+    // who can reply? bg
+    .r-rgqbpe {
+      background-color: fade(@cyan, 10%);
+    }
+    
+    // circles
+    .r-s224ru {
+      background-color: @green;
+    }
+    
+    .r-h7o7i8 {
+      background-color: fade(@green, 10%);
+    }
+    
+    // live indicator
+    .r-4nw3r4, .r-1dgebii {
+      background-color: @red;
+    }
+    
+    // live border
+    .r-b5kvu3 {
+      border-color: @red;
+    }
+    
+    // red transparent bg (appears with &quot;unfollow&quot; hover)
+    .r-qqmkd0 {
+      background-color: fade(@red, 10%);
+    }
+    
+    // red bg on hover
+    .r-12d83nn {
+      background-color: darken(@red, 10%);
+    }
+    
+    // red bg when active
+    .r-oybae9 {
+      background-color: darken(@red, 15%);
+    }
+    
+    .r-11mg6pl {
+      border-color: @darker-bg;
+    }
+    
+    // mask over layer
+    .r-11z020y {
+      background-color: fade(@current-line, 30%);
+    }
+    
+    // likes
+    [fill=&quot;rgb(249,22,127)&quot;], [fill=&quot;rgb(222,45,108)&quot;], g[clip-path=&quot;url(#__lottie_element_562)&quot;] path, [style=&quot;color: rgb(249, 24, 128);&quot;] [viewBox=&quot;0 0 24 24&quot;] path {
+      fill: @pink !important;
+    }
+    
+    // likes when hover
+    .r-1krxqcr {
+      background-color: fade(@pink, 10%);
+    }
+    
+    // likes when active
+    .r-uuique {
+      background-color: fade(@pink, 20%);
+    }
+    
+    // heart svg on notifications page
+    .r-vkub15, .r-9l7dzd {
+      color: @pink;
+    }
+    
+    // bell svg on notifications page
+    .r-1cvl2hr {
+      color: @accent-color;
+    }
+    
+    // retweet svg on notifications page
+    .r-o6sn0f {
+      color: @green;
+    }
+    
+    // rt when hover
+    .r-15azkrj {
+      background-color: fade(@green, 10%);
+    }
+    
+    // rt when active
+    .r-1x669os {
+      background-color: fade(@green, 20%);
+    }
+    
+    // image won&#x27;t load svg
+    [data-testid=&quot;card.wrapper&quot;] [d=&quot;M21.04 1.54L17.5 5.09c-.04-.02-.08-.03-.13-.04L14.3 3H9.7l-3 2H5C3.62 5 2.5 6.12 2.5 7.5v11c0 .46.12.88.34 1.25l-1.3 1.29 1.42 1.42 19.5-19.5-1.42-1.42zM13.7 5l2.33 1.56-2 1.99C13.44 8.2 12.74 8 12 8c-2.21 0-4 1.79-4 4 0 .74.2 1.44.55 2.03L4.5 18.09V7.5c0-.28.22-.5.5-.5h2.3l3-2h3.4zM12 10c.18 0 .35.02.52.07l-2.45 2.45c-.05-.17-.07-.34-.07-.52 0-1.1.9-2 2-2zm7 11H7.24l2-2H19c.28 0 .5-.22.5-.5V9h2v9.5c0 1.38-1.12 2.5-2.5 2.5z&quot;] {
+      color: @comment;
+    }
+    
+    // cw button
+    .r-n94g0g {
+      background-color: fade(@foreground, 30%);
+    }
+    
+    .r-z9i421 {
+      background-color: fade(@foreground, 27%);
+    }
+    
+    .r-19130f6 {
+      background-color: @darker-bg;
+    }
+    
+    .r-l8tqsx {
+      background-color: fade(@foreground, 10%);
+    }
+    
+    // lock svg
+    .r-3gvs5h {
+      background-color: @comment;
+    }
+    
+    // sunglasses commu note
+    .r-1fkb3t2 {
+      background-color: @current-line;
+    }
+    
+    // media player text
+    .r-jwli3a {
+      color: @foreground;
+    }
+    
+    .r-1kwlb9n {
+      background-color: fade(@red, 12%);
+    }
+    
+    // Hard-coded overrides
+    [style*=&quot;https://abs.twimg.com/responsive-web/client-web/background-premiumplus-web&quot;] {
+      background-image: none !important;
+      background-color: @current-line;
+    }
+    
+    [stroke=&quot;#2F3336&quot; i] {
+      stroke: @border !important;
+    }
+    
+    [stroke=&quot;#1D9BF0&quot; i], [style*=&quot;stroke: rgb(29, 155, 240)&quot;] {
+      stroke: @accent-color !important;
+    }
+    
+    [stroke=&quot;#FFD400&quot; i] {
+      stroke: @yellow !important;
+    }
+    
+    [fill=&quot;#829AAB&quot; i] {
+      fill: @comment !important;
+    }
+    
+    [fill=&quot;#1DA1F2&quot; i] {
+      fill: @cyan !important;
+    }
+    
+    [fill=&quot;#78C6EE&quot; i] {
+      fill: @cyan !important;
+    }
+    
+    // yellow verified badge
+    [stop-color=&quot;#f4e72a&quot; i], [stop-color=&quot;#cd8105&quot; i], [stop-color=&quot;#cb7b00&quot; i], [stop-color=&quot;#f4ec26&quot; i], [stop-color=&quot;#f9e87f&quot; i], [stop-color=&quot;#e2b719&quot; i] {
+      stop-color: @yellow !important;
+    }
+    
+    [fill=&quot;#d18800&quot; i] {
+      fill: @yellow !important;
+    }
+    
+    [style*=&quot;border-color: rgb(83, 100, 113)&quot;] {
+      border-color: @current-line !important;
+    }
+    
+    [style*=&quot;border-color: rgb(51, 54, 57)&quot;] {
+      border-color: @border !important;
+    }
+    
+    [style*=&quot;border-color: rgb(103, 7, 15)&quot;] {
+      border-color: fadeout(@red, 50%) !important;
+    }
+    
+    [style*=&quot;border-color: rgb(29, 155, 240)&quot;] {
+      border-color: @accent-color !important;
+    }
+    
+    [style*=&quot;color: rgb(231, 233, 234)&quot;]:not([style*=&quot;background-color: rgb(231, 233, 234)&quot;]),
+    [style*=&quot;color: rgb(239, 243, 244)&quot;]:not([style*=&quot;background-color: rgb(239, 243, 244)&quot;]),
+    [style*=&quot;color: rgb(255, 255, 255)&quot;]:not([style*=&quot;background-color: rgb(255, 255, 255)&quot;]) {
+      color: @foreground !important;
+    }
+    
+    [style*=&quot;color: rgb(231, 233, 234)&quot;]:not([style*=&quot;background-color: rgb(231, 233, 234)&quot;]) input::placeholder {
+      color: @comment !important;
+    }
+    
+    // faded text
+    [style*=&quot;color: rgb(113, 118, 123)&quot;]:not([style*=&quot;background-color: rgb(113, 118, 123)&quot;]),
+    [style*=&quot;color: rgb(182, 185, 188)&quot;]:not([style*=&quot;background-color: rgb(182, 185, 188)&quot;]) {
+      color: @comment !important;
+    }
+    
+    // retweets color
+    [style*=&quot;color: rgb(0, 186, 124)&quot;]:not([style*=&quot;background-color: rgb(0, 186, 124)&quot;]) {
+      color: @green !important;
+    }
+    
+    // likes/unfollow color
+    [style*=&quot;color: rgb(249, 24, 128)&quot;]:not([style*=&quot;background-color: rgb(249, 24, 128)&quot;]),
+    [style*=&quot;color: rgb(244, 33, 46)&quot;]:not([style*=&quot;background-color: rgb(244, 33, 46)&quot;]) {
+      color: @pink !important;
+    }
+    
+    [style*=&quot;color: rgb(250, 68, 152)&quot;]:not([style*=&quot;background-color: rgb(250, 68, 152)&quot;]) {
+      color: @pink !important;
+    }
+    
+    [style*=&quot;color: rgb(255, 212, 0)&quot;]:not([style*=&quot;background-color: rgb(255, 212, 0)&quot;]) {
+      color: @yellow !important;
+    }
+    
+    [style*=&quot;color: rgb(120, 86, 255)&quot;]:not([style*=&quot;background-color: rgb(120, 86, 255)&quot;]) {
+      color: @purple !important;
+    }
+    
+    [style*=&quot;color: rgb(255, 122, 0)&quot;]:not([style*=&quot;background-color: rgb(255, 122, 0)&quot;]) {
+      color: @orange !important;
+    }
+    
+    // accent color (blue)
+    [style*=&quot;color: rgb(29, 155, 240)&quot;]:not([style*=&quot;background-color: rgb(29, 155, 240)&quot;]) {
+      color: @accent-color !important;
+    }
+    
+    // background colors
+    [style*=&quot;background-color: rgb(142, 205, 248)&quot;] {
+      background-color: lighten(@accent-color, 10%) !important;
+    }
+    
+    [style*=&quot;background-color: rgb(2, 17, 61)&quot;] {
+      background-color: fade(@accent-color, 15%) !important;
+    }
+    
+    [style*=&quot;background-color: rgba(255, 255, 255, 0.25)&quot;] {
+      background-color: fade(@foreground, 25%) !important;
+    }
+    
+    [style*=&quot;background-color: rgb(147, 147, 147)&quot;] {
+      background-color: @comment !important;
+      + [style*=&quot;background-color: rgb(250, 250, 250)&quot;] {
+        background-color: @foreground !important;
+      }
+    }
+    
+    [style*=&quot;background-color: rgb(29, 155, 240)&quot;] {
+      background-color: @accent-color !important;
+      [style*=&quot;color: rgb(255, 255, 255)&quot;] {
+        color: @darker-bg !important;
+      }
+    }
+    
+    [style*=&quot;background-color: rgb(239, 243, 244)&quot;] {
+      background-color: @foreground !important;
+      [style*=&quot;color: rgb(15, 20, 25)&quot;] {
+        color: @darker-bg !important;
+      }
+    }
+    
+    [style*=&quot;background-color: rgb(244, 33, 46)&quot;] {
+      background-color: @red !important;
+      [style*=&quot;color: rgb(255, 255, 255)&quot;] {
+        color: @darker-bg !important;
+      }
+    }
+    
+    [style*=&quot;background-color: rgb(0, 0, 0)&quot;],
+    [style*=&quot;background-color: #000&quot;] {
+      background-color: @background !important;
+    }
+    
+    [style*=&quot;background-color: rgba(15, 20, 25, 0.75)&quot;] {
+      background-color: fade(@darker-bg, 75%) !important;
+      [style*=&quot;color: rgb(255, 255, 255)&quot;] svg {
+        color: @foreground !important;
+      }
+    }
+    
+    // dms
+    .r-eff69c {
+      background-color: darken(@accent-color, 5%);
+      [style*=&quot;color: rgb(255, 255, 255)&quot;] {
+        color: @darker-bg !important;
+      }
+    }
+    
+    // follow button
+    [data-testid$=&quot;-follow&quot;] {
+      [style*=&quot;color: rgb(15, 20, 25)&quot;] {
+        color: @darker-bg !important;
+      }
+    }
+    
+    // options
+    &amp; when (@colorizeLogo = 1) {
+      path[d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;] {
+        fill: @accent-color !important;
+      }
+    }
+    
+    a[aria-label^=&quot;Translated from&quot;][aria-label$=&quot;by Google&quot;] svg path {
+      fill: @foreground !important;
+    }
+  }
+}
+
+@-moz-document domain(&quot;api.twitter.com&quot;), domain(&quot;api.x.com&quot;) {
+  :root {
+    #dracula(@accentColor);
+  }
+  
+  #dracula(@accent) {
+    @background: #282a36;
+    @current-line: #44475a;
+    @foreground: #f8f8f2;
+    @comment: #6272a4;
+    @cyan: #8be9fd;
+    @green: #50fa7b;
+    @orange: #ffb86c;
+    @pink: #ff79c6;
+    @purple: #bd93f9;
+    @red: #ff5555;
+    @yellow: #f1fa8c;
+    @darker-bg: #21222c;
+    @accent-color: @dracula[@@accent];
+    
+    html {
+      background: @darker-bg;
+    }
+    
+    #header {
+      color: @comment;
+      background: @background;
+      border-bottom-color: @current-line;
+      
+      .logo a {
+        border-bottom-color: transparent;
+      }
+      
+      #session {
+        a {
+          background: transparent;
+          color: @comment;
+        }
+        
+        h2 img {
+          border-color: @current-line;
+        }
+      }
+    }
+    
+    .footer {
+      background: @darker-bg;
+      border-top-color: @current-line;
+    }
+    
+    .auth h2 {
+      color: @foreground;
+    }
+    
+    .oauth #bd {
+      border-color: @current-line;
+    }
+    
+    .app-info h3 img {
+      border-color: @background;
+    }
+    
+    .permissions.allow strong {
+      color: @green;
+    }
+    
+    .button {
+      background: @comment;
+      color: @foreground;
+      border-color: @current-line;
+      
+      &amp;:hover {
+        color: @foreground;
+        border-color: @current-line;
+        background: darken(@current-line, 10%);
+      }
+    }
+    
+    .button.selected,
+    .follow-button .unfollow .button {
+      background-color: @accent-color;
+      color: @darker-bg;
+      border-color: darken(@accent-color, 10%);
+      
+      &amp;:hover {
+        background-color: darken(@accent-color, 10%);
+      }
+      
+      .app-info, #bd h3 {
+        color: @comment;
+      }
+      
+      #ft {
+        color: @comment;
+      }
+    }
+  }
+}
+
+@-moz-document domain(&quot;twitter.com&quot;), domain(&quot;x.com&quot;) {
+  :root {
+    #dracula(@accentColor);
+  }
+  
+  #dracula(@accent) {
+    @background: #282a36;
+    @current-line: #44475a;
+    @foreground: #f8f8f2;
+    @comment: #6272a4;
+    @cyan: #8be9fd;
+    @green: #50fa7b;
+    @orange: #ffb86c;
+    @pink: #ff79c6;
+    @purple: #bd93f9;
+    @red: #ff5555;
+    @yellow: #f1fa8c;
+    @darker-bg: #21222c;
+    @accent-color: @dracula[@@accent];
+    
+    #session a, #session input, #session button {
+      background: @current-line;
+      color: @comment;
+    }
+    
+    #session .user-menu {
+      a:focus, a:hover, button:focus, button:hover, input:focus, input:hover {
+        color: @darker-bg;
+        background-color: @accent-color;
+      }
+    }
+    
+    .notice, .notice p, h2 {
+      color: @foreground;
+    }
+    
+    .notice.error {
+      background: fade(@red, 20%);
+      border-color: fade(@red, 25%);
+    }
+    
+    .ResponsiveLayout--Night .PageContainer {
+      background-color: @background;
+    }
+    
+    .list-explanation {
+      color: @comment;
+    }
+    
+    .ResponsiveLayout--Night .list-btn {
+      &amp;:first-of-type {
+        border-top-color: @darker-bg;
+      }
+      
+      &amp;:hover {
+        background-color: @darker-bg;
+      }
+    }
+    
+    .submit-btn {
+      background-color: @accent-color;
+      color: @darker-bg;
+      border-color: darken(@accent-color, 10%);
+    }
+    
+    .submit-btn:hover, .redirect-btn:hover {
+      background-color: darken(@accent-color, 10%);
+    }
+    
+    .block-btn {
+      color: @red;
+      border-color: @red;
+    }
+    
+    .mute-btn, .unfollow-btn, .email-report-btn {
+      color: @accent-color;
+      border-color: @accent-color;
+    }
+    
+    .list-btn {
+      border-color: @current-line;
+      
+      &amp;:first-of-type {
+        border-top-color: @current-line;
+      }
+      
+      &amp;:hover {
+        background-color: @current-line;
+      }
+    }
+    
+    // authorize page
+    .js #session .user-menu {
+      background-color: @current-line;
+    }
+    
+    .dropdown-caret .caret-outer, .dropdown-caret .caret-inner {
+      border-bottom-color: @current-line;
+    }
+  }
+}
+
+/* prettier-ignore */
+@dracula: {
+  @purple: #bd93f9;
+  @pink: #ff79c6;
+  @cyan: #8be9fd;
+  @green: #50fa7b;
+  @orange: #ffb86c;
+  @red: #ff5555;
+  @yellow: #f1fa8c;
+};
+
+// vim:ft=less</code></pre></details></li></ul><p id="23e78e5b-a644-8028-b6bd-d5e12e4a89a4" class="">
+</p><p id="23e78e5b-a644-802e-aa29-de2f21006382" class="">Github</p><figure id="23e78e5b-a644-807a-8147-ef6341491aac" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.26.262x.png"><img style="width:2934px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.26.262x.png"/></a></figure><p id="23e78e5b-a644-8024-a775-d00e68ffb8af" class=""><a href="https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-github.css">https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-github.css</a></p><ul id="23e78e5b-a644-80de-bd33-f4ba2dbc8dfa" class="toggle"><li><details open=""><summary>Stylus Code</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="23e78e5b-a644-80fe-bc79-c543eaf3aa98" class="code"><code class="language-JavaScript">/* ==UserStyle==
+@name             Dracula for GitHub
+@namespace        github.com/druxorey/dracula-for-stylus
+@version          1.4.0
+@description      Are you tired of the same boring colors on GitHub? Then try this modern color style based on the Dracula theme
+@author           Druxorey
+@license          GNU General Public License v3.0
+@preprocessor     less
+@var select accent-color &quot;Accent Color&quot; {
+	&quot;Red&quot;: &quot;#FF5555&quot;,
+	&quot;Orange&quot;: &quot;#FFB86C&quot;,
+	&quot;Yellow&quot;: &quot;#F1FA8C&quot;,
+	&quot;Green&quot;: &quot;#50FA7B&quot;,
+	&quot;Blue&quot;: &quot;#54B3FF&quot;,
+	&quot;Cyan&quot;: &quot;#8BE9FD&quot;,
+	&quot;Purple&quot;: &quot;#BD93F9&quot;,
+	&quot;Pink&quot;: &quot;#FF79C6&quot;,
+}
+==/UserStyle== */
+
+@-moz-document domain(&quot;github.com&quot;) {
+	:root,
+	[data-color-mode=&quot;dark&quot;][data-dark-theme=&quot;dark&quot;] {
+		--drx-color-background-1: #525568;
+		--drx-color-background-2: #44475a;
+		--drx-color-background-3: #363948;
+		--drx-color-background-4: #282a36;
+		--drx-color-background-5: #1e1f29;
+
+		--drx-color-foreground-1: #f8f8f2;
+		--drx-color-foreground-2: #adafbc;
+		--drx-color-foreground-3: #5a5d6d;
+
+		--drx-color-shadow-1: #2f313f;
+		--drx-color-shadow-2: #1e1f29;
+		--drx-color-shadow-3: #1a1b23;
+
+		--drx-color-border: #363948;
+	}
+
+	:root,
+	[data-color-mode=&quot;light&quot;][data-dark-theme=&quot;light&quot;] {
+		--drx-color-background-4: #f4f4f6;
+		--drx-color-background-2: #e9e9ed;
+		--drx-color-background-5: #dddde3;
+		--drx-color-background-3: #c7c8d1;
+		--drx-color-background-1: #a5a7b6;
+
+		--drx-color-foreground-1: #44475a;
+		--drx-color-foreground-2: #7e808e;
+		--drx-color-foreground-3: #b9bac2;
+
+		--drx-color-shadow-3: #dddde3;
+		--drx-color-shadow-2: #a5a7b6;
+		--drx-color-shadow-1: #8f91a3;
+
+		--drx-color-border: #c7c8d1;
+	}
+
+	:root {
+		--color-comment: #6272a4;
+
+		--color-red-1: #ff6e6e;
+		--color-red-2: #ff5555;
+		--color-red-3: #e63c3c;
+		--color-orange-1: #ffd185;
+		--color-orange-2: #ffb86c;
+		--color-orange-3: #e69f53;
+		--color-yellow-1: #ffffa5;
+		--color-yellow-2: #f1fa8c;
+		--color-yellow-3: #d8e173;
+		--color-green-1: #69ff94;
+		--color-green-2: #50fa7b;
+		--color-green-3: #37eb62;
+		--color-cyan-1: #a4ffff;
+		--color-cyan-2: #8be9fd;
+		--color-cyan-3: #72d0e4;
+		--color-blue-1: #6dccff;
+		--color-blue-2: #54b3ff;
+		--color-blue-3: #3b9ae6;
+		--color-purple-1: #d6acff;
+		--color-purple-2: #bd93f9;
+		--color-purple-3: #a47ae0;
+		--color-pink-1: #ff92df;
+		--color-pink-2: #ff79c6;
+		--color-pink-3: #e660ad;
+
+		--color-accent: @accent-color;
+
+		--drx-transition-speed: 0.25s;
+		--drx-border-radius: 10px;
+		--drx-border-width: 2px;
+		--drx-shadow-radius: 8px;
+	}
+
+	html {
+		background-color: var(--drx-color-background-4) !important;
+	}
+
+	body {
+		--buttonCounter-default-bgColor-rest: var(--drx-color-background-4);
+
+		--button-danger-bgColor-rest: var(--drx-color-background-5);
+		--button-default-bgColor-rest: var(--drx-color-background-2);
+		--button-default-borderColor-disabled: var(--drx-color-border);
+		--button-default-borderColor-rest: var(--drx-color-border);
+		--button-default-bgColor-disabled: var(--drx-color-background-5);
+		--button-default-bgColor-hover: var(--drx-color-background-1);
+		--button-default-borderColor-hover: var(--color-accent);
+		--button-default-bgColor-active: var(--drx-color-background-2);
+		--button-default-borderColor-active: var(--drx-color-background-1);
+		--button-default-fgColor-rest: var(--drx-color-foreground-1);
+		--button-primary-fgColor-disabled: var(--drx-color-foreground-3);
+		--button-star-iconColor: var(--color-yellow-2);
+
+		--button-primary-bgColor-rest: var(--color-accent);
+		--button-primary-bgColor-hover: var(--color-accent);
+		--button-primary-bgColor-active: var(--color-accent);
+		--button-primary-bgColor-disabled: var(--color-comment);
+		--button-primary-borderColor-disabled: var(--color-comment);
+
+		--bgColor-accent-muted: var(--drx-color-background-3);
+		--bgColor-attention-muted: var(--color-accent);
+		--bgColor-default: var(--drx-color-background-5);
+		--bgColor-inset: var(--drx-color-background-4);
+		--bgColor-muted: var(--drx-color-background-5);
+		--bgColor-neutral-muted: var(--drx-color-background-2);
+		--bgColor-emphasis: var(--drx-color-background-5) !important;
+		--bgColor-accent-emphasis: var(--color-accent);
+
+		--overlay-bgColor: var(--drx-color-background-4);
+
+		--fgColor-default: var(--drx-color-foreground-1);
+		--fgColor-onEmphasis: var(--drx-color-foreground-1);
+		--fgColor-disabled: var(--drx-color-foreground-3);
+		--fgColor-muted: var(--drx-color-foreground-2);
+		--fgColor-danger: var(--color-red-2);
+		--fgColor-attention: var(--color-orange-2);
+		--fgColor-success: var(--color-green-2);
+		--fgColor-accent: var(--color-accent);
+		--fgColor-link: var(--color-accent);
+
+		--focus-outlineColor: var(--color-accent);
+
+		--border: var(--drx-color-background-2);
+		--borderColor-accent-emphasis: var(--color-accent);
+		--borderColor-default: var(--drx-color-border);
+		--borderColor-muted: var(--drx-color-background-2);
+		--borderColor-neutral-muted: var(--drx-color-background-2);
+		--borderColor-danger-emphasis: var(--color-red-2);
+		--borderColor-attention-emphasis: var(--color-orange-2);
+		--borderColor-attention-muted: red;
+		--borderColor-accent-muted: red;
+
+		--controlKnob-bgColor-rest: var(--drx-color-background-2);
+		--controlKnob-borderColor-rest: red;
+		--controlTrack-bgColor-rest: var(--drx-color-background-5);
+		--controlTrack-bgColor-active: var(--drx-color-background-2);
+		--controlTrack-bgColor-hover: var(--color-accent);
+		--control-borderColor-rest: var(--drx-color-background-5);
+		--control-transparent-bgColor-active: var(--color-accent);
+		--control-transparent-bgColor-hover: var(--drx-color-background-2);
+		--control-transparent-bgColor-selected: var(--drx-color-background-2);
+
+		--contribution-default-bgColor-0: var(--drx-color-background-5);
+		--contribution-default-bgColor-1: fade(@accent-color, 25%);
+		--contribution-default-bgColor-2: fade(@accent-color, 50%);
+		--contribution-default-bgColor-3: fade(@accent-color, 75%);
+		--contribution-default-bgColor-4: fade(@accent-color, 100%);
+
+		--color-user-mention-fg: var(--drx-color-foreground-1);
+		--color-user-mention-bg: var(--color-accent);
+		--page-header-bgColor: var(--drx-color-background-5);
+
+		--underlineNav-borderColor-active: var(--color-accent);
+
+		--menu-bgColor-active: var(--drx-color-background-2);
+
+		--borderWidth-thin: var(--drx-border-width);
+	}
+
+	.TextInput-wrapper,
+	.react-directory-row,
+	.kHyYUy {
+		background-color: var(--drx-color-background-4);
+		box-shadow: none;
+	}
+
+	/* General buttons styling */
+	.Button.Button--iconOnly.Button--secondary.Button--medium.AppHeader-button,
+	.AppHeader .AppHeader-button,
+	.btn-sm.btn,
+	.Box-sc-g0xbh4-0.JMXqM.prc-Button-ButtonBase-c50BI.overview-ref-selector.width-full,
+	.prc-Button-ButtonBase-c50BI.prc-Button-IconButton-szpyj,
+	.form-control.width-full,
+	.btn,
+	.Box-sc-g0xbh4-0.vcvyP.TextInput-wrapper.prc-components-TextInputWrapper-i1ofR.prc-components-TextInputBaseWrapper-ueK9q {
+		background-color: var(--drx-color-background-2);
+		border: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	.pinned-item-list-item-content {
+		background: var(--drx-color-background-4);
+		padding: 1rem;
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius);
+		border-radius: var(--drx-border-radius);
+		border: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	.Box.mt-4 {
+		background-color: var(--drx-color-background-4);
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius);
+		border-radius: var(--drx-border-radius);
+		border: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	.col-12.col-lg-10,
+	.h-card.mt-5 {
+		padding: 1rem;
+		background-color: var(--drx-color-background-4);
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius);
+		border-radius: var(--drx-border-radius);
+		border: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	.mt-5 {
+		margin-top: 1.5rem !important;
+	}
+
+	.Layout.Layout--sidebarPosition-start .Layout-sidebar {
+		margin-right: 1rem;
+	}
+
+	.kHyYUy:hover,
+	.AppHeader-search {
+		background-color: var(--drx-color-background-5);
+	}
+
+	.UnderlineNav {
+		box-shadow: none;
+	}
+
+	.bgColor-muted.p-1.rounded-top-2 {
+		background: var(--drx-color-background-2) !important;
+	}
+
+	.form-control {
+		background: var(--drx-color-background-5);
+		border: none;
+	}
+
+	.iXWA-dl,
+	.AppHeader {
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius);
+		border-bottom: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	.p-3 {
+		padding: 0.25rem !important;
+	}
+
+	/* Removes the border for general box elements */
+	.Box {
+		border: none;
+	}
+
+	/* Fix background for activity overview */
+	.Box.mb-5.p-3.activity-overview-box.border-top.border-xl-top-0 {
+		background: transparent;
+	}
+
+	/* Header of repository readme */
+	.OverviewRepoFiles-module__Box_3--Bi2jM {
+		background: var(--drx-color-background-2);
+	}
+
+	/* Body of repository readme */
+	.OverviewRepoFiles-module__Box_2--yIjMp {
+		background: var(--drx-color-background-4);
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius);
+		border-radius: var(--drx-border-radius);
+		border: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	.markdown-body h1,
+	.markdown-body h2,
+	.markdown-body h3,
+	.markdown-body h4,
+	.markdown-body h5,
+	.markdown-body h6 {
+		border-bottom: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	.markdown-body hr {
+		height: var(--drx-border-width);
+	}
+
+	/* Background for repository directories */
+	.Box-sc-g0xbh4-0.fdROMU {
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius) !important;
+		border: var(--drx-border-width) solid var(--drx-color-border) !important;
+	}
+
+	/* Repository settings edit box */
+	.Box.d-flex.flex-column.anim-fade-in.fast.Box-overlay--wide.overflow-x-hidden {
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius);
+		border-radius: var(--drx-border-radius);
+		border: var(--drx-border-width) solid var(--drx-color-border);
+	}
+
+	/* Fix border for AppHeader search keyboard shortcut */
+	.AppHeader-search-kbd {
+		border: none !important;
+	}
+
+	.dark-backdrop {
+		background: #44475a3f;
+	}
+
+	.color-shadow-large {
+		box-shadow: var(--drx-color-shadow-3) 0rem 0rem var(--drx-shadow-radius) !important;
+	}
+
+	:root,
+	[data-color-mode=&quot;light&quot;][data-light-theme*=&quot;light&quot;],
+	[data-color-mode=&quot;dark&quot;][data-dark-theme*=&quot;light&quot;] {
+		background: var(--drx-color-background-5);
+	}
+}</code></pre></details></li></ul><p id="23e78e5b-a644-80cb-9e54-e335080c50bd" class="">
+</p><p id="23e78e5b-a644-8049-9f69-c9f2eb054fad" class="">Obsidian</p><figure id="23e78e5b-a644-8037-a517-da3f1f2a261d" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.31.352x.png"><img style="width:3152px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.31.352x.png"/></a></figure><p id="23e78e5b-a644-809b-8dd5-f3e2f3e7f9fa" class=""><a href="https://github.com/clbn/dracula-gemini">https://github.com/clbn/dracula-gemini</a></p><ul id="23e78e5b-a644-8049-b1ad-e20b92947108" class="toggle"><li><details open=""><summary>Steps</summary><figure id="23e78e5b-a644-8070-99cb-dfccf6607291" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.54.242x.png"><img style="width:2218px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.54.242x.png"/></a></figure><figure id="23e78e5b-a644-80eb-9b88-c429ef0d22e9" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.54.542x.png"><img style="width:2226px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.54.542x.png"/></a></figure></details></li></ul><p id="23e78e5b-a644-8089-a0b3-eafd23f29a5b" class="">
+</p><p id="23e78e5b-a644-80bc-96b7-d84fc6498a4b" class="">Portfolio Website</p><figure id="23e78e5b-a644-80d5-89a6-ca1e98886be2" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.34.422x.png"><img style="width:2930px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.34.422x.png"/></a></figure><div id="23e78e5b-a644-80c3-8e19-d7633c2c5281" class="collection-content"><h4 class="collection-title">Dracula Color Palette </h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Palette</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Hex</th></tr></thead><tbody><tr id="23e78e5b-a644-804a-84dd-c9a06059fa82"><td class="cell-title"><a href="https://www.notion.so/Background-23e78e5ba644804a84ddc9a06059fa82?pvs=21">Background</a></td><td class="cell-=SSf"><code>#282a36</code></td></tr><tr id="23e78e5b-a644-801c-bf24-d100c3f16cc1"><td class="cell-title"><a href="https://www.notion.so/Current-Line-23e78e5ba644801cbf24d100c3f16cc1?pvs=21">Current Line</a></td><td class="cell-=SSf"><code>#44475a</code></td></tr><tr id="23e78e5b-a644-8054-98b3-d40c969148ca"><td class="cell-title"><a href="https://www.notion.so/Selection-23e78e5ba644805498b3d40c969148ca?pvs=21">Selection</a></td><td class="cell-=SSf"><code>#44475a</code></td></tr><tr id="23e78e5b-a644-8030-8a79-d6390adb90cd"><td class="cell-title"><a href="https://www.notion.so/Foreground-23e78e5ba64480308a79d6390adb90cd?pvs=21">Foreground</a></td><td class="cell-=SSf"><code>#f8f8f2</code></td></tr><tr id="23e78e5b-a644-8016-9208-ceade1359fce"><td class="cell-title"><a href="https://www.notion.so/Comment-23e78e5ba64480169208ceade1359fce?pvs=21">Comment</a></td><td class="cell-=SSf"><code>#6272a4</code></td></tr><tr id="23e78e5b-a644-8021-a4df-da3756424508"><td class="cell-title"><a href="https://www.notion.so/Cyan-23e78e5ba6448021a4dfda3756424508?pvs=21">Cyan</a></td><td class="cell-=SSf"><code>#8be9fd</code></td></tr><tr id="23e78e5b-a644-80e3-9c53-eb5f866673fa"><td class="cell-title"><a href="https://www.notion.so/Green-23e78e5ba64480e39c53eb5f866673fa?pvs=21">Green</a></td><td class="cell-=SSf"><code>#50fa7b</code></td></tr><tr id="23e78e5b-a644-8051-8c71-c0ea3abcd504"><td class="cell-title"><a href="https://www.notion.so/Orange-23e78e5ba64480518c71c0ea3abcd504?pvs=21">Orange</a></td><td class="cell-=SSf"><code>#ffb86c</code></td></tr><tr id="23e78e5b-a644-800f-8b55-ebc3d15983c4"><td class="cell-title"><a href="https://www.notion.so/Pink-23e78e5ba644800f8b55ebc3d15983c4?pvs=21">Pink</a></td><td class="cell-=SSf"><code>#ff79c6</code></td></tr><tr id="23e78e5b-a644-8041-a007-d9f480a230a5"><td class="cell-title"><a href="https://www.notion.so/Purple-23e78e5ba6448041a007d9f480a230a5?pvs=21">Purple</a></td><td class="cell-=SSf"><code>#bd93f9</code></td></tr><tr id="23e78e5b-a644-8029-8685-c8494577ee5d"><td class="cell-title"><a href="https://www.notion.so/Red-23e78e5ba64480298685c8494577ee5d?pvs=21">Red</a></td><td class="cell-=SSf"><code>#ff5555</code></td></tr><tr id="23e78e5b-a644-8041-a3cd-c4b1f5debb22"><td class="cell-title"><a href="https://www.notion.so/Yellow-23e78e5ba6448041a3cdc4b1f5debb22?pvs=21">Yellow</a></td><td class="cell-=SSf"><code>#f1fa8c</code></td></tr></tbody></table><br/><br/></div><p id="23e78e5b-a644-801f-995a-f1fe0b9a6b7b" class="">
+</p><p id="23e78e5b-a644-80b6-9419-eb4fb27b8ad9" class="">Iterm2</p><figure id="23e78e5b-a644-8063-8f41-d79ae3fc6328" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.35.402x.png"><img style="width:3136px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.35.402x.png"/></a></figure><p id="23e78e5b-a644-80f8-a0fd-f0e05450cdd3" class="">Official Dracula Theme + Powerlevel10k + OhmyZsh</p><p id="23e78e5b-a644-805d-8114-c61e689bad2a" class=""><a href="https://draculatheme.com/iterm">https://draculatheme.com/iterm</a></p><p id="23e78e5b-a644-804e-8c13-c4ac0635e337" class=""><a href="https://github.com/romkatv/powerlevel10k">https://github.com/romkatv/powerlevel10k</a></p><p id="23e78e5b-a644-803f-8c62-f425f65dc13a" class=""><a href="https://ohmyz.sh/">https://ohmyz.sh/</a></p><p id="23e78e5b-a644-8025-befe-d52cd5cbc5bc" class="">
+</p><p id="23e78e5b-a644-8059-9f43-ed16df1ecc37" class="">Discord</p><figure id="23e78e5b-a644-801c-a87f-e68074dcc790" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.42.552x.png"><img style="width:3146px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.42.552x.png"/></a></figure><p id="23e78e5b-a644-803b-90c6-c7f7010bb530" class="">Better Discord: <a href="https://betterdiscord.app/">https://betterdiscord.app/</a></p><p id="23e78e5b-a644-80d8-8056-df70a3d945d4" class="">Refactor Midnight + Custom CSS: <a href="https://www.refact0r.dev/projects/midnight">https://www.refact0r.dev/projects/midnight</a></p><ul id="23e78e5b-a644-801b-966d-dae0632e0b43" class="toggle"><li><details open=""><summary>Custom CSS</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="23e78e5b-a644-80ec-a858-f533c7333c19" class="code"><code class="language-JavaScript">/* Make chat input buttons pink */
+button[aria-label],
+button.button-38aScr,
+button.buttonWrapper-3YFQGJ {
+  color: #ff79c6 !important;
+  fill: #ff79c6 !important;
+}
+
+/* Specifically target input icons */
+.attachButtonPlus-3IYelE,
+.buttonContainer-28fw2U svg,
+.button-2fCJ0o svg,
+.button-ejjZWC svg,
+.button-2fCJ0o path,
+.button-ejjZWC path,
+.stickerButton-3OEgwj svg,
+.emojiButton-3FRTuj svg,
+.giftIcon-2kmxGZ,
+.icon-3cZ1F_ {
+  color: #ff79c6 !important;
+  fill: #ff79c6 !important;
+}
+
+/* Optional: make hover state a brighter pink or white */
+button[aria-label]:hover,
+.button-2fCJ0o:hover svg,
+.button-ejjZWC:hover svg {
+  color: #ffaedb !important;
+  fill: #ffaedb !important;
+}
+
+</code></pre></details></li></ul><p id="23e78e5b-a644-80fa-aa07-e03d343a07f6" class="">
+</p><p id="23e78e5b-a644-80a6-a055-ef3bf8ec1698" class="">Reddit</p><figure id="23e78e5b-a644-80cd-8821-d1e195a4675f" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.25.542x.png"><img style="width:2934px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.25.542x.png"/></a></figure><p id="23e78e5b-a644-8051-a77a-e2c6b28d7380" class=""><a href="https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-reddit.css">https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-reddit.css</a></p><ul id="23e78e5b-a644-809f-9d1b-c1280a77dbf7" class="toggle"><li><details open=""><summary>Stylus Code</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="23e78e5b-a644-809e-a516-da7a4b218a01" class="code"><code class="language-JavaScript">/* ==UserStyle==
+@name             Dracula for Reddit
+@namespace        github.com/druxorey/dracula-for-stylus
+@version          1.3.1
+@description      Are you tired of the same boring colors on Reddit? Then try this modern color style based on the Dracula theme
+@author           Druxorey
+@license          GNU General Public License v3.0
+@preprocessor     less
+@var select dracula-style &quot;Style&quot; {
+  &quot;Dark&quot;: &quot;dark&quot;,
+  &quot;Light&quot;: &quot;light&quot;,
+}
+@var select accent-color &quot;Accent Color&quot; {
+	&quot;Red&quot;: &quot;#FF5555&quot;,
+	&quot;Orange&quot;: &quot;#FFB86C&quot;,
+	&quot;Yellow&quot;: &quot;#F1FA8C&quot;,
+	&quot;Green&quot;: &quot;#50FA7B&quot;,
+	&quot;Blue&quot;: &quot;#54B3FF&quot;,
+	&quot;Cyan&quot;: &quot;#8BE9FD&quot;,
+	&quot;Purple&quot;: &quot;#BD93F9&quot;,
+	&quot;Pink&quot;: &quot;#FF79C6&quot;,
+}
+==/UserStyle== */
+
+
+@-moz-document domain(&quot;reddit.com&quot;) {
+
+	:root {
+		--color-dark-background-1: #525568;
+		--color-dark-background-2: #44475A;
+		--color-dark-background-3: #353747;
+		--color-dark-background-4: #282A36;
+		--color-dark-background-5: #21222C;
+
+		--color-dark-foreground-1: #F8F8F2;
+		--color-dark-foreground-2: #E3E3E2;
+		--color-dark-foreground-3: #C6C7CC;
+
+		--color-dark-shadow-1: #353747;
+		--color-dark-shadow-2: #21222C;
+		--color-dark-shadow-3: #1A1C24;
+
+		--color-light-background-4: #F3F4F6;
+		--color-light-background-5: #E8E8EE;
+		--color-light-background-3: #DCDDE5;
+		--color-light-background-2: #D0D2DC;
+		--color-light-background-1: #C4C7D4;
+
+		--color-light-foreground-1: #44475A;
+		--color-light-foreground-2: #353747;
+		--color-light-foreground-3: #282A36;
+
+		--color-light-shadow-3: #DCDDE5;
+		--color-light-shadow-2: #C4C7D4;
+		--color-light-shadow-1: #B2B5C2;
+		
+		--color-background-1: e(&quot;var(--color-@{dracula-style}-background-1)&quot;);
+		--color-background-2: e(&quot;var(--color-@{dracula-style}-background-2)&quot;);
+		--color-background-3: e(&quot;var(--color-@{dracula-style}-background-3)&quot;);
+		--color-background-4: e(&quot;var(--color-@{dracula-style}-background-4)&quot;);
+		--color-background-5: e(&quot;var(--color-@{dracula-style}-background-5)&quot;);
+		
+		--color-foreground-1: e(&quot;var(--color-@{dracula-style}-foreground-1)&quot;);
+		--color-foreground-2: e(&quot;var(--color-@{dracula-style}-foreground-2)&quot;);
+		--color-foreground-3: e(&quot;var(--color-@{dracula-style}-foreground-3)&quot;);
+		
+		--color-shadow-1: e(&quot;var(--color-@{dracula-style}-shadow-1)&quot;);
+		--color-shadow-2: e(&quot;var(--color-@{dracula-style}-shadow-2)&quot;);
+		--color-shadow-3: e(&quot;var(--color-@{dracula-style}-shadow-3)&quot;);
+
+		--color-comment: #6272A4;
+
+		--color-red-1:#FF6E6E;
+		--color-red-2: #FF5555;
+		--color-red-3: #E63C3C;
+		--color-orange-1: #FFD185;
+		--color-orange-2: #FFB86C;
+		--color-orange-3: #E69F53;
+		--color-yellow-1: #FFFFA5;
+		--color-yellow-2: #F1FA8C;
+		--color-yellow-3: #D8E173;
+		--color-green-1: #69FF94;
+		--color-green-2: #50FA7B;
+		--color-green-3: #37EB62; 
+		--color-cyan-1: #A4FFFF;
+		--color-cyan-2: #8BE9FD;
+		--color-cyan-3: #72D0E4;
+		--color-blue-1: #6DCCFF;
+		--color-blue-2: #54B3FF;
+		--color-blue-3: #3B9AE6;
+		--color-purple-1: #D6ACFF;
+		--color-purple-2: #BD93F9;
+		--color-purple-3: #A47AE0;
+		--color-pink-1: #FF92DF;
+		--color-pink-2: #FF79C6;
+		--color-pink-3: #E660AD;
+
+		--color-accent: @accent-color;
+	}
+	
+	html {background-color: var(--color-background-5) !important;}
+
+	* {
+		--color-primary-onBackground: red !important;
+		--color-primary-onBackground-selected: red;
+		--color-neutral-border: transparent !important;
+
+		--color-neutral-content: var(--color-foreground-3)!important;
+		--color-neutral-content-disabled: var(--color-accent) !important;
+		--color-neutral-content-weak: var(--color-comment) !important;
+		--color-neutral-content-strong: var(--color-foreground-1) !important;
+		--color-neutral-background: var(--color-background-4) !important;
+		--color-neutral-background-selected: var(--color-accent) !important;
+		--color-neutral-background-weak: var(--color-background-4) !important;
+		--color-neutral-background-medium: red !important;
+		--color-neutral-background-strong: var(--color-background-4) !important;
+		--color-neutral-background-hover: var(--color-background-3) !important;
+		--color-neutral-border-weak: var(--color-background-2) !important;
+		--color-neutral-border-strong: var(--color-foreground-1) !important;
+		--color-tone-1: var(--color-accent) !important;
+		--color-tone-2: var(--color-accent) !important;
+		--color-tone-3: red !important;
+		--color-tone-4: var(--color-comment) !important;
+		--color-tone-5: transparent !important;
+		--color-tone-6: var(--color-background-2) !important;
+		--color-tone-7: var(--color-background-4) !important;
+		--color-primary: var(--color-accent) !important;
+		--color-primary-hover: var(--color-accent) !important;
+		--color-primary-background: var(--color-background-1) !important;
+		--color-primary-background-hover: var(--color-accent) !important;
+		--color-primary-background-selected: blue!important;
+		--color-secondary: var(--color-foreground-2) !important;
+		--color-secondary-hover: blue
+		--color-secondary-weak: blue !important;
+		--color-secondary-background: var(--color-background-2) !important;
+		--color-secondary-background-hover: var(--color-background-2) !important;
+		--color-secondary-background-selected: var(--color-accent) !important;
+		--shreddit-content-background: var(--color-background-4) !important;
+
+		--button-border-color: blue;
+		--button-border-color-activated: transparent !important;
+		--button-color-background-activated: var(--color-accent) !important;
+		--button-color-text-activated: var(--color-foreground-1) !important;
+		--button-color-overlay: blue !important;
+		--button-border-color-hover: var(--color-background-2) !important;
+		--button-color-background-hover: var(--color-background-2) !important;
+		--button-color-text: var(--color-accent) !important;
+
+		--color-button-secondary-text: var(--color-foreground-3) !important;
+		--color-button-secondary-text-activated: blue !important;
+		--color-button-secondary-text-disabled: blue !important;
+		--color-button-secondary-border: transparent !important;
+		--color-button-secondary-background: var(--color-background-2) !important;
+		--color-button-secondary-background-focus: blue !important;
+		--color-button-secondary-background-hover: var(--color-accent) !important;
+		--color-button-secondary-background-activated: blue !important;
+		--color-button-secondary-background-disabled: green !important;
+
+		--color-action-upvote: var(--color-green-2);
+		--color-action-downvote: var(--color-red-2);
+		--color-media-background: var(--color-background-4);
+		--color-media-onbackground: var(--color-accent);
+		--color-media-onbackground-disabled: var(--color-foreground-1);
+
+		--newCommunityTheme-bodyText: green;
+		--newCommunityTheme-metaText: green;
+		--newCommunityTheme-button: green;
+		--newCommunityTheme-body: green;
+		--newRedditTheme-actionIcon: green;
+		--newCommunityTheme-line: green;
+		--newRedditTheme-line: green;
+		--newRedditTheme-linkText: orange;
+		--newCommunityTheme-navIconFaded10:orange;
+		--newCommunityTheme-active: orange;
+		--newCommunityTheme-field: orange;
+		--newRedditTheme-button: orange;
+		--newCommunityTheme-actionIcon: orange;
+		--newCommunityTheme-bodyTextAlpha20: transparent;
+		--newRedditTheme-post: orange;
+		--newRedditTheme-body: orange;
+		--newRedditTheme-field: pink;
+		--newCommunityTheme-navIcon: pink;
+		--newRedditTheme-actionIconAlpha50: pink;
+		--newRedditTheme-buttonAlpha05: pink;
+		--newRedditTheme-bodyText: pink;
+		--newCommunityTheme-buttonAlpha50: pink;
+		--pseudo-before-background: pink !important;
+		--newRedditTheme-metaText: pink;
+		--newRedditTheme-navIconFaded10:pink;
+		
+		--button-color-background-default: var(--color-background-2);
+		--button-color-background-focus: yellow;
+		--button-color-background-active: linear-gradient(var(--color-background-1), var(--color-background-1));
+		--button-color-background-disabled: yellow;
+		--button-color-text-default: var(--color-accent);
+		--button-color-text-disabled: var(--color-background-1);
+		--button-color-text-hover: var(--color-foreground);
+		--button-border-color-default: var(--color-accent);
+		--button-border-color-active: yellow;
+		--button-border-color-disabled: yellow !important;
+		--button-border-width-default: yellow !important;
+		--button-border-width-activated: yellow !important;
+
+		--newCommunityTheme-postLine: yellow;
+		--newRedditTheme-widgetColors-sidebarWidgetBackgroundColor: yellow
+		--newCommunityTheme-widgetColors-sidebarWidgetHeaderColor: yellow;
+		--newRedditTheme-widgetColors-sidebarWidgetBorderColor: yellow;
+		--post-icon-color: yellow;
+		--newCommunityTheme-postIcon: yellow;
+		--posttitletextcolor: yellow
+			
+		color: yellow;
+	}
+	
+	svg { fill: var(--color-accent); }
+	
+	/* Background */
+	.bg-neutral-background {
+		background-color: var(--color-background-4);
+		border-bottom: none;
+	}
+	
+	.text-secondary-weak {
+		color: var(--color-comment);
+	}
+
+	/* Borders */
+	.xs\:rounded-\[16px\] {
+		border-radius: 8px;
+		padding:1rem;
+		border: none;
+	}
+	.py-md { 
+		border: 1px solidgreen;
+		border-radius: 8px;
+	}
+
+	/* Images */
+	.rounded-\[16px\] {
+		border-radius: 8px;
+		border: none;
+	}
+	
+	/* Spacing between reddit posts */
+	.border-b-neutral-border-weak {
+		border: none;
+		height: 0.5rem;
+	}
+	
+	.flair-content { color: white !important; }
+	
+    /* Store styles */
+	.text-global-brand-orangered { background: color-mix(in srgb, var(--orange) 20%, transparent); }
+	.text-global-brand-orangered faceplate-number { color: var(--orange); }
+	
+
+	/* Unread Notifications*/
+	.theme-dark .notification-item.unread-notification {
+		background-color: var(--color-background-3);
+	}
+	
+	.theme-dark .notification-item.unread-notification:hover {
+		background-color: var(--color-background-2);
+	}
+	
+    /* Reddit post styles */
+	article {
+		box-shadow: 0rem 0rem 1rem var(--color-shadow-2);
+		border-radius: 8px;
+		background-color:var(--color-shadow-3);
+	}
+	
+    /* Reddit posts when opened */
+	shreddit-post {
+		box-shadow: 0rem 0rem 1rem var(--color-shadow-3);
+		border-radius: 8px;
+	}
+	
+	shreddit-comments-sort-dropdown {
+		padding-left: 2rem;
+	}
+	
+	shreddit-comment-tree, comment-body-header {
+		box-shadow: 0rem 0rem 1rem var(--color-shadow-3);
+		border-radius: 8px;
+		margin-top: 1rem;
+		padding: 1rem;
+	}
+    
+    .bg-online {
+		background-color:var(--color-green-2);
+    }
+}</code></pre></details></li></ul><p id="23e78e5b-a644-805e-9dc3-f898b8f6fb0e" class="">
+</p><p id="23e78e5b-a644-8012-a771-dc2c50daee00" class="">Youtube - Untrap</p><figure id="23e78e5b-a644-8010-8f7d-e30a903c08bf" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.27.332x.png"><img style="width:2926px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_14.27.332x.png"/></a></figure><p id="23e78e5b-a644-80b0-9642-fb99ba437f71" class=""><a href="https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-youtube.css">https://github.com/druxorey/dracula-for-stylus/blob/main/styles/dracula-for-youtube.css</a></p><ul id="23e78e5b-a644-8079-b861-d8ed8da7a696" class="toggle"><li><details open=""><summary>Stylus Code</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="23e78e5b-a644-806e-95fd-dddba1adcda5" class="code"><code class="language-JavaScript">/* ==UserStyle==
+@name             Dracula for Youtube
+@namespace        github.com/druxorey/dracula-for-stylus
+@version          1.1.4
+@description      Are you tired of the same boring colors on Youtube? Then try this modern color style based on the Dracula theme
+@author           Druxorey
+@license          GNU General Public License v3.0
+@preprocessor     less
+@var select accent-color &quot;Accent Color&quot; {
+	&quot;Red&quot;: &quot;red&quot;,
+	&quot;Orange&quot;: &quot;orange&quot;,
+	&quot;Yellow&quot;: &quot;yellow&quot;,
+	&quot;Green&quot;: &quot;green&quot;,
+	&quot;Blue&quot;: &quot;blue&quot;,
+	&quot;Cyan&quot;: &quot;cyan&quot;,
+	&quot;Purple&quot;: &quot;purple&quot;,
+	&quot;Pink&quot;: &quot;pink&quot;,
+}
+
+@var checkbox media-bar &quot;Enable black bars&quot; 0
+@var checkbox video-box &quot;Enable video box&quot; 0
+==/UserStyle== */
+
+@-moz-document url-prefix(&quot;https://www.youtube.com/&quot;) {
+
+	:root {
+		--color-comment: #6272A4;
+
+		--color-red-1: #FF6E6E;
+		--color-red-2: #FF5555;
+		--color-red-3: #E63C3C;
+		--color-orange-1: #FFD185;
+		--color-orange-2: #FFB86C;
+		--color-orange-3: #E69F53;
+		--color-yellow-1: #FFFFA5;
+		--color-yellow-2: #F1FA8C;
+		--color-yellow-3: #D8E173;
+		--color-green-1: #69FF94;
+		--color-green-2: #50FA7B;
+		--color-green-3: #37EB62;
+		--color-cyan-1: #A4FFFF;
+		--color-cyan-2: #8BE9FD;
+		--color-cyan-3: #72D0E4;
+		--color-blue-1: #6DCCFF;
+		--color-blue-2: #54B3FF;
+		--color-blue-3: #3B9AE6;
+		--color-purple-1: #D6ACFF;
+		--color-purple-2: #BD93F9;
+		--color-purple-3: #A47AE0;
+		--color-pink-1: #FF92DF;
+		--color-pink-2: #FF79C6;
+		--color-pink-3: #E660AD;
+
+		--color-accent-1: e(&quot;var(--color-@{accent-color}-1)&quot;);
+		--color-accent-2: e(&quot;var(--color-@{accent-color}-2)&quot;);
+		--color-accent-3: e(&quot;var(--color-@{accent-color}-3)&quot;);
+	}
+
+	:root:not([dark]) {
+		--color-background-4: #F4F4F6;
+		--color-background-3: #DDDDE3;
+		--color-background-2: #DDDDE3;
+		--color-background-5: #A5A7B6;
+		--color-background-1: #8F91A3;
+
+		--color-foreground-1: #44475A;
+		--color-foreground-2: #7E808E;
+		--color-foreground-3: #B9BAC2;
+
+		--color-shadow-1: #DDDDE3;
+		--color-shadow-2: #A5A7B6;
+		--color-shadow-3: #8F91A3;
+
+		background: var(--color-background-4) !important;
+	}
+
+	:root[dark] {
+		--color-background-1: #525568;
+		--color-background-2: #44475A;
+		--color-background-3: #2F313F;
+		--color-background-4: #282A36;
+		--color-background-5: #1E1F29;
+
+		--color-foreground-1: #F8F8F2;
+		--color-foreground-2: #9e9fa6;
+		--color-foreground-3: #5a5d6d;
+
+		--color-shadow-1: #2F313F;
+		--color-shadow-2: #1E1F29;
+		--color-shadow-3: #1A1B23;
+
+		background: var(--color-background-4) !important;
+	}
+
+	[fill=&quot;red&quot;],
+	[fill=&quot;#F00&quot;],
+	[fill=&quot;#FF0000&quot;],
+	[fill=&quot;#f03&quot;],
+	[fill=&quot;#FF0033&quot;] {
+		fill: var(--color-accent-2) !important;
+	}
+
+	&amp;,
+	[dark],
+	[system-icons],
+	[darker-dark-theme],
+	&amp;[dark],
+	&amp;[system-icons],
+	&amp;[darker-dark-theme] {
+		--yt-spec-raised-background: var(--color-background-3);
+		--yt-spec-general-background-a: var(--color-background-3);
+		--yt-spec-additive-background: var(--color-background-2);
+		--yt-spec-badge-chip-background: var(--color-background-3);
+		--yt-spec-base-background: var(--color-background-);
+		--yt-spec-brand-background-primary: var(--color-background-3);
+		--yt-spec-menu-background: var(--color-background-3);
+		--yt-spec-text-secondary: var(--color-accent-2);
+		--yt-spec-text-primary: var(--color-foreground-1);
+		--yt-spec-icon-active-other: var(--color-foreground-1);
+		--yt-spec-wordmark-text: var(--color-foreground-1);
+		--yt-spec-button-chip-background-hover: var(--color-accent-2);
+		--yt-frosted-glass-desktop: var(--color-background-4);
+	}
+
+	.ytSuggestionComponentRemoveLinkDark {
+		color: var(--color-accent-2);
+	}
+	
+	.ytp-progress-list {
+		background: var(--color-background-2);
+	}
+	
+	.ytp-load-progress {
+		background: var(--color-foreground-3);
+	}
+	
+	.ytSearchboxComponentInputBoxDark,
+	.ytSearchboxComponentSearchButtonDark {
+		background-color: var(--color-background-3);
+		color: var(--color-foreground-1);
+		border-color: var(--color-background-3);
+	}
+	
+	.ytSearchboxComponentSuggestionsContainer,
+	.ytSearchboxComponentSuggestionsContainerDark {
+		background: var(--yt-spec-raised-background) !important;
+		border-color: var(--yt-spec-raised-background) !important;
+	}
+
+	.ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBoxHasFocus {
+		border-color: var(--color-accent-3);
+	}
+
+	.yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge {
+		background-color: var(--color-accent-2);
+	}
+
+	.yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color {
+		color: var(--color-accent-2);
+	}
+
+	.yt-content-metadata-view-model-wiz--medium-text .yt-content-metadata-view-model-wiz__metadata-text {
+		color: var(--color-accent-2);
+	}
+
+	.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
+		color: var(--color-comment);
+	}
+
+	#content.ytd-rich-item-renderer ytd-post-renderer.ytd-rich-item-renderer,
+	#content.ytd-rich-item-renderer ytd-shared-post-renderer.ytd-rich-item-renderer,
+	#content.ytd-rich-item-renderer ytd-mini-game-card-view-model.ytd-rich-item-renderer {
+		background-color: transparent;
+		border-radius: 10px;
+		border: none;
+	}
+
+	.html5-video-player,
+	.ytp-contextmenu {
+		background-color: if(@media-bar =1, #000, var(--color-background-4));
+	}
+
+	.yt-spec-icon-badge-shape--style-overlay .yt-spec-icon-badge-shape__icon {
+		color: var(--color-foreground-1);
+	}
+
+	.yt-page-navigation-progress {
+		background: var(--color-accent-2) !important;
+	}
+
+	ytd-searchbox[has-focus] #container.ytd-searchbox {
+		border-color: var(--color-background-1);
+	}
+
+	.yt-spec-button-shape-next--mono {
+		&amp;.yt-spec-button-shape-next--tonal {
+			background-color: var(--color-background-2);
+			color: var(--color-foreground-1);
+
+			[fill=&quot;rgb(3,3,3)&quot;],
+			[fill=&quot;rgb(0,0,0)&quot;],
+			[fill=&quot;rgb(255,255,255)&quot;] {
+				fill: var(--color-pink-2) !important;
+			}
+
+			[stroke=&quot;rgb(0,0,0)&quot;],
+			[stroke=&quot;rgb(255,255,255)&quot;] {
+				stroke: #00ff00 !important;
+			}
+
+			/* Accent for filled-in thumbs up (like button) */
+			[animated-icon-type=&quot;LIKE&quot;] {
+				g path[fill] {
+					fill: var(--color-accent-2) !important;
+
+					+[stroke] {
+						stroke: #00ff00 !important;
+					}
+				}
+			}
+
+			&amp;:hover {
+				background-color: var(--color-background-1);
+			}
+		}
+
+		&amp;.yt-spec-button-shape-next--outline {
+			background: var(--color-background-2);
+			color: var(--color-foreground-1);
+			border-color: var(--color-background-2);
+
+			&amp;:hover {
+				background-color: var(--color-background-1);
+			}
+		}
+
+		&amp;.yt-spec-button-shape-next--text {
+			color: var(--color-foreground-3);
+
+			/* Accent for filled-in thumbs up (like button) */
+			path[d=&quot;M3,11h3v10H3V11z M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11v10h10.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z&quot;] {
+				fill: #00ff00;
+			}
+
+			&amp;:hover {
+				background-color: var(--color-background-2);
+			}
+		}
+
+		&amp;.yt-spec-button-shape-next--filled {
+			background-color: var(--color-accent-2);
+			color: var(--color-foreground-1);
+
+			&amp;:hover {
+				background-color: var(--color-accent-3);
+			}
+		}
+	}
+
+	ytd-playlist-panel-video-renderer[can-reorder]:hover,
+	ytd-playlist-panel-video-renderer[can-reorder][menu-opened],
+	ytd-playlist-panel-video-renderer[can-reorder].dragging {
+		box-shadow: 0 2px 8px var(--color-shadow-2);
+	}
+
+	.ytp-swatch-background-color,
+	.ytp-play-progress {
+		background: var(--color-accent-2) !important;
+	}
+	
+	.yt_to_text_container {
+		background: var(--color-background-2);
+		color: var(--color-foreground-1);
+	}
+
+	.yt_to_text_default_btn {
+		background: var(--color-background-1);		
+		color: var(--color-foreground-1);
+	}
+
+	.yt_to_text_default_btn.selected {
+		background: var(--color-accent-2);
+		color: var(--color-foreground-1);
+	}
+
+	.yt_to_text_footer_contact-us {
+		span {
+			color: var(--color-accent-2);
+		}
+	}
+
+	.yt_to_text_transcript_text_timestamp {
+		color: var(--color-accent-2);
+	}
+
+	.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal,
+	.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
+		background: var(--color-background-2);
+	}
+
+	.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal:hover,
+	.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text:hover {
+		background: var(--color-background-1);
+	}
+	
+	#yt_to_text_footer_pro_transcript,
+	#yt_to_text_footer_summary{
+		background: var(--color-accent-2);
+		color: var(--color-foreground-1);
+	}
+	
+	#yt_to_text_visibility_icon path {
+		stroke: var(--color-accent-2);
+	}
+	
+	#yt_to_text_profile path {
+		stroke: var(--color-accent-2);
+		stroke-width: 0.8;
+	}
+	
+	ytd-playlist-panel-video-renderer[selected][use-color-palette], ytd-playlist-panel-video-renderer[selected][use-color-palette]:hover:not(.dragging) {
+		background-color: var(--color-background-2);
+	}
+	
+	div#content.style-scope.ytd-rich-item-renderer {
+		background: if(@video-box = 1, var(--color-background-2), transparent);
+		box-shadow: 0rem 0rem 1rem if(@video-box = 1, var(--color-shadow-2), transparent);
+		padding: 1rem;
+		border-radius: 10px
+	}
+	
+	div#content.style-scope.ytd-rich-item-renderer:hover {
+		background: var(--color-background-2);
+	}
+	
+	#masthead-container, #chips-content {
+		background: var(--color-background-4);
+	}
+	
+	div#guide-content.style-scope.ytd-app {
+		background: var(--color-background-4);
+	}
+	
+	div#container.style-scope.ytd-playlist-panel-renderer {
+		border: none;
+		box-shadow: 0rem 0rem 1rem var(--color-shadow-2);
+	}
+
+	div#items.style-scope.ytd-watch-next-secondary-results-renderer {
+		background: var(--color-background-3);
+		box-shadow: 0rem 0rem 1rem var(--color-shadow-2);
+		padding: 1rem;
+		border-radius: 10px
+	}
+	
+	div#description.item.style-scope.ytd-watch-metadata {
+		box-shadow: 0rem 0rem 1rem var(--color-shadow-2);
+	}
+	
+	div#dismissible.style-scope .ytd-rich-shelf-renderer {
+		display: none;
+	}
+}</code></pre></details></li></ul><p id="23e78e5b-a644-80e7-affa-ccc89791e17c" class="">
+</p><p id="23e78e5b-a644-8064-9a79-d775e42a62ea" class="">Resources:</p><ul id="23e78e5b-a644-8038-9878-d4c5ccfc564c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://userstyles.world/">https://userstyles.world/</a></span><div class="indented"></div></li></ul><ul id="23e78e5b-a644-8065-a3c4-fbcf8e06f5bb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Brave, gemini, google drive/docs, leetcode, whatsapp, wikipedia - stylus: <a href="https://github.com/druxorey/dracula-for-stylus/tree/main/styles">https://github.com/druxorey/dracula-for-stylus/tree/main/styles</a></span><div class="indented"></div></li></ul><p id="23e78e5b-a644-80e0-bfba-dd40ea7c6002" class="">
+</p><p id="23e78e5b-a644-80a2-9979-ee40b4dd0e3c" class="">Wallpapers</p><figure id="23e78e5b-a644-80ac-9555-e0c50486af43" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/dracula_mac_wallpaper.png"><img style="width:710px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/dracula_mac_wallpaper.png"/></a></figure><figure id="23e78e5b-a644-803c-acfe-d375fe66c137" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Dracula.png"><img style="width:3840px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Dracula.png"/></a></figure><figure id="23e78e5b-a644-803a-a490-fb93af6fafc9" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Ghost.png"><img style="width:3840px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Ghost.png"/></a></figure><figure id="23e78e5b-a644-80ec-8835-e1342241bb11" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Hand.png"><img style="width:3840px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Hand.png"/></a></figure><figure id="23e78e5b-a644-8018-b820-e0668468ebfc" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Kraken.png"><img style="width:7680px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Kraken.png"/></a></figure><figure id="23e78e5b-a644-80cd-b21d-febe4403833a" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Rainbow_1.png"><img style="width:3840px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Rainbow_1.png"/></a></figure><figure id="23e78e5b-a644-809e-ad7c-f80058cf071e" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Tree.png"><img style="width:3840px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Tree.png"/></a></figure><figure id="23e78e5b-a644-80f4-b558-ec6d58b813c3" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Waves_1.png"><img style="width:3840px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/Waves_1.png"/></a></figure><p id="23e78e5b-a644-80bb-94cb-c2fbfc7d7d60" class="">More here: <a href="https://github.com/aynp/dracula-wallpapers">https://github.com/aynp/dracula-wallpapers</a></p><p id="23e78e5b-a644-80ae-9697-c5b1ba1df919" class="">
+</p><p id="23e78e5b-a644-809f-a602-db922afd7330" class="">MacOS</p><figure id="23e78e5b-a644-80f3-8c17-ee09b626dfc1" class="image"><a href="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_15.20.012x.png"><img style="width:3420px" src="Dracula%20Fever%2023e78e5ba64480d99da4ec93222ae0ca/CleanShot_2025-07-28_at_15.20.012x.png"/></a></figure><p id="23e78e5b-a644-8041-8fb1-f6a170867163" class="">Sketchybar: <a href="https://github.com/FelixKratz/SketchyBar">https://github.com/FelixKratz/SketchyBar</a></p><p id="23e78e5b-a644-8015-93d5-d361bbeae5bd" class="">Found some cool implementations here: <a href="https://github.com/FelixKratz/SketchyBar/discussions/47">https://github.com/FelixKratz/SketchyBar/discussions/47</a></p><p id="23e78e5b-a644-803c-ac9d-f45af541cce3" class=""><br/>JankyBorders: <br/><a href="https://github.com/FelixKratz/JankyBorders">https://github.com/FelixKratz/JankyBorders</a></p><p id="23e78e5b-a644-8028-abf3-d01aba5cef9f" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
