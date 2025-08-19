@@ -115,6 +115,27 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      background: #44475a;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      color: #6272a4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      transition: background 0.15s;
+    }
+
+    .tag:hover {
+      background: #6272a4;
+    }
+
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     .tag {
@@ -284,9 +305,15 @@
       <header class="post-header">
         <div class="post-meta">
           <span class="post-date">10th July 2025</span>
-          <!-- <span class="post-status">Published</span> -->
+          <span class="post-status">Get Rekt</span>
         </div>
         <h1 class="post-title">How to make an LLM play Black Myth: Wukong</h1>
+        <div class="post-tags">
+          <span class="tag">AI</span>
+          <span class="tag">gaming</span>
+          <span class="tag">LLM</span>
+          <span class="tag">automation</span>
+        </div>
       </header>
 
       <div class="post-content">
