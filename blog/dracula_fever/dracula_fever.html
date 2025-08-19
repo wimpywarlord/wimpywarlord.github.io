@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dracula Fever - Tjay</title>
+    <title>Dracula Theming - Tjay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,9 +45,20 @@
       .back-link:hover {
         color: #f8f8f2;
       }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #6272a4;
+        margin-bottom: 2rem;
+        transition: color 0.15s;
+      }
+      .back-link:hover {
+        color: #f8f8f2;
+      }
       .blog-post {
         max-width: 700px;
-        margin: 6rem auto;
+        margin: 0 auto;
       }
       .post-header {
         margin-bottom: 3rem;
@@ -242,14 +253,16 @@
   </head>
   <body>
     <div class="container">
-      <nav></nav>
+      <nav>
+        <a href="../../index.html" class="back-link">← Back to Home</a>
+      </nav>
       <article class="blog-post">
         <header class="post-header">
           <div class="post-meta">
             <span class="post-date">28 July 2025</span>
           </div>
           <h1 class="post-title">
-            Dracula Fever: Dracula Theming Your macOS Setup
+            Dracula Theming Your macOS Setup
           </h1>
         </header>
         <div class="post-content">
