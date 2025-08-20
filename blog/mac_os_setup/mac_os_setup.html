@@ -1,792 +1,1080 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MacOS on Steroids - Tjay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>macOS Setup Guide - Tjay</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="macOS on Steroids" />
+    <meta
+      property="og:description"
+      content="Complete step-by-step guide to setting up a new macOS machine with essential tools, dotfiles, and configurations."
+    />
+    <meta
+      property="og:image"
+      content="https://kshitijdhyani.com/assets/meow_party.gif"
+    />
+    <meta
+      property="og:url"
+      content="https://kshitijdhyani.com/blog/mac_os_setup/mac_os_setup.html"
+    />
+    <meta property="og:type" content="article" />
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="macOS Setup Guide" />
-  <meta property="og:description" content="Complete step-by-step guide to setting up a new macOS machine with essential tools, dotfiles, and configurations." />
-  <meta property="og:image" content="https://kshitijdhyani.com/assets/meow_party.gif" />
-  <meta property="og:url" content="https://kshitijdhyani.com/blog/mac_os_setup/mac_os_setup.html" />
-  <meta property="og:type" content="article" />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="macOS on Steroids" />
+    <meta
+      name="twitter:description"
+      content="Complete step-by-step guide to setting up a new macOS machine."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kshitijdhyani.com/assets/meow_party.gif"
+    />
 
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="macOS Setup Guide" />
-  <meta name="twitter:description" content="Complete step-by-step guide to setting up a new macOS machine." />
-  <meta name="twitter:image" content="https://kshitijdhyani.com/assets/meow_party.gif" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://kshitijdhyani.com/assets/meow_party.gif"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://kshitijdhyani.com/assets/meow_party.gif" />
+    <style>
+      /* Base styles matching main site */
+      body {
+        font-family: "Noto Sans Display", sans-serif;
+        background-color: #282a36;
+        color: #f8f8f2;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
 
-  <style>
-    /* Base styles matching main site */
-    body {
-      font-family: "Noto Sans Display", sans-serif;
-      background-color: #282a36;
-      color: #f8f8f2;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
+      /* Reset link styles */
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-    /* Reset link styles */
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+      }
 
-    a:hover,
-    a:focus-visible {
-      text-decoration: underline;
-    }
-
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* Navigation */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.9rem;
-      color: #6272a4;
-      margin-bottom: 2rem;
-      transition: color 0.15s;
-    }
-
-    .back-link:hover {
-      color: #f8f8f2;
-    }
-
-    /* Blog post styles */
-    .blog-post {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .post-header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #44475a;
-    }
-
-    .post-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .post-date {
-      font-size: 0.85rem;
-      color: #6272a4;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-
-    .post-status {
-      font-size: 0.75rem;
-      background: #50fa7b;
-      color: #282a36;
-      padding: 0.15rem 0.45rem;
-      border-radius: 0.25rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-weight: 600;
-    }
-
-    .post-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0;
-      line-height: 1.2;
-      color: #f8f8f2;
-    }
-
-    .post-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      background: #44475a;
-      padding: 0.15rem 0.45rem;
-      border-radius: 0.25rem;
-      color: #6272a4;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      transition: background 0.15s;
-    }
-
-    .tag:hover {
-      background: #6272a4;
-      color: #f8f8f2;
-    }
-
-    /* Post content */
-    .post-content {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #f8f8f2;
-    }
-
-    .post-content h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin: 2.5rem 0 1rem 0;
-      color: #bd93f9;
-    }
-
-    .post-content h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 2rem 0 0.8rem 0;
-      color: #f8f8f2;
-    }
-
-    .post-content h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.6rem 0;
-      color: #8be9fd;
-    }
-
-    .post-content p {
-      margin: 1.2rem 0;
-    }
-
-    .post-content ul, .post-content ol {
-      margin: 1.2rem 0;
-      padding-left: 1.5rem;
-    }
-
-    .post-content li {
-      margin: 0.5rem 0;
-    }
-
-    .post-content a {
-      color: #8be9fd;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
-    }
-
-    .post-content a:hover {
-      color: #ffb86c;
-    }
-
-    .post-content code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      background: #44475a;
-      padding: 0.1rem 0.3rem;
-      border-radius: 0.2rem;
-      font-size: 0.9em;
-    }
-
-    .post-content pre {
-      background: #282a36;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border: 1px solid #44475a;
-    }
-
-    .post-content pre code {
-      background: none;
-      padding: 0;
-      color: #f8f8f2;
-    }
-
-    .post-content blockquote {
-      border-left: 4px solid #ffb86c;
-      padding-left: 1.5rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: #6272a4;
-    }
-
-    .post-content img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-      margin: 1.5rem 0;
-    }
-
-    /* Post footer */
-    .post-footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid #44475a;
-    }
-
-    .post-navigation {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-link {
-      font-size: 0.9rem;
-      color: #6272a4;
-      transition: color 0.15s;
-    }
-
-    .nav-link:hover {
-      color: #f8f8f2;
-    }
-
-    /* Section separator */
-    .section-separator {
-      border-bottom: 1px solid #44475a;
-      margin: 2rem 0;
-    }
-
-    /* Highlight styles */
-    .highlight-purple {
-      color: #bd93f9;
-      font-weight: 600;
-    }
-
-    .highlight-orange {
-      color: #ffb86c;
-    }
-
-    .highlight-cyan {
-      color: #8be9fd;
-    }
-
-    .highlight-yellow {
-      color: #f1fa8c;
-    }
-
-    .highlight-green {
-      color: #50fa7b;
-    }
-
-    /* Command box styles */
-    .command-box {
-      background: #44475a;
-      padding: 1rem 1rem;
-      border-radius: 0.5rem;
-      margin: 1rem;
-    }
-
-    .command-box code {
-      background: none;
-      color: #50fa7b;
-      font-size: 0.95em;
-      margin-bottom: 1rem 1rem;
-    }
-
-    /* Step numbers */
-    .step-number {
-      display: inline-block;
-      background: #bd93f9;
-      color: #282a36;
-      padding: 0.1rem 0.55rem;
-      border-radius: 0.3rem;
-      font-weight: 600;
-      margin-right: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    /* Info boxes */
-    .info-box {
-      background: #44475a;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin: 1.5rem 0;
-      border-left: 3px solid #8be9fd;
-    }
-
-    .warning-box {
-      background: #44475a;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin: 1.5rem 0;
-      border-left: 3px solid #ffb86c;
-    }
-
-    /* Responsive design */
-    @media (max-width: 768px) {
+      /* Container */
       .container {
-        padding: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
       }
-      
+
+      /* Navigation */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #6272a4;
+        margin-bottom: 2rem;
+        transition: color 0.15s;
+      }
+
+      .back-link:hover {
+        color: #f8f8f2;
+      }
+
+      /* Blog post styles */
+      .blog-post {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .post-header {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #44475a;
+      }
+
+      .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-date {
+        font-size: 0.85rem;
+        color: #6272a4;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+
+      .post-status {
+        font-size: 0.75rem;
+        background: #50fa7b;
+        color: #282a36;
+        padding: 0.15rem 0.45rem;
+        border-radius: 0.25rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-weight: 600;
+      }
+
       .post-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.2;
+        color: #f8f8f2;
       }
-      
+
+      .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        background: #44475a;
+        padding: 0.15rem 0.45rem;
+        border-radius: 0.25rem;
+        color: #6272a4;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        transition: background 0.15s;
+      }
+
+      .tag:hover {
+        background: #6272a4;
+        color: #f8f8f2;
+      }
+
+      /* Post content */
       .post-content {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #f8f8f2;
+      }
+
+      .post-content h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 2.5rem 0 1rem 0;
+        color: #bd93f9;
+      }
+
+      .post-content h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 2rem 0 0.8rem 0;
+        color: #f8f8f2;
+      }
+
+      .post-content h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.6rem 0;
+        color: #8be9fd;
+      }
+
+      .post-content p {
+        margin: 1.2rem 0;
+      }
+
+      .post-content ul,
+      .post-content ol {
+        margin: 1.2rem 0;
+        padding-left: 1.5rem;
+      }
+
+      .post-content li {
+        margin: 0.5rem 0;
+      }
+
+      .post-content a {
+        color: #8be9fd;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+
+      .post-content a:hover {
+        color: #ffb86c;
+      }
+
+      .post-content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: #44475a;
+        padding: 0.1rem 0.3rem;
+        border-radius: 0.2rem;
+        font-size: 0.9em;
+      }
+
+      .post-content pre {
+        background: #282a36;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        border: 1px solid #44475a;
+      }
+
+      .post-content pre code {
+        background: none;
+        padding: 0;
+        color: #f8f8f2;
+      }
+
+      .post-content blockquote {
+        border-left: 4px solid #ffb86c;
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: #6272a4;
+      }
+
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        margin: 1.5rem 0;
+      }
+
+      /* Post footer */
+      .post-footer {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid #44475a;
+      }
+
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-size: 0.9rem;
+        color: #6272a4;
+        transition: color 0.15s;
+      }
+
+      .nav-link:hover {
+        color: #f8f8f2;
+      }
+
+      /* Section separator */
+      .section-separator {
+        border-bottom: 1px solid #44475a;
+        margin: 2rem 0;
+      }
+
+      /* Highlight styles */
+      .highlight-purple {
+        color: #bd93f9;
+        font-weight: 600;
+      }
+
+      .highlight-orange {
+        color: #ffb86c;
+      }
+
+      .highlight-cyan {
+        color: #8be9fd;
+      }
+
+      .highlight-yellow {
+        color: #f1fa8c;
+      }
+
+      .highlight-green {
+        color: #50fa7b;
+      }
+
+      /* Command box styles */
+      .command-box {
+        background: #44475a;
+        padding: 1rem 1rem;
+        border-radius: 0.5rem;
+        margin: 1rem;
+      }
+
+      .command-box code {
+        background: none;
+        color: #50fa7b;
+        font-size: 0.95em;
+        margin-bottom: 1rem 1rem;
+      }
+
+      /* Step numbers */
+      .step-number {
+        display: inline-block;
+        background: #bd93f9;
+        color: #282a36;
+        padding: 0.1rem 0.55rem;
+        border-radius: 0.3rem;
+        font-weight: 600;
+        margin-right: 0.5rem;
         font-size: 0.9rem;
       }
-      
-      .post-content h2 {
-        font-size: 1.2rem;
+
+      /* Info boxes */
+      .info-box {
+        background: #44475a;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 1.5rem 0;
+        border-left: 3px solid #8be9fd;
       }
-      
-      .post-content h3 {
-        font-size: 1rem;
+
+      .warning-box {
+        background: #44475a;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 1.5rem 0;
+        border-left: 3px solid #ffb86c;
       }
-      
-      .post-navigation {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        .post-title {
+          font-size: 1.3rem;
+        }
+
+        .post-content {
+          font-size: 0.9rem;
+        }
+
+        .post-content h2 {
+          font-size: 1.2rem;
+        }
+
+        .post-content h3 {
+          font-size: 1rem;
+        }
+
+        .post-navigation {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start;
+        }
+
+        .post-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
       }
-      
-      .post-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <nav>
-      <a href="../../index.html" class="back-link">← Back to Home</a>
-    </nav>
-    
-    <article class="blog-post">
-      <header class="post-header">
-        <div class="post-meta">
-          <span class="post-date">19 August 2025</span>
-          <span class="post-status">Just use NIX bro</span>
-        </div>
-        <h1 class="post-title">My macOS Setup Guide</h1>
-        <div class="post-tags">
-          <span class="tag">macOS</span>
-          <span class="tag">setup</span>
-          <span class="tag">dotfiles</span>
-          <span class="tag">productivity</span>
-        </div>
-      </header>
-
-      <div class="post-content">
-        <p>This is my almanac for setting up a new macOS machine to my workflows.</p>
-
-        <div class="section-separator"></div>
-
-        <h2>Initial System Setup</h2>
-        
-        <h3>Step 1: Basic macOS Configuration</h3>
-        <p>Before installing any applications, let's configure macOS for optimal productivity:</p>
-        
-        <div class="command-box">
-          <p><span class="step-number">1</span>Enable tap to click:</p>
-          <code>System Settings → Trackpad → Point & Click → Tap to click</code>
-        </div>
-        
-        <div class="command-box">
-          <p><span class="step-number">2</span>Speed up key repeat rate:</p>
-          <code>defaults write -g InitialKeyRepeat -int 15</code><br>
-          <code>defaults write -g KeyRepeat -int 2</code>
-        </div>
-        
-        <div class="command-box">
-          <p><span class="step-number">3</span>Show hidden files in Finder:</p>
-          <code>defaults write com.apple.finder AppleShowAllFiles YES</code><br>
-          <code>killall Finder</code>
-        </div>
-
-        <div class="command-box">
-          <p><span class="step-number">4</span>Disable press-and-hold for accented characters:</p>
-          <code>defaults write -g ApplePressAndHoldEnabled -bool false</code>
-        </div>
-
-        <div class="section-separator"></div>
-
-        <h2>Wallpapers & Visual Setup</h2>
-
-        <h3>Desktop Wallpapers</h3>
-        <p>My collection of desktop wallpapers:</p>
-        
-        <img src="assets/dracula_mac_wallpaper.png" alt="Dracula Mac Wallpaper">
-        <img src="assets/Wallpaper.jpg" alt="Main Wallpaper">
-        <img src="assets/satoru-gojo-suguru-3840x2160-16373.png" alt="Gojo Suguru Wallpaper">
-
-        <h3>Twitter Banners</h3>
-        <p>For your Twitter account banners and social media:</p>
-        
-        <img src="assets/GwUsUFvXsAEZf83.jpg" alt="Twitter Banner">
-        <img src="assets/IMG_1514.jpeg" alt="Social Media Banner">
-        <img src="assets/IMG_1515.png" alt="Alternative Banner">
-        <img src="assets/IMG_1680.jpeg" alt="Banner Option">
-
-        <h3>Profile Pictures</h3>
-        <p>For consistency across all your accounts:</p>
-        
-        <div style="text-align: center;">
-          <img src="assets/Group_2.png" alt="Profile Picture" style="max-width: 200px; margin: 0 0.5rem;">
-          <img src="assets/1689993698983_1.png" alt="Alternative Profile Picture" style="max-width: 200px; margin: 0 0.5rem;">
-          <img src="assets/profile.png" alt="Main Profile Picture" style="max-width: 200px; margin: 0 0.5rem;">
-        </div>
-
-        <div class="section-separator"></div>
-
-        <h2>Installing Homebrew & Core Applications</h2>
-        
-        <h3>Step 1: Install Homebrew</h3>
-        <p>Homebrew is the <span class="highlight-green">essential package manager</span> for macOS. It simplifies installing and managing applications.</p>
-        
-        <div class="command-box">
-          <p>Run this command in Terminal:</p>
-          <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>
-        </div>
-        
-        <p>After installation, add Homebrew to your PATH:</p>
-        <div class="command-box">
-          <code>echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile</code><br>
-          <code>eval "$(/opt/homebrew/bin/brew shellenv)"</code>
-        </div>
-
-        <h3>Step 2: Install Essential Applications</h3>
-        <p>Now let's install all the applications you'll need. I've organized them by category with detailed explanations:</p>
-
-        <h3>One-Command Installation</h3>
-        <p>Install everything at once with this single command:</p>
-        
-        <div class="command-box">
-          <code>brew install node python tmux git uv zoxide atuin yt-dlp fzf eza \
-  --cask zen-browser superkey protonvpn notion libreoffice ghostty iterm2 \
-  bettertouchtool postman screen-studio flux forklift fork davinci-resolve \
-  discord cursor cleanshot chatgpt aldente alfred appcleaner rectangle</code>
-        </div>
-
-        <h4>Core Command Line Tools</h4>
-        <div class="command-box">
-          <code>brew install node</code>
-          <p><a href="https://nodejs.org/" target="_blank">Node.js</a> - JavaScript runtime for server-side development</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install python</code>
-          <p><a href="https://www.python.org/" target="_blank">Python</a> - Essential programming language for scripting and development</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install tmux</code>
-          <p><a href="https://github.com/tmux/tmux" target="_blank">tmux</a> - Terminal multiplexer for managing multiple terminal sessions</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install git</code>
-          <p><a href="https://git-scm.com/" target="_blank">Git</a> - Version control system (brew version is more up-to-date than macOS default)</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install uv</code>
-          <p><a href="https://docs.astral.sh/uv/" target="_blank">uv</a> - Extremely fast Python package and project manager, written in Rust</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install zoxide</code>
-          <p><a href="https://github.com/ajeetdsouza/zoxide" target="_blank">zoxide</a> - Smarter cd command that remembers your most used directories</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install atuin</code>
-          <p><a href="https://docs.atuin.sh/" target="_blank">Atuin</a> - Magical shell history with sync across machines</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install yt-dlp</code>
-          <p><a href="https://github.com/yt-dlp/yt-dlp" target="_blank">yt-dlp</a> - Download videos/images from YouTube and 1000+ other sites</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install fzf</code>
-          <p><a href="https://github.com/junegunn/fzf" target="_blank">fzf</a> - Command-line fuzzy finder for files, history, and processes</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install eza</code>
-          <p><a href="https://github.com/eza-community/eza" target="_blank">eza</a> - Modern, maintained replacement for ls with colors and icons</p>
-        </div>
-
-        <h4>Browsers</h4>
-        <div class="command-box">
-          <code>brew install --cask zen-browser</code>
-          <p><a href="https://zen-browser.app/" target="_blank">Zen Browser</a> - Privacy-focused browser with excellent customization</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask google-chrome</code>
-          <p><a href="https://www.google.com/chrome/" target="_blank">Chrome</a> - Primary browser with excellent DevTools</p>
-        </div>
-
-        <h4>Development Tools</h4>
-        <div class="command-box">
-          <code>brew install --cask cursor</code>
-          <p><a href="https://cursor.sh/" target="_blank">Cursor</a> - AI-powered code editor built on VSCode, perfect for AI-assisted development</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask postman</code>
-          <p><a href="https://www.postman.com/" target="_blank">Postman</a> - API development and testing platform with collaboration features</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask ghostty</code>
-          <p><a href="https://ghostty.org/" target="_blank">Ghostty</a> - Fast, feature-rich terminal emulator</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask fork</code>
-          <p><a href="https://git-fork.com/" target="_blank">Fork</a> - Beautiful Git client with intuitive interface</p>
-        </div>
-
-        <h4>Productivity & System Tools</h4>
-        <div class="command-box">
-          <code>brew install --cask notion</code>
-          <p><a href="https://www.notion.so/" target="_blank">Notion</a> - All-in-one workspace for notes, documents, and project management</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask alfred</code>
-          <p><a href="https://www.alfredapp.com/" target="_blank">Alfred</a> - Powerful productivity app with workflows and clipboard history</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask bettertouchtool</code>
-          <p><a href="https://folivora.ai/" target="_blank">BetterTouchTool</a> - Customize trackpad gestures, keyboard shortcuts, and Touch Bar</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask superkey</code>
-          <p><a href="https://superkey.app/" target="_blank">SuperKey</a> - Transform your caps lock into a powerful productivity key</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask aldente</code>
-          <p><a href="https://apphousekitchen.com/" target="_blank">AlDente</a> - Battery health management to extend MacBook battery life</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask appcleaner</code>
-          <p><a href="https://freemacsoft.net/appcleaner/" target="_blank">AppCleaner</a> - Thoroughly uninstall applications and their associated files</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask flux</code>
-          <p><a href="https://justgetflux.com/" target="_blank">f.lux</a> - Adjust screen color temperature based on time of day</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask rectangle</code>
-          <p><a href="https://rectangleapp.com/" target="_blank">Rectangle</a> - Window management made simple with keyboard shortcuts</p>
-        </div>
-
-        <h4>File Management</h4>
-        <div class="command-box">
-          <code>brew install --cask forklift</code>
-          <p><a href="https://binarynights.com/" target="_blank">ForkLift</a> - Advanced file manager and FTP client</p>
-        </div>
-
-        <h4>Office & Documents</h4>
-        <div class="command-box">
-          <code>brew install --cask libreoffice</code>
-          <p><a href="https://www.libreoffice.org/" target="_blank">LibreOffice</a> - Free and powerful office suite</p>
-        </div>
-
-        <div class="command-box">
-          <p>Don't forget to set up <a href="https://www.notion.com/product/calendar" target="_blank">Notion Calendar</a> and <a href="https://www.notion.com/product/mail" target="_blank">Notion Mail</a> for seamless integration with your workspace.</p>
-        </div>
-
-        <div class="command-box">
-          <p>For PDF editing, download <a href="https://www.pdfgear.com/" target="_blank">PDF Gear</a> - excellent free PDF editor with annotation tools.</p>
-        </div>
-
-        <h4>Communication</h4>
-        <div class="command-box">
-          <code>brew install --cask discord</code>
-          <p><a href="https://discord.com/" target="_blank">Discord</a> - Community and team communication</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask whatsapp</code>
-          <p><a href="https://www.whatsapp.com/" target="_blank">WhatsApp</a> - Popular messaging platform</p>
-        </div>
-
-        <h4>Creative & Media Tools</h4>
-        <div class="command-box">
-          <code>brew install --cask cleanshot</code>
-          <p><a href="https://cleanshot.com/" target="_blank">CleanShot X</a> - Advanced screenshot and screen recording tool</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask screen-studio</code>
-          <p><a href="https://www.screen.studio/" target="_blank">Screen Studio</a> - Professional screen recording with beautiful animations</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask davinci-resolve</code>
-          <p><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank">DaVinci Resolve</a> - Professional video editing and color grading</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask figma</code>
-          <p><a href="https://www.figma.com/" target="_blank">Figma</a> - Collaborative design tool for UI/UX</p>
-        </div>
-
-        <h4>Media Players</h4>
-        <div class="command-box">
-          <p>For video playback, use <a href="https://iina.io/" target="_blank">IINA</a> - Modern media player designed specifically for macOS</p>
-        </div>
-
-        <div class="command-box">
-          <p>For music, try <a href="https://github.com/th-ch/youtube-music" target="_blank">YouTube Music Desktop</a> - Unofficial YouTube Music app with additional features</p>
-        </div>
-
-        <h4>Security & Privacy</h4>
-        <div class="command-box">
-          <code>brew install --cask protonvpn</code>
-          <p><a href="https://protonvpn.com/" target="_blank">ProtonVPN</a> - Secure VPN service with strong privacy focus</p>
-        </div>
-
-        <div class="command-box">
-          <code>brew install --cask chatgpt</code>
-          <p><a href="https://openai.com/chatgpt/desktop" target="_blank">ChatGPT</a> - Official OpenAI ChatGPT desktop app</p>
-        </div>
-
-        <div class="section-separator"></div>
-
-        <h2>Terminal Setup with Oh My Zsh</h2>
-        
-        <h3>Step 1: Install Oh My Zsh</h3>
-        <p>Oh My Zsh is a framework for managing your Zsh configuration with <span class="highlight-cyan">tons of helpful features</span>.</p>
-        
-        <div class="command-box">
-          <code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code>
-        </div>
-
-        <h3>Step 2: Install Powerlevel10k Theme</h3>
-        <p>The most powerful and customizable Zsh theme:</p>
-        
-        <div class="command-box">
-          <code>git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</code>
-        </div>
-        
-        <p>Then edit your <code>~/.zshrc</code>:</p>
-        <div class="command-box">
-          <code>nano ~/.zshrc</code>
-          <p>Change the theme line to:</p>
-          <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code>
-        </div>
-
-        <h3>Step 3: Install Essential Zsh Plugins</h3>
-        
-        <h4>zsh-autosuggestions</h4>
-        <p>Suggests commands as you type based on your history:</p>
-        <div class="command-box">
-          <code>git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions</code>
-        </div>
-
-        <h4>zsh-syntax-highlighting</h4>
-        <p>Provides syntax highlighting for your shell commands:</p>
-        <div class="command-box">
-          <code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting</code>
-        </div>
-
-        <h4>zsh-fast-syntax-highlighting</h4>
-        <p>Faster and more feature-rich syntax highlighting:</p>
-        <div class="command-box">
-          <code>git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting</code>
-        </div>
-
-        <h4>zsh-autocomplete</h4>
-        <p>Real-time auto-completion as you type:</p>
-        <div class="command-box">
-          <code>git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete</code>
-        </div>
-
-        <h4>Enabling the Plugins</h4>
-        <p>Edit your <code>~/.zshrc</code> file and update the plugins line:</p>
-        <div class="command-box">
-          <code>nvim ~/.zshrc</code>
-          <p>Find the line that says <code>plugins=(git)</code> and replace it with:</p>
-          <code>plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)</code>
-        </div>
-        
-        <p>Apply the changes:</p>
-        <div class="command-box">
-          <code>source ~/.zshrc</code>
-        </div>
-
-        <div class="command-box">
-          <p><strong>Configuration Wizard:</strong> After restarting your terminal, Powerlevel10k will run a configuration wizard. Choose options that match your aesthetic preferences!</p>
-        </div>
-
-        <h3>Step 4: Advanced Terminal Tools Setup</h3>
-        
-        <h4>Initialize Shell History with Atuin</h4>
-        <p>Set up magical shell history sync:</p>
-        <div class="command-box">
-          <code>atuin import auto</code>
-          <p>Imports your existing shell history</p>
-        </div>
-
-        <h4>Configure Zoxide for Smart Navigation</h4>
-        <p>Initialize zoxide in your shell:</p>
-        <div class="command-box">
-          <code>echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc</code>
-          <p>Now use <code>z</code> instead of <code>cd</code> - it remembers your most used directories</p>
-        </div>
-
-        <h4>Setup FZF Integration</h4>
-        <p>Add fuzzy finding to your shell:</p>
-        <div class="command-box">
-          <code>$(brew --prefix)/opt/fzf/install</code>
-          <p>Enables Ctrl+R for history search and Ctrl+T for file search</p>
-        </div>
-
-        <h4>macOS UI Customization (Advanced)</h4>
-        <p>For power users who want to customize the macOS interface:</p>
-        <ul>
-          <li><a href="https://github.com/FelixKratz/JankyBorders" target="_blank"><strong>JankyBorders</strong></a> - Add colored borders around windows</li>
-          <li><a href="https://github.com/FelixKratz/SketchyBar" target="_blank"><strong>SketchyBar</strong></a> - Highly customizable status bar</li>
-          <li><a href="https://github.com/Jean-Tinland/simple-bar" target="_blank"><strong>Simple Bar</strong></a> - Alternative clean status bar</li>
-          <li><a href="https://github.com/junegunn/fzf-git.sh" target="_blank"><strong>fzf-git</strong></a> - Enhanced Git workflows with fuzzy finding</li>
-        </ul>
-
-        <div class="section-separator"></div>
-
-        <h2>iTerm2 Configuration</h2>
-        
-        <h3>Essential iTerm2 Settings</h3>
-        <p>Configure iTerm2 for the optimal terminal experience:</p>
-
-        <h4>Enable Natural Text Editing</h4>
-        <div class="command-box">
-          <code>iTerm2 → Preferences → Profiles → Keys → Key Mappings</code>
-          <p>Set up natural text editing shortcuts for smooth cursor movement</p>
-        </div>
-
-        <h4>Transparency and Blur Settings</h4>
-        <div class="command-box">
-          <code>iTerm2 → Preferences → Profiles → Window</code>
-          <p>Set Transparency to <strong>26</strong> and Blur to <strong>32</strong> for the perfect aesthetic</p>
-        </div>
-
-        <h3>Auto-Activate Python Virtual Environments</h3>
-        <p>Add this to your <code>~/.zshrc</code> for automatic virtual environment activation:</p>
-        
-        <pre><code># Auto-activate Python virtual environment if .env or .venv exists (no auto-deactivate)
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <a href="../../index.html" class="back-link">← Back to Home</a>
+      </nav>
+
+      <article class="blog-post">
+        <header class="post-header">
+          <div class="post-meta">
+            <span class="post-date">19 August 2025</span>
+            <span class="post-status">Just use NIX bro</span>
+          </div>
+          <h1 class="post-title">My macOS on Steroids</h1>
+          <div class="post-tags">
+            <span class="tag">macOS</span>
+            <span class="tag">setup</span>
+            <span class="tag">dotfiles</span>
+            <span class="tag">productivity</span>
+          </div>
+        </header>
+
+        <div class="post-content">
+          <p>
+            This is my almanac for setting up a new macOS machine to my
+            workflows.
+          </p>
+
+          <div class="section-separator"></div>
+
+          <h2>Initial System Setup</h2>
+
+          <h3>Step 1: Basic macOS Configuration</h3>
+          <p>
+            Before installing any applications, let's configure macOS for
+            optimal productivity:
+          </p>
+
+          <div class="command-box">
+            <p><span class="step-number">1</span>Enable tap to click:</p>
+            <code
+              >System Settings → Trackpad → Point & Click → Tap to click</code
+            >
+          </div>
+
+          <div class="command-box">
+            <p><span class="step-number">2</span>Speed up key repeat rate:</p>
+            <code>defaults write -g InitialKeyRepeat -int 15</code><br />
+            <code>defaults write -g KeyRepeat -int 2</code>
+          </div>
+
+          <div class="command-box">
+            <p>
+              <span class="step-number">3</span>Show hidden files in Finder:
+            </p>
+            <code>defaults write com.apple.finder AppleShowAllFiles YES</code
+            ><br />
+            <code>killall Finder</code>
+          </div>
+
+          <div class="command-box">
+            <p>
+              <span class="step-number">4</span>Disable press-and-hold for
+              accented characters:
+            </p>
+            <code>defaults write -g ApplePressAndHoldEnabled -bool false</code>
+          </div>
+
+          <div class="section-separator"></div>
+
+          <h2>Wallpapers & Visual Setup</h2>
+
+          <h3>Desktop Wallpapers</h3>
+          <p>My collection of desktop wallpapers:</p>
+
+          <img
+            src="assets/dracula_mac_wallpaper.png"
+            alt="Dracula Mac Wallpaper"
+          />
+          <img src="assets/Wallpaper.jpg" alt="Main Wallpaper" />
+          <img
+            src="assets/satoru-gojo-suguru-3840x2160-16373.png"
+            alt="Gojo Suguru Wallpaper"
+          />
+
+          <h3>Twitter Banners</h3>
+          <p>For your Twitter account banners and social media:</p>
+
+          <img src="assets/GwUsUFvXsAEZf83.jpg" alt="Twitter Banner" />
+          <img src="assets/IMG_1514.jpeg" alt="Social Media Banner" />
+          <img src="assets/IMG_1515.png" alt="Alternative Banner" />
+          <img src="assets/IMG_1680.jpeg" alt="Banner Option" />
+
+          <h3>Profile Pictures</h3>
+          <p>For consistency across all your accounts:</p>
+
+          <div style="text-align: center">
+            <img
+              src="assets/Group_2.png"
+              alt="Profile Picture"
+              style="max-width: 200px; margin: 0 0.5rem"
+            />
+            <img
+              src="assets/1689993698983_1.png"
+              alt="Alternative Profile Picture"
+              style="max-width: 200px; margin: 0 0.5rem"
+            />
+            <img
+              src="assets/profile.png"
+              alt="Main Profile Picture"
+              style="max-width: 200px; margin: 0 0.5rem"
+            />
+          </div>
+
+          <div class="section-separator"></div>
+
+          <h2>Installing Homebrew & Core Applications</h2>
+
+          <h3>Step 1: Install Homebrew</h3>
+          <p>
+            Homebrew is the
+            <span class="highlight-green">essential package manager</span> for
+            macOS. It simplifies installing and managing applications.
+          </p>
+
+          <div class="command-box">
+            <p>Run this command in Terminal:</p>
+            <code
+              >/bin/bash -c "$(curl -fsSL
+              https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code
+            >
+          </div>
+
+          <p>After installation, add Homebrew to your PATH:</p>
+          <div class="command-box">
+            <code
+              >echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>
+              ~/.zprofile</code
+            ><br />
+            <code>eval "$(/opt/homebrew/bin/brew shellenv)"</code>
+          </div>
+
+          <h3>Step 2: Install Essential Applications</h3>
+          <p>
+            Now let's install all the applications you'll need. I've organized
+            them by category with detailed explanations:
+          </p>
+
+          <h3>One-Command Installation</h3>
+          <p>Install everything at once with this single command:</p>
+
+          <div class="command-box">
+            <code
+              >brew install node python tmux git uv zoxide atuin yt-dlp fzf eza
+              \ --cask zen-browser superkey protonvpn notion libreoffice ghostty
+              iterm2 \ bettertouchtool postman screen-studio flux forklift fork
+              davinci-resolve \ discord cursor cleanshot chatgpt aldente alfred
+              appcleaner rectangle</code
+            >
+          </div>
+
+          <h4>Core Command Line Tools</h4>
+          <div class="command-box">
+            <code>brew install node</code>
+            <p>
+              <a href="https://nodejs.org/" target="_blank">Node.js</a> -
+              JavaScript runtime for server-side development
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install python</code>
+            <p>
+              <a href="https://www.python.org/" target="_blank">Python</a> -
+              Essential programming language for scripting and development
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install tmux</code>
+            <p>
+              <a href="https://github.com/tmux/tmux" target="_blank">tmux</a> -
+              Terminal multiplexer for managing multiple terminal sessions
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install git</code>
+            <p>
+              <a href="https://git-scm.com/" target="_blank">Git</a> - Version
+              control system (brew version is more up-to-date than macOS
+              default)
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install uv</code>
+            <p>
+              <a href="https://docs.astral.sh/uv/" target="_blank">uv</a> -
+              Extremely fast Python package and project manager, written in Rust
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install zoxide</code>
+            <p>
+              <a href="https://github.com/ajeetdsouza/zoxide" target="_blank"
+                >zoxide</a
+              >
+              - Smarter cd command that remembers your most used directories
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install atuin</code>
+            <p>
+              <a href="https://docs.atuin.sh/" target="_blank">Atuin</a> -
+              Magical shell history with sync across machines
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install yt-dlp</code>
+            <p>
+              <a href="https://github.com/yt-dlp/yt-dlp" target="_blank"
+                >yt-dlp</a
+              >
+              - Download videos/images from YouTube and 1000+ other sites
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install fzf</code>
+            <p>
+              <a href="https://github.com/junegunn/fzf" target="_blank">fzf</a>
+              - Command-line fuzzy finder for files, history, and processes
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install eza</code>
+            <p>
+              <a href="https://github.com/eza-community/eza" target="_blank"
+                >eza</a
+              >
+              - Modern, maintained replacement for ls with colors and icons
+            </p>
+          </div>
+
+          <h4>Browsers</h4>
+          <div class="command-box">
+            <code>brew install --cask zen-browser</code>
+            <p>
+              <a href="https://zen-browser.app/" target="_blank">Zen Browser</a>
+              - Privacy-focused browser with excellent customization
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask google-chrome</code>
+            <p>
+              <a href="https://www.google.com/chrome/" target="_blank"
+                >Chrome</a
+              >
+              - Primary browser with excellent DevTools
+            </p>
+          </div>
+
+          <h4>Development Tools</h4>
+          <div class="command-box">
+            <code>brew install --cask cursor</code>
+            <p>
+              <a href="https://cursor.sh/" target="_blank">Cursor</a> -
+              AI-powered code editor built on VSCode, perfect for AI-assisted
+              development
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask postman</code>
+            <p>
+              <a href="https://www.postman.com/" target="_blank">Postman</a> -
+              API development and testing platform with collaboration features
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask ghostty</code>
+            <p>
+              <a href="https://ghostty.org/" target="_blank">Ghostty</a> - Fast,
+              feature-rich terminal emulator
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask fork</code>
+            <p>
+              <a href="https://git-fork.com/" target="_blank">Fork</a> -
+              Beautiful Git client with intuitive interface
+            </p>
+          </div>
+
+          <h4>Productivity & System Tools</h4>
+          <div class="command-box">
+            <code>brew install --cask notion</code>
+            <p>
+              <a href="https://www.notion.so/" target="_blank">Notion</a> -
+              All-in-one workspace for notes, documents, and project management
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask alfred</code>
+            <p>
+              <a href="https://www.alfredapp.com/" target="_blank">Alfred</a> -
+              Powerful productivity app with workflows and clipboard history
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask bettertouchtool</code>
+            <p>
+              <a href="https://folivora.ai/" target="_blank">BetterTouchTool</a>
+              - Customize trackpad gestures, keyboard shortcuts, and Touch Bar
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask superkey</code>
+            <p>
+              <a href="https://superkey.app/" target="_blank">SuperKey</a> -
+              Transform your caps lock into a powerful productivity key
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask aldente</code>
+            <p>
+              <a href="https://apphousekitchen.com/" target="_blank">AlDente</a>
+              - Battery health management to extend MacBook battery life
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask appcleaner</code>
+            <p>
+              <a href="https://freemacsoft.net/appcleaner/" target="_blank"
+                >AppCleaner</a
+              >
+              - Thoroughly uninstall applications and their associated files
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask flux</code>
+            <p>
+              <a href="https://justgetflux.com/" target="_blank">f.lux</a> -
+              Adjust screen color temperature based on time of day
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask rectangle</code>
+            <p>
+              <a href="https://rectangleapp.com/" target="_blank">Rectangle</a>
+              - Window management made simple with keyboard shortcuts
+            </p>
+          </div>
+
+          <h4>File Management</h4>
+          <div class="command-box">
+            <code>brew install --cask forklift</code>
+            <p>
+              <a href="https://binarynights.com/" target="_blank">ForkLift</a> -
+              Advanced file manager and FTP client
+            </p>
+          </div>
+
+          <h4>Office & Documents</h4>
+          <div class="command-box">
+            <code>brew install --cask libreoffice</code>
+            <p>
+              <a href="https://www.libreoffice.org/" target="_blank"
+                >LibreOffice</a
+              >
+              - Free and powerful office suite
+            </p>
+          </div>
+
+          <div class="command-box">
+            <p>
+              Don't forget to set up
+              <a href="https://www.notion.com/product/calendar" target="_blank"
+                >Notion Calendar</a
+              >
+              and
+              <a href="https://www.notion.com/product/mail" target="_blank"
+                >Notion Mail</a
+              >
+              for seamless integration with your workspace.
+            </p>
+          </div>
+
+          <div class="command-box">
+            <p>
+              For PDF editing, download
+              <a href="https://www.pdfgear.com/" target="_blank">PDF Gear</a> -
+              excellent free PDF editor with annotation tools.
+            </p>
+          </div>
+
+          <h4>Communication</h4>
+          <div class="command-box">
+            <code>brew install --cask discord</code>
+            <p>
+              <a href="https://discord.com/" target="_blank">Discord</a> -
+              Community and team communication
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask whatsapp</code>
+            <p>
+              <a href="https://www.whatsapp.com/" target="_blank">WhatsApp</a> -
+              Popular messaging platform
+            </p>
+          </div>
+
+          <h4>Creative & Media Tools</h4>
+          <div class="command-box">
+            <code>brew install --cask cleanshot</code>
+            <p>
+              <a href="https://cleanshot.com/" target="_blank">CleanShot X</a> -
+              Advanced screenshot and screen recording tool
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask screen-studio</code>
+            <p>
+              <a href="https://www.screen.studio/" target="_blank"
+                >Screen Studio</a
+              >
+              - Professional screen recording with beautiful animations
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask davinci-resolve</code>
+            <p>
+              <a
+                href="https://www.blackmagicdesign.com/products/davinciresolve"
+                target="_blank"
+                >DaVinci Resolve</a
+              >
+              - Professional video editing and color grading
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask figma</code>
+            <p>
+              <a href="https://www.figma.com/" target="_blank">Figma</a> -
+              Collaborative design tool for UI/UX
+            </p>
+          </div>
+
+          <h4>Media Players</h4>
+          <div class="command-box">
+            <p>
+              For video playback, use
+              <a href="https://iina.io/" target="_blank">IINA</a> - Modern media
+              player designed specifically for macOS
+            </p>
+          </div>
+
+          <div class="command-box">
+            <p>
+              For music, try
+              <a href="https://github.com/th-ch/youtube-music" target="_blank"
+                >YouTube Music Desktop</a
+              >
+              - Unofficial YouTube Music app with additional features
+            </p>
+          </div>
+
+          <h4>Security & Privacy</h4>
+          <div class="command-box">
+            <code>brew install --cask protonvpn</code>
+            <p>
+              <a href="https://protonvpn.com/" target="_blank">ProtonVPN</a> -
+              Secure VPN service with strong privacy focus
+            </p>
+          </div>
+
+          <div class="command-box">
+            <code>brew install --cask chatgpt</code>
+            <p>
+              <a href="https://openai.com/chatgpt/desktop" target="_blank"
+                >ChatGPT</a
+              >
+              - Official OpenAI ChatGPT desktop app
+            </p>
+          </div>
+
+          <div class="section-separator"></div>
+
+          <h2>Terminal Setup with Oh My Zsh</h2>
+
+          <h3>Step 1: Install Oh My Zsh</h3>
+          <p>
+            Oh My Zsh is a framework for managing your Zsh configuration with
+            <span class="highlight-cyan">tons of helpful features</span>.
+          </p>
+
+          <div class="command-box">
+            <code
+              >sh -c "$(curl -fsSL
+              https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code
+            >
+          </div>
+
+          <h3>Step 2: Install Powerlevel10k Theme</h3>
+          <p>The most powerful and customizable Zsh theme:</p>
+
+          <div class="command-box">
+            <code
+              >git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
+              ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</code
+            >
+          </div>
+
+          <p>Then edit your <code>~/.zshrc</code>:</p>
+          <div class="command-box">
+            <code>nano ~/.zshrc</code>
+            <p>Change the theme line to:</p>
+            <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code>
+          </div>
+
+          <h3>Step 3: Install Essential Zsh Plugins</h3>
+
+          <h4>zsh-autosuggestions</h4>
+          <p>Suggests commands as you type based on your history:</p>
+          <div class="command-box">
+            <code
+              >git clone https://github.com/zsh-users/zsh-autosuggestions.git
+              $ZSH_CUSTOM/plugins/zsh-autosuggestions</code
+            >
+          </div>
+
+          <h4>zsh-syntax-highlighting</h4>
+          <p>Provides syntax highlighting for your shell commands:</p>
+          <div class="command-box">
+            <code
+              >git clone
+              https://github.com/zsh-users/zsh-syntax-highlighting.git
+              $ZSH_CUSTOM/plugins/zsh-syntax-highlighting</code
+            >
+          </div>
+
+          <h4>zsh-fast-syntax-highlighting</h4>
+          <p>Faster and more feature-rich syntax highlighting:</p>
+          <div class="command-box">
+            <code
+              >git clone
+              https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+              ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting</code
+            >
+          </div>
+
+          <h4>zsh-autocomplete</h4>
+          <p>Real-time auto-completion as you type:</p>
+          <div class="command-box">
+            <code
+              >git clone --depth 1 --
+              https://github.com/marlonrichert/zsh-autocomplete.git
+              $ZSH_CUSTOM/plugins/zsh-autocomplete</code
+            >
+          </div>
+
+          <h4>Enabling the Plugins</h4>
+          <p>
+            Edit your <code>~/.zshrc</code> file and update the plugins line:
+          </p>
+          <div class="command-box">
+            <code>nvim ~/.zshrc</code>
+            <p>
+              Find the line that says <code>plugins=(git)</code> and replace it
+              with:
+            </p>
+            <code
+              >plugins=(git zsh-autosuggestions zsh-syntax-highlighting
+              fast-syntax-highlighting zsh-autocomplete)</code
+            >
+          </div>
+
+          <p>Apply the changes:</p>
+          <div class="command-box">
+            <code>source ~/.zshrc</code>
+          </div>
+
+          <div class="command-box">
+            <p>
+              <strong>Configuration Wizard:</strong> After restarting your
+              terminal, Powerlevel10k will run a configuration wizard. Choose
+              options that match your aesthetic preferences!
+            </p>
+          </div>
+
+          <h3>Step 4: Advanced Terminal Tools Setup</h3>
+
+          <h4>Initialize Shell History with Atuin</h4>
+          <p>Set up magical shell history sync:</p>
+          <div class="command-box">
+            <code>atuin import auto</code>
+            <p>Imports your existing shell history</p>
+          </div>
+
+          <h4>Configure Zoxide for Smart Navigation</h4>
+          <p>Initialize zoxide in your shell:</p>
+          <div class="command-box">
+            <code>echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc</code>
+            <p>
+              Now use <code>z</code> instead of <code>cd</code> - it remembers
+              your most used directories
+            </p>
+          </div>
+
+          <h4>Setup FZF Integration</h4>
+          <p>Add fuzzy finding to your shell:</p>
+          <div class="command-box">
+            <code>$(brew --prefix)/opt/fzf/install</code>
+            <p>Enables Ctrl+R for history search and Ctrl+T for file search</p>
+          </div>
+
+          <h4>macOS UI Customization (Advanced)</h4>
+          <p>For power users who want to customize the macOS interface:</p>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/FelixKratz/JankyBorders"
+                target="_blank"
+                ><strong>JankyBorders</strong></a
+              >
+              - Add colored borders around windows
+            </li>
+            <li>
+              <a href="https://github.com/FelixKratz/SketchyBar" target="_blank"
+                ><strong>SketchyBar</strong></a
+              >
+              - Highly customizable status bar
+            </li>
+            <li>
+              <a
+                href="https://github.com/Jean-Tinland/simple-bar"
+                target="_blank"
+                ><strong>Simple Bar</strong></a
+              >
+              - Alternative clean status bar
+            </li>
+            <li>
+              <a href="https://github.com/junegunn/fzf-git.sh" target="_blank"
+                ><strong>fzf-git</strong></a
+              >
+              - Enhanced Git workflows with fuzzy finding
+            </li>
+          </ul>
+
+          <div class="section-separator"></div>
+
+          <h2>iTerm2 Configuration</h2>
+
+          <h3>Essential iTerm2 Settings</h3>
+          <p>Configure iTerm2 for the optimal terminal experience:</p>
+
+          <h4>Enable Natural Text Editing</h4>
+          <div class="command-box">
+            <code>iTerm2 → Preferences → Profiles → Keys → Key Mappings</code>
+            <p>
+              Set up natural text editing shortcuts for smooth cursor movement
+            </p>
+          </div>
+
+          <h4>Transparency and Blur Settings</h4>
+          <div class="command-box">
+            <code>iTerm2 → Preferences → Profiles → Window</code>
+            <p>
+              Set Transparency to <strong>26</strong> and Blur to
+              <strong>32</strong> for the perfect aesthetic
+            </p>
+          </div>
+
+          <h3>Auto-Activate Python Virtual Environments</h3>
+          <p>
+            Add this to your <code>~/.zshrc</code> for automatic virtual
+            environment activation:
+          </p>
+
+          <pre><code># Auto-activate Python virtual environment if .env or .venv exists (no auto-deactivate)
 
 function auto_activate_env() {
   local dir=$PWD
@@ -814,247 +1102,378 @@ case ":$PATH:" in
 esac
 # pnpm end</code></pre>
 
-        <div class="section-separator"></div>
+          <div class="section-separator"></div>
 
-        <h2>Hyper Key Setup & Macros</h2>
-        
-        <h3>Ultimate Productivity Shortcuts</h3>
-        <p>Using BetterTouchTool's Hyper Key (⌘⌥⌃⇧). <span class="highlight-green">Never use your eyes for navigation (vision search is slow), use your muscle memory</span>:</p>
+          <h2>Hyper Key Setup & Macros</h2>
 
-        <div class="command-box">
-          <p>Configure these shortcuts in BetterTouchTool:</p>
-          <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
-            <li><strong>Hyper + ←</strong> → Act as Hyper Key</li>
-            <li><strong>Hyper + Q</strong> → Launch Zen Browser</li>
-            <li><strong>Hyper + W</strong> → Launch Cursor</li>
-            <li><strong>Hyper + E</strong> → Launch iTerm</li>
-            <li><strong>Hyper + R</strong> → Launch Notion</li>
-            <li><strong>Hyper + T</strong> → Launch WhatsApp</li>
-            <li><strong>Hyper + F</strong> → Launch Finder</li>
-            <li><strong>Hyper + D</strong> → Launch Discord</li>
-            <li><strong>Hyper + Y</strong> → Launch YouTube Music</li>
-            <li><strong>Hyper + P</strong> → Launch Postman</li>
-            <li><strong>Hyper + M</strong> → Launch MongoDB Compass</li>
-            <li><strong>Hyper + S</strong> → Launch ChatGPT</li>
-            <li><strong>Hyper + 1-5</strong> → Switch to Desktop 1-5</li>
+          <h3>Ultimate Productivity Shortcuts</h3>
+          <p>
+            Using BetterTouchTool's Hyper Key (⌘⌥⌃⇧).
+            <span class="highlight-green"
+              >Never use your eyes for navigation (vision search is slow), use
+              your muscle memory</span
+            >:
+          </p>
+
+          <div class="command-box">
+            <p>Configure these shortcuts in BetterTouchTool:</p>
+            <ul style="list-style: none; padding-left: 0; margin: 1rem 0">
+              <li><strong>Hyper + ←</strong> → Act as Hyper Key</li>
+              <li><strong>Hyper + Q</strong> → Launch Zen Browser</li>
+              <li><strong>Hyper + W</strong> → Launch Cursor</li>
+              <li><strong>Hyper + E</strong> → Launch iTerm</li>
+              <li><strong>Hyper + R</strong> → Launch Notion</li>
+              <li><strong>Hyper + T</strong> → Launch WhatsApp</li>
+              <li><strong>Hyper + F</strong> → Launch Finder</li>
+              <li><strong>Hyper + D</strong> → Launch Discord</li>
+              <li><strong>Hyper + Y</strong> → Launch YouTube Music</li>
+              <li><strong>Hyper + P</strong> → Launch Postman</li>
+              <li><strong>Hyper + M</strong> → Launch MongoDB Compass</li>
+              <li><strong>Hyper + S</strong> → Launch ChatGPT</li>
+              <li><strong>Hyper + 1-5</strong> → Switch to Desktop 1-5</li>
+            </ul>
+          </div>
+
+          <div class="command-box">
+            <p>
+              <strong>Tip:</strong> The Hyper Key eliminates conflicts with
+              existing shortcuts while giving you instant access to any app.
+              It's the most efficient way to navigate your Mac!
+            </p>
+          </div>
+
+          <div class="section-separator"></div>
+
+          <h2>Development Environment Setup</h2>
+
+          <h3>Node.js & npm</h3>
+          <p>
+            Install Node Version Manager (nvm) for managing Node.js versions:
+          </p>
+          <div class="command-box">
+            <code
+              >curl -o-
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh |
+              bash</code
+            >
+          </div>
+
+          <p>Install the latest LTS Node.js:</p>
+          <div class="command-box">
+            <code>nvm install --lts</code><br />
+            <code>nvm use --lts</code><br />
+            <code>nvm alias default node</code>
+          </div>
+
+          <h3>Python Environment</h3>
+          <p>Install pyenv for Python version management:</p>
+          <div class="command-box">
+            <code>brew install pyenv</code><br />
+            <code>echo 'eval "$(pyenv init -)"' >> ~/.zshrc</code><br />
+            <code>source ~/.zshrc</code>
+          </div>
+
+          <p>Install Python:</p>
+          <div class="command-box">
+            <code>pyenv install 3.11.0</code><br />
+            <code>pyenv global 3.11.0</code>
+          </div>
+
+          <h3>Git Configuration</h3>
+          <p>Set up your Git identity and preferences:</p>
+          <div class="command-box">
+            <code>git config --global user.name "Your Name"</code><br />
+            <code>git config --global user.email "your.email@example.com"</code
+            ><br />
+            <code>git config --global init.defaultBranch main</code><br />
+            <code>git config --global pull.rebase true</code>
+          </div>
+
+          <h3>SSH Keys for GitHub</h3>
+          <p>Generate and add SSH keys for secure GitHub access:</p>
+          <div class="command-box">
+            <code>ssh-keygen -t ed25519 -C "your.email@example.com"</code><br />
+            <code>eval "$(ssh-agent -s)"</code><br />
+            <code>ssh-add ~/.ssh/id_ed25519</code><br />
+            <code>pbcopy < ~/.ssh/id_ed25519.pub</code>
+            <p>Now go to GitHub → Settings → SSH Keys and paste</p>
+          </div>
+
+          <div class="section-separator"></div>
+
+          <div class="section-separator"></div>
+
+          <h2>System Maintenance</h2>
+
+          <h3>Regular Updates</h3>
+          <p>Keep your system and applications up to date:</p>
+          <div class="command-box">
+            <code># Update Homebrew and all packages</code><br />
+            <code>brew update && brew upgrade</code><br /><br />
+            <code># Update Oh My Zsh</code><br />
+            <code>omz update</code><br /><br />
+            <code># Update npm packages globally</code><br />
+            <code>npm update -g</code>
+          </div>
+
+          <div class="command-box">
+            <p>
+              <strong>Cloud Backup:</strong> Additionally, use iCloud to sync
+              your important folders.
+            </p>
+          </div>
+
+          <div class="section-separator"></div>
+
+          <h2>Essential Extensions & Productivity Tools</h2>
+
+          <h3>Raycast Extensions</h3>
+          <p>
+            Supercharge your macOS workflow with these
+            <span class="highlight-cyan">must-have Raycast extensions</span>:
+          </p>
+          <ul>
+            <li><strong>GitHub</strong> - Search repos, issues, and PRs</li>
+            <li><strong>Linear</strong> - Task management integration</li>
+            <li>
+              <strong>Kill Process</strong> - Quickly terminate hanging
+              processes
+            </li>
+            <li>
+              <strong>Clipboard History</strong> - Access your clipboard history
+            </li>
+            <li>
+              <strong>Window Management</strong> - Alternative to Rectangle
+            </li>
+            <li><strong>Speedtest</strong> - Quick internet speed tests</li>
+            <li><strong>Color Picker</strong> - Pick colors from anywhere</li>
           </ul>
-        </div>
 
-        <div class="command-box">
-          <p><strong>Tip:</strong> The Hyper Key eliminates conflicts with existing shortcuts while giving you instant access to any app. It's the most efficient way to navigate your Mac!</p>
-        </div>
+          <h3>VS Code Extensions</h3>
+          <p>
+            These are some very useful
+            <span class="highlight-purple">VScode Extensions</span>:
+          </p>
 
-        <div class="section-separator"></div>
+          <h3>Core Productivity Extensions</h3>
+          <ul>
+            <li>
+              <strong>All Autocomplete</strong> - Enhanced autocomplete across
+              all files
+            </li>
+            <li>
+              <strong>AutoClose Find</strong> - Automatically close find dialog
+              when you stop typing
+            </li>
+            <li>
+              <strong>Better Comments</strong> - Styled comments with alerts,
+              todos, and highlights
+            </li>
+            <li>
+              <strong>Code Spell Checker</strong> - Catch spelling errors in
+              your code
+            </li>
+            <li>
+              <strong>Color Highlighter</strong> - Highlight color values in
+              your code
+            </li>
+            <li>
+              <strong>Error Lens</strong> - See errors and warnings inline with
+              your code
+            </li>
+            <li>
+              <strong>Path Intellisense</strong> - Autocomplete for file paths
+            </li>
+            <li>
+              <strong>Todo Highlight</strong> - Highlight TODO, FIXME comments
+            </li>
+          </ul>
 
-        <h2>Development Environment Setup</h2>
-        
-        <h3>Node.js & npm</h3>
-        <p>Install Node Version Manager (nvm) for managing Node.js versions:</p>
-        <div class="command-box">
-          <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash</code>
-        </div>
-        
-        <p>Install the latest LTS Node.js:</p>
-        <div class="command-box">
-          <code>nvm install --lts</code><br>
-          <code>nvm use --lts</code><br>
-          <code>nvm alias default node</code>
-        </div>
+          <h3>Theme & Icons</h3>
+          <ul>
+            <li>
+              <strong>Dracula Theme Official</strong> - The perfect dark theme
+              for long coding sessions
+            </li>
+            <li>
+              <strong>Material Icon Theme</strong> - Beautiful file and folder
+              icons
+            </li>
+          </ul>
 
-        <h3>Python Environment</h3>
-        <p>Install pyenv for Python version management:</p>
-        <div class="command-box">
-          <code>brew install pyenv</code><br>
-          <code>echo 'eval "$(pyenv init -)"' >> ~/.zshrc</code><br>
-          <code>source ~/.zshrc</code>
-        </div>
-        
-        <p>Install Python:</p>
-        <div class="command-box">
-          <code>pyenv install 3.11.0</code><br>
-          <code>pyenv global 3.11.0</code>
-        </div>
+          <h3>Git Integration</h3>
+          <ul>
+            <li>
+              <strong>GitLens</strong> - Supercharge Git capabilities with blame
+              annotations
+            </li>
+            <li>
+              <strong>Git History</strong> - View git log, file history, and
+              compare branches
+            </li>
+          </ul>
 
-        <h3>Git Configuration</h3>
-        <p>Set up your Git identity and preferences:</p>
-        <div class="command-box">
-          <code>git config --global user.name "Your Name"</code><br>
-          <code>git config --global user.email "your.email@example.com"</code><br>
-          <code>git config --global init.defaultBranch main</code><br>
-          <code>git config --global pull.rebase true</code>
-        </div>
+          <h3>Code Quality & Formatting</h3>
+          <ul>
+            <li><strong>ESLint</strong> - JavaScript/TypeScript linting</li>
+            <li>
+              <strong>Prettier - Code Formatter</strong> - Opinionated code
+              formatter
+            </li>
+          </ul>
 
-        <h3>SSH Keys for GitHub</h3>
-        <p>Generate and add SSH keys for secure GitHub access:</p>
-        <div class="command-box">
-          <code>ssh-keygen -t ed25519 -C "your.email@example.com"</code><br>
-          <code>eval "$(ssh-agent -s)"</code><br>
-          <code>ssh-add ~/.ssh/id_ed25519</code><br>
-          <code>pbcopy < ~/.ssh/id_ed25519.pub</code>
-          <p>Now go to GitHub → Settings → SSH Keys and paste</p>
-        </div>
+          <h3>Python Development</h3>
+          <ul>
+            <li><strong>Python</strong> - Core Python language support</li>
+            <li>
+              <strong>Pylance</strong> - Fast, feature-rich Python language
+              server
+            </li>
+            <li>
+              <strong>Python Debugger</strong> - Debug Python code with
+              breakpoints
+            </li>
+            <li><strong>isort</strong> - Sort Python imports automatically</li>
+          </ul>
 
-        <div class="section-separator"></div>
+          <h3>Web Development</h3>
+          <ul>
+            <li>
+              <strong>Live Server</strong> - Launch local development server
+              with live reload
+            </li>
+          </ul>
 
-        <div class="section-separator"></div>
+          <h3>Data & Documentation</h3>
+          <ul>
+            <li>
+              <strong>Rainbow CSV</strong> - Highlight CSV files with colors
+            </li>
+            <li>
+              <strong>Markdown Preview Enhanced</strong> - Enhanced markdown
+              preview with math support
+            </li>
+          </ul>
 
-        <h2>System Maintenance</h2>
-        
-        <h3>Regular Updates</h3>
-        <p>Keep your system and applications up to date:</p>
-        <div class="command-box">
-          <code># Update Homebrew and all packages</code><br>
-          <code>brew update && brew upgrade</code><br><br>
-          <code># Update Oh My Zsh</code><br>
-          <code>omz update</code><br><br>
-          <code># Update npm packages globally</code><br>
-          <code>npm update -g</code>
-        </div>
+          <div class="section-separator"></div>
 
-        <div class="command-box">
-          <p><strong>Cloud Backup:</strong> Additionally, use iCloud to sync your important folders.</p>
-        </div>
+          <h2>Final Tips & Tricks</h2>
 
-        <div class="section-separator"></div>
+          <h3>Quick Look Enhancements</h3>
+          <p>Enhance Quick Look (spacebar preview) with plugins:</p>
+          <div class="command-box">
+            <code
+              >brew install --cask qlmarkdown qlstephen qlcolorcode
+              quicklook-json</code
+            >
+          </div>
 
-        <h2>Essential Extensions & Productivity Tools</h2>
-        
-        <h3>Raycast Extensions</h3>
-        <p>Supercharge your macOS workflow with these <span class="highlight-cyan">must-have Raycast extensions</span>:</p>
-        <ul>
-          <li><strong>GitHub</strong> - Search repos, issues, and PRs</li>
-          <li><strong>Linear</strong> - Task management integration</li>
-          <li><strong>Kill Process</strong> - Quickly terminate hanging processes</li>
-          <li><strong>Clipboard History</strong> - Access your clipboard history</li>
-          <li><strong>Window Management</strong> - Alternative to Rectangle</li>
-          <li><strong>Speedtest</strong> - Quick internet speed tests</li>
-          <li><strong>Color Picker</strong> - Pick colors from anywhere</li>
-        </ul>
+          <h3>Touch ID for sudo</h3>
+          <p>Enable Touch ID for sudo commands:</p>
+          <div class="command-box">
+            <code>sudo nano /etc/pam.d/sudo</code>
+            <p>Add this line at the top:</p>
+            <code>auth sufficient pam_tid.so</code>
+          </div>
 
-        <h3>VS Code Extensions</h3>
-        <p>These are some very useful <span class="highlight-purple">VScode Extensions</span>:</p>
+          <h3>Show Path Bar in Finder</h3>
+          <div class="command-box">
+            <code>defaults write com.apple.finder ShowPathbar -bool true</code>
+          </div>
 
-        <h3>Core Productivity Extensions</h3>
-        <ul>
-          <li><strong>All Autocomplete</strong> - Enhanced autocomplete across all files</li>
-          <li><strong>AutoClose Find</strong> - Automatically close find dialog when you stop typing</li>
-          <li><strong>Better Comments</strong> - Styled comments with alerts, todos, and highlights</li>
-          <li><strong>Code Spell Checker</strong> - Catch spelling errors in your code</li>
-          <li><strong>Color Highlighter</strong> - Highlight color values in your code</li>
-          <li><strong>Error Lens</strong> - See errors and warnings inline with your code</li>
-          <li><strong>Path Intellisense</strong> - Autocomplete for file paths</li>
-          <li><strong>Todo Highlight</strong> - Highlight TODO, FIXME comments</li>
-        </ul>
+          <h3>Faster Dock Auto-Hide</h3>
+          <div class="command-box">
+            <code>defaults write com.apple.dock autohide-delay -float 0</code
+            ><br />
+            <code
+              >defaults write com.apple.dock autohide-time-modifier -float
+              0.4</code
+            ><br />
+            <code>killall Dock</code>
+          </div>
 
-        <h3>Theme & Icons</h3>
-        <ul>
-          <li><strong>Dracula Theme Official</strong> - The perfect dark theme for long coding sessions</li>
-          <li><strong>Material Icon Theme</strong> - Beautiful file and folder icons</li>
-        </ul>
+          <h3>Paste Without Formatting (Essential for Cursor)</h3>
+          <p>
+            Set up ⌘⇧V for paste without formatting - crucial when working in
+            Cursor:
+          </p>
+          <div class="command-box">
+            <code
+              >System Settings → Keyboard → Keyboard Shortcuts → App
+              Shortcuts</code
+            >
+            <p>Add shortcut for "Paste and Match Style" with ⌘⇧V</p>
+          </div>
 
-        <h3>Git Integration</h3>
-        <ul>
-          <li><strong>GitLens</strong> - Supercharge Git capabilities with blame annotations</li>
-          <li><strong>Git History</strong> - View git log, file history, and compare branches</li>
-        </ul>
+          <div style="text-align: center; margin: 1rem 0">
+            <img
+              src="assets/CleanShot_2025-08-02_at_16.32.482x.png"
+              alt="Paste without formatting setup"
+              style="max-width: 100%; border-radius: 0.5rem"
+            />
+          </div>
 
-        <h3>Code Quality & Formatting</h3>
-        <ul>
-          <li><strong>ESLint</strong> - JavaScript/TypeScript linting</li>
-          <li><strong>Prettier - Code Formatter</strong> - Opinionated code formatter</li>
-        </ul>
+          <p>
+            Reference:
+            <a
+              href="https://www.reddit.com/r/mac/comments/100v3qd/how_to_past_without_formatting_mac"
+              target="_blank"
+              >Reddit guide on paste without formatting</a
+            >
+          </p>
 
-        <h3>Python Development</h3>
-        <ul>
-          <li><strong>Python</strong> - Core Python language support</li>
-          <li><strong>Pylance</strong> - Fast, feature-rich Python language server</li>
-          <li><strong>Python Debugger</strong> - Debug Python code with breakpoints</li>
-          <li><strong>isort</strong> - Sort Python imports automatically</li>
-        </ul>
+          <h3>CleanShot X Auto Copy Setup</h3>
+          <p>
+            Enable auto copy to clipboard in CleanShot X for seamless screenshot
+            workflow:
+          </p>
+          <div class="command-box">
+            <code
+              >CleanShot X → Preferences → General → Auto copy to
+              clipboard</code
+            >
+            <p>Position the setting on the right side for easy access</p>
+          </div>
 
-        <h3>Web Development</h3>
-        <ul>
-          <li><strong>Live Server</strong> - Launch local development server with live reload</li>
-        </ul>
+          <h3>Remove Full Screen Shortcut Conflict</h3>
+          <p>
+            Disable ⌘⇧F full screen shortcut to avoid conflicts with code
+            search:
+          </p>
+          <div class="command-box">
+            <code
+              >System Settings → Keyboard → Keyboard Shortcuts → App
+              Shortcuts</code
+            >
+            <p>Find "Enter Full Screen" and remove ⌘⇧F shortcut</p>
+          </div>
 
-        <h3>Data & Documentation</h3>
-        <ul>
-          <li><strong>Rainbow CSV</strong> - Highlight CSV files with colors</li>
-          <li><strong>Markdown Preview Enhanced</strong> - Enhanced markdown preview with math support</li>
-        </ul>
+          <h3>VS Code Auto Close Tags</h3>
+          <p>
+            Enable automatic tag closing in VS Code for faster HTML/JSX editing:
+          </p>
+          <div class="command-box">
+            <code>VS Code → Settings → Search "auto close tags"</code>
+            <p>Enable "Auto Close Tags" setting</p>
+          </div>
 
-        <div class="section-separator"></div>
+          <h3>VS Code Block Highlighting & Bracket Colorization</h3>
+          <p>
+            Enhanced code readability with Dracula-themed bracket colors and
+            block highlighting:
+          </p>
+          <div class="command-box">
+            <p>
+              <strong>Step 1:</strong> Open Command Palette (⌘⇧P) →
+              "Preferences: Open User Settings (JSON)"
+            </p>
+            <p>
+              <strong>Step 2:</strong> Add this configuration for perfect
+              Dracula integration:
+            </p>
+          </div>
 
-        <h2>Final Tips & Tricks</h2>
-        
-        <h3>Quick Look Enhancements</h3>
-        <p>Enhance Quick Look (spacebar preview) with plugins:</p>
-        <div class="command-box">
-          <code>brew install --cask qlmarkdown qlstephen qlcolorcode quicklook-json</code>
-        </div>
-
-        <h3>Touch ID for sudo</h3>
-        <p>Enable Touch ID for sudo commands:</p>
-        <div class="command-box">
-          <code>sudo nano /etc/pam.d/sudo</code>
-          <p>Add this line at the top:</p>
-          <code>auth sufficient pam_tid.so</code>
-        </div>
-
-        <h3>Show Path Bar in Finder</h3>
-        <div class="command-box">
-          <code>defaults write com.apple.finder ShowPathbar -bool true</code>
-        </div>
-
-        <h3>Faster Dock Auto-Hide</h3>
-        <div class="command-box">
-          <code>defaults write com.apple.dock autohide-delay -float 0</code><br>
-          <code>defaults write com.apple.dock autohide-time-modifier -float 0.4</code><br>
-          <code>killall Dock</code>
-        </div>
-
-        <h3>Paste Without Formatting (Essential for Cursor)</h3>
-        <p>Set up ⌘⇧V for paste without formatting - crucial when working in Cursor:</p>
-        <div class="command-box">
-          <code>System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts</code>
-          <p>Add shortcut for "Paste and Match Style" with ⌘⇧V</p>
-        </div>
-        
-        <div style="text-align: center; margin: 1rem 0;">
-          <img src="assets/CleanShot_2025-08-02_at_16.32.482x.png" alt="Paste without formatting setup" style="max-width: 100%; border-radius: 0.5rem;">
-        </div>
-
-        <p>Reference: <a href="https://www.reddit.com/r/mac/comments/100v3qd/how_to_past_without_formatting_mac" target="_blank">Reddit guide on paste without formatting</a></p>
-
-        <h3>CleanShot X Auto Copy Setup</h3>
-        <p>Enable auto copy to clipboard in CleanShot X for seamless screenshot workflow:</p>
-        <div class="command-box">
-          <code>CleanShot X → Preferences → General → Auto copy to clipboard</code>
-          <p>Position the setting on the right side for easy access</p>
-        </div>
-
-        <h3>Remove Full Screen Shortcut Conflict</h3>
-        <p>Disable ⌘⇧F full screen shortcut to avoid conflicts with code search:</p>
-        <div class="command-box">
-          <code>System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts</code>
-          <p>Find "Enter Full Screen" and remove ⌘⇧F shortcut</p>
-        </div>
-
-        <h3>VS Code Auto Close Tags</h3>
-        <p>Enable automatic tag closing in VS Code for faster HTML/JSX editing:</p>
-        <div class="command-box">
-          <code>VS Code → Settings → Search "auto close tags"</code>
-          <p>Enable "Auto Close Tags" setting</p>
-        </div>
-
-        <h3>VS Code Block Highlighting & Bracket Colorization</h3>
-        <p>Enhanced code readability with Dracula-themed bracket colors and block highlighting:</p>
-        <div class="command-box">
-          <p><strong>Step 1:</strong> Open Command Palette (⌘⇧P) → "Preferences: Open User Settings (JSON)"</p>
-          <p><strong>Step 2:</strong> Add this configuration for perfect Dracula integration:</p>
-        </div>
-        
-        <pre><code>{
+          <pre><code>{
   // --- Block Highlighter core settings ---
   // Semi-transparent Dracula purple (#bd93f9) with ~10% alpha
   "blockHighlighter.background": [189, 147, 249, 0.10], // RGBA
@@ -1100,57 +1519,93 @@ esac
   }
 }</code></pre>
 
-        <div class="info-box">
-          <p><strong>What this does:</strong> Adds subtle purple block highlighting, colorized bracket pairs using Dracula colors, and enhanced code structure visibility while maintaining the beautiful Dracula aesthetic.</p>
+          <div class="info-box">
+            <p>
+              <strong>What this does:</strong> Adds subtle purple block
+              highlighting, colorized bracket pairs using Dracula colors, and
+              enhanced code structure visibility while maintaining the beautiful
+              Dracula aesthetic.
+            </p>
+          </div>
+
+          <div class="section-separator"></div>
+
+          <h2>Shortcuts to Live By</h2>
+
+          <p>
+            These keyboard shortcuts will
+            <span class="highlight-green">save you time</span>:
+          </p>
+
+          <h3>VS Code / Cursor Shortcuts</h3>
+          <div class="command-box">
+            <ul style="list-style: none; padding-left: 0">
+              <li>
+                <strong>⌘ + ←</strong> Collapse all folders in file explorer
+              </li>
+            </ul>
+          </div>
+
+          <div class="section-separator"></div>
+
+          <h2>Dracula Theme Setup</h2>
+
+          <p>
+            For complete Dracula theming across all your applications, check out
+            my detailed guide:
+          </p>
+
+          <div style="text-align: center; margin: 2rem 0">
+            <a
+              href="../dracula_fever/dracula_fever.html"
+              style="text-decoration: none"
+            >
+              <img
+                src="assets/dracula.webp"
+                alt="Dracula Theme Setup Guide"
+                style="
+                  max-width: 100%;
+                  border-radius: 0.5rem;
+                  border: 2px solid #bd93f9;
+                "
+              />
+              <div style="margin-top: 1rem">
+                <span
+                  style="color: #bd93f9; font-weight: 600; font-size: 1.1rem"
+                  >→ Complete Dracula Theming Guide</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <p>
+            This guide covers theming for VS Code, iTerm2, browsers with Stylus,
+            Discord, Obsidian, and more!
+          </p>
+
+          <div class="section-separator"></div>
+
+          <h2>Conclusion</h2>
+          <p>
+            This setup will give you a
+            <span class="highlight-purple"
+              >powerful, efficient, and beautiful</span
+            >
+            macOS development environment.
+          </p>
+
+          <blockquote>
+            "The best time to set up your development environment was when you
+            got your Mac. The second best time is now."
+          </blockquote>
         </div>
 
-        <div class="section-separator"></div>
-
-        <h2>Shortcuts to Live By</h2>
-        
-        <p>These keyboard shortcuts will <span class="highlight-green">save you time</span>:</p>
-
-        <h3>VS Code / Cursor Shortcuts</h3>
-        <div class="command-box">
-          <ul style="list-style: none; padding-left: 0;">
-            <li><strong>⌘ + ←</strong> Collapse all folders in file explorer</li>
-          </ul>
-        </div>
-
-        <div class="section-separator"></div>
-
-        <h2>Dracula Theme Setup</h2>
-        
-        <p>For complete Dracula theming across all your applications, check out my detailed guide:</p>
-
-        <div style="text-align: center; margin: 2rem 0;">
-          <a href="../dracula_fever/dracula_fever.html" style="text-decoration: none;">
-            <img src="assets/dracula.webp" alt="Dracula Theme Setup Guide" style="max-width: 100%; border-radius: 0.5rem; border: 2px solid #bd93f9;">
-            <div style="margin-top: 1rem;">
-              <span style="color: #bd93f9; font-weight: 600; font-size: 1.1rem;">→ Complete Dracula Theming Guide</span>
-            </div>
-          </a>
-        </div>
-
-        <p>This guide covers theming for VS Code, iTerm2, browsers with Stylus, Discord, Obsidian, and more!</p>
-
-        <div class="section-separator"></div>
-
-        <h2>Conclusion</h2>
-        <p>This setup will give you a <span class="highlight-purple">powerful, efficient, and beautiful</span> macOS development environment.</p>
-        
-        <blockquote>
-          "The best time to set up your development environment was when you got your Mac. The second best time is now."
-        </blockquote>
-      </div>
-
-      <footer class="post-footer">
-        <div class="post-navigation">
-          <a href="../../index.html" class="nav-link">← Back to Home</a>
-        </div>
-      </footer>
-    </article>
-  </div>
-</body>
-
+        <footer class="post-footer">
+          <div class="post-navigation">
+            <a href="../../index.html" class="nav-link">← Back to Home</a>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </body>
 </html>
