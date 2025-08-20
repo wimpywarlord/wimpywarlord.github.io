@@ -436,13 +436,29 @@
             <code>killall Finder</code>
           </div>
 
-          <div class="command-box">
-            <p>
-              <span class="step-number">4</span>Disable press-and-hold for
-              accented characters:
-            </p>
-            <code>defaults write -g ApplePressAndHoldEnabled -bool false</code>
-          </div>
+        <div class="command-box">
+          <p><span class="step-number">4</span>Disable press-and-hold for accented characters:</p>
+          <code>defaults write -g ApplePressAndHoldEnabled -bool false</code>
+        </div>
+
+        <div class="command-box">
+          <p><span class="step-number">5</span>Show path bar in Finder:</p>
+          <code>defaults write com.apple.finder ShowPathbar -bool true</code>
+        </div>
+
+        <div class="command-box">
+          <p><span class="step-number">6</span>Show status bar with available space in Finder:</p>
+          <code>defaults write com.apple.finder ShowStatusBar -bool true</code>
+        </div>
+
+        <div class="command-box">
+          <p><span class="step-number">7</span>Apply Finder changes:</p>
+          <code>killall Finder</code>
+        </div>
+
+        <div class="info-box">
+          <p><strong>What this does:</strong> The path bar shows your current folder location at the bottom of Finder windows, while the status bar displays available disk space and item counts - essential for file management!</p>
+        </div>
 
           <div class="section-separator"></div>
 
