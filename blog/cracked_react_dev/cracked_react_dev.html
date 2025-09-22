@@ -498,6 +498,25 @@
 
         <h2>Tips & Tricks</h2>
 
+        <h3>DevTools: Inspect Disappearing Elements</h3>
+        <p>Ever struggled to inspect tooltips or dropdowns that disappear when you move your mouse? Here's a <span class="highlight-green">pro tip</span> from <a href="https://x.com/kamrify/status/1951884835951202500" target="_blank">@kamrify</a>:</p>
+
+        <video controls style="width: 100%; max-width: 600px; border-radius: 8px; margin: 1rem auto; display: block;">
+          <source src="devtools-inspect-disappearing-elements.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <p>Use the <span class="highlight-cyan">DevTools debugger</span> to freeze the page:</p>
+        <ul>
+          <li>Open DevTools Console</li>
+          <li>Trigger the element you want to inspect</li>
+          <li>While it's visible, run: <code style="background: #44475a; padding: 2px 6px; border-radius: 3px;">setTimeout(() => {debugger}, 3000)</code></li>
+          <li>You now have 3 seconds to position your cursor before the page freezes</li>
+          <li>Inspect the element at your leisure!</li>
+        </ul>
+
+        <div class="section-separator"></div>
+
         <h3>Design System Prompt</h3>
         <p>Use this prompt to extract design systems from any website:</p>
         
