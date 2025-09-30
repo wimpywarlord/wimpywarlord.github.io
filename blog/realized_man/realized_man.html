@@ -4,11 +4,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BLOG_TITLE - Tjay</title>
+  <title>Realized Man - Tjay</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Realized Man" />
+  <meta property="og:description" content="A story about a father, a son, and the journey to understanding." />
+  <meta property="og:image" content="https://kshitijdhyani.com/blog/realized_man/father.jpeg" />
+  <meta property="og:url" content="https://kshitijdhyani.com/blog/realized_man/realized_man.html" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Realized Man" />
+  <meta name="twitter:description" content="A story about a father, a son, and the journey to understanding." />
+  <meta name="twitter:image" content="https://kshitijdhyani.com/blog/realized_man/father.jpeg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://kshitijdhyani.com/assets/meow_party.gif" />
+
   <style>
     /* Base styles matching main site */
     body {
@@ -79,11 +96,12 @@
 
     .post-status {
       font-size: 0.75rem;
-      background: #44475a;
+      background: #ff79c6;
+      color: #282a36;
       padding: 0.15rem 0.45rem;
       border-radius: 0.25rem;
-      color: #ffb86c;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 600;
     }
 
     .post-title {
@@ -118,7 +136,7 @@
     /* Post content */
     .post-content {
       font-size: 1.1rem;
-      line-height: 1.7;
+      line-height: 1.8;
       color: #f8f8f2;
     }
 
@@ -126,7 +144,7 @@
       font-size: 1.8rem;
       font-weight: 600;
       margin: 2.5rem 0 1rem 0;
-      color: #f8f8f2;
+      color: #bd93f9;
     }
 
     .post-content h3 {
@@ -137,7 +155,7 @@
     }
 
     .post-content p {
-      margin: 1.2rem 0;
+      margin: 1.5rem 0;
     }
 
     .post-content ul, .post-content ol {
@@ -150,52 +168,83 @@
     }
 
     .post-content a {
-      color: #ffb86c;
+      color: #8be9fd;
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 2px;
     }
 
     .post-content a:hover {
-      color: #ffa500;
-    }
-
-    .post-content code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      background: #44475a;
-      padding: 0.1rem 0.3rem;
-      border-radius: 0.2rem;
-      font-size: 0.9em;
-    }
-
-    .post-content pre {
-      background: #282a36;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border: 1px solid #44475a;
-    }
-
-    .post-content pre code {
-      background: none;
-      padding: 0;
-      color: #f8f8f2;
-    }
-
-    .post-content blockquote {
-      border-left: 4px solid #ffb86c;
-      padding-left: 1.5rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: #6272a4;
+      color: #ffb86c;
     }
 
     .post-content img {
       max-width: 100%;
       height: auto;
       border-radius: 0.5rem;
-      margin: 1.5rem 0;
+      margin: 2rem 0;
+      display: block;
+    }
+
+    .post-content video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      display: block;
+    }
+
+    .post-content blockquote {
+      border-left: 4px solid #ff79c6;
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #bd93f9;
+      font-size: 1.2rem;
+    }
+
+    /* Media container */
+    .media-section {
+      margin: 3rem 0;
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 100%;
+    }
+
+    .media-grid img {
+      grid-column: 1 / -1;
+      margin: 0;
+    }
+
+    .media-grid video {
+      margin: 0;
+    }
+
+    /* Personal note */
+    .personal-note {
+      background: #44475a;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 3rem 0;
+      border-left: 4px solid #50fa7b;
+    }
+
+    .personal-note h3 {
+      color: #50fa7b;
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .personal-note p {
+      margin: 1rem 0 0 0;
+      font-style: italic;
     }
 
     /* Post footer */
@@ -226,33 +275,41 @@
       .container {
         padding: 1rem;
       }
-      
+
       .post-title {
         font-size: 2rem;
       }
-      
+
       .post-content {
         font-size: 1rem;
       }
-      
+
       .post-content h2 {
         font-size: 1.5rem;
       }
-      
+
       .post-content h3 {
         font-size: 1.2rem;
       }
-      
+
       .post-navigation {
         flex-direction: column;
         gap: 1rem;
         align-items: flex-start;
       }
-      
+
       .post-meta {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+      }
+
+      .personal-note {
+        padding: 1.5rem;
+      }
+
+      .media-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -261,52 +318,86 @@
 <body>
   <div class="container">
     <nav>
-      <a href="../index.html" class="back-link">← Back to Home</a>
+      <a href="../../index.html" class="back-link">← Back to Home</a>
     </nav>
-    
+
     <article class="blog-post">
       <header class="post-header">
         <div class="post-meta">
-          <span class="post-date">POST_DATE</span>
-          <span class="post-status">POST_STATUS</span>
+          <span class="post-date">1st October 2025</span>
+          <span class="post-status">Personal</span>
         </div>
-        <h1 class="post-title">BLOG_TITLE</h1>
+        <h1 class="post-title">Realized Man</h1>
         <div class="post-tags">
-          <span class="tag">TAG1</span>
-          <span class="tag">TAG2</span>
-          <span class="tag">TAG3</span>
+          <span class="tag">family</span>
+          <span class="tag">life</span>
+          <span class="tag">personal</span>
         </div>
       </header>
 
       <div class="post-content">
-        <!-- YOUR BLOG CONTENT GOES HERE -->
-        <p>This is where your blog content will go. Replace this section with your actual article content.</p>
-        
-        <h2>Example Section</h2>
-        <p>You can use headings, paragraphs, lists, code blocks, and more.</p>
-        
-        <ul>
-          <li>Example list item 1</li>
-          <li>Example list item 2</li>
-          <li>Example list item 3</li>
-        </ul>
-        
-        <h3>Code Example</h3>
-        <pre><code>// Your code examples here
-console.log("Hello, World!");</code></pre>
-        
-        <blockquote>
-          This is an example blockquote for important notes or quotes.
-        </blockquote>
+        <p>My father served the nation for close to 37 years. While this service earned him a lot many of things — it does come at a price.</p>
+
+        <p>Price of a son not knowing his father.</p>
+
+        <p>For roughly 16 years of my life I barely understood my father (to both of our faults).</p>
+
+        <p>I saw him as someone who showed up during summer holidays and gave a lot of lectures.</p>
+
+        <p>Things he was trying to tell me, I just wasn't ready for them.</p>
+
+        <p>At 16 years of age life presented me with an opportunity to live with him. Just him and me.</p>
+
+        <p>We lived like two men are expected to live. We had 1 mattress- 1 TV and 1 lonely table in a big house.</p>
+
+        <p>Not once did we feel like we were missing something.</p>
+
+        <p>We lived like broke bachelors, but our conversations were rich.</p>
+
+        <p>Rich in temper.</p>
+
+        <p>Rich in banter.</p>
+
+        <p>Rich in laughter.</p>
+
+        <p>Rich in wisdom.</p>
+
+        <p>A 16 year of lost teenager found solace in those conversations.</p>
+
+        <p>He taught me how to think bigger than one self.</p>
+
+        <p>How to observe one self.</p>
+
+        <p>He danced the subtle dance of a young mans silent anguish.</p>
+
+        <p>He has taught me countless many things.</p>
+
+        <p>but most of all he taught me how to be a REALIZED MAN.</p>
+
+        <div class="media-section">
+          <div class="media-grid">
+            <img src="father.jpeg" alt="Father and son" />
+
+            <video controls>
+              <source src="video1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <video controls>
+              <source src="video2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
 
       <footer class="post-footer">
         <div class="post-navigation">
-          <a href="../index.html" class="nav-link">← Back to Home</a>
+          <a href="../../index.html" class="nav-link">← Back to Home</a>
         </div>
       </footer>
     </article>
   </div>
 </body>
 
-</html> 
+</html>
