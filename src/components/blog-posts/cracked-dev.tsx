@@ -152,6 +152,18 @@ export function CrackedReactDev() {
       <ul className="space-y-2">
         <li>
           <Link
+            href="https://www.fancycomponents.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Fancy Components
+          </Link>
+          {
+            " - Growing library of ready-to-use React components & microinteractions. Free & open source"
+          }
+        </li>
+        <li>
+          <Link
             href="https://21st.dev/home"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
