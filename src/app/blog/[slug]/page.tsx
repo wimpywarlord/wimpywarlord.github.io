@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
 
 // Import blog post components
 import { RealizedMan } from "@/components/blog-posts/realized-man";
@@ -17,6 +18,7 @@ type BlogMetadata = {
   date: string;
   description: string;
   component: React.ComponentType;
+  image?: string;
 };
 
 // Map slugs to components with metadata
@@ -26,36 +28,42 @@ const blogData: Record<string, BlogMetadata> = {
     date: "15th March 2024",
     description: "A story about a father and son",
     component: RealizedMan,
+    image: "/assets/logo.jpg",
   },
   "macos-setup-guide": {
     title: "MacOS Setup Guide",
     date: "12th May 2024",
-    description: "Ultimate MacOS productivity setup",
+    description: "Ultimate MacOS productivity setup for developers",
     component: MacosOnSteroids,
+    image: "/assets/logo.jpg",
   },
   "cracked-dev": {
-    title: "Cracked Dev",
+    title: "Cracked Dev - Ultimate React Developer Resources",
     date: "29th June 2024",
-    description: "Ultimate collection of tools and workflows for React development",
+    description: "Ultimate collection of tools, workflows, and resources for React development. Component libraries, design systems, and productivity tools.",
     component: CrackedReactDev,
+    image: "/assets/logo.jpg",
   },
   "cs-guide-for-autistic-nerds": {
     title: "CS Guide for Autistic Nerds",
     date: "8th April 2024",
-    description: "Comprehensive guide to computer science",
+    description: "Comprehensive guide to computer science fundamentals",
     component: CsGuideForAutisticNerds,
+    image: "/assets/logo.jpg",
   },
   "llm-video-games": {
     title: "How to make an LLM play Video Games",
     date: "22nd August 2024",
-    description: "Building an AI agent that plays video games",
+    description: "Building an AI agent that plays video games using LLMs",
     component: LlmWukong,
+    image: "/assets/logo.jpg",
   },
   "theming-macos": {
-    title: "Theming your MacOS",
+    title: "Theming your MacOS with Dracula",
     date: "18th February 2024",
-    description: "Complete guide to Dracula theme setup",
+    description: "Complete guide to Dracula theme setup for MacOS",
     component: DraculaTheming,
+    image: "/assets/logo.jpg",
   },
 };
 
@@ -63,6 +71,65 @@ export async function generateStaticParams() {
   return Object.keys(blogData).map((slug) => ({
     slug: slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const blogPost = blogData[slug];
+
+  if (!blogPost) {
+    return {
+      title: "Blog Post Not Found",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  const siteUrl = "https://kshitijdhyani.com";
+  const blogUrl = `${siteUrl}/blog/${slug}`;
+  const imageUrl = blogPost.image ? `${siteUrl}${blogPost.image}` : `${siteUrl}/assets/logo.jpg`;
+
+  return {
+    title: `${blogPost.title} | Kshitij Dhyani`,
+    description: blogPost.description,
+    keywords: [
+      "Kshitij Dhyani",
+      "Tjay",
+      "React",
+      "Next.js",
+      "Web Development",
+      blogPost.title,
+    ],
+    authors: [{ name: "Kshitij Dhyani" }],
+    creator: "Kshitij Dhyani",
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url: blogUrl,
+      siteName: "Kshitij Dhyani",
+      title: blogPost.title,
+      description: blogPost.description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: blogPost.title,
+        },
+      ],
+      publishedTime: blogPost.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@type_kshitij",
+      creator: "@type_kshitij",
+      title: blogPost.title,
+      description: blogPost.description,
+      images: [imageUrl],
+    },
+    alternates: {
+      canonical: blogUrl,
+    },
+  };
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
