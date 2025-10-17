@@ -1,6 +1,3 @@
-"use client";
-
-import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -62,8 +59,14 @@ const blogData: Record<string, BlogMetadata> = {
   },
 };
 
-export default function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
+export async function generateStaticParams() {
+  return Object.keys(blogData).map((slug) => ({
+    slug: slug,
+  }));
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
 
   const blogPost = blogData[slug];
 
