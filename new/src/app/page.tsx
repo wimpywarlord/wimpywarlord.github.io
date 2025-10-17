@@ -2,14 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Github,
-  Twitter,
-  Linkedin,
-  FileText,
-  Copy,
-  Check,
-} from "lucide-react";
+import { Github, Twitter, Linkedin, FileText, Copy, Check } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -36,8 +29,8 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6">
-        <div className="max-w-2xl mx-auto pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8">
+      <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex items-center">
+        <div className="max-w-2xl mx-auto py-8">
           <div className="space-y-4 sm:space-y-5">
             {/* Header */}
             <div className="space-y-1">
@@ -51,9 +44,7 @@ export default function Home() {
 
             {/* Email */}
             <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm">
-              <span className="text-muted-foreground">
-                I read (but not reply to) every email:
-              </span>
+              <span className="text-muted-foreground">I read every email:</span>
               <Button
                 variant="secondary"
                 size="sm"

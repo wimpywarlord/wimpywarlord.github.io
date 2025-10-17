@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button";
 
 // Import blog post components
 import { RealizedMan } from "@/components/blog-posts/realized-man";
-import { MacosOnSteroids } from "@/components/blog-posts/macos-on-steroids";
-import { CrackedReactDev } from "@/components/blog-posts/cracked-react-dev";
+import { MacosOnSteroids } from "@/components/blog-posts/macos-setup-guide";
+import { CrackedReactDev } from "@/components/blog-posts/cracked-dev";
 import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-autistic-nerds";
-import { LlmWukong } from "@/components/blog-posts/llm-wukong";
-import { DraculaTheming } from "@/components/blog-posts/dracula-theming";
+import { LlmWukong } from "@/components/blog-posts/llm-video-games";
+import { DraculaTheming } from "@/components/blog-posts/theming-macos";
 
 // Blog metadata
 type BlogMetadata = {
