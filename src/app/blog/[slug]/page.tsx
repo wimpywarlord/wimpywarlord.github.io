@@ -11,6 +11,7 @@ import { CrackedReactDev } from "@/components/blog-posts/cracked-dev";
 import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-autistic-nerds";
 import { LlmWukong } from "@/components/blog-posts/llm-video-games";
 import { DraculaTheming } from "@/components/blog-posts/theming-macos";
+import { Taste } from "@/components/blog-posts/taste";
 
 // Blog metadata
 type BlogMetadata = {
@@ -63,6 +64,13 @@ const blogData: Record<string, BlogMetadata> = {
     date: "18th February 2024",
     description: "Complete guide to Dracula theme setup for MacOS",
     component: DraculaTheming,
+    image: "/assets/logo.jpg",
+  },
+  "taste": {
+    title: "Taste",
+    date: "17th October 2024",
+    description: "Exploring the concept of taste and its importance in design, development, and life",
+    component: Taste,
     image: "/assets/logo.jpg",
   },
 };

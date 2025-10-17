@@ -618,6 +618,21 @@ and anything that'll help an AI replicate such designs.`}
         </li>
       </ul>
 
+      <h3>CSS Typography Tip</h3>
+      <p>
+        Improve text readability and avoid awkward single words on the last
+        line:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-6 overflow-x-auto">
+        <code className="text-sm">
+          {`text-wrap: pretty;`}
+        </code>
+      </pre>
+      <p>
+        This CSS property makes text line breaks look more natural and
+        professional, especially in headings and paragraphs.
+      </p>
+
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Final Words</h2>

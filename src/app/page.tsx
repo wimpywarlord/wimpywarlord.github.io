@@ -258,6 +258,14 @@ export default function Home() {
                     Theming your MacOS
                   </Link>
                 </li>
+                <li className="list-disc">
+                  <Link
+                    href="/blog/taste"
+                    className="text-xs sm:text-sm hover:underline text-link-primary"
+                  >
+                    Taste
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
