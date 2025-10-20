@@ -134,6 +134,57 @@ export function Taste() {
 
       <div className="my-8 border-b border-border" />
 
+      <h2 className="text-primary">Color Palette Inspiration</h2>
+      <p>
+        Exceptional color palette selections and combinations that demonstrate
+        sophisticated color theory and visual harmony. Great color choices set
+        the mood and reinforce brand identity.
+      </p>
+      <div className="my-6 space-y-4">
+        <video
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/colors_panel_2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Image
+            src="/blog/taste/colors_panel.jpg"
+            alt="Color panel example 1"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+          <Image
+            src="/blog/taste/color_panel_3.jpg"
+            alt="Color panel example 3"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+          <Image
+            src="/blog/taste/color_panel_4.jpg"
+            alt="Color panel example 4"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+          <Image
+            src="/blog/taste/color_panel_5.jpg"
+            alt="Color panel example 5"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+        </div>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
       <h2 className="text-primary">Typography & Font Pairings</h2>
       <p>
         Exceptional typography choices and font pairings that demonstrate
@@ -168,6 +219,23 @@ export function Taste() {
           width={800}
           height={600}
           className="w-full rounded-lg"
+        />
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Figma Plugins</h2>
+      <p>
+        Essential Figma plugins that enhance your design workflow and unlock
+        powerful capabilities. The right plugins can transform how you work.
+      </p>
+      <div className="my-6">
+        <Image
+          src="/blog/taste/figma_design.jpg"
+          alt="Figma plugins collection"
+          width={800}
+          height={600}
+          className="w-full max-w-2xl rounded-lg mx-auto"
         />
       </div>
 
@@ -332,6 +400,58 @@ export function Taste() {
           {" - Collection of UI component design patterns"}
         </li>
       </ul>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Landing Page Bento Component Inspiration</h2>
+      <p>
+        Bento grid layouts bring a modern, organized approach to showcasing
+        multiple features and content blocks. These examples demonstrate how to
+        effectively use bento-style components to create visually appealing and
+        functional landing pages.
+      </p>
+      <div className="my-6 space-y-4">
+        <video
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/landing_page_component_5.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Image
+            src="/blog/taste/landing_page_component.jpg"
+            alt="Landing page bento component example 1"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+          <Image
+            src="/blog/taste/landing_page_component_2.jpg"
+            alt="Landing page bento component example 2"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+          <Image
+            src="/blog/taste/landing_page_component_3.jpg"
+            alt="Landing page bento component example 3"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+          <Image
+            src="/blog/taste/landing_page_component_4.jpg"
+            alt="Landing page bento component example 4"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
+        </div>
+      </div>
 
       <div className="my-8 border-b border-border" />
 
