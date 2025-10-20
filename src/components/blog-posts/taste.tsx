@@ -208,6 +208,40 @@ export function Taste() {
         Study these examples of exceptional landing page design to refine your
         own taste:
       </p>
+
+      <div className="my-6 space-y-4">
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Dark Mode Landing Page</h3>
+          <video
+            controls
+            loop
+            autoPlay
+            muted
+            className="w-full max-w-2xl rounded-lg mx-auto"
+          >
+            <source src="/blog/taste/landing_page_dark.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Light Mode Landing Page</h3>
+          <video
+            controls
+            loop
+            autoPlay
+            muted
+            className="w-full max-w-2xl rounded-lg mx-auto"
+          >
+            <source src="/blog/taste/landing_page_light.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <p className="mt-6">
+        More curated landing page resources:
+      </p>
       <ul className="space-y-2">
         <li>
           <a

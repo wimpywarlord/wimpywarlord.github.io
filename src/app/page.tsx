@@ -16,10 +16,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white relative">
+    <div className="min-h-dvh w-full bg-white relative">
       {/* Primary Color Glow Background */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 min-h-dvh z-0"
         style={{
           backgroundImage: `
             radial-gradient(125% 125% at 50% 10%, #ffffff 40%, #FF8A50 100%)
@@ -29,7 +29,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex items-center">
+      <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-dvh flex items-center">
         <div className="max-w-2xl mx-auto py-8">
           <div className="space-y-4 sm:space-y-5">
             {/* Header */}
