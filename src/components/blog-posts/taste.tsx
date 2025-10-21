@@ -305,6 +305,20 @@ export function Taste() {
             Your browser does not support the video tag.
           </video>
         </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Landing Page Animation</h3>
+          <video
+            controls
+            loop
+            autoPlay
+            muted
+            className="w-full max-w-2xl rounded-lg mx-auto"
+          >
+            <source src="/blog/taste/landing_page_inspiration_4.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
 
       <p className="mt-6">
@@ -616,6 +630,28 @@ setTransform(
             src="/blog/taste/scroll_text_animation_inspiration.mp4"
             type="video/mp4"
           />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">LUTs for Video Content</h2>
+      <p>
+        Look-Up Tables (LUTs) are powerful color grading tools that instantly
+        transform the mood and aesthetic of your video content. Professional
+        LUTs can elevate your videos from amateur to cinematic with just one
+        click.
+      </p>
+      <div className="my-6">
+        <video
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/luts_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
