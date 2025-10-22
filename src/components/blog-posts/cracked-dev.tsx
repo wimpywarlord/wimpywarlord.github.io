@@ -616,6 +616,16 @@ and anything that'll help an AI replicate such designs.`}
           </Link>
           {" - Google's powerful image compression tool with various codecs"}
         </li>
+        <li>
+          <Link
+            href="https://clarityai.co/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Clarity AI
+          </Link>
+          {" - Upscale and enhance your images with AI Magic"}
+        </li>
       </ul>
 
       <h3>CSS Typography Tip</h3>
