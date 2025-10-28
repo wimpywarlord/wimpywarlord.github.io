@@ -319,12 +319,37 @@ export function Taste() {
             Your browser does not support the video tag.
           </video>
         </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Landing Page Inspiration</h3>
+          <video
+            controls
+            loop
+            autoPlay
+            muted
+            className="w-full max-w-2xl rounded-lg mx-auto"
+          >
+            <source src="/blog/taste/landing_page_inspi.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
 
       <p className="mt-6">
         More curated landing page resources:
       </p>
       <ul className="space-y-2">
+        <li>
+          <a
+            href="https://www.convex.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Convex
+          </a>
+          {" - Modern, clean landing page with smooth animations and great visual hierarchy"}
+        </li>
         <li>
           <a
             href="https://mymind.com/"
