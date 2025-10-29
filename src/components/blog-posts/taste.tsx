@@ -489,6 +489,13 @@ export function Taste() {
             height={600}
             className="w-full rounded-lg"
           />
+          <Image
+            src="/blog/taste/landing_page_component_6.jpg"
+            alt="Landing page bento component example 6"
+            width={800}
+            height={600}
+            className="w-full rounded-lg"
+          />
         </div>
       </div>
 
