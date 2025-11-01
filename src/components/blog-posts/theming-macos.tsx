@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
-import Image from "next/image";
+import { GalleryImage } from "@/components/gallery";
 
 export function DraculaTheming() {
   return (
@@ -64,7 +64,7 @@ export function DraculaTheming() {
             Dracula for Twitter
           </Link>
           .<br />
-          <Image
+          <GalleryImage
             src="/blog/assets/CleanShot_2025-07-28_at_14.20.512x.png"
             alt="Dracula Twitter Screenshot"
             width={1200}
@@ -82,7 +82,7 @@ export function DraculaTheming() {
             Dracula for GitHub
           </Link>
           .<br />
-          <Image
+          <GalleryImage
             src="/blog/assets/CleanShot_2025-07-28_at_14.26.262x.png"
             alt="Dracula GitHub Screenshot"
             width={1200}
@@ -100,7 +100,7 @@ export function DraculaTheming() {
             Dracula for YouTube
           </Link>
           .<br />
-          <Image
+          <GalleryImage
             src="/blog/assets/CleanShot_2025-07-28_at_14.27.332x.png"
             alt="Dracula YouTube Screenshot"
             width={1200}
@@ -118,7 +118,7 @@ export function DraculaTheming() {
             Dracula for Reddit
           </Link>
           .<br />
-          <Image
+          <GalleryImage
             src="/blog/assets/CleanShot_2025-07-28_at_14.25.542x.png"
             alt="Dracula Reddit Screenshot"
             width={1200}
@@ -156,7 +156,7 @@ export function DraculaTheming() {
         theme brings the Dracula palette to your notes, making your second brain
         look as good as it works.
       </p>
-      <Image
+      <GalleryImage
         src="/blog/assets/CleanShot_2025-07-28_at_14.31.352x.png"
         alt="Obsidian Dracula Screenshot"
         width={1200}
@@ -201,7 +201,7 @@ export function DraculaTheming() {
         </Link>{" "}
         for plugin magic.
       </p>
-      <Image
+      <GalleryImage
         src="/blog/assets/CleanShot_2025-07-28_at_14.35.402x.png"
         alt="iTerm2 Dracula Screenshot"
         width={1200}
@@ -260,7 +260,7 @@ export function DraculaTheming() {
         </Link>{" "}
         and add your own custom CSS for extra flair.
       </p>
-      <Image
+      <GalleryImage
         src="/blog/assets/CleanShot_2025-07-28_at_14.42.552x.png"
         alt="Discord Dracula Screenshot"
         width={1200}
@@ -296,7 +296,7 @@ button.buttonWrapper-3YFQGJ {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/dracula_mac_wallpaper.png"
             alt="Dracula Mac Wallpaper"
             width={800}
@@ -312,7 +312,7 @@ button.buttonWrapper-3YFQGJ {
           </Link>
         </div>
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/Dracula.png"
             alt="Dracula Wallpaper"
             width={800}
@@ -328,7 +328,7 @@ button.buttonWrapper-3YFQGJ {
           </Link>
         </div>
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/Ghost.png"
             alt="Ghost Wallpaper"
             width={800}
@@ -344,7 +344,7 @@ button.buttonWrapper-3YFQGJ {
           </Link>
         </div>
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/Hand.png"
             alt="Hand Wallpaper"
             width={800}
@@ -360,7 +360,7 @@ button.buttonWrapper-3YFQGJ {
           </Link>
         </div>
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/Kraken.png"
             alt="Kraken Wallpaper"
             width={800}
@@ -376,7 +376,7 @@ button.buttonWrapper-3YFQGJ {
           </Link>
         </div>
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/Rainbow_1.png"
             alt="Rainbow Wallpaper"
             width={800}
@@ -392,7 +392,7 @@ button.buttonWrapper-3YFQGJ {
           </Link>
         </div>
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/Tree.png"
             alt="Tree Wallpaper"
             width={800}
@@ -408,7 +408,7 @@ button.buttonWrapper-3YFQGJ {
           </Link>
         </div>
         <div className="relative group">
-          <Image
+          <GalleryImage
             src="/blog/assets/Waves_1.png"
             alt="Waves Wallpaper"
             width={800}
@@ -468,7 +468,7 @@ button.buttonWrapper-3YFQGJ {
         </Link>{" "}
         for inspiration.
       </p>
-      <Image
+      <GalleryImage
         src="/blog/assets/CleanShot_2025-07-28_at_15.20.012x.png"
         alt="SketchyBar Screenshot"
         width={1200}

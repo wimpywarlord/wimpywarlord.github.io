@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
+import { GalleryVideo } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -252,6 +253,16 @@ export function CrackedReactDev() {
             Lucide Icons
           </Link>
           {" - Beautiful & consistent icon toolkit"}
+        </li>
+        <li>
+          <Link
+            href="https://iconicsets.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Iconic Sets
+          </Link>
+          {" - Curated collection of premium icon sets"}
         </li>
       </ul>
 
@@ -517,13 +528,13 @@ export function CrackedReactDev() {
       </p>
 
       <div className="my-6">
-        <video controls className="w-full max-w-2xl rounded-lg mx-auto">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/cracked_react_dev/devtools-inspect-disappearing-elements.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <p>

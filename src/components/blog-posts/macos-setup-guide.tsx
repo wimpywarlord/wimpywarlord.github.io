@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
-import Image from "next/image";
+import { GalleryImage } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -140,21 +140,21 @@ export function MacosOnSteroids() {
       <h3 className="text-base sm:text-lg">Desktop Wallpapers</h3>
       <p>My collection of desktop wallpapers:</p>
 
-      <Image
+      <GalleryImage
         src="/blog/mac_os_setup/assets/dracula_mac_wallpaper.png"
         alt="Dracula Mac Wallpaper"
         width={1200}
         height={800}
         className="w-full rounded-lg my-3 sm:my-4"
       />
-      <Image
+      <GalleryImage
         src="/blog/mac_os_setup/assets/Wallpaper.jpg"
         alt="Main Wallpaper"
         width={1200}
         height={800}
         className="w-full rounded-lg my-3 sm:my-4"
       />
-      <Image
+      <GalleryImage
         src="/blog/mac_os_setup/assets/satoru-gojo-suguru-3840x2160-16373.png"
         alt="Gojo Suguru Wallpaper"
         width={1200}
@@ -166,28 +166,28 @@ export function MacosOnSteroids() {
       <p>For your Twitter account banners and social media:</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/GwUsUFvXsAEZf83.jpg"
           alt="Twitter Banner"
           width={800}
           height={600}
           className="w-full rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/IMG_1514.jpeg"
           alt="Social Media Banner"
           width={800}
           height={600}
           className="w-full rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/IMG_1515.png"
           alt="Alternative Banner"
           width={800}
           height={600}
           className="w-full rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/IMG_1680.jpeg"
           alt="Banner Option"
           width={800}
@@ -200,21 +200,21 @@ export function MacosOnSteroids() {
       <p>For consistency across all your accounts:</p>
 
       <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 my-4">
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/Group_2.png"
           alt="Profile Picture"
           width={400}
           height={400}
           className="max-w-[200px] mx-auto sm:mx-0 rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/1689993698983_1.png"
           alt="Alternative Profile Picture"
           width={400}
           height={400}
           className="max-w-[200px] mx-auto sm:mx-0 rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/profile.png"
           alt="Main Profile Picture"
           width={400}
@@ -1603,7 +1603,7 @@ esac
       </CommandBox>
 
       <div className="text-center my-4 sm:my-6">
-        <Image
+        <GalleryImage
           src="/blog/mac_os_setup/assets/CleanShot_2025-08-02_at_16.32.482x.png"
           alt="Paste without formatting setup"
           width={1200}

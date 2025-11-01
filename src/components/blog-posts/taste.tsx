@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable react/no-unescaped-entities */
 
-import Image from "next/image";
+import { GalleryImage, GalleryVideo } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -25,19 +25,13 @@ export function Taste() {
         are the ones you don't notice.
       </p>
       <div className="my-6">
-        <video
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/taste/cool_landing_page_navigation.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <div className="my-8 border-b border-border" />
@@ -48,7 +42,7 @@ export function Taste() {
         maintaining easy access to navigation. Less is more.
       </p>
       <div className="my-6">
-        <Image
+        <GalleryImage
           src="/blog/taste/side_vertical_nav_bar.png"
           alt="Vertical sidebar navigation example"
           width={800}
@@ -65,7 +59,7 @@ export function Taste() {
         Great design isn't just visual—it's about the complete experience.
       </p>
       <div className="my-6">
-        <Image
+        <GalleryImage
           src="/blog/taste/old_song_in_trailer.jpeg"
           alt="Old songs used in movie trailers"
           width={800}
@@ -83,15 +77,10 @@ export function Taste() {
         and tells your product story effectively.
       </p>
       <div className="my-6">
-        <video
-          controls
-          loop
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/ai_videos.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <div className="my-8 border-b border-border" />
@@ -103,33 +92,22 @@ export function Taste() {
         the bar for how to captivate an audience.
       </p>
       <div className="my-6 space-y-4">
-        <video
-          controls
-          loop
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto max-h-96 object-contain"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto max-h-96 object-contain">
           <source src="/blog/taste/tasteful_trailer.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
-        <video
-          controls
-          loop
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        </GalleryVideo>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/tasterful_trailer_2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
-        <video
-          controls
-          loop
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        </GalleryVideo>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/trailer_3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/trailer_4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
       </div>
 
       <div className="my-8 border-b border-border" />
@@ -141,7 +119,7 @@ export function Taste() {
         the mood and reinforce brand identity.
       </p>
       <div className="my-6 space-y-4">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -150,30 +128,30 @@ export function Taste() {
         >
           <source src="/blog/taste/colors_panel_2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Image
+          <GalleryImage
             src="/blog/taste/colors_panel.jpg"
             alt="Color panel example 1"
             width={800}
             height={600}
             className="w-full rounded-lg"
           />
-          <Image
+          <GalleryImage
             src="/blog/taste/color_panel_3.jpg"
             alt="Color panel example 3"
             width={800}
             height={600}
             className="w-full rounded-lg"
           />
-          <Image
+          <GalleryImage
             src="/blog/taste/color_panel_4.jpg"
             alt="Color panel example 4"
             width={800}
             height={600}
             className="w-full rounded-lg"
           />
-          <Image
+          <GalleryImage
             src="/blog/taste/color_panel_5.jpg"
             alt="Color panel example 5"
             width={800}
@@ -192,28 +170,28 @@ export function Taste() {
         invisible yet impactful.
       </p>
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Image
+        <GalleryImage
           src="/blog/taste/font1.jpg"
           alt="Font pairing example 1"
           width={800}
           height={600}
           className="w-full rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/taste/font2.jpg"
           alt="Font pairing example 2"
           width={800}
           height={600}
           className="w-full rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/taste/font3.jpg"
           alt="Font pairing example 3"
           width={800}
           height={600}
           className="w-full rounded-lg"
         />
-        <Image
+        <GalleryImage
           src="/blog/taste/font4.jpg"
           alt="Font pairing example 4"
           width={800}
@@ -230,7 +208,7 @@ export function Taste() {
         powerful capabilities. The right plugins can transform how you work.
       </p>
       <div className="my-6">
-        <Image
+        <GalleryImage
           src="/blog/taste/figma_design.jpg"
           alt="Figma plugins collection"
           width={800}
@@ -249,7 +227,7 @@ export function Taste() {
         graphics that maintain quality at any size.
       </p>
       <div className="my-6">
-        <Image
+        <GalleryImage
           src="/blog/taste/flag_icons.jpg"
           alt="Flag icons collection"
           width={800}
@@ -280,58 +258,34 @@ export function Taste() {
       <div className="my-6 space-y-4">
         <div>
           <h3 className="text-lg font-semibold mb-3">Dark Mode Landing Page</h3>
-          <video
-            controls
-            loop
-            autoPlay
-            muted
-            className="w-full max-w-2xl rounded-lg mx-auto"
-          >
+          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
             <source src="/blog/taste/landing_page_dark.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </GalleryVideo>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold mb-3">Light Mode Landing Page</h3>
-          <video
-            controls
-            loop
-            autoPlay
-            muted
-            className="w-full max-w-2xl rounded-lg mx-auto"
-          >
+          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
             <source src="/blog/taste/landing_page_light.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </GalleryVideo>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold mb-3">Landing Page Animation</h3>
-          <video
-            controls
-            loop
-            autoPlay
-            muted
-            className="w-full max-w-2xl rounded-lg mx-auto"
-          >
+          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
             <source src="/blog/taste/landing_page_inspiration_4.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </GalleryVideo>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold mb-3">Landing Page Inspiration</h3>
-          <video
-            controls
-            loop
-            autoPlay
-            muted
-            className="w-full max-w-2xl rounded-lg mx-auto"
-          >
+          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
             <source src="/blog/taste/landing_page_inspi.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </GalleryVideo>
         </div>
       </div>
 
@@ -360,6 +314,17 @@ export function Taste() {
             MyMind
           </a>
           {" - Minimalist design that lets content breathe"}
+        </li>
+        <li>
+          <a
+            href="https://orkhan.art/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Orkhan.art
+          </a>
+          {" - Creative portfolio with stunning visual design and interactions"}
         </li>
         <li>
           <a
@@ -450,7 +415,7 @@ export function Taste() {
         functional landing pages.
       </p>
       <div className="my-6 space-y-4">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -459,37 +424,37 @@ export function Taste() {
         >
           <source src="/blog/taste/landing_page_component_5.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Image
+          <GalleryImage
             src="/blog/taste/landing_page_component.jpg"
             alt="Landing page bento component example 1"
             width={800}
             height={600}
             className="w-full rounded-lg"
           />
-          <Image
+          <GalleryImage
             src="/blog/taste/landing_page_component_2.jpg"
             alt="Landing page bento component example 2"
             width={800}
             height={600}
             className="w-full rounded-lg"
           />
-          <Image
+          <GalleryImage
             src="/blog/taste/landing_page_component_3.jpg"
             alt="Landing page bento component example 3"
             width={800}
             height={600}
             className="w-full rounded-lg"
           />
-          <Image
+          <GalleryImage
             src="/blog/taste/landing_page_component_4.jpg"
             alt="Landing page bento component example 4"
             width={800}
             height={600}
             className="w-full rounded-lg"
           />
-          <Image
+          <GalleryImage
             src="/blog/taste/landing_page_component_6.jpg"
             alt="Landing page bento component example 6"
             width={800}
@@ -508,7 +473,7 @@ export function Taste() {
         Great tools feel like magic.
       </p>
       <div className="my-6">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -517,7 +482,7 @@ export function Taste() {
         >
           <source src="/blog/taste/figma_bg_remover.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <div className="my-8 border-b border-border" />
@@ -529,7 +494,7 @@ export function Taste() {
         approachable and intuitive.
       </p>
       <div className="my-6">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -538,7 +503,7 @@ export function Taste() {
         >
           <source src="/blog/taste/settings.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <div className="my-8 border-b border-border" />
@@ -572,7 +537,7 @@ export function Taste() {
       </p>
 
       <div className="my-6 space-y-4">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -581,8 +546,8 @@ export function Taste() {
         >
           <source src="/blog/taste/gallery_animation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
-        <video
+        </GalleryVideo>
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -591,7 +556,7 @@ export function Taste() {
         >
           <source src="/blog/taste/gallery_animation_2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <h4 className="text-base font-semibold mt-6">The Math Behind It</h4>
@@ -633,7 +598,7 @@ setTransform(
         Great loaders turn waiting time into delightful moments.
       </p>
       <div className="my-6">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -642,7 +607,7 @@ setTransform(
         >
           <source src="/blog/taste/loader_inspiration.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <h3 className="text-lg font-semibold mt-8">Scroll Text Animations</h3>
@@ -651,7 +616,7 @@ setTransform(
         to the user experience. Subtle motion that guides attention.
       </p>
       <div className="my-6">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -663,7 +628,7 @@ setTransform(
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <div className="my-8 border-b border-border" />
@@ -676,7 +641,7 @@ setTransform(
         click.
       </p>
       <div className="my-6">
-        <video
+        <GalleryVideo
           controls
           loop
           autoPlay
@@ -685,7 +650,7 @@ setTransform(
         >
           <source src="/blog/taste/luts_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
       </div>
 
       <div className="my-8 border-b border-border" />

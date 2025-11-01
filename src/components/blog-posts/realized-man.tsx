@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable react/no-unescaped-entities */
 
-import Image from "next/image";
+import { GalleryImage, GalleryVideo } from "@/components/gallery";
 
 export function RealizedMan() {
   return (
@@ -89,7 +89,7 @@ export function RealizedMan() {
 
       <div className="my-8 sm:my-12 flex justify-center">
         <div className="w-full max-w-3xl">
-          <Image
+          <GalleryImage
             src="/blog/realized_man/father.jpeg"
             alt="Father and son"
             width={1200}
@@ -98,15 +98,15 @@ export function RealizedMan() {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            <video controls className="w-full rounded-lg">
+            <GalleryVideo className="w-full rounded-lg">
               <source src="/blog/realized_man/video1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </GalleryVideo>
 
-            <video controls className="w-full rounded-lg">
+            <GalleryVideo className="w-full rounded-lg">
               <source src="/blog/realized_man/video2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </GalleryVideo>
           </div>
         </div>
       </div>

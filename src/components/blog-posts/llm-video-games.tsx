@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
-import Image from "next/image";
+import { GalleryImage, GalleryVideo } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({
@@ -19,10 +19,10 @@ export function LlmWukong() {
       <h2 className="text-primary">What did I build?</h2>
 
       <div className="my-4 sm:my-6">
-        <video controls className="w-full rounded-lg mb-2">
+        <GalleryVideo className="w-full rounded-lg mb-2">
           <source src="/blog/llm_wukong/assets/smash.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </GalleryVideo>
         <p className="text-xs sm:text-sm text-muted-foreground m-0">
           New input paradigm - controlling 3D embodied characters through natural speech.
         </p>
@@ -30,20 +30,20 @@ export function LlmWukong() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 my-4 sm:my-6">
         <div>
-          <video controls className="w-full rounded-lg mb-2">
+          <GalleryVideo className="w-full rounded-lg mb-2">
             <source src="/blog/llm_wukong/assets/dodge.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </GalleryVideo>
           <p className="text-xs sm:text-sm text-muted-foreground m-0">
             Context awareness - control input (space-bar press for dodging) is fed into the system context - the robot responds accordingly.
           </p>
         </div>
 
         <div>
-          <video controls className="w-full rounded-lg mb-2">
+          <GalleryVideo className="w-full rounded-lg mb-2">
             <source src="/blog/llm_wukong/assets/time.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </GalleryVideo>
           <p className="text-xs sm:text-sm text-muted-foreground m-0">
             Spatial + Vision + Time awareness - human like immersion.
           </p>
@@ -51,8 +51,8 @@ export function LlmWukong() {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 my-4 sm:my-6 mb-2">
-        <Image src="/blog/llm_wukong/assets/personality_config.png" alt="Personality Configuration" width={800} height={600} className="flex-1 w-full object-contain rounded-lg" />
-        <Image src="/blog/llm_wukong/assets/dashboard.png" alt="Dashboard" width={800} height={600} className="flex-1 w-full object-contain rounded-lg" />
+        <GalleryImage src="/blog/llm_wukong/assets/personality_config.png" alt="Personality Configuration" width={800} height={600} className="flex-1 w-full object-contain rounded-lg" />
+        <GalleryImage src="/blog/llm_wukong/assets/dashboard.png" alt="Dashboard" width={800} height={600} className="flex-1 w-full object-contain rounded-lg" />
       </div>
 
       <p className="text-xs sm:text-sm text-muted-foreground m-0 mb-4">
@@ -78,21 +78,21 @@ export function LlmWukong() {
 
       <p>
         The number 1 problem you will run into while building something like this is - Latency. Ideal total latency for video games: 20–60 ms (that pretty FAST{" "}
-        <Image src="/blog/llm_wukong/assets/sonic-running.gif" alt="Sonic Running" width={24} height={24} className="inline h-5 sm:h-6 align-middle" unoptimized />
+        <GalleryImage src="/blog/llm_wukong/assets/sonic-running.gif" alt="Sonic Running" width={24} height={24} className="inline h-5 sm:h-6 align-middle" unoptimized />
         ). However average latency for LLMs is 6 seconds (anecdotally{" "}
-        <Image src="/blog/llm_wukong/assets/slow_parrot.gif" alt="Slow Parrot" width={16} height={16} className="inline h-4 align-middle" unoptimized />
+        <GalleryImage src="/blog/llm_wukong/assets/slow_parrot.gif" alt="Slow Parrot" width={16} height={16} className="inline h-4 align-middle" unoptimized />
         ).
       </p>
 
-      <Image src="/blog/llm_wukong/assets/latency_chart.png" alt="Latency Chart" width={1200} height={800} className="w-full rounded-lg my-4 sm:my-6" />
+      <GalleryImage src="/blog/llm_wukong/assets/latency_chart.png" alt="Latency Chart" width={1200} height={800} className="w-full rounded-lg my-4 sm:my-6" />
 
       <p>
         No one wants to see an autistic alien use the joystick at turtle speeds{" "}
-        <Image src="/blog/llm_wukong/assets/this_is_fine.gif" alt="This is Fine" width={24} height={24} className="inline h-5 sm:h-6 align-middle" unoptimized />.
+        <GalleryImage src="/blog/llm_wukong/assets/this_is_fine.gif" alt="This is Fine" width={24} height={24} className="inline h-5 sm:h-6 align-middle" unoptimized />.
       </p>
 
       <div className="flex justify-center my-4 sm:my-6">
-        <Image src="/blog/llm_wukong/assets/no_brain.jpg" alt="No Brain" width={600} height={400} className="max-w-full rounded-lg" />
+        <GalleryImage src="/blog/llm_wukong/assets/no_brain.jpg" alt="No Brain" width={600} height={400} className="max-w-full rounded-lg" />
       </div>
 
       <p>
@@ -109,14 +109,14 @@ export function LlmWukong() {
         Short answer <Highlight>Yes</Highlight>. Here is how:
       </p>
 
-      <Image src="/blog/llm_wukong/assets/flowchart.png" alt="Flowchart" width={1200} height={800} className="w-full rounded-lg my-4 sm:my-6" />
+      <GalleryImage src="/blog/llm_wukong/assets/flowchart.png" alt="Flowchart" width={1200} height={800} className="w-full rounded-lg my-4 sm:my-6" />
 
       <p>
         The <Highlight>fundamental difference</Highlight> in my approach here is to write game scripts (pre-meditated or generated by LLM on the fly) for controlling the agent input.
       </p>
 
       <p>
-        <Image src="/blog/llm_wukong/assets/catjam.gif" alt="Cat Jam" width={20} height={20} className="inline h-5 align-middle" unoptimized /> LLMs never controls the control input directly. LLM only decides what game script to run. The scripts are then injected in the game engine and executed in realtime.
+        <GalleryImage src="/blog/llm_wukong/assets/catjam.gif" alt="Cat Jam" width={20} height={20} className="inline h-5 align-middle" unoptimized /> LLMs never controls the control input directly. LLM only decides what game script to run. The scripts are then injected in the game engine and executed in realtime.
       </p>
 
       <p>
@@ -167,7 +167,7 @@ You must respond with 'action_type' field with one of these values.
       </p>
 
       <div className="flex justify-center my-4 sm:my-6">
-        <Image src="/blog/llm_wukong/assets/actually.png" alt="Actually" width={600} height={400} className="max-w-full rounded-lg" />
+        <GalleryImage src="/blog/llm_wukong/assets/actually.png" alt="Actually" width={600} height={400} className="max-w-full rounded-lg" />
       </div>
 
       <p>
@@ -188,15 +188,15 @@ You must respond with 'action_type' field with one of these values.
         Well that is where having the LLM generate game scripts on the fly comes into play. Voyager has achieved great success at that with Minecraft.
       </p>
 
-      <video controls className="w-full rounded-lg my-4 sm:my-6">
+      <GalleryVideo className="w-full rounded-lg my-4 sm:my-6">
         <source src="/blog/llm_wukong/assets/voyager.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </GalleryVideo>
 
       <h3>Optimizations</h3>
 
       <div className="flex justify-center my-4 sm:my-6">
-        <Image src="/blog/llm_wukong/assets/optimization.jpg" alt="Yo Dawg Optimization Meme" width={600} height={400} className="max-w-full rounded-lg" />
+        <GalleryImage src="/blog/llm_wukong/assets/optimization.jpg" alt="Yo Dawg Optimization Meme" width={600} height={400} className="max-w-full rounded-lg" />
       </div>
 
       <p>

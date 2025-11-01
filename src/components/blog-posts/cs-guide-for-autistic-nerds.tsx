@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
-import Image from "next/image";
+import { GalleryImage } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -1209,7 +1209,7 @@ export function CsGuideForAutisticNerds() {
       </h2>
 
       <p>To start with - solve these questions:</p>
-      <Image
+      <GalleryImage
         src="/blog/cs_study_plan/assets/CleanShot_2025-07-09_at_11.08.472x.png"
         alt="DSA Starting Problems"
         width={1200}
@@ -1293,7 +1293,7 @@ export function CsGuideForAutisticNerds() {
         </Link>
       </p>
 
-      <Image
+      <GalleryImage
         src="/blog/cs_study_plan/assets/Screenshot_at_Aug_06_21-42-45.png"
         alt="Time Complexity Chart"
         width={1200}
