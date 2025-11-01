@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, VideoHTMLAttributes, useState, useEffect } from "react";
+import { useRef, VideoHTMLAttributes, useState, useEffect, ReactElement } from "react";
 import { useGallery } from "./GalleryViewer";
 
 interface GalleryVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
@@ -13,16 +13,55 @@ export const GalleryVideo = ({ enableGallery = true, children, ...props }: Galle
   const expandedVideoRef = useRef<HTMLVideoElement>(null);
   const { openGallery } = useGallery();
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  // Extract video source from children on mount
   useEffect(() => {
-    // Extract video source from children
-    if (videoRef.current) {
-      const sourceElement = videoRef.current.querySelector("source");
-      if (sourceElement) {
-        setVideoSrc(sourceElement.src);
+    const extractSrc = () => {
+      const childArray = Array.isArray(children) ? children : [children];
+      const sourceChild = childArray.find(
+        (child: any) => child?.type === "source"
+      ) as ReactElement<{ src: string }>;
+
+      if (sourceChild?.props?.src) {
+        setVideoSrc(sourceChild.props.src);
       }
-    }
+    };
+
+    extractSrc();
   }, [children]);
+
+  // Lazy loading with Intersection Observer
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement || !videoSrc) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isLoaded) {
+            // Load video when it enters viewport
+            const sourceElement = videoElement.querySelector("source");
+            if (sourceElement && videoSrc) {
+              sourceElement.src = videoSrc;
+              videoElement.load();
+              setIsLoaded(true);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "200px", // Start loading 200px before entering viewport
+        threshold: 0.01,
+      }
+    );
+
+    observer.observe(videoElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isLoaded, videoSrc]);
 
   const handleClick = () => {
     if (enableGallery && videoRef.current) {
@@ -51,17 +90,30 @@ export const GalleryVideo = ({ enableGallery = true, children, ...props }: Galle
   };
 
   return (
-    <video
-      {...props}
-      ref={videoRef}
-      className={`${props.className} ${enableGallery ? "cursor-pointer" : ""}`}
-      onClick={enableGallery ? handleClick : props.onClick}
-      autoPlay
-      loop
-      muted
-      playsInline
-    >
-      {children}
-    </video>
+    <div className="relative">
+      {/* Loading placeholder */}
+      {!isLoaded && (
+        <div
+          className="absolute inset-0 bg-muted/50 animate-pulse rounded-lg flex items-center justify-center"
+          style={{ aspectRatio: "16/9" }}
+        >
+          <div className="text-muted-foreground text-sm">Loading...</div>
+        </div>
+      )}
+
+      <video
+        {...props}
+        ref={videoRef}
+        className={`${props.className} ${enableGallery ? "cursor-pointer" : ""} ${!isLoaded ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
+        onClick={enableGallery ? handleClick : props.onClick}
+        autoPlay={isLoaded}
+        loop
+        muted
+        playsInline
+      >
+        {/* Render source without src initially - will be set by Intersection Observer */}
+        <source type="video/mp4" />
+      </video>
+    </div>
   );
 };

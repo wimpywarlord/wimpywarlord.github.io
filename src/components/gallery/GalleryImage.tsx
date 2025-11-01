@@ -32,6 +32,7 @@ export const GalleryImage = ({ enableGallery = true, ...props }: GalleryImagePro
       ref={imageRef}
       className={`${props.className} ${enableGallery ? "cursor-pointer" : ""}`}
       onClick={enableGallery ? handleClick : props.onClick}
+      loading={props.loading || "lazy"} // Explicit lazy loading (images load as user scrolls)
     />
   );
 };
