@@ -151,7 +151,23 @@ export function CrackedReactDev() {
           >
             Lego Pixellation
           </Link>
-          {" - Convert images into legofied versions with pixel art aesthetic"}
+          {" - Convert images into legofied versions with pixel art aesthetic ("}
+          <Link
+            href="https://github.com/rock-biter/lego-pixellation"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {", "}
+          <Link
+            href="https://x.com/__rockbiter/status/1984919825072664586"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Tweet
+          </Link>
+          {")"}
         </li>
       </ul>
 
