@@ -143,6 +143,16 @@ export function CrackedReactDev() {
             " - The easiest way to add dither effects on the web. The dither plugin for TailwindCSS is adding a dither effect to your elements by using simple CSS filters. The plugin is free to use and open-source."
           }
         </li>
+        <li>
+          <Link
+            href="https://lego-pixellation.vercel.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Lego Pixellation
+          </Link>
+          {" - Convert images into legofied versions with pixel art aesthetic"}
+        </li>
       </ul>
 
       <h3>Component Libraries</h3>
