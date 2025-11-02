@@ -21,6 +21,7 @@ export const GalleryImage = ({
         imageRef.current,
         <Image
           {...props}
+          alt={props.alt || "Gallery image"}
           className={`${props.className} cursor-default`}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />,
@@ -32,6 +33,7 @@ export const GalleryImage = ({
   return (
     <Image
       {...props}
+      alt={props.alt || "Gallery image"}
       ref={imageRef}
       className={`${props.className} ${enableGallery ? "cursor-pointer" : ""}`}
       onClick={enableGallery ? handleClick : props.onClick}

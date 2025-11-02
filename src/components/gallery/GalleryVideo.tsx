@@ -10,7 +10,6 @@ interface GalleryVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
 
 export const GalleryVideo = ({ enableGallery = true, children, ...props }: GalleryVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const expandedVideoRef = useRef<HTMLVideoElement>(null);
   const { openGallery } = useGallery();
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -20,7 +19,7 @@ export const GalleryVideo = ({ enableGallery = true, children, ...props }: Galle
     const extractSrc = () => {
       const childArray = Array.isArray(children) ? children : [children];
       const sourceChild = childArray.find(
-        (child: any) => child?.type === "source"
+        (child: unknown) => (child as ReactElement)?.type === "source"
       ) as ReactElement<{ src: string }>;
 
       if (sourceChild?.props?.src) {
