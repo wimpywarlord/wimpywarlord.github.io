@@ -8,7 +8,10 @@ interface GalleryImageProps extends ImageProps {
   enableGallery?: boolean;
 }
 
-export const GalleryImage = ({ enableGallery = true, ...props }: GalleryImageProps) => {
+export const GalleryImage = ({
+  enableGallery = true,
+  ...props
+}: GalleryImageProps) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const { openGallery } = useGallery();
 
