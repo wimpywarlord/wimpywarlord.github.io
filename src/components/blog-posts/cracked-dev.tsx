@@ -386,6 +386,26 @@ export function CrackedReactDev() {
           </Link>
           {" - Browser automation toolkit"}
         </li>
+        <li>
+          <Link
+            href="https://www.react-grab.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            React Grab
+          </Link>
+          {
+            " - Select elements and copy context (HTML, React component, file source). Makes Cursor, Claude Code, Copilot run up to 55% faster ("
+          }
+          <Link
+            href="https://x.com/boringmarketer/status/1993104146044797140"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Tweet
+          </Link>
+          {")"}
+        </li>
       </ul>
 
       <h3>AI Image Generation</h3>
