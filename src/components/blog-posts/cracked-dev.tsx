@@ -362,6 +362,18 @@ export function CrackedReactDev() {
             " - Ready-to-use configurations for Anthropic's Claude Code. A comprehensive collection of AI agents, custom commands, settings, hooks, external integrations (MCPs), and project templates to enhance your development workflow."
           }
         </li>
+        <li>
+          <Link
+            href="https://x.com/boringmarketer/status/1993104146044797140"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Claude Code Frontend Design Skill
+          </Link>
+          {
+            " - Install this skill for enhanced frontend design capabilities. Run: /plugin marketplace add anthropics/claude-code then /plugin install frontend-design@claude-code-plugins"
+          }
+        </li>
       </ul>
 
       <h3>Browser Automation</h3>
@@ -395,16 +407,8 @@ export function CrackedReactDev() {
             React Grab
           </Link>
           {
-            " - Select elements and copy context (HTML, React component, file source). Makes Cursor, Claude Code, Copilot run up to 55% faster ("
+            " - Select elements and copy context (HTML, React component, file source). Makes Cursor, Claude Code, Copilot run up to 55% faster"
           }
-          <Link
-            href="https://x.com/boringmarketer/status/1993104146044797140"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Tweet
-          </Link>
-          {")"}
         </li>
       </ul>
 
