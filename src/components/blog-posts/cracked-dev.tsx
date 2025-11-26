@@ -233,6 +233,84 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h3>Shadcn UI Extension Libraries</h3>
+      <p>
+        If you use Shadcn UI, these libraries will{" "}
+        <Highlight>supercharge</Highlight> your component toolkit:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://kokonutui.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Kokonut UI
+          </Link>
+          {" - Beautiful Shadcn-compatible components"}
+        </li>
+        <li>
+          <Link
+            href="https://cult-ui.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Cult UI
+          </Link>
+          {" - Stunning UI components for modern apps"}
+        </li>
+        <li>
+          <Link
+            href="https://pro.cult-ui.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Cult UI Pro
+          </Link>
+          {" - Premium components and templates"}
+        </li>
+        <li>
+          <Link
+            href="https://tailark.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Tailark
+          </Link>
+          {" - Modern UI components with Tailwind"}
+        </li>
+        <li>
+          <Link
+            href="https://smoothui.dev"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Smooth UI
+          </Link>
+          {" - Sleek and smooth animated components"}
+        </li>
+        <li>
+          <Link
+            href="https://patterncraft.fun"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            PatternCraft
+          </Link>
+          {" - Beautiful patterns for Shadcn projects"}
+        </li>
+        <li>
+          <Link
+            href="https://motion-primitives.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Motion Primitives
+          </Link>
+          {" - Animation primitives for React & Tailwind"}
+        </li>
+      </ul>
+
       <h3>Color & Theming</h3>
       <ul className="space-y-2">
         <li>
