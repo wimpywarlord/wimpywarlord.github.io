@@ -169,6 +169,18 @@ export function CrackedReactDev() {
           </Link>
           {")"}
         </li>
+        <li>
+          <Link
+            href="https://cmyk.danielpetho.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            CMYK Emulator
+          </Link>
+          {
+            " - Web-based CMYK print emulator with pre-filter settings, blur, antialiasing, and MP4 recording (works on mobile too)"
+          }
+        </li>
       </ul>
 
       <h3>Component Libraries</h3>
@@ -357,6 +369,16 @@ export function CrackedReactDev() {
             Lucide Icons
           </Link>
           {" - Beautiful & consistent icon toolkit"}
+        </li>
+        <li>
+          <Link
+            href="https://lucide-animated.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Lucide Animated
+          </Link>
+          {" - Beautifully crafted animated icons, open-source (MIT License)"}
         </li>
         <li>
           <Link
