@@ -145,6 +145,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://efecto.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Efecto
+          </Link>
+          {" - ASCII dither effect generator for creating unique retro-style visuals"}
+        </li>
+        <li>
+          <Link
             href="https://lego-pixellation.vercel.app/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -575,6 +585,20 @@ export function CrackedReactDev() {
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Dev Workflow Optimization</h2>
+
+      <h3>Developer Utilities</h3>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://github.com/productdevbook/port-killer"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Port Killer
+          </Link>
+          {" - Native macOS app for finding and killing processes on open ports. Perfect for developers"}
+        </li>
+      </ul>
 
       <h3>The Primeagen Way</h3>
       <p>
