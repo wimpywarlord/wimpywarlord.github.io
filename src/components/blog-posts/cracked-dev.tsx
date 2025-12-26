@@ -598,6 +598,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Native macOS app for finding and killing processes on open ports. Perfect for developers"}
         </li>
+        <li>
+          <Link
+            href="https://github.com/tw93/Mole"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Mole
+          </Link>
+          {" - Deep clean and optimize your Mac. Install via: brew install tw93/tap/mole"}
+        </li>
       </ul>
 
       <h3>The Primeagen Way</h3>
