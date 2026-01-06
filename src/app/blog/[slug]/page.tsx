@@ -14,6 +14,7 @@ import { DraculaTheming } from "@/components/blog-posts/theming-macos";
 import { Taste } from "@/components/blog-posts/taste";
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality";
 import { Mindset } from "@/components/blog-posts/mindset";
+import { SovereignIndividual } from "@/components/blog-posts/sovereign_individual";
 
 // Blog metadata
 type BlogMetadata = {
@@ -87,6 +88,13 @@ const blogData: Record<string, BlogMetadata> = {
     date: "6th January 2025",
     description: "Mental frameworks from Elon Musk and Peter Thiel on achieving extraordinary things",
     component: Mindset,
+    image: "/assets/logo.jpg",
+  },
+  "sovereign-individual": {
+    title: "Sovereign Individual",
+    date: "6th January 2025",
+    description: "Privacy, financial sovereignty, and tools for the decentralized future",
+    component: SovereignIndividual,
     image: "/assets/logo.jpg",
   },
 };

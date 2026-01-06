@@ -685,6 +685,19 @@ export function CrackedReactDev() {
         Need to ship <Highlight>FAST</Highlight>? These are premium resources:
       </p>
 
+      <ul className="space-y-2 mb-6">
+        <li>
+          <Link
+            href="https://www.aura.build/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Aura
+          </Link>
+          {" - Like Replit or Lovable, but specifically for beautiful landing pages. Ship stunning pages fast."}
+        </li>
+      </ul>
+
       <Card className="bg-muted/50 p-4 my-6">
         <h4 className="text-primary text-sm uppercase tracking-wider font-semibold mb-3">
           Paid Resources
