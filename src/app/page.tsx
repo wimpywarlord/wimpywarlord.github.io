@@ -266,6 +266,22 @@ export default function Home() {
                     Taste
                   </Link>
                 </li>
+                <li className="list-disc">
+                  <Link
+                    href="/blog/interface-for-reality"
+                    className="text-xs sm:text-sm hover:underline text-link-primary"
+                  >
+                    Interface for Reality
+                  </Link>
+                </li>
+                <li className="list-disc">
+                  <Link
+                    href="/blog/mindset"
+                    className="text-xs sm:text-sm hover:underline text-link-primary"
+                  >
+                    Mindset
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

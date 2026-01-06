@@ -508,6 +508,27 @@ export function Taste() {
 
       <div className="my-8 border-b border-border" />
 
+      <h2 className="text-primary">Delete Button Design</h2>
+      <p>
+        A thoughtfully crafted delete button interaction that balances visual
+        feedback with user confidence. Great destructive actions communicate
+        their intent clearly while remaining elegant.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/delete_button.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
       <h2 className="text-primary">Animation Inspiration Collection</h2>
       <p>
         A curated collection of exceptional animations that demonstrate
@@ -649,6 +670,71 @@ setTransform(
           className="w-full max-w-2xl rounded-lg mx-auto"
         >
           <source src="/blog/taste/luts_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">The Feel of Greatness</h2>
+      <p>
+        There's an intangible quality to truly great work—you can{" "}
+        <Highlight>feel</Highlight> it before you can articulate why. This
+        intuition for greatness is what separates good taste from exceptional
+        taste.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/the_feel_of_greatness.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">The Vibe is Unmatched</h2>
+      <p>
+        When everything comes together perfectly—the visuals, the sound, the
+        pacing—you get something that transcends its individual parts. The{" "}
+        <Highlight>vibe</Highlight> becomes undeniable.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/the_vibe_is_unmatched.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Dither & ASCII Effects</h2>
+      <p>
+        <Highlight>Dithering</Highlight> and ASCII art effects add a raw,
+        nostalgic texture to modern visuals. These techniques bridge the gap
+        between retro aesthetics and contemporary design, creating something
+        uniquely captivating.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/ditter_ascii.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>

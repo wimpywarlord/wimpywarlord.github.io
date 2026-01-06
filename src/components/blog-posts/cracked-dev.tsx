@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { GalleryVideo } from "@/components/gallery";
+import { GalleryVideo, GalleryImage } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -485,6 +485,46 @@ export function CrackedReactDev() {
           }
         </li>
       </ul>
+
+      <h3>Spec-Based Development with Claude Code</h3>
+      <p>
+        My favorite way to build large features with Claude Code is{" "}
+        <Highlight>spec-based</Highlight>. Start with a minimal spec or prompt
+        and ask Claude to interview you using the AskUserQuestionTool. Let it
+        ask about technical implementation, UI & UX, concerns, tradeoffs—but
+        make sure the questions are not obvious.
+      </p>
+      <p>
+        Be very in-depth and continue the interview until it's complete. Then
+        make a <Highlight>new session</Highlight> to execute the spec. This
+        separation keeps context clean and execution focused.
+      </p>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/how_to_use_claude_code_effectively.jpg"
+          alt="How to use Claude Code effectively with spec-based development"
+          width={800}
+          height={600}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
+
+      <h3>Playwright Testing with Claude Code</h3>
+      <p>
+        Use <Highlight>Playwright</Highlight> for automated testing with Claude
+        Code. This approach lets Claude verify its own work by running tests
+        against the UI, catching regressions and ensuring features work as
+        expected.
+      </p>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/agentMD.jpg"
+          alt="Using Playwright testing with Claude Code"
+          width={800}
+          height={600}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
 
       <h3>Browser Automation</h3>
       <ul className="space-y-2">

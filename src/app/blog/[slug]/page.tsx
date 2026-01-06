@@ -12,6 +12,8 @@ import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-au
 import { LlmWukong } from "@/components/blog-posts/llm-video-games";
 import { DraculaTheming } from "@/components/blog-posts/theming-macos";
 import { Taste } from "@/components/blog-posts/taste";
+import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality";
+import { Mindset } from "@/components/blog-posts/mindset";
 
 // Blog metadata
 type BlogMetadata = {
@@ -71,6 +73,20 @@ const blogData: Record<string, BlogMetadata> = {
     date: "17th October 2024",
     description: "Exploring the concept of taste and its importance in design, development, and life",
     component: Taste,
+    image: "/assets/logo.jpg",
+  },
+  "interface-for-reality": {
+    title: "Interface for Reality",
+    date: "6th January 2025",
+    description: "Exploring the natural interfaces and systems that shape our reality",
+    component: InterfaceForReality,
+    image: "/assets/logo.jpg",
+  },
+  "mindset": {
+    title: "Mindset",
+    date: "6th January 2025",
+    description: "Mental frameworks from Elon Musk and Peter Thiel on achieving extraordinary things",
+    component: Mindset,
     image: "/assets/logo.jpg",
   },
 };
