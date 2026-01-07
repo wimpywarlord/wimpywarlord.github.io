@@ -37,6 +37,16 @@ export function SovereignIndividual() {
         </Link>
         {" - Monitor the size of the shielded pool and its correlation with price action."}
       </p>
+      <p className="mt-4">
+        <Link
+          href="https://zechub.wiki/dashboard"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          ZecHub Dashboard
+        </Link>
+        {" - Track shielded pool supply trends and Zcash ecosystem metrics."}
+      </p>
 
       <div className="my-8 border-b border-border" />
 
