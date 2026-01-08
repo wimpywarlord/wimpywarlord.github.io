@@ -618,7 +618,7 @@ setTransform(
         Creative loading states that keep users engaged while content loads.
         Great loaders turn waiting time into delightful moments.
       </p>
-      <div className="my-6">
+      <div className="my-6 space-y-4">
         <GalleryVideo
           controls
           loop
@@ -627,6 +627,16 @@ setTransform(
           className="w-full max-w-2xl rounded-lg mx-auto"
         >
           <source src="/blog/taste/loader_inspiration.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/perfect_pixel_loader.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
