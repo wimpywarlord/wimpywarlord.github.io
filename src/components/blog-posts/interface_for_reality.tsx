@@ -73,6 +73,32 @@ export function InterfaceForReality() {
 
       <div className="my-8 border-b border-border" />
 
+      <h2 className="text-primary">Awareness: The Ultimate Interface</h2>
+      <p>
+        Perhaps the most profound interface of all is{" "}
+        <Highlight>awareness itself</Highlight>. You are not your thoughts, your
+        body, or your emotions—you are the awareness that perceives them all.
+        This consciousness is the primary interface through which all of reality
+        is experienced. Without it, nothing exists for you.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/interface_for_reality/awareness_is_you.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
       <h2 className="text-primary">Final Thoughts</h2>
       <p>
         Understanding these natural interfaces helps us appreciate the delicate

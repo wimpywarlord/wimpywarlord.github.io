@@ -13,8 +13,8 @@ export function Mindset() {
     <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
       <p>
         <Highlight>Mindset</Highlight> separates those who achieve extraordinary
-        things from those who don't. These insights from Elon Musk and Peter
-        Thiel reveal the mental frameworks that drive success.
+        things from those who don't. These insights from Elon Musk, Peter Thiel,
+        and Jack Dorsey reveal the mental frameworks that drive success.
       </p>
 
       <div className="my-8 border-b border-border" />
@@ -126,6 +126,28 @@ export function Mindset() {
             src="/blog/mindset/instinct_instinct_instinct.mp4"
             type="video/mp4"
           />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Details Matter</h2>
+      <p>
+        Jack Dorsey on the importance of <Highlight>sweating the details</Highlight>.
+        The difference between good and great often lies in the small things that
+        most people overlook. Excellence is built through obsessive attention to
+        every aspect of what you're creating.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/mindset/jack_dorsy_details.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
