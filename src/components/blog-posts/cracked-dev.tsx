@@ -484,6 +484,18 @@ export function CrackedReactDev() {
             " - Install this skill for enhanced frontend design capabilities. Run: /plugin marketplace add anthropics/claude-code then /plugin install frontend-design@claude-code-plugins"
           }
         </li>
+        <li>
+          <Link
+            href="https://www.npmjs.com/package/code-simplifier"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Code Simplifier Agent
+          </Link>
+          {
+            " - Open sourced by the Claude Code team. Use at the end of long coding sessions or to clean up complex PRs. Install: claude plugin install code-simplifier (or /plugin marketplace update claude-plugins-official then /plugin install code-simplifier)"
+          }
+        </li>
       </ul>
 
       <h3>Spec-Based Development with Claude Code</h3>
