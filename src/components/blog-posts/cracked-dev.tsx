@@ -390,16 +390,6 @@ export function CrackedReactDev() {
           </Link>
           {" - Beautifully crafted animated icons, open-source (MIT License)"}
         </li>
-        <li>
-          <Link
-            href="https://iconicsets.com/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Iconic Sets
-          </Link>
-          {" - Curated collection of premium icon sets"}
-        </li>
       </ul>
 
       <p>was looking for brand icons today</p>
