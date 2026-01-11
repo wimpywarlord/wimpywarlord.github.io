@@ -115,9 +115,12 @@ export function MacosOnSteroids() {
       <CommandBox>
         <p>
           <StepNumber number={7} />
-          Apply Finder changes:
+          Enable Quit option for Finder:
         </p>
         <code className="text-xs sm:text-sm block mt-2 text-primary">
+          defaults write com.apple.Finder QuitMenuItem 1
+        </code>
+        <code className="text-xs sm:text-sm block mt-1 text-primary">
           killall Finder
         </code>
       </CommandBox>
@@ -126,8 +129,9 @@ export function MacosOnSteroids() {
         <p className="text-sm sm:text-base">
           <strong>What this does:</strong> The path bar shows your current
           folder location at the bottom of Finder windows, while the status bar
-          displays available disk space and item counts - essential for file
-          management!
+          displays available disk space and item counts. Enabling the Quit menu
+          item allows you to fully quit Finder (useful when using ForkLift as
+          your primary file manager)!
         </p>
       </InfoBox>
 
@@ -1208,6 +1212,50 @@ esac
       <div className="my-6 sm:my-8 border-b border-border" />
 
       <h2 className="text-primary text-xl sm:text-2xl">
+        Ghostty Terminal Configuration
+      </h2>
+
+      <h3 className="text-base sm:text-lg">Essential Ghostty Settings</h3>
+      <p>
+        Configure Ghostty for an optimal terminal experience with persistent
+        window state:
+      </p>
+
+      <h4 className="text-primary text-sm">Window State Persistence</h4>
+      <p className="text-sm">
+        Enable automatic saving and restoring of window state (position, size,
+        tabs, splits):
+      </p>
+      <CommandBox>
+        <p className="text-xs sm:text-sm mb-2">
+          Add this to your Ghostty configuration file:
+        </p>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          window-save-state = always
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://ghostty.org/docs/config/reference#window-save-state"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Documentation reference
+          </Link>
+        </p>
+      </CommandBox>
+
+      <InfoBox>
+        <p className="text-sm sm:text-base">
+          <strong>What this does:</strong> Ghostty will automatically remember
+          your window positions, sizes, open tabs, and split configurations
+          across sessions. This ensures your terminal workspace is exactly as
+          you left it when you restart the app.
+        </p>
+      </InfoBox>
+
+      <div className="my-6 sm:my-8 border-b border-border" />
+
+      <h2 className="text-primary text-xl sm:text-2xl">
         Hyper Key Setup & Macros
       </h2>
 
@@ -1230,28 +1278,31 @@ esac
             <strong>Hyper + ←</strong> → Act as Hyper Key
           </li>
           <li>
-            <strong>Hyper + Q</strong> → Launch Zen Browser
+            <strong>Hyper + Q</strong> → Launch VS Code
           </li>
           <li>
-            <strong>Hyper + W</strong> → Launch Cursor
+            <strong>Hyper + W</strong> → Launch Ghostty
           </li>
           <li>
-            <strong>Hyper + E</strong> → Launch iTerm
+            <strong>Hyper + X</strong> → Launch Notion Mail
           </li>
           <li>
-            <strong>Hyper + R</strong> → Launch Notion
+            <strong>Hyper + E</strong> → Launch Zen Browser
           </li>
           <li>
-            <strong>Hyper + T</strong> → Launch WhatsApp
+            <strong>Hyper + R</strong> → Launch Figma
           </li>
           <li>
-            <strong>Hyper + F</strong> → Launch Finder
+            <strong>Hyper + A</strong> → Launch WhatsApp
           </li>
           <li>
-            <strong>Hyper + D</strong> → Launch Discord
+            <strong>Hyper + Z</strong> → Launch ForkLift
           </li>
           <li>
-            <strong>Hyper + Y</strong> → Launch YouTube Music
+            <strong>Hyper + D</strong> → Launch Notion
+          </li>
+          <li>
+            <strong>Hyper + G</strong> → Launch YouTube Music
           </li>
           <li>
             <strong>Hyper + P</strong> → Launch Postman
@@ -1260,7 +1311,10 @@ esac
             <strong>Hyper + M</strong> → Launch MongoDB Compass
           </li>
           <li>
-            <strong>Hyper + S</strong> → Launch ChatGPT
+            <strong>Hyper + S</strong> → Launch Claude
+          </li>
+          <li>
+            <strong>Hyper + C</strong> → Launch Notion Calendar
           </li>
           <li>
             <strong>Hyper + 1-5</strong> → Switch to Desktop 1-5
@@ -1282,51 +1336,49 @@ esac
         Development Environment Setup
       </h2>
 
-      <h3 className="text-base sm:text-lg">Node.js & npm</h3>
-      <p>Install Node Version Manager (nvm) for managing Node.js versions:</p>
+      <h3 className="text-base sm:text-lg">Bun - Fast JavaScript Runtime</h3>
+      <p>
+        Install <Highlight>Bun</Highlight>, a fast all-in-one JavaScript runtime
+        and toolkit:
+      </p>
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary break-all">
-          curl -o-
-          https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+          curl -fsSL https://bun.sh/install | bash
         </code>
       </CommandBox>
 
-      <p>Install the latest LTS Node.js:</p>
+      <InfoBox>
+        <p className="text-sm sm:text-base">
+          <strong>What is Bun?</strong> Bun is a modern JavaScript runtime that's
+          significantly faster than Node.js. It includes a bundler, test runner,
+          and package manager all in one. Perfect for modern web development!
+        </p>
+      </InfoBox>
+
+      <h3 className="text-base sm:text-lg">
+        Python Environment with uv
+      </h3>
+      <p>
+        We already installed <Highlight>uv</Highlight> via Homebrew earlier. Now
+        let's use it to manage Python versions:
+      </p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
-          nvm install --lts
-        </code>
-        <code className="text-xs sm:text-sm block mb-1 text-primary">
-          nvm use --lts
+          uv python install 3.11
         </code>
         <code className="text-xs sm:text-sm block text-primary">
-          nvm alias default node
+          uv python pin 3.11
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">Python Environment</h3>
-      <p>Install pyenv for Python version management:</p>
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-1 text-primary">
-          brew install pyenv
-        </code>
-        <code className="text-xs sm:text-sm block mb-1 text-primary break-all">
-          echo 'eval "$(pyenv init -)"' &gt;&gt; ~/.zshrc
-        </code>
-        <code className="text-xs sm:text-sm block text-primary">
-          source ~/.zshrc
-        </code>
-      </CommandBox>
-
-      <p>Install Python:</p>
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-1 text-primary">
-          pyenv install 3.11.0
-        </code>
-        <code className="text-xs sm:text-sm block text-primary">
-          pyenv global 3.11.0
-        </code>
-      </CommandBox>
+      <InfoBox>
+        <p className="text-sm sm:text-base">
+          <strong>Why uv?</strong> uv is an extremely fast Python package and
+          project manager written in Rust. It's 10-100x faster than pip and
+          handles both package management and Python version management in one
+          tool!
+        </p>
+      </InfoBox>
 
       <h3 className="text-base sm:text-lg">Git Configuration</h3>
       <p>Set up your Git identity and preferences:</p>
@@ -1563,13 +1615,6 @@ esac
         <p className="text-xs sm:text-sm mb-1">Add this line at the top:</p>
         <code className="text-xs sm:text-sm block text-primary">
           auth sufficient pam_tid.so
-        </code>
-      </CommandBox>
-
-      <h3 className="text-base sm:text-lg">Show Path Bar in Finder</h3>
-      <CommandBox>
-        <code className="text-xs sm:text-sm block text-primary">
-          defaults write com.apple.finder ShowPathbar -bool true
         </code>
       </CommandBox>
 
