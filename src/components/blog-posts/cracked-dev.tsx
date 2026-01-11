@@ -416,36 +416,6 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Backend with Go</h2>
-      <p>
-        Great for concurrent and parallel use cases. Go is becoming the{" "}
-        <Highlight>go-to</Highlight> backend language for React apps.
-      </p>
-      <ul className="space-y-2">
-        <li>
-          <Link
-            href="https://www.youtube.com/watch?v=yyUHQIec83I"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Learn Go
-          </Link>
-          {" - Complete tutorial"}
-        </li>
-        <li>
-          <Link
-            href="https://github.com/burakorkmez/react-go-tutorial/blob/master/COMPARISONS.md"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Go vs Node.js Comparisons
-          </Link>
-          {" - Make an informed choice"}
-        </li>
-      </ul>
-
-      <div className="my-8 border-b border-border" />
-
       <h2 className="text-primary">AI Development Tools</h2>
 
       <h3>Claude Code Tips</h3>
