@@ -313,16 +313,6 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
-            href="https://patterncraft.fun"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            PatternCraft
-          </Link>
-          {" - Beautiful patterns for Shadcn projects"}
-        </li>
-        <li>
-          <Link
             href="https://motion-primitives.com"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
