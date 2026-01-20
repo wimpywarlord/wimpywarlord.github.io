@@ -458,6 +458,18 @@ export function CrackedReactDev() {
             " - Open sourced by the Claude Code team. Use at the end of long coding sessions or to clean up complex PRs. Install: claude plugin install code-simplifier (or /plugin marketplace update claude-plugins-official then /plugin install code-simplifier)"
           }
         </li>
+        <li>
+          <Link
+            href="https://github.com/blader/humanizer"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Humanizer
+          </Link>
+          {
+            " - A Claude Code skill that removes signs of AI-generated writing from text, making it sound more natural and human"
+          }
+        </li>
       </ul>
 
       <h3>Spec-Based Development with Claude Code</h3>
