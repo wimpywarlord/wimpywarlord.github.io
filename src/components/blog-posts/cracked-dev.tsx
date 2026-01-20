@@ -191,6 +191,18 @@ export function CrackedReactDev() {
             " - Web-based CMYK print emulator with pre-filter settings, blur, antialiasing, and MP4 recording (works on mobile too)"
           }
         </li>
+        <li>
+          <Link
+            href="https://postspark.app/templates"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            PostSpark
+          </Link>
+          {
+            " - Quickly create eye-catching screenshot mockups for social media with customizable templates"
+          }
+        </li>
       </ul>
 
       <h3>Component Libraries</h3>
