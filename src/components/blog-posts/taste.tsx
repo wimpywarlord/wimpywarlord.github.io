@@ -751,6 +751,90 @@ setTransform(
 
       <div className="my-8 border-b border-border" />
 
+      <h2 className="text-primary">1K Followers Milestone</h2>
+      <p>
+        Celebrating growth milestones with style. This example shows how to
+        create an engaging visual for social media achievements that feels
+        authentic and shareable.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/1_k_follwers.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Invoice Design</h2>
+      <p>
+        Even mundane documents like invoices deserve thoughtful design.
+        A well-crafted invoice reflects professionalism and attention to detail
+        that clients notice and appreciate.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/invoice_design.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Landing Page Bento Piece</h2>
+      <p>
+        A standalone bento grid component that showcases how individual pieces
+        can create visual interest while maintaining functional clarity. Great
+        for feature highlights and product showcases.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/landing_bento_piece.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Weather Card UI</h2>
+      <p>
+        Weather interfaces are a classic design challenge. This example
+        demonstrates how to present complex meteorological data in a beautiful,
+        glanceable format that users love to interact with.
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/weather_card.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
       <h2 className="text-primary">Final Thoughts</h2>
       <p>
         Taste is learned through exposure and iteration. Study what you admire,
