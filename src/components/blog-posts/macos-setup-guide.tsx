@@ -894,6 +894,22 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask soundsource
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://rogueamoeba.com/soundsource/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            SoundSource
+          </Link>
+          {" - Advanced per-app volume control, audio routing, and system-wide EQ"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask background-music
         </code>
         <p className="text-xs sm:text-sm">
