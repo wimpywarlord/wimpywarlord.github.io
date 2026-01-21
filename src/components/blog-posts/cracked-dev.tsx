@@ -411,6 +411,22 @@ export function CrackedReactDev() {
       <h2 className="text-primary">AI Development Tools</h2>
 
       <h3>Claude Code Tips</h3>
+
+      <p>
+        <code className="bg-muted px-2 py-1 rounded text-sm">Ctrl+S</code> to
+        stash your prompt. Send something else, then auto-restore your draft.{" "}
+        <Highlight>git stash</Highlight> for prompts.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/saving_prompt.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
       <ul className="space-y-2">
         <li>
           <Link
@@ -733,6 +749,30 @@ export function CrackedReactDev() {
           {" - Deep clean and optimize your Mac. Install via: brew install tw93/tap/mole"}
         </li>
       </ul>
+
+      <h3>yt-dlp Commands</h3>
+      <p>
+        <Link
+          href="https://github.com/yt-dlp/yt-dlp"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          yt-dlp
+        </Link>
+        {" is essential for downloading videos and audio from YouTube and 1000+ other sites. Here are the two commands you'll use most:"}
+      </p>
+      <p className="mt-4 mb-2 font-semibold">Download as MP4 (best quality video):</p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-2 overflow-x-auto">
+        <code className="text-sm">
+          {`yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" <URL>`}
+        </code>
+      </pre>
+      <p className="mt-4 mb-2 font-semibold">Download as MP3 (audio only):</p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-2 overflow-x-auto">
+        <code className="text-sm">
+          {`yt-dlp -x --audio-format mp3 <URL>`}
+        </code>
+      </pre>
 
       <h3>The Primeagen Way</h3>
       <p>
