@@ -494,6 +494,65 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h3>My Claude Code Settings</h3>
+      <p>
+        Here's my personal <Highlight>settings.json</Highlight> for Claude Code
+        with useful plugins and configurations:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-6 overflow-x-auto">
+        <code className="text-sm">
+          {`{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_playwright_playwright__*",
+      "Bash"
+    ],
+    "deny": [
+      "Bash(rm *)",
+      "Bash(* rm *)",
+      "Bash(rmdir *)",
+      "Bash(* rmdir *)",
+      "Bash(sudo *)",
+      "Bash(* sudo *)",
+      "Bash(chmod *)",
+      "Bash(* chmod *)",
+      "Bash(chown *)",
+      "Bash(* chown *)"
+    ]
+  },
+  "model": "opus",
+  "alwaysThinkingEnabled": true,
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound default -timeout 10"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "code-simplifier@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true
+  }
+}`}
+        </code>
+      </pre>
+      <p>
+        Key features: Uses <Highlight>Opus</Highlight> model with always-on
+        thinking, safe Bash permissions that block destructive commands, desktop
+        notifications when tasks complete, and essential plugins for frontend
+        design, GitHub, commits, documentation lookup (Context7), and browser
+        automation (Playwright).
+      </p>
+
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <GalleryVideo className="w-full rounded-lg">
           <source
