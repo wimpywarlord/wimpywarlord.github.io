@@ -470,7 +470,46 @@ export function CrackedReactDev() {
             " - A Claude Code skill that removes signs of AI-generated writing from text, making it sound more natural and human"
           }
         </li>
+        <li>
+          <Link
+            href="https://www.remotion.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Remotion Agent Skills
+          </Link>
+          {" - Make videos just with Claude Code! Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx skills add remotion-dev/skills
+          </code>
+          {" ("}
+          <Link
+            href="https://gist.github.com/JonnyBurger/5b801182176f1b76447901fbeb5a84ac"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Example
+          </Link>
+          {")"}
+        </li>
       </ul>
+
+      <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <GalleryVideo className="w-full rounded-lg">
+          <source
+            src="/blog/cracked_react_dev/remotion_1.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+        <GalleryVideo className="w-full rounded-lg">
+          <source
+            src="/blog/cracked_react_dev/remotion_2.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h3>Spec-Based Development with Claude Code</h3>
       <p>
