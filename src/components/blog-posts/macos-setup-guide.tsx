@@ -890,6 +890,24 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
+      <h4 className="text-primary text-sm sm:text-base">Audio Utilities</h4>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask background-music
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/kyleneideck/BackgroundMusic"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Background Music
+          </Link>
+          {" - Auto-pause music, set per-app volumes, and record system audio (open source)"}
+        </p>
+      </CommandBox>
+
       <h4 className="text-primary text-sm sm:text-base">Security & Privacy</h4>
 
       <CommandBox>
