@@ -203,6 +203,16 @@ export function CrackedReactDev() {
             " - Quickly create eye-catching screenshot mockups for social media with customizable templates"
           }
         </li>
+        <li>
+          <Link
+            href="https://app.bigforge.net/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            BigForge
+          </Link>
+          {" - Photoshop for making memes"}
+        </li>
       </ul>
 
       <h3>Component Libraries</h3>
