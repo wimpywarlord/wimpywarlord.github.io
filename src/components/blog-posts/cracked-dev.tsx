@@ -562,10 +562,10 @@ export function CrackedReactDev() {
       </pre>
       <p>
         Key features: Uses <Highlight>Opus</Highlight> model with always-on
-        thinking, safe Bash permissions that block destructive commands, desktop
-        notifications when tasks complete, and essential plugins for frontend
-        design, GitHub, commits, documentation lookup (Context7), and browser
-        automation (Playwright).
+        thinking, full Bash permissions for maximum flexibility, desktop
+        notifications (with Blow sound) when tasks complete, and essential plugins
+        for frontend design, GitHub, commits, documentation lookup (Context7), and
+        browser automation (Playwright).
       </p>
 
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
