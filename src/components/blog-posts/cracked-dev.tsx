@@ -523,18 +523,7 @@ export function CrackedReactDev() {
       "mcp__plugin_playwright_playwright__*",
       "Bash"
     ],
-    "deny": [
-      "Bash(rm *)",
-      "Bash(* rm *)",
-      "Bash(rmdir *)",
-      "Bash(* rmdir *)",
-      "Bash(sudo *)",
-      "Bash(* sudo *)",
-      "Bash(chmod *)",
-      "Bash(* chmod *)",
-      "Bash(chown *)",
-      "Bash(* chown *)"
-    ]
+    "deny": []
   },
   "model": "opus",
   "alwaysThinkingEnabled": true,
@@ -544,7 +533,7 @@ export function CrackedReactDev() {
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound default -timeout 10"
+            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound Blow -timeout 10"
           }
         ]
       }
@@ -603,23 +592,6 @@ export function CrackedReactDev() {
         <GalleryImage
           src="/blog/cracked_react_dev/how_to_use_claude_code_effectively.jpg"
           alt="How to use Claude Code effectively with spec-based development"
-          width={800}
-          height={600}
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        />
-      </div>
-
-      <h3>Playwright Testing with Claude Code</h3>
-      <p>
-        Use <Highlight>Playwright</Highlight> for automated testing with Claude
-        Code. This approach lets Claude verify its own work by running tests
-        against the UI, catching regressions and ensuring features work as
-        expected.
-      </p>
-      <div className="my-6">
-        <GalleryImage
-          src="/blog/cracked_react_dev/agentMD.jpg"
-          alt="Using Playwright testing with Claude Code"
           width={800}
           height={600}
           className="w-full max-w-2xl rounded-lg mx-auto"

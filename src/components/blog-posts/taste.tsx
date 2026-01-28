@@ -687,12 +687,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">The Feel of Greatness</h2>
-      <p>
-        There's an intangible quality to truly great work—you can{" "}
-        <Highlight>feel</Highlight> it before you can articulate why. This
-        intuition for greatness is what separates good taste from exceptional
-        taste.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -709,11 +703,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">The Vibe is Unmatched</h2>
-      <p>
-        When everything comes together perfectly—the visuals, the sound, the
-        pacing—you get something that transcends its individual parts. The{" "}
-        <Highlight>vibe</Highlight> becomes undeniable.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -730,12 +719,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Dither & ASCII Effects</h2>
-      <p>
-        <Highlight>Dithering</Highlight> and ASCII art effects add a raw,
-        nostalgic texture to modern visuals. These techniques bridge the gap
-        between retro aesthetics and contemporary design, creating something
-        uniquely captivating.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -752,11 +735,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">1K Followers Milestone</h2>
-      <p>
-        Celebrating growth milestones with style. This example shows how to
-        create an engaging visual for social media achievements that feels
-        authentic and shareable.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -773,11 +751,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Invoice Design</h2>
-      <p>
-        Even mundane documents like invoices deserve thoughtful design.
-        A well-crafted invoice reflects professionalism and attention to detail
-        that clients notice and appreciate.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -794,11 +767,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Landing Page Bento Piece</h2>
-      <p>
-        A standalone bento grid component that showcases how individual pieces
-        can create visual interest while maintaining functional clarity. Great
-        for feature highlights and product showcases.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -815,11 +783,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Weather Card UI</h2>
-      <p>
-        Weather interfaces are a classic design challenge. This example
-        demonstrates how to present complex meteorological data in a beautiful,
-        glanceable format that users love to interact with.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -836,10 +799,6 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Final Thoughts</h2>
-      <p>
-        Taste is learned through exposure and iteration. Study what you admire,
-        understand why it works, and apply those principles to your own work.
-      </p>
     </div>
   );
 }
