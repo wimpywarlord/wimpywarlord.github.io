@@ -1,13 +1,43 @@
 "use client";
 /* eslint-disable react/no-unescaped-entities */
 
+import { useState } from "react";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { GalleryVideo, GalleryImage } from "@/components/gallery";
+import { Copy, Check } from "lucide-react";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
   return <span className="text-primary font-semibold">{children}</span>;
+};
+
+// Helper component for copyable text
+const CopyableText = ({ text }: { text: string }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="relative bg-muted/50 border border-border rounded-lg p-4 my-4">
+      <button
+        onClick={handleCopy}
+        className="absolute top-3 right-3 p-2 rounded-md hover:bg-muted transition-colors"
+        aria-label={copied ? "Copied" : "Copy to clipboard"}
+      >
+        {copied ? (
+          <Check className="h-4 w-4 text-green-500" />
+        ) : (
+          <Copy className="h-4 w-4 text-muted-foreground" />
+        )}
+      </button>
+      <code className="text-sm pr-10 block">{text}</code>
+    </div>
+  );
 };
 
 export function CrackedReactDev() {
@@ -607,6 +637,11 @@ export function CrackedReactDev() {
           className="w-full max-w-2xl rounded-lg mx-auto"
         />
       </div>
+
+      <p>
+        Copy this prompt to start your spec interview:
+      </p>
+      <CopyableText text="Interview me using the AskUserQuestionTool. Let it ask about technical implementation, UI & UX, concerns, tradeoffs—but make sure the questions are not obvious." />
 
       <h3>Browser Automation</h3>
       <ul className="space-y-2">
