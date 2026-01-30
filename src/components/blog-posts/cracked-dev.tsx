@@ -5,7 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { GalleryVideo, GalleryImage } from "@/components/gallery";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ChevronDown, ChevronRight } from "lucide-react";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -36,6 +36,66 @@ const CopyableText = ({ text }: { text: string }) => {
         )}
       </button>
       <code className="text-sm pr-10 block">{text}</code>
+    </div>
+  );
+};
+
+// Toggle component for Claude Code settings
+const ClaudeCodeSettingsToggle = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const settingsJson = `{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_playwright_playwright__*",
+      "Bash"
+    ],
+    "deny": []
+  },
+  "model": "opus",
+  "alwaysThinkingEnabled": true,
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound Blow -timeout 10"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "code-simplifier@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true
+  }
+}`;
+
+  return (
+    <div className="my-4">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+        aria-expanded={isOpen}
+        aria-label={isOpen ? "Hide settings" : "Show settings"}
+      >
+        {isOpen ? (
+          <ChevronDown className="h-4 w-4" />
+        ) : (
+          <ChevronRight className="h-4 w-4" />
+        )}
+        {isOpen ? "Hide" : "Show"} my settings.json
+      </button>
+      {isOpen && (
+        <pre className="bg-muted/50 border border-border rounded-lg p-4 mt-4 overflow-x-auto">
+          <code className="text-sm">{settingsJson}</code>
+        </pre>
+      )}
     </div>
   );
 };
@@ -467,6 +527,17 @@ export function CrackedReactDev() {
         </GalleryVideo>
       </div>
 
+      <h4 className="text-base font-semibold mt-6">Jitter Fix</h4>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/claude_code_jitter_fix.jpg"
+          alt="Claude Code jitter fix tip"
+          width={800}
+          height={600}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
+
       <ul className="space-y-2">
         <li>
           <Link
@@ -551,52 +622,7 @@ export function CrackedReactDev() {
       </ul>
 
       <h3>My Claude Code Settings</h3>
-      <p>
-        Here's my personal <Highlight>settings.json</Highlight> for Claude Code
-        with useful plugins and configurations:
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-6 overflow-x-auto">
-        <code className="text-sm">
-          {`{
-  "permissions": {
-    "allow": [
-      "mcp__plugin_playwright_playwright__*",
-      "Bash"
-    ],
-    "deny": []
-  },
-  "model": "opus",
-  "alwaysThinkingEnabled": true,
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound Blow -timeout 10"
-          }
-        ]
-      }
-    ]
-  },
-  "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "github@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true
-  }
-}`}
-        </code>
-      </pre>
-      <p>
-        Key features: Uses <Highlight>Opus</Highlight> model with always-on
-        thinking, full Bash permissions for maximum flexibility, desktop
-        notifications (with Blow sound) when tasks complete, and essential plugins
-        for frontend design, GitHub, commits, documentation lookup (Context7), and
-        browser automation (Playwright).
-      </p>
+      <ClaudeCodeSettingsToggle />
 
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <GalleryVideo className="w-full rounded-lg">
