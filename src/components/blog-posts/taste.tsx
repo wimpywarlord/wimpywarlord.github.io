@@ -816,6 +816,10 @@ setTransform(
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Origami Design</h2>
+      <p>
+        Origami-inspired design brings elegance through paper-folding aesthetics
+        and geometric precision.
+      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -828,6 +832,17 @@ setTransform(
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
+      <p className="mt-4">
+        <a
+          href="https://origamiarchive.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Origami Archive
+        </a>
+        {" - Extensive collection of origami designs, patterns, and folding techniques"}
+      </p>
     </div>
   );
 }

@@ -245,6 +245,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://grainrad.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GrainRad
+          </Link>
+          {" - ASCII art style generator for creating textured, grainy visual effects"}
+        </li>
+        <li>
+          <Link
             href="https://lego-pixellation.vercel.app/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -916,6 +926,61 @@ export function CrackedReactDev() {
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Tips & Tricks</h2>
+
+      <h3>CSS: Increase Click Area Without Messing Up Layout</h3>
+      <p>
+        Want to increase the click area without messing up your layout? Try{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">:after</code> with{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">
+          position: absolute
+        </code>{" "}
+        +{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">
+          inset: -&#123;value&#125;px
+        </code>
+      </p>
+      <p>
+        This creates a larger, invisible hit area around the element, making it
+        easier to click without changing the layout.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/click_area_increase.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <h3>CSS: Fix Hover Bugs with Group Classes</h3>
+      <p>
+        You can achieve parent-child hover interactions using the Tailwind{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">group</code> class
+        on parent and{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">group-hover</code>{" "}
+        variant on target:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`<div class="group">
+  <div class="group-hover:translate-y-6"/>
+</div>`}
+        </code>
+      </pre>
+      <p>
+        Here is a breakdown of the target element within an exaggerated
+        oversized parent wrapper:
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/hover_bug_fix_css.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h3>DevTools: Inspect Disappearing Elements</h3>
       <p>
