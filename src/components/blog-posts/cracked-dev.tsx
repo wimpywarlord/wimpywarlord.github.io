@@ -1123,6 +1123,21 @@ and anything that'll help an AI replicate such designs.`}
         professional, especially in headings and paragraphs.
       </p>
 
+      <h3>CSS: Prevent Page Bounce with Multiple Scroll Containers</h3>
+      <p>
+        If your app contains multiple scroll containers, add this to your
+        html/body to prevent the annoying "page bounce" effect:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-6 overflow-x-auto">
+        <code className="text-sm">
+          {`overscroll-behavior: none;`}
+        </code>
+      </pre>
+      <p>
+        This prevents the browser's default overscroll behavior (like elastic
+        scrolling on macOS) from interfering with your nested scrollable areas.
+      </p>
+
       <div className="my-8 border-b border-border" />
 
       <h2 className="text-primary">Final Words</h2>
