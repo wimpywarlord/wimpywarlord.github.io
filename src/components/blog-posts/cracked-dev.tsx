@@ -45,16 +45,55 @@ const ClaudeCodeSettingsToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const settingsJson = `{
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-5-20250929"
+  },
   "permissions": {
     "allow": [
       "mcp__plugin_playwright_playwright__*",
-      "Bash"
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(brew *)",
+      "Bash(curl *)",
+      "Bash(wget *)"
     ],
     "deny": []
   },
   "model": "opus",
   "alwaysThinkingEnabled": true,
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /Users/dhyani/.claude/yeah-boiii-i-i-i.mp3"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /Users/dhyani/.claude/someone-is-born-age-of-empires-1.mp3"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /Users/dhyani/.claude/pluh.mp3"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
