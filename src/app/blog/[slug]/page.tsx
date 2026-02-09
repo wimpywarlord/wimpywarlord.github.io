@@ -15,6 +15,7 @@ import { Taste } from "@/components/blog-posts/taste";
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality";
 import { Mindset } from "@/components/blog-posts/mindset";
 import { SovereignIndividual } from "@/components/blog-posts/sovereign_individual";
+import { MemeCollection } from "@/components/blog-posts/meme-collection";
 
 // Blog metadata
 type BlogMetadata = {
@@ -95,6 +96,13 @@ const blogData: Record<string, BlogMetadata> = {
     date: "6th January 2025",
     description: "Privacy, financial sovereignty, and tools for the decentralized future",
     component: SovereignIndividual,
+    image: "/assets/logo.jpg",
+  },
+  "meme-collection": {
+    title: "Meme Collection",
+    date: "9th February 2025",
+    description: "Curated collection of meme assets, sound effects, and tools for content creation",
+    component: MemeCollection,
     image: "/assets/logo.jpg",
   },
 };

@@ -631,6 +631,26 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h4 className="text-base font-semibold mt-6">Prevent Haiku Sub-Agents</h4>
+      <p>
+        If you've been burned by Claude Code default sub-agents using{" "}
+        <Highlight>Haiku</Highlight> models, there's an easy workaround to
+        permanently prevent it. Remap the alias via env vars in{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">
+          ~/.claude/settings.json
+        </code>
+        :
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`{
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-5-20250929"
+  }
+}`}
+        </code>
+      </pre>
+
       <h3>My Claude Code Settings</h3>
       <ClaudeCodeSettingsToggle />
 
@@ -873,6 +893,26 @@ export function CrackedReactDev() {
           </Link>
           {" - Like Replit or Lovable, but specifically for beautiful landing pages. Ship stunning pages fast."}
         </li>
+        <li>
+          <Link
+            href="https://visitors.now/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Visitors.now
+          </Link>
+          {" - Beautiful landing page inspiration"}
+        </li>
+        <li>
+          <Link
+            href="https://www.startupperks.xyz/perks"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Startup Perks
+          </Link>
+          {" - Free perks and discounts for startups on tools, services, and credits"}
+        </li>
       </ul>
 
       <Card className="bg-muted/50 p-4 my-6">
@@ -1071,6 +1111,63 @@ and anything that'll help an AI replicate such designs.`}
             Favicon.io
           </Link>
           {" - Quick and easy favicon generator for your website"}
+        </li>
+      </ul>
+
+      <h3>Verification & Testing Tools</h3>
+      <p>
+        After deploying, test your metadata with these tools:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://www.opengraph.xyz/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Open Graph Debugger
+          </Link>
+          {" - Preview how links appear on social media"}
+        </li>
+        <li>
+          <Link
+            href="https://developers.facebook.com/tools/debug/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Facebook Sharing Debugger
+          </Link>
+          {" - Test Facebook/Meta preview"}
+        </li>
+        <li>
+          <Link
+            href="https://www.linkedin.com/post-inspector/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            LinkedIn Post Inspector
+          </Link>
+          {" - Test LinkedIn preview"}
+        </li>
+        <li>
+          <Link
+            href="https://search.google.com/test/rich-results"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Google Rich Results Test
+          </Link>
+          {" - Validate structured data (JSON-LD)"}
+        </li>
+        <li>
+          <Link
+            href="https://validator.schema.org/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Schema.org Validator
+          </Link>
+          {" - Detailed schema validation"}
         </li>
       </ul>
 

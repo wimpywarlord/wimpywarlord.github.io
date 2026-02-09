@@ -287,6 +287,14 @@ export function Taste() {
             Your browser does not support the video tag.
           </GalleryVideo>
         </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Landing Page Feel</h3>
+          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+            <source src="/blog/taste/landing_feel.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </GalleryVideo>
+        </div>
       </div>
 
       <p className="mt-6">
@@ -493,7 +501,7 @@ export function Taste() {
         with aesthetics. Good settings UI makes complex configuration feel
         approachable and intuitive.
       </p>
-      <div className="my-6">
+      <div className="my-6 space-y-4">
         <GalleryVideo
           controls
           loop
@@ -502,6 +510,16 @@ export function Taste() {
           className="w-full max-w-2xl rounded-lg mx-auto"
         >
           <source src="/blog/taste/settings.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/slider_setting_filter.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
@@ -809,6 +827,22 @@ setTransform(
           className="w-full max-w-2xl rounded-lg mx-auto"
         >
           <source src="/blog/taste/weather_card.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Book Collection UI</h2>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/taste_ful_ui_for_collection_of_books.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
