@@ -69,7 +69,11 @@ const ClaudeCodeSettingsToggle = () => {
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /Users/dhyani/.claude/yeah-boiii-i-i-i.mp3"
+            "command": "nohup afplay /Users/dhyani/.claude/yeah-boiii-i-i-i.mp3 >/dev/null 2>&1 &"
+          },
+          {
+            "type": "command",
+            "command": "open raycast://extensions/raycast/raycast/confetti"
           }
         ]
       }
@@ -79,7 +83,7 @@ const ClaudeCodeSettingsToggle = () => {
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /Users/dhyani/.claude/someone-is-born-age-of-empires-1.mp3"
+            "command": "nohup afplay /Users/dhyani/.claude/someone-is-born-age-of-empires-1.mp3 >/dev/null 2>&1 &"
           }
         ]
       }
@@ -89,7 +93,7 @@ const ClaudeCodeSettingsToggle = () => {
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /Users/dhyani/.claude/pluh.mp3"
+            "command": "nohup afplay /Users/dhyani/.claude/pluh.mp3 >/dev/null 2>&1 &"
           }
         ]
       }
