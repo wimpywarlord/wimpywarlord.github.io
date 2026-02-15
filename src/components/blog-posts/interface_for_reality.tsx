@@ -174,6 +174,82 @@ export function InterfaceForReality() {
 
       <div className="my-8 border-b border-border" />
 
+      <h2 className="text-primary">The Size of Black Holes</h2>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/interface_for_reality/size_of_black_holes.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">The Logic Behind Moon Shapes</h2>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/interface_for_reality/logic_behind_moon_shapes.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">The Expanse of Human Civilization</h2>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/interface_for_reality/expanse_of_human_civ.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Nothing Ever Really Touches</h2>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/interface_for_reality/nothing_ever_really_touches.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
       <h2 className="text-primary">Awareness: The Ultimate Interface</h2>
       <div className="my-6">
         <GalleryVideo

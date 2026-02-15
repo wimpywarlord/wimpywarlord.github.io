@@ -877,6 +877,38 @@ setTransform(
         </a>
         {" - Extensive collection of origami designs, patterns, and folding techniques"}
       </p>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Upbeat & Colorful</h2>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/taste_up_beat_colorful.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h2 className="text-primary">Tasteful Info Launch Video</h2>
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/tasteful_info_launch_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
     </div>
   );
 }

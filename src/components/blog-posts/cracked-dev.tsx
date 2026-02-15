@@ -694,6 +694,26 @@ export function CrackedReactDev() {
         </code>
       </pre>
 
+      <h4 className="text-base font-semibold mt-6">
+        Even Better: Use Sonnet 1M Context
+      </h4>
+      <p>
+        The best thing I've done with Claude Code — by measure of ranting less
+        to my agent sessions this past week. Use the{" "}
+        <Highlight>1M context</Highlight> variant of Sonnet as the haiku model.
+        Sub-agents get way more context to work with, which means fewer
+        hallucinations and less back-and-forth:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`{
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-5-20250929[1m]"
+  }
+}`}
+        </code>
+      </pre>
+
       <h3>My Claude Code Settings</h3>
       <ClaudeCodeSettingsToggle />
 
@@ -1247,6 +1267,37 @@ and anything that'll help an AI replicate such designs.`}
           {" - Upscale and enhance your images with AI Magic"}
         </li>
       </ul>
+
+      <h3>CSS: Fix Dead Zones Between Stacked Elements</h3>
+      <p>
+        Ever notice small dead zones between closely stacked elements where
+        clicks or hovers don't register? Fix it with a{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">::before</code>{" "}
+        pseudo element that extends the hit area vertically:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`::before {
+  content: "";
+  position: absolute;
+  inset: -10px 0; /* extends 10px vertically */
+}`}
+        </code>
+      </pre>
+      <p>
+        This creates an invisible buffer zone that eliminates those annoying
+        gaps between list items, nav links, or any tightly stacked interactive
+        elements.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/dead_zones_css_trick.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h3>CSS Typography Tip</h3>
       <p>
