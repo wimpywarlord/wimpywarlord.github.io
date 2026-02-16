@@ -16,6 +16,7 @@ import { InterfaceForReality } from "@/components/blog-posts/interface_for_reali
 import { Mindset } from "@/components/blog-posts/mindset";
 import { SovereignIndividual } from "@/components/blog-posts/sovereign_individual";
 import { MemeCollection } from "@/components/blog-posts/meme-collection";
+import { Piracy } from "@/components/blog-posts/piracy";
 
 // Blog metadata
 type BlogMetadata = {
@@ -103,6 +104,13 @@ const blogData: Record<string, BlogMetadata> = {
     date: "9th February 2025",
     description: "Curated collection of meme assets, sound effects, and tools for content creation",
     component: MemeCollection,
+    image: "/assets/logo.jpg",
+  },
+  "piracy": {
+    title: "Piracy",
+    date: "15th February 2025",
+    description: "Display technologies, media formats, and the visual interface explained",
+    component: Piracy,
     image: "/assets/logo.jpg",
   },
 };

@@ -418,6 +418,26 @@ export function CrackedReactDev() {
             " - Powerful JavaScript animation library for creating smooth, complex animations"
           }
         </li>
+        <li>
+          <Link
+            href="https://micro.bossadizenith.me/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Micro Interactions
+          </Link>
+          {" - Beautiful, modern, responsive micro interactions optimized for performance and UX"}
+        </li>
+        <li>
+          <Link
+            href="https://easemaster.satisui.xyz/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Ease Master
+          </Link>
+          {" - Animation easing curve visualizer and generator for JavaScript"}
+        </li>
       </ul>
 
       <h3>Shadcn UI Extension Libraries</h3>

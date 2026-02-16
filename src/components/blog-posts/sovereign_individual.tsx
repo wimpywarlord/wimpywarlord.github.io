@@ -50,6 +50,18 @@ export function SovereignIndividual() {
 
       <div className="my-8 border-b border-border" />
 
+      <div className="my-6 flex justify-center">
+        <iframe
+          src="https://platform.twitter.com/embed/Tweet.html?id=2021320521237872931"
+          className="w-full max-w-xl rounded-lg border border-border"
+          height="600"
+          allowFullScreen
+          title="Tweet by @mert"
+        />
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
       <h2 className="text-primary">Final Thoughts</h2>
       <p>
         Financial privacy isn't about having something to hide—it's about
