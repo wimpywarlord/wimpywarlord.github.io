@@ -297,6 +297,22 @@ export default function Home() {
                       Sovereign Individual
                     </Link>
                   </li>
+                  <li className="list-disc">
+                    <Link
+                      href="/blog/meme-collection"
+                      className="text-xs sm:text-sm hover:underline text-link-primary"
+                    >
+                      Meme Collection
+                    </Link>
+                  </li>
+                  <li className="list-disc">
+                    <Link
+                      href="/blog/piracy"
+                      className="text-xs sm:text-sm hover:underline text-link-primary"
+                    >
+                      Piracy
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
