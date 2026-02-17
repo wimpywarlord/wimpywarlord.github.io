@@ -51,6 +51,189 @@ export function Piracy() {
         it's affordable because OLED keeps getting better.
       </p>
 
+      <h2 className="text-primary">Free Streaming: Stremio + Torrentio + Real Debrid</h2>
+      <p>
+        The holy trinity of free streaming. Works on smart TVs, Fire Sticks, or
+        any platform with a Stremio client. Real Debrid is optional but
+        recommended — it routes through a server instead of peer-to-peer, so
+        your IP stays private and streams are faster.
+      </p>
+
+      <details className="group border border-border rounded-lg p-3 sm:p-4 mb-3">
+        <summary className="cursor-pointer font-semibold text-primary list-none flex items-center justify-between">
+          <span>Step 1: Install Stremio</span>
+          <span className="text-xs text-muted-foreground group-open:rotate-90 transition-transform">&#9654;</span>
+        </summary>
+        <ol className="mt-3 space-y-2 pl-4">
+          <li>
+            Go to{" "}
+            <a
+              href="https://www.stremio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+              tabIndex={0}
+              aria-label="Stremio website"
+            >
+              stremio.com
+            </a>
+          </li>
+          <li>Download the client for your platform (Windows/Mac/Linux)</li>
+          <li>Open Stremio and sign up with email or Facebook</li>
+        </ol>
+      </details>
+
+      <details className="group border border-border rounded-lg p-3 sm:p-4 mb-3">
+        <summary className="cursor-pointer font-semibold text-primary list-none flex items-center justify-between">
+          <span>Step 2: Set Up Real Debrid (Optional but Recommended)</span>
+          <span className="text-xs text-muted-foreground group-open:rotate-90 transition-transform">&#9654;</span>
+        </summary>
+        <ol className="mt-3 space-y-2 pl-4">
+          <li>
+            Go to{" "}
+            <a
+              href="http://real-debrid.com/?id=7913336"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+              tabIndex={0}
+              aria-label="Real Debrid website (referral link)"
+            >
+              real-debrid.com
+            </a>{" "}
+            <span className="text-xs text-muted-foreground">(referral link)</span>
+          </li>
+          <li>Sign up for an account</li>
+          <li>Go to <strong>Premium Offers</strong> and choose a package</li>
+          <li>
+            Go to the{" "}
+            <a
+              href="https://real-debrid.com/apitoken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+              tabIndex={0}
+              aria-label="Real Debrid API token page"
+            >
+              API token page
+            </a>{" "}
+            and copy your API key
+          </li>
+        </ol>
+      </details>
+
+      <details className="group border border-border rounded-lg p-3 sm:p-4 mb-3">
+        <summary className="cursor-pointer font-semibold text-primary list-none flex items-center justify-between">
+          <span>Step 3: Install Torrentio Addon</span>
+          <span className="text-xs text-muted-foreground group-open:rotate-90 transition-transform">&#9654;</span>
+        </summary>
+        <ol className="mt-3 space-y-2 pl-4">
+          <li>
+            Go to{" "}
+            <a
+              href="https://torrentio.strem.fun/configure"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+              tabIndex={0}
+              aria-label="Torrentio configuration page"
+            >
+              torrentio.strem.fun/configure
+            </a>
+          </li>
+          <li>Choose your options for providers, quality, foreign language etc.</li>
+          <li>
+            If using Real Debrid, paste your API key under{" "}
+            <strong>RealDebrid API Key</strong>
+          </li>
+          <li>
+            You can also install without a Debrid provider — it works, but your
+            IP will be visible in peer-to-peer and speeds may vary
+          </li>
+          <li>Click <strong>Install</strong></li>
+        </ol>
+      </details>
+
+      <details className="group border border-border rounded-lg p-3 sm:p-4 mb-3">
+        <summary className="cursor-pointer font-semibold text-primary list-none flex items-center justify-between">
+          <span>Step 4: Start Streaming</span>
+          <span className="text-xs text-muted-foreground group-open:rotate-90 transition-transform">&#9654;</span>
+        </summary>
+        <ol className="mt-3 space-y-2 pl-4">
+          <li>
+            Verify the addon: click the puzzle piece icon (top right) &rarr;{" "}
+            <strong>My Addons</strong> &rarr; scroll to find Torrentio
+          </li>
+          <li>
+            Go to <strong>Discover</strong>, click on any movie or TV show
+          </li>
+          <li>
+            You should see streams labeled{" "}
+            <strong>[RD+] Torrentio - Quality</strong>
+          </li>
+          <li>Pick a stream and enjoy</li>
+        </ol>
+        <p className="mt-3 text-xs text-muted-foreground italic">
+          2025 Inflation update — added referral code to Real Debrid link
+        </p>
+      </details>
+
+      <h2 className="text-primary">E-Readers & Digital Reading</h2>
+
+      <h3 className="text-primary/80">KOReader AI Assistant Plugin</h3>
+      <p>
+        An AI helper plugin for KOReader that lets you interact with language
+        models (Claude, GPT-4, Gemini, DeepSeek, Ollama etc.) while reading.
+        Look up words, get summaries, ask questions about your book — all
+        without leaving the reader.
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <a
+            href="https://github.com/omer-faruq/assistant.koplugin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="KOReader AI Assistant Plugin on GitHub"
+          >
+            assistant.koplugin — GitHub
+          </a>
+        </li>
+      </ul>
+
+      <h3 className="text-primary/80">Kindle Jailbreaking</h3>
+      <p>
+        Jailbreaking a Kindle opens up KOReader, custom fonts, better PDF
+        rendering, and full control over your device.
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <a
+            href="https://kindlemodding.org/jailbreaking/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Kindle Jailbreaking Guide"
+          >
+            kindlemodding.org — Jailbreaking Guide
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.mobileread.com/forums/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="MobileRead Forums"
+          >
+            MobileRead Forums — E-Reader Community
+          </a>
+        </li>
+      </ul>
+
       <h3 className="text-primary/80">Resolution: SD, HD, UHD</h3>
       <p>
         These describe how many pixels are in the image. More pixels means more
