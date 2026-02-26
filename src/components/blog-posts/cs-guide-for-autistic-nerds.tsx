@@ -11,7 +11,7 @@ const Highlight = ({ children }: { children: React.ReactNode }) => {
 
 export function CsGuideForAutisticNerds() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         Geared towards intermediate level. Content I can personally vouch for. I
         will keep improving it.

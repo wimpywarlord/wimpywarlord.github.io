@@ -5,7 +5,7 @@ import { GalleryImage, GalleryVideo } from "@/components/gallery";
 
 export function RealizedMan() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p className="text-base sm:text-lg leading-relaxed my-4 sm:my-6">
         My father served the nation for close to 37 years. While this service
         earned him a lot many of things — it does come at a price.

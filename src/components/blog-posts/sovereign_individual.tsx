@@ -10,7 +10,7 @@ const Highlight = ({ children }: { children: React.ReactNode }) => {
 
 export function SovereignIndividual() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         The <Highlight>Sovereign Individual</Highlight> thesis predicts a future
         where technology empowers individuals to operate outside traditional

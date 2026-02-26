@@ -145,7 +145,7 @@ const ClaudeCodeSettingsToggle = () => {
 
 export function CrackedReactDev() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         Want to become an absolute <Highlight>beast</Highlight> at React
         development? This is my curated collection of tools, workflows, and

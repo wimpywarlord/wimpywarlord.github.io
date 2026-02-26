@@ -29,7 +29,7 @@ const InfoBox = ({ children }: { children: React.ReactNode }) => (
 
 export function MacosOnSteroids() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         This is my almanac for setting up a new macOS machine to my workflows.
       </p>

@@ -5,7 +5,7 @@ import { GalleryVideo } from "@/components/gallery";
 
 export function InterfaceForReality() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <h2 className="text-primary">Jupiter: Earth's Cosmic Shield</h2>
       <div className="my-6">
         <GalleryVideo

@@ -10,7 +10,7 @@ const Highlight = ({ children }: { children: React.ReactNode }) => {
 
 export function Taste() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         Developing <Highlight>taste</Highlight> in design is about recognizing
         what works and why. Here are some examples of exceptional design
