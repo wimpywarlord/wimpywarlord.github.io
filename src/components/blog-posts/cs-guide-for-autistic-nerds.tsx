@@ -11,7 +11,7 @@ const Highlight = ({ children }: { children: React.ReactNode }) => {
 
 export function CsGuideForAutisticNerds() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         Geared towards intermediate level. Content I can personally vouch for. I
         will keep improving it.
@@ -1971,11 +1971,6 @@ export function CsGuideForAutisticNerds() {
           </Link>
         </li>
       </ul>
-
-      <p className="text-base sm:text-lg font-semibold mt-6 sm:mt-8">
-        Good luck on your learning journey! And remember - we're in this
-        together.
-      </p>
     </div>
   );
 }

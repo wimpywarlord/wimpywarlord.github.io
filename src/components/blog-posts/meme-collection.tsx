@@ -10,7 +10,7 @@ const Highlight = ({ children }: { children: React.ReactNode }) => {
 
 export function MemeCollection() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         A curated collection of <Highlight>meme assets</Highlight>, sound
         effects, and tools for when you need to add that perfect comedic timing

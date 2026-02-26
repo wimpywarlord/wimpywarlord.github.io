@@ -3,7 +3,7 @@
 
 export function Piracy() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <h2 className="text-primary">Display Technology: The Visual Interface</h2>
       <p>
         How we see digital content is defined by the interface between light and

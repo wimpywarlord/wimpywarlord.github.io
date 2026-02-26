@@ -15,7 +15,7 @@ const Highlight = ({
 
 export function LlmWukong() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <h2 className="text-primary">What did I build?</h2>
 
       <div className="my-4 sm:my-6">

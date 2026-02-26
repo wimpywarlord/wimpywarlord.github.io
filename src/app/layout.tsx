@@ -1,90 +1,141 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { GalleryProvider } from "@/components/gallery";
+import "@/styles/globals.css"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import type { Metadata, Viewport } from "next"
+import Script from "next/script"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
+import type { WebSite, WithContext } from "schema-dts"
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { DuckFollower } from "@/components/duck-follower"
+import { Providers } from "@/components/providers"
+import { META_THEME_COLORS, SITE_INFO } from "@/config/site"
+import { USER } from "@/features/portfolio/data/user"
+import { fontMono, fontPixelSquare, fontSans } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
+
+function getWebSiteJsonLd(): WithContext<WebSite> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_INFO.name,
+    url: SITE_INFO.url,
+    alternateName: [USER.username],
+  }
+}
+
+const darkModeScript = String.raw`
+  try {
+    if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
+    }
+  } catch (_) {}
+
+  try {
+    if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+      document.documentElement.classList.add('os-macos')
+    }
+  } catch (_) {}
+`
 
 export const metadata: Metadata = {
-  title: "Kshitij Dhyani - Tjay",
-  description: "Building Gradbro to 1M MRR. Former Rivian, YC, Illumio. I write about React development, macOS productivity, and building with AI.",
-  keywords: ["Kshitij Dhyani", "Tjay", "Software Engineer", "Gradbro", "YC", "React Developer", "Full Stack Developer"],
-  authors: [{ name: "Kshitij Dhyani" }],
-  creator: "Kshitij Dhyani",
-
-  // Open Graph (Facebook, LinkedIn, etc.)
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://kshitijdhyani.com",
-    siteName: "Kshitij Dhyani",
-    title: "Kshitij Dhyani - Tjay",
-    description: "Building Gradbro to 1M MRR. Former Rivian, YC, Illumio. I write about React development, macOS productivity, and building with AI.",
-    images: [
-      {
-        url: "/assets/logo.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kshitij Dhyani",
-      },
-    ],
-  },
-
-  // Twitter
-  twitter: {
-    card: "summary_large_image",
-    site: "@type_kshitij",
-    creator: "@type_kshitij",
-    title: "Kshitij Dhyani - Tjay",
-    description: "Building Gradbro to 1M MRR. Former Rivian, YC, Illumio. I write about React development, macOS productivity, and building with AI.",
-    images: ["/assets/logo.jpg"],
-  },
-
-  // Icons and manifest
-  icons: {
-    icon: [
-      { url: "/assets/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/assets/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/assets/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      { url: "/assets/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/assets/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
-    ],
-  },
-  manifest: "/assets/site.webmanifest",
-
-  // Additional metadata
-  metadataBase: new URL("https://kshitijdhyani.com"),
+  metadataBase: new URL(SITE_INFO.url),
   alternates: {
     canonical: "/",
   },
-};
+  title: {
+    template: `%s – ${SITE_INFO.name}`,
+    default: `${USER.displayName} – ${USER.jobTitle}`,
+  },
+  description: SITE_INFO.description,
+  keywords: SITE_INFO.keywords,
+  authors: [
+    {
+      name: USER.displayName,
+      url: SITE_INFO.url,
+    },
+  ],
+  creator: USER.username,
+  openGraph: {
+    siteName: SITE_INFO.name,
+    url: "/",
+    type: "profile",
+    locale: "en_US",
+    firstName: USER.firstName,
+    lastName: USER.lastName,
+    username: USER.username,
+    gender: USER.gender,
+    images: [
+      {
+        url: SITE_INFO.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE_INFO.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@type_kshitij",
+    images: [SITE_INFO.ogImage],
+  },
+  icons: {
+    icon: [
+      {
+        url: "/assets/favicon.ico",
+        sizes: "any",
+      },
+    ],
+    apple: {
+      url: "/assets/apple-touch-icon.png",
+      type: "image/png",
+      sizes: "180x180",
+    },
+  },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: META_THEME_COLORS.light,
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <GalleryProvider>
-          {children}
-        </GalleryProvider>
+    <html
+      lang="en"
+      className={cn(
+        fontSans.variable,
+        fontMono.variable,
+        fontPixelSquare.variable
+      )}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{ __html: darkModeScript }}
+        />
+        <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getWebSiteJsonLd()).replace(/</g, "\\u003c"),
+          }}
+        />
+      </head>
+
+      <body>
+        <Providers>
+          <NuqsAdapter>
+            {children}
+            <DuckFollower />
+          </NuqsAdapter>
+        </Providers>
       </body>
     </html>
-  );
+  )
 }

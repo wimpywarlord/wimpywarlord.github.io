@@ -6,7 +6,7 @@ import { GalleryImage } from "@/components/gallery";
 
 export function DraculaTheming() {
   return (
-    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+    <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         I'll walk you through how to turn your macOS setup—and your favorite
         apps—into{" "}
