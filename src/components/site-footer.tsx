@@ -11,7 +11,7 @@ export function SiteFooter() {
         </p>
 
         <p className="mb-4 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
-          Truth seeking
+          Seeking Truth
         </p>
 
         <div className="screen-line-before screen-line-after flex w-full before:z-1 after:z-1">

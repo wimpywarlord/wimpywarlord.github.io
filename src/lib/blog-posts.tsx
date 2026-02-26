@@ -34,9 +34,9 @@ export const blogPostsData: Record<string, BlogPost> = {
     title: 'Cracked React Dev 🚿',
     date: '29th June 2025',
     status: 'Pays to Know',
-    description: 'Ultimate collection of tools, workflows, and resources to become an elite React developer. From Cursor workflows to design systems.',
+    description: 'Collection of tools, workflows, and resources to become an elite React developer. From Cursor workflows to design systems.',
     tags: ['react', 'frontend', 'tools', 'workflow'],
-    ogImage: 'https://kshitijdhyani.com/assets/meow_party.gif',
+    ogImage: 'https://kshitijdhyani.com/assets/logo.jpg',
     content: null // Will be set in the component file
   },
   // Additional blog posts will be added here

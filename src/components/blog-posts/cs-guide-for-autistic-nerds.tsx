@@ -1971,11 +1971,6 @@ export function CsGuideForAutisticNerds() {
           </Link>
         </li>
       </ul>
-
-      <p className="text-base sm:text-lg font-semibold mt-6 sm:mt-8">
-        Good luck on your learning journey! And remember - we're in this
-        together.
-      </p>
     </div>
   );
 }

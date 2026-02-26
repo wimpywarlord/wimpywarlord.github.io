@@ -198,32 +198,46 @@ export function MacosOnSteroids() {
           height={600}
           className="w-full rounded-lg"
         />
+        <GalleryImage
+          src="/assets/banner_dark.jpg"
+          alt="Dark Anime Banner"
+          width={800}
+          height={600}
+          className="w-full rounded-lg sm:col-span-2"
+        />
       </div>
 
       <h3 className="text-base sm:text-lg">Profile Pictures</h3>
       <p>For consistency across all your accounts:</p>
 
-      <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 my-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 my-4">
         <GalleryImage
-          src="/blog/mac_os_setup/assets/Group_2.png"
-          alt="Profile Picture"
+          src="/assets/pfp/original_pfp.jpg"
+          alt="Original Profile Picture"
           width={400}
           height={400}
-          className="max-w-[200px] mx-auto sm:mx-0 rounded-lg"
+          className="w-full rounded-lg"
         />
         <GalleryImage
-          src="/blog/mac_os_setup/assets/1689993698983_1.png"
-          alt="Alternative Profile Picture"
+          src="/assets/pfp/light_pfp.png"
+          alt="Light Theme Profile Picture"
           width={400}
           height={400}
-          className="max-w-[200px] mx-auto sm:mx-0 rounded-lg"
+          className="w-full rounded-lg"
         />
         <GalleryImage
-          src="/blog/mac_os_setup/assets/profile.png"
-          alt="Main Profile Picture"
+          src="/assets/pfp/dark_pfp.png"
+          alt="Dark Theme Profile Picture"
           width={400}
           height={400}
-          className="max-w-[200px] mx-auto sm:mx-0 rounded-lg"
+          className="w-full rounded-lg"
+        />
+        <GalleryImage
+          src="/assets/pfp/silver_surfer.jpg"
+          alt="Silver Surfer Profile Picture"
+          width={400}
+          height={400}
+          className="w-full rounded-lg"
         />
       </div>
 

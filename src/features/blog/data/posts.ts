@@ -20,7 +20,7 @@ const postsRaw: Post[] = [
     metadata: {
       title: "Cracked React Dev",
       description:
-        "Ultimate collection of tools, workflows, and resources to become an elite React developer.",
+        "Collection of tools, workflows, and resources to become an elite React developer.",
       image: "/assets/blog/blog_thum_12.gif",
       createdAt: "2025-06-29",
       updatedAt: "2025-06-29",
@@ -33,7 +33,7 @@ const postsRaw: Post[] = [
     metadata: {
       title: "CS Guide for Autistic Nerds",
       description:
-        "A comprehensive computer science study plan for the obsessively curious.",
+        "A computer science study plan for the obsessively curious.",
       image: "/assets/blog/blog_thum_1.gif",
       createdAt: "2025-05-15",
       updatedAt: "2025-05-15",

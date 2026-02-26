@@ -1348,11 +1348,6 @@ and anything that'll help an AI replicate such designs.`}
         This prevents the browser's default overscroll behavior (like elastic
         scrolling on macOS) from interfering with your nested scrollable areas.
       </p>
-
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Final Words</h2>
-      <p>I will keep improving this resource.</p>
     </div>
   );
 }
