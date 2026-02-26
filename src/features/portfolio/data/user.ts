@@ -7,7 +7,7 @@ export const USER = {
   username: "wimpywarlord",
   gender: "male",
   pronouns: "he/him",
-  bio: "Database Analyst at WashU. Former Illumio, ego (YC W24), Rivian.",
+  bio: "Seeking truth in an attempt to mainline the secret to the universe",
   flipSentences: [
     "Your PATH is uniquely yours",
     "Limit the number of details every detail perfect",
