@@ -3,27 +3,17 @@
 
 import { GalleryImage, GalleryVideo } from "@/components/gallery";
 
-// Helper component for text highlighting
-const Highlight = ({ children }: { children: React.ReactNode }) => {
-  return <span className="text-primary font-semibold">{children}</span>;
-};
-
 export function Taste() {
   return (
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
-      <p>
-        Developing <Highlight>taste</Highlight> in design is about recognizing
-        what works and why. Here are some examples of exceptional design
-        choices that demonstrate refined taste.
+      <p className="text-muted-foreground italic">
+        Good/bad decision making + experiences (struggles) + introspection builds <strong className="text-primary not-italic">judgement</strong>.
+        <br />
+        Applied judgement becomes <strong className="text-primary not-italic">wisdom</strong>.
+        <br />
+        Wisdom applied over long durations of time becomes <strong className="text-primary not-italic">taste</strong> (gut).
       </p>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Cool Landing Page Navigation</h2>
-      <p>
-        Smooth, intuitive navigation that feels effortless. The best interfaces
-        are the ones you don't notice.
-      </p>
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
@@ -34,13 +24,6 @@ export function Taste() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Vertical Sidebar Navigation</h2>
-      <p>
-        Clean, minimal sidebar design that maximizes content space while
-        maintaining easy access to navigation. Less is more.
-      </p>
       <div className="my-6">
         <GalleryImage
           src="/blog/taste/side_vertical_nav_bar.png"
@@ -51,13 +34,6 @@ export function Taste() {
         />
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Old Songs in Trailers</h2>
-      <p>
-        Using nostalgic music in modern trailers creates emotional resonance.
-        Great design isn't just visual—it's about the complete experience.
-      </p>
       <div className="my-6">
         <GalleryImage
           src="/blog/taste/old_song_in_trailer.jpeg"
@@ -68,29 +44,6 @@ export function Taste() {
         />
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">AI Generated Videos</h2>
-      <p>
-        Creating compelling launch videos using AI tools. Modern AI enables
-        rapid prototyping and iteration of video content that captures attention
-        and tells your product story effectively.
-      </p>
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source src="/blog/taste/ai_videos.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Tasteful Trailers Collection</h2>
-      <p>
-        A curated collection of exceptionally crafted trailers that demonstrate
-        masterful storytelling, pacing, and visual design. These trailers set
-        the bar for how to captivate an audience.
-      </p>
       <div className="my-6 space-y-4">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto max-h-96 object-contain">
           <source src="/blog/taste/tasteful_trailer.mp4" type="video/mp4" />
@@ -110,14 +63,6 @@ export function Taste() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Color Palette Inspiration</h2>
-      <p>
-        Exceptional color palette selections and combinations that demonstrate
-        sophisticated color theory and visual harmony. Great color choices set
-        the mood and reinforce brand identity.
-      </p>
       <div className="my-6 space-y-4">
         <GalleryVideo
           controls
@@ -161,14 +106,6 @@ export function Taste() {
         </div>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Typography & Font Pairings</h2>
-      <p>
-        Exceptional typography choices and font pairings that demonstrate
-        sophisticated visual hierarchy and readability. Great typography is
-        invisible yet impactful.
-      </p>
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <GalleryImage
           src="/blog/taste/font1.jpg"
@@ -200,13 +137,6 @@ export function Taste() {
         />
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Figma Plugins</h2>
-      <p>
-        Essential Figma plugins that enhance your design workflow and unlock
-        powerful capabilities. The right plugins can transform how you work.
-      </p>
       <div className="my-6">
         <GalleryImage
           src="/blog/taste/figma_design.jpg"
@@ -217,15 +147,6 @@ export function Taste() {
         />
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Design Resources</h2>
-
-      <h3 className="text-lg font-semibold mt-6">Flag Icons</h3>
-      <p>
-        Beautiful, consistent flag icons for React applications. Clean vector
-        graphics that maintain quality at any size.
-      </p>
       <div className="my-6">
         <GalleryImage
           src="/blog/taste/flag_icons.jpg"
@@ -244,62 +165,31 @@ export function Taste() {
         >
           Nucleo Flag Icons for React
         </a>
-        {" - Complete flag icon package with React components"}
-      </p>
-
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Landing Page Inspiration</h2>
-      <p>
-        Study these examples of exceptional landing page design to refine your
-        own taste:
       </p>
 
       <div className="my-6 space-y-4">
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Dark Mode Landing Page</h3>
-          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-            <source src="/blog/taste/landing_page_dark.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </GalleryVideo>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Light Mode Landing Page</h3>
-          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-            <source src="/blog/taste/landing_page_light.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </GalleryVideo>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Landing Page Animation</h3>
-          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-            <source src="/blog/taste/landing_page_inspiration_4.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </GalleryVideo>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Landing Page Inspiration</h3>
-          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-            <source src="/blog/taste/landing_page_inspi.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </GalleryVideo>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Landing Page Feel</h3>
-          <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-            <source src="/blog/taste/landing_feel.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </GalleryVideo>
-        </div>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/landing_page_dark.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/landing_page_light.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/landing_page_inspiration_4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/landing_page_inspi.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/landing_feel.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
       </div>
 
-      <p className="mt-6">
-        More curated landing page resources:
-      </p>
       <ul className="space-y-2">
         <li>
           <a
@@ -310,7 +200,6 @@ export function Taste() {
           >
             Convex
           </a>
-          {" - Modern, clean landing page with smooth animations and great visual hierarchy"}
         </li>
         <li>
           <a
@@ -321,7 +210,6 @@ export function Taste() {
           >
             MyMind
           </a>
-          {" - Minimalist design that lets content breathe"}
         </li>
         <li>
           <a
@@ -332,7 +220,6 @@ export function Taste() {
           >
             Orkhan.art
           </a>
-          {" - Creative portfolio with stunning visual design and interactions"}
         </li>
         <li>
           <a
@@ -343,7 +230,6 @@ export function Taste() {
           >
             Craftwork Curated Websites
           </a>
-          {" - Hand-picked collection of beautifully designed websites"}
         </li>
         <li>
           <a
@@ -354,7 +240,6 @@ export function Taste() {
           >
             Seesaw
           </a>
-          {" - Showcase of creative web design and interactions"}
         </li>
         <li>
           <a
@@ -365,7 +250,6 @@ export function Taste() {
           >
             Maxi Best Of
           </a>
-          {" - Curated collection of outstanding web experiences"}
         </li>
         <li>
           <a
@@ -376,7 +260,6 @@ export function Taste() {
           >
             Minimal Gallery
           </a>
-          {" - Minimalist website designs that focus on content"}
         </li>
         <li>
           <a
@@ -387,7 +270,6 @@ export function Taste() {
           >
             Navbar Gallery
           </a>
-          {" - Navigation bar design patterns and examples"}
         </li>
         <li>
           <a
@@ -398,7 +280,6 @@ export function Taste() {
           >
             CTA Gallery
           </a>
-          {" - Call-to-action design inspiration"}
         </li>
         <li>
           <a
@@ -409,19 +290,9 @@ export function Taste() {
           >
             Component Gallery
           </a>
-          {" - Collection of UI component design patterns"}
         </li>
       </ul>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Landing Page Bento Component Inspiration</h2>
-      <p>
-        Bento grid layouts bring a modern, organized approach to showcasing
-        multiple features and content blocks. These examples demonstrate how to
-        effectively use bento-style components to create visually appealing and
-        functional landing pages.
-      </p>
       <div className="my-6 space-y-4">
         <GalleryVideo
           controls
@@ -472,14 +343,6 @@ export function Taste() {
         </div>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Figma Background Remover</h2>
-      <p>
-        Figma's seamless background removal tool demonstrates how powerful
-        features can be integrated into design workflows with minimal friction.
-        Great tools feel like magic.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -493,14 +356,6 @@ export function Taste() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Settings Modal Inspiration</h2>
-      <p>
-        Thoughtfully designed settings interfaces that balance functionality
-        with aesthetics. Good settings UI makes complex configuration feel
-        approachable and intuitive.
-      </p>
       <div className="my-6 space-y-4">
         <GalleryVideo
           controls
@@ -524,9 +379,6 @@ export function Taste() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Delete Button Design</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -540,9 +392,6 @@ export function Taste() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Slant Button Design</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -556,14 +405,6 @@ export function Taste() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Animation Inspiration Collection</h2>
-      <p>
-        A curated collection of exceptional animations that demonstrate
-        creativity, smooth interactions, and attention to detail. These examples
-        showcase what's possible with thoughtful animation design.
-      </p>
       <p className="mt-4">
         <a
           href="https://www.landing.love/"
@@ -573,12 +414,8 @@ export function Taste() {
         >
           Landing.love
         </a>
-        {
-          " - Curated gallery of the best landing page animations and interactions"
-        }
       </p>
 
-      <h3 className="text-lg font-semibold mt-6">Gallery Animation with Scale & Translate</h3>
       <p>
         A sophisticated image expansion animation using CSS <code>scale()</code>{" "}
         and <code>translate()</code> functions with viewport calculations. The
@@ -609,21 +446,20 @@ export function Taste() {
         </GalleryVideo>
       </div>
 
-      <h4 className="text-base font-semibold mt-6">The Math Behind It</h4>
+      <p className="font-semibold">The Math Behind It</p>
       <p>
         The scaling calculation handles images of different aspect ratios by
         fitting them within the viewport with proper margins:
       </p>
-
       <ol className="space-y-2 my-4">
         <li>
           <strong>Calculate scale factors:</strong> First, calculate the
-          necessary scale factor to fit the image within the window's inner
+          necessary scale factor to fit the image within the window&apos;s inner
           dimensions given a margin of 0.95.
         </li>
         <li>
           <strong>Choose minimum scale:</strong> Select the minimum scale so it
-          doesn't exceed either the horizontal or vertical boundaries of the
+          doesn&apos;t exceed either the horizontal or vertical boundaries of the
           viewport.
         </li>
       </ol>
@@ -642,7 +478,6 @@ setTransform(
 );`}</code>
       </pre>
 
-      <h3 className="text-lg font-semibold mt-8">Loader Animations</h3>
       <div className="my-6 space-y-4">
         <GalleryVideo
           controls
@@ -676,11 +511,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <h3 className="text-lg font-semibold mt-8">Scroll Text Animations</h3>
-      <p>
-        Text animations triggered by scrolling that add depth and narrative flow
-        to the user experience. Subtle motion that guides attention.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -697,15 +527,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">LUTs for Video Content</h2>
-      <p>
-        Look-Up Tables (LUTs) are powerful color grading tools that instantly
-        transform the mood and aesthetic of your video content. Professional
-        LUTs can elevate your videos from amateur to cinematic with just one
-        click.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -719,9 +540,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">The Feel of Greatness</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -735,9 +553,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">The Vibe is Unmatched</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -751,9 +566,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Dither & ASCII Effects</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -767,9 +579,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">1K Followers Milestone</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -783,9 +592,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Invoice Design</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -799,9 +605,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Landing Page Bento Piece</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -815,9 +618,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Weather Card UI</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -831,9 +631,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Book Collection UI</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -847,13 +644,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Origami Design</h2>
-      <p>
-        Origami-inspired design brings elegance through paper-folding aesthetics
-        and geometric precision.
-      </p>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -875,12 +665,8 @@ setTransform(
         >
           Origami Archive
         </a>
-        {" - Extensive collection of origami designs, patterns, and folding techniques"}
       </p>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Upbeat & Colorful</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -894,9 +680,6 @@ setTransform(
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Tasteful Info Launch Video</h2>
       <div className="my-6">
         <GalleryVideo
           controls

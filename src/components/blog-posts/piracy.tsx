@@ -178,6 +178,39 @@ export function Piracy() {
         </p>
       </details>
 
+      <h2 className="text-primary">E-Books</h2>
+
+      <h3 className="text-primary/80">Free E-Book Sources</h3>
+      <p>
+        Download any book in .epub or .pdf format for free:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <a
+            href="https://oceanofpdf.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Ocean of PDF"
+          >
+            Ocean of PDF
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://z-lib.gd/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Z-Library"
+          >
+            Z-Library
+          </a>
+        </li>
+      </ul>
+
       <h2 className="text-primary">E-Readers & Digital Reading</h2>
 
       <h3 className="text-primary/80">KOReader AI Assistant Plugin</h3>
@@ -202,7 +235,7 @@ export function Piracy() {
         </li>
       </ul>
 
-      <h3 className="text-primary/80">Kindle Jailbreaking</h3>
+      <h3 className="text-primary/80">Kindle Jailbreaking & Modding</h3>
       <p>
         Jailbreaking a Kindle opens up KOReader, custom fonts, better PDF
         rendering, and full control over your device.
@@ -218,6 +251,42 @@ export function Piracy() {
             aria-label="Kindle Jailbreaking Guide"
           >
             kindlemodding.org — Jailbreaking Guide
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://kindlemodshelf.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Kindle Mod Shelf"
+          >
+            Kindle Mod Shelf
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://kindlemodshelf.me/images"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Kindle Mod Shelf Images"
+          >
+            Kindle Mod Shelf — Images & Firmware
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.reddit.com/r/kindlejailbreak/comments/1orx99j/the_complete_kindle_jailbreaking_and_modding_guide/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Reddit Complete Kindle Jailbreaking Guide"
+          >
+            Reddit — Complete Kindle Jailbreaking & Modding Guide
           </a>
         </li>
         <li>

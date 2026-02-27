@@ -28,7 +28,7 @@ export const USER = {
   ],
   about: `
 - Part of projects [shortsbro.com](https://shortsbro.com), [gradmits.com](https://gradmits.com), and [gradbro.com](https://gradbro.com).
-- Started coding to help my grandfather fight Alzheimer's — built this.
+- Started coding to help my grandfather fight Alzheimer's — built [this](https://journals.sagepub.com/doi/10.1177/14604582211052848).
 - Cooked up:
   - AI agent that plays — [Black Myth Wukong](/blog/llm-video-games).
   - Social deduction AI game — [Accomplice](https://www.linkedin.com/posts/kshitijdhyani_joined-ego-yc-w24-in-january-bringing-activity-7308904504999976960-4piP).

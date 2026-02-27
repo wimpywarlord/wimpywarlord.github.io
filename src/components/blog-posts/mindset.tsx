@@ -5,7 +5,6 @@ import { GalleryVideo } from "@/components/gallery";
 export function Mindset() {
   return (
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
-      <h2 className="text-primary">Just Show Up</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -19,9 +18,6 @@ export function Mindset() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Many Tries</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -35,9 +31,6 @@ export function Mindset() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Market Crashes</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -51,9 +44,6 @@ export function Mindset() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Currency is Energy</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -67,9 +57,6 @@ export function Mindset() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Instinct Over Intellect</h2>
       <div className="my-6">
         <GalleryVideo
           controls
@@ -86,9 +73,6 @@ export function Mindset() {
         </GalleryVideo>
       </div>
 
-      <div className="my-8 border-b border-border" />
-
-      <h2 className="text-primary">Details Matter</h2>
       <div className="my-6">
         <GalleryVideo
           controls

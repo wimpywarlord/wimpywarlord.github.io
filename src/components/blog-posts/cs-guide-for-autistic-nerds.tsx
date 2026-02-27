@@ -56,15 +56,23 @@ export function CsGuideForAutisticNerds() {
       </ul>
 
       <p className="text-sm sm:text-base">
-        Use this website to pirate all{" "}
+        Use these websites to pirate all{" "}
         <code className="text-xs sm:text-sm">.epub</code> for any book and then
         read on your kindle:{" "}
         <Link
-          href="https://annas-archive.org/search?q=networking+for+dummies"
+          href="https://oceanofpdf.com/"
           target="_blank"
           className="text-primary hover:text-primary/80 underline underline-offset-2"
         >
-          Anna's Archive
+          Ocean of PDF
+        </Link>
+        {", "}
+        <Link
+          href="https://z-lib.gd/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Z-Library
         </Link>
       </p>
       <p className="text-sm sm:text-base">
@@ -732,11 +740,19 @@ export function CsGuideForAutisticNerds() {
       <p>
         Amazon Kindle:{" "}
         <Link
-          href="https://annas-archive.org/search?q=networking+for+dummies"
+          href="https://oceanofpdf.com/"
           target="_blank"
           className="text-primary hover:text-primary/80 underline"
         >
-          Anna's Archive
+          Ocean of PDF
+        </Link>
+        {", "}
+        <Link
+          href="https://z-lib.gd/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline"
+        >
+          Z-Library
         </Link>
       </p>
 
