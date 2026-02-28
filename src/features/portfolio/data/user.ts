@@ -18,7 +18,7 @@ export const USER = {
   phoneNumber: "", // not public
   email: "ZW1haWxvZmtzaGl0aWpkaHlhbmlAZ21haWwuY29t", // base64 encoded
   website: "https://kshitijdhyani.com",
-  jobTitle: "Database Analyst",
+  jobTitle: "Seeking Truth",
   jobs: [
     {
       title: "Database Analyst",
