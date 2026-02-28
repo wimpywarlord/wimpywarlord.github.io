@@ -37,7 +37,7 @@ export const USER = {
   avatar: "/assets/logo.jpg",
   ogImage: "/assets/logo.jpg",
   namePronunciationUrl: "/assets/my_name.mp3",
-  timeZone: "America/Denver",
+  timeZone: "America/Phoenix",
   keywords: [
     "kshitij dhyani",
     "kshitij",

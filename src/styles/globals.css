@@ -44,6 +44,17 @@
   --font-pixel-square: var(--font-geist-pixel-square);
 
   --shadow-popover: var(--shadow-popover);
+
+  --animate-starfield-pan: starfield-pan 8s linear infinite;
+}
+
+@keyframes starfield-pan {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @utility no-scrollbar {
