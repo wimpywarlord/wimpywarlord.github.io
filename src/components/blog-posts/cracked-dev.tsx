@@ -930,6 +930,19 @@ export function CrackedReactDev() {
         </code>
       </pre>
 
+      <h3>Terminal Music Player</h3>
+      <p>
+        <Link
+          href="https://github.com/bjarneo/cliamp"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          cliamp
+        </Link>
+        {" - Winamp-inspired terminal music player with spectrum visualizer, 10-band EQ, and support for MP3/FLAC/WAV/OGG/AAC. Streams YouTube and SoundCloud via yt-dlp, plays internet radio, and has 17 built-in themes."}
+      </p>
+      <CopyableText text="curl -fsSL https://raw.githubusercontent.com/bjarneo/cliamp/HEAD/install.sh | sh" />
+
       <h3>The Primeagen Way</h3>
       <p>
         Learn from one of the most <Highlight>efficient</Highlight> developers
