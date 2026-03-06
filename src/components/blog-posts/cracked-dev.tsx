@@ -575,6 +575,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Beautifully crafted animated icons, open-source (MIT License)"}
         </li>
+        <li>
+          <Link
+            href="https://www.itshover.com/icons"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Its Hover
+          </Link>
+          {" - Motion-first animated icons that trigger on hover. Built with Motion.dev, works with shadcn via CLI"}
+        </li>
       </ul>
 
       <p>was looking for brand icons today</p>
