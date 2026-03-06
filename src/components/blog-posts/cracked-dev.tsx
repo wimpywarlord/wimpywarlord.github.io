@@ -278,6 +278,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://asc11.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ASC11
+          </Link>
+          {" - ASCII art editor that animates images, videos, and live cam. Preview with HTML and export to JS"}
+        </li>
+        <li>
+          <Link
             href="https://efecto.app/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
