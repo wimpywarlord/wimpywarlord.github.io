@@ -164,6 +164,22 @@ export function InterfaceForReality() {
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
+
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/interface_for_reality/guitar_string_oscillation.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
     </div>
   );
 }

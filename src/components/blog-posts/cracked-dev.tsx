@@ -308,6 +308,26 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://yourascii.vercel.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Your ASCII
+          </Link>
+          {" - Turn any image into ASCII art"}
+        </li>
+        <li>
+          <Link
+            href="https://fluideffects.vercel.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Fluid Effects
+          </Link>
+          {" - Interactive fluid simulation effects for the web"}
+        </li>
+        <li>
+          <Link
             href="https://lego-pixellation.vercel.app/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -1366,6 +1386,63 @@ and anything that'll help an AI replicate such designs.`}
         This CSS property makes text line breaks look more natural and
         professional, especially in headings and paragraphs.
       </p>
+
+      <h3>CSS: Fix Ugly Autofill Backgrounds</h3>
+      <p>
+        <code className="bg-muted px-2 py-1 rounded text-sm">autofill</code> on
+        inputs is ugly by default — the background bleed ruins clean design
+        systems, especially in dark mode. Fix it with a pure CSS inset shadow
+        hack:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`autofill:shadow-[inset_0_0_0px_1000px_var(--color-background)]`}
+        </code>
+      </pre>
+      <p>
+        This forces the background color and kills the native blue.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/autofill_inset_shadow_fix.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <h3>CSS: Transitions vs Keyframe Animations</h3>
+      <p>
+        When it comes to interruptibility, CSS transitions and keyframe animations
+        behave differently. Transitions interpolate toward the latest state and can
+        be interrupted, while keyframe animations run on a fixed timeline and
+        don&apos;t retarget once started.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/css_transitions_vs_keyframes.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <h3>CSS: Nested Border Radii</h3>
+      <p>
+        Nested border radii look funky when they're the same value. The correct formula is{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">outer r = inner r + padding</code>.
+      </p>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/nested_border_radii.png"
+          alt="Nested border radii tip - outer radius should equal inner radius plus padding"
+          width={800}
+          height={600}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
 
       <h3>CSS: Prevent Page Bounce with Multiple Scroll Containers</h3>
       <p>

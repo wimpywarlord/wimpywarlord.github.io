@@ -705,6 +705,19 @@ setTransform(
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
+
+      <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/tree_filter_claude.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
     </div>
   );
 }

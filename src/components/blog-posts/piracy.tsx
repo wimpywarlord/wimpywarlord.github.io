@@ -211,6 +211,64 @@ export function Piracy() {
         </li>
       </ul>
 
+      <h3 className="text-primary/80">Anna's Archive</h3>
+      <p>
+        The largest, truly open library in human history.
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <a
+            href="http://annas-archive.gd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Anna's Archive (.gd)"
+          >
+            annas-archive.gd
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://annas-archive.vg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Anna's Archive (.vg)"
+          >
+            annas-archive.vg
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://annas-archive.pk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Anna's Archive (.pk)"
+          >
+            annas-archive.pk
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://annas-archive.gl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Anna's Archive (.gl)"
+          >
+            annas-archive.gl
+          </a>
+        </li>
+      </ul>
+      <p className="text-xs text-muted-foreground italic">
+        None of the above require VPN. The original .li suffix URLs are defunct.
+      </p>
+
       <h2 className="text-primary">E-Readers & Digital Reading</h2>
 
       <h3 className="text-primary/80">KOReader AI Assistant Plugin</h3>
@@ -302,6 +360,36 @@ export function Piracy() {
           </a>
         </li>
       </ul>
+
+      <h2 className="text-primary">VPN</h2>
+
+      <h3 className="text-primary/80">VPN Quality Matters</h3>
+      <p>
+        What matters is the quality of the VPN.{" "}
+        <a
+          href="https://www.hidemyass.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+          tabIndex={0}
+          aria-label="HMA VPN"
+        >
+          HMA (Hide My Ass)
+        </a>
+        {" "}is a quality provider. Before opening apps like TikTok, check the
+        reputation of your IP address with{" "}
+        <a
+          href="http://scamanalytics.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+          tabIndex={0}
+          aria-label="Scam Analytics IP reputation checker"
+        >
+          scamanalytics.com
+        </a>
+        {" "}— a low fraud score means the IP is clean and less likely to get flagged.
+      </p>
 
       <h3 className="text-primary/80">Resolution: SD, HD, UHD</h3>
       <p>
