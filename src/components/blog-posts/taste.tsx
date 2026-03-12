@@ -15,6 +15,22 @@ export function Taste() {
       </p>
 
       <div className="my-6">
+        <GalleryVideo
+          controls
+          loop
+          autoPlay
+          muted
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/taste/gorgeous_startup_design.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/taste/cool_landing_page_navigation.mp4"
