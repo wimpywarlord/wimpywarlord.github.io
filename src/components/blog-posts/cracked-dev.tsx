@@ -276,6 +276,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://studio.neato.fun/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Neato Studio
+          </Link>
+          {" - Generative design tools for creating unique visuals, patterns, and effects"}
+        </li>
+        <li>
+          <Link
             href="https://dither.floriankiem.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
