@@ -1372,6 +1372,34 @@ and anything that'll help an AI replicate such designs.`}
         </GalleryVideo>
       </div>
 
+      <h3>Fonts That Hit Different</h3>
+      <p>
+        If you want to take your website typography to the next level, check out
+        these 2 websites for fonts:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://fontshare.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Fontshare
+          </Link>
+          {" - Free, high-quality fonts by Indian Type Foundry"}
+        </li>
+        <li>
+          <Link
+            href="https://uncut.wtf"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Uncut
+          </Link>
+          {" - Free typefaces for the contemporary designer"}
+        </li>
+      </ul>
+
       <h3>CSS Typography Tip</h3>
       <p>
         Improve text readability and avoid awkward single words on the last
