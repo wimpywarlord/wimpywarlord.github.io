@@ -211,6 +211,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Comprehensive design systems resource"}
         </li>
+        <li>
+          <Link
+            href="https://www.loftlyy.com/en"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Loftlyy
+          </Link>
+          {" - Discover real-world brand identities. Curated database of logos, color palettes, typography, and brand guidelines from 37+ major brands"}
+        </li>
       </ul>
 
       <h3>Website Backgrounds</h3>
