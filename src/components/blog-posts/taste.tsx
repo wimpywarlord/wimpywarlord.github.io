@@ -15,13 +15,7 @@ export function Taste() {
       </p>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/taste/gorgeous_startup_design.mp4"
             type="video/mp4"
@@ -80,13 +74,7 @@ export function Taste() {
       </div>
 
       <div className="my-6 space-y-4">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/colors_panel_2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
@@ -310,13 +298,7 @@ export function Taste() {
       </ul>
 
       <div className="my-6 space-y-4">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/landing_page_component_5.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
@@ -360,62 +342,32 @@ export function Taste() {
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/figma_bg_remover.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6 space-y-4">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/settings.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/slider_setting_filter.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/delete_button.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/taste_slant_button.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
@@ -440,23 +392,11 @@ export function Taste() {
       </p>
 
       <div className="my-6 space-y-4">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/gallery_animation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/gallery_animation_2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
@@ -495,46 +435,22 @@ setTransform(
       </pre>
 
       <div className="my-6 space-y-4">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/loader_inspiration.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/perfect_pixel_loader.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/taste_loaders.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/taste/scroll_text_animation_inspiration.mp4"
             type="video/mp4"
@@ -544,130 +460,70 @@ setTransform(
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/luts_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/the_feel_of_greatness.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/the_vibe_is_unmatched.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/ditter_ascii.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/1_k_follwers.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/invoice_design.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/landing_bento_piece.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/weather_card.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/taste_ful_ui_for_collection_of_books.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/taste_oragami.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
@@ -684,52 +540,28 @@ setTransform(
       </p>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/taste_up_beat_colorful.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/tasteful_info_launch_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/grid_like_taste_effect.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/tree_filter_claude.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
