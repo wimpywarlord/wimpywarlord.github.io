@@ -19,9 +19,9 @@ export function MemeCollection() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Sound Effects</h2>
+      <h3 className="text-primary">Sound Effects</h3>
 
-      <h3>MyInstants - The Holy Grail</h3>
+      <h4>MyInstants - The Holy Grail</h4>
       <p>
         Every meme sound effect you could ever need, all in one place. The{" "}
         <Highlight>Vine boom</Highlight>, the <Highlight>Windows XP error</Highlight>,
@@ -42,9 +42,9 @@ export function MemeCollection() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Meme Editor</h2>
+      <h3 className="text-primary">Meme Editor</h3>
 
-      <h3>BigForge - The Goated Meme Editor</h3>
+      <h4>BigForge - The Goated Meme Editor</h4>
       <p>
         The best meme editor out there. Clean UI, fast, and just works.
       </p>
@@ -63,7 +63,7 @@ export function MemeCollection() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">More Coming Soon</h2>
+      <h3 className="text-primary">More Coming Soon</h3>
       <p>
         This collection is just getting started. More meme resources, templates,
         and tools will be added as I find them.

@@ -261,9 +261,9 @@ const StaggerCard = ({
           className="soulful-stagger"
           style={{ "--stagger": 1 } as React.CSSProperties}
         >
-          <h3 className="text-sm sm:text-base font-semibold mb-2">
+          <h4 className="text-sm sm:text-base font-semibold mb-2">
             Track expenses, build lasting habits
-          </h3>
+          </h4>
           <p className="text-xs text-muted-foreground mb-3">
             Monitor your spending and develop financial habits that stick.
           </p>
@@ -282,9 +282,9 @@ const StaggerCard = ({
             className="soulful-stagger"
             style={{ "--stagger": 1 } as React.CSSProperties}
           >
-            <h3 className="text-sm sm:text-base font-semibold mb-2">
+            <h4 className="text-sm sm:text-base font-semibold mb-2">
               Track expenses, build lasting habits
-            </h3>
+            </h4>
           </div>
           <div
             className="soulful-stagger"
@@ -665,20 +665,14 @@ export function SoulfulCss() {
         }
       `}</style>
 
-      <h2>overflow: hidden vs overflow: clip</h2>
+      <h3>overflow: hidden vs overflow: clip</h3>
 
       <p>
         They look the same. They are <strong>not</strong> the same.
       </p>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/soulful_css/overflow_hidden_vs_clip.mp4"
             type="video/mp4"
@@ -687,11 +681,11 @@ export function SoulfulCss() {
         </GalleryVideo>
       </div>
 
-      <h3>
+      <h4>
         <code className="bg-muted px-2 py-1 rounded text-sm">
           overflow: hidden
         </code>
-      </h3>
+      </h4>
       <ul>
         <li>Clips visually but still creates a scroll container</li>
         <li>
@@ -700,11 +694,11 @@ export function SoulfulCss() {
         <li>May leak edges with border-radius in some cases</li>
       </ul>
 
-      <h3>
+      <h4>
         <code className="bg-muted px-2 py-1 rounded text-sm">
           overflow: clip
         </code>
-      </h3>
+      </h4>
       <ul>
         <li>Strict clipping, no scroll container at all</li>
         <li>Nothing scrolls — not even via JS</li>
@@ -719,7 +713,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Smooth Edges for Marquees with CSS Mask</h2>
+      <h3>Smooth Edges for Marquees with CSS Mask</h3>
 
       <p>
         Two Tailwind classes. That's it.
@@ -732,13 +726,7 @@ export function SoulfulCss() {
       </pre>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/soulful_css/css_mask_smooth_edges.mp4"
             type="video/mp4"
@@ -755,7 +743,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Organic Shapes with 8-Value border-radius</h2>
+      <h3>Organic Shapes with 8-Value border-radius</h3>
 
       <p>
         <code className="bg-muted px-2 py-1 rounded text-sm">border-radius</code>{" "}
@@ -775,13 +763,7 @@ export function SoulfulCss() {
       </p>
 
       <div className="my-6">
-        <GalleryVideo
-          controls
-          loop
-          autoPlay
-          muted
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        >
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/soulful_css/border_radius_organic_shapes.mp4"
             type="video/mp4"
@@ -792,7 +774,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Increase Click Area Without Messing Up Layout</h2>
+      <h3>Increase Click Area Without Messing Up Layout</h3>
       <p>
         Want to increase the click area without messing up your layout? Try{" "}
         <code className="bg-muted px-2 py-1 rounded text-sm">:after</code> with{" "}
@@ -820,7 +802,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Fix Hover Bugs with Group Classes</h2>
+      <h3>Fix Hover Bugs with Group Classes</h3>
       <p>
         You can achieve parent-child hover interactions using the Tailwind{" "}
         <code className="bg-muted px-2 py-1 rounded text-sm">group</code> class
@@ -851,7 +833,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Fix Dead Zones Between Stacked Elements</h2>
+      <h3>Fix Dead Zones Between Stacked Elements</h3>
       <p>
         Ever notice small dead zones between closely stacked elements where
         clicks or hovers don't register? Fix it with a{" "}
@@ -884,7 +866,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Typography: text-wrap: pretty</h2>
+      <h3>Typography: text-wrap: pretty</h3>
       <p>
         Improve text readability and avoid awkward single words on the last
         line:
@@ -901,7 +883,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Fix Ugly Autofill Backgrounds</h2>
+      <h3>Fix Ugly Autofill Backgrounds</h3>
       <p>
         <code className="bg-muted px-2 py-1 rounded text-sm">autofill</code> on
         inputs is ugly by default — the background bleed ruins clean design
@@ -928,7 +910,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Transitions vs Keyframe Animations</h2>
+      <h3>Transitions vs Keyframe Animations</h3>
       <p>
         When it comes to interruptibility, CSS transitions and keyframe animations
         behave differently. Transitions interpolate toward the latest state and can
@@ -947,7 +929,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Nested Border Radii</h2>
+      <h3>Nested Border Radii</h3>
       <p>
         Nested border radii look funky when they're the same value. The correct formula is{" "}
         <code className="bg-muted px-2 py-1 rounded text-sm">outer r = inner r + padding</code>.
@@ -964,7 +946,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Prevent Page Bounce with Multiple Scroll Containers</h2>
+      <h3>Prevent Page Bounce with Multiple Scroll Containers</h3>
       <p>
         If your app contains multiple scroll containers, add this to your
         html/body to prevent the annoying "page bounce" effect:
@@ -983,7 +965,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Text Wrapping: balance vs wrap</h2>
+      <h3>Text Wrapping: balance vs wrap</h3>
       <p>
         <code className="bg-muted px-2 py-1 rounded text-sm">text-wrap: balance</code>{" "}
         distributes text evenly across each line, avoiding orphaned words. Drag
@@ -996,7 +978,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Animate Icons Contextually</h2>
+      <h3>Animate Icons Contextually</h3>
       <p>
         When swapping icons (like copy → check), don't just pop them in. Layer{" "}
         <code className="bg-muted px-2 py-1 rounded text-sm">opacity</code>,{" "}
@@ -1017,7 +999,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Make Text Crispy</h2>
+      <h3>Make Text Crispy</h3>
       <p>
         macOS uses subpixel antialiasing by default, which makes light text on
         dark backgrounds look thick and blurry. One line fixes it.
@@ -1035,7 +1017,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Use Tabular Numbers</h2>
+      <h3>Use Tabular Numbers</h3>
       <p>
         Proportional digits have varying widths — great for reading, terrible for
         counters and tables. Hit play and watch the numbers jump around, then flip
@@ -1051,7 +1033,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Split & Stagger Entering Elements</h2>
+      <h3>Split & Stagger Entering Elements</h3>
       <p>
         Instead of animating everything in at once, stagger elements using a{" "}
         <code className="bg-muted px-2 py-1 rounded text-sm">--stagger</code>{" "}
@@ -1075,7 +1057,7 @@ export function SoulfulCss() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Make Exit Animations Subtle</h2>
+      <h3>Make Exit Animations Subtle</h3>
       <p>
         Entrance animations mirror the full distance. Exit animations shouldn't.
         A short{" "}
@@ -1093,7 +1075,7 @@ exit: { y: "-12px", opacity: 0, filter: "blur(4px)" }`}</code>
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Align Optically, Not Geometrically</h2>
+      <h3>Align Optically, Not Geometrically</h3>
       <p>
         Equal padding on both sides of a button with an icon looks unbalanced —
         the icon side appears heavier. Shave a few pixels off the icon side.
@@ -1107,7 +1089,7 @@ exit: { y: "-12px", opacity: 0, filter: "blur(4px)" }`}</code>
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Use Shadows Instead of Borders</h2>
+      <h3>Use Shadows Instead of Borders</h3>
       <p>
         Borders are binary — they're either there or not. Multi-layer box shadows
         create depth that adapts to any background, especially with transparency.
@@ -1122,7 +1104,7 @@ exit: { y: "-12px", opacity: 0, filter: "blur(4px)" }`}</code>
 
       <div className="my-8 border-b border-border" />
 
-      <h2>Add Outline to Images</h2>
+      <h3>Add Outline to Images</h3>
       <p>
         Images on similar backgrounds lose their edge. A 1px outline at 10% opacity
         with{" "}

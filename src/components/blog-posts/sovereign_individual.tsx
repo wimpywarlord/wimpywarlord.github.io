@@ -20,7 +20,7 @@ export function SovereignIndividual() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Zcash Shielded Pool</h2>
+      <h3 className="text-primary">Zcash Shielded Pool</h3>
       <p>
         The <Highlight>shielded pool</Highlight> in Zcash represents the total
         amount of ZEC held in privacy-preserving addresses. It's a direct
@@ -62,7 +62,7 @@ export function SovereignIndividual() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Final Thoughts</h2>
+      <h3 className="text-primary">Final Thoughts</h3>
       <p>
         Financial privacy isn't about having something to hide—it's about
         preserving the freedom to transact without surveillance. The tools exist;

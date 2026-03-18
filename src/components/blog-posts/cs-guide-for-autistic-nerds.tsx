@@ -17,9 +17,9 @@ export function CsGuideForAutisticNerds() {
         will keep improving it.
       </p>
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Why to Study? Find your WHY?
-      </h2>
+      </h3>
       <p>
         Before diving into the technical content, it's crucial to understand
         your motivation. Why do you want to learn computer science? Is it for a
@@ -29,7 +29,7 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">HOW to Study?</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">HOW to Study?</h3>
       <p>
         Massive amount of material, don't try to rush through it, pick what is
         important right now.
@@ -119,7 +119,7 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">What to Study?</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">What to Study?</h3>
       <p>
         Computer Science fundamentals can be broken down into the following:{" "}
         <Link
@@ -329,9 +329,9 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         <Highlight>Computer Networks + Cloud</Highlight>
-      </h2>
+      </h3>
 
       <p>
         WATCH THIS - How does the internet work? -{" "}
@@ -344,7 +344,7 @@ export function CsGuideForAutisticNerds() {
         </Link>
       </p>
 
-      <h3 className="text-base sm:text-lg">History and Fundamentals</h3>
+      <h4 className="text-base sm:text-lg">History and Fundamentals</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           History of the internet:{" "}
@@ -378,7 +378,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">URLs and Domains</h3>
+      <h4 className="text-base sm:text-lg">URLs and Domains</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           What is a URL?:{" "}
@@ -432,7 +432,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Networking Basics</h3>
+      <h4 className="text-base sm:text-lg">Networking Basics</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Basics of Networking (Talk with AI about each topic):{" "}
@@ -456,7 +456,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">OSI Model</h3>
+      <h4 className="text-base sm:text-lg">OSI Model</h4>
       <p>Everything in Networking is a part of OSI Model:</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -491,7 +491,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Networking Protocols</h3>
+      <h4 className="text-base sm:text-lg">Networking Protocols</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Networking Protocols Intro:{" "}
@@ -525,7 +525,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">TCP/IP and UDP</h3>
+      <h4 className="text-base sm:text-lg">TCP/IP and UDP</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           In-depth of TCP/IP and UDP:{" "}
@@ -549,7 +549,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">HTTP and HTTPS</h3>
+      <h4 className="text-base sm:text-lg">HTTP and HTTPS</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           What is HTTP and HTTPs:{" "}
@@ -583,7 +583,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">APIs</h3>
+      <h4 className="text-base sm:text-lg">APIs</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           What is an API:{" "}
@@ -667,7 +667,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Cookies, Sessions and SSH</h3>
+      <h4 className="text-base sm:text-lg">Cookies, Sessions and SSH</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           What is Cookies and Sessions:{" "}
@@ -712,7 +712,7 @@ export function CsGuideForAutisticNerds() {
         <li>Exercise here could be setup of Github</li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Exercise</h3>
+      <h4 className="text-base sm:text-lg">Exercise</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Download and use Wireshark - and analyze network traffic -{" "}
@@ -726,7 +726,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">In-Depth Reading</h3>
+      <h4 className="text-base sm:text-lg">In-Depth Reading</h4>
       <p>
         Networking for Dummies:{" "}
         <Link
@@ -772,7 +772,7 @@ export function CsGuideForAutisticNerds() {
         <li>Chapter 24 - Connecting from Home</li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Cloud</h3>
+      <h4 className="text-base sm:text-lg">Cloud</h4>
       <p>
         This will all be hands on exercise - cloud is not different from
         networking fundamentals, just someone else's computer.
@@ -780,11 +780,11 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         <Highlight>Operating Systems</Highlight>
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Basic Introduction</h3>
+      <h4 className="text-base sm:text-lg">Basic Introduction</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Basic intro to Operating System:{" "}
@@ -828,7 +828,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Process and Thread Management</h3>
+      <h4 className="text-base sm:text-lg">Process and Thread Management</h4>
       <p className="text-sm">Creating and managing execution contexts</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -860,7 +860,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Context Switching</h3>
+      <h4 className="text-base sm:text-lg">Context Switching</h4>
       <p className="text-sm">Rapidly switching between running processes</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -883,7 +883,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">CPU Scheduling</h3>
+      <h4 className="text-base sm:text-lg">CPU Scheduling</h4>
       <p className="text-sm">Determining which process runs when</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -906,7 +906,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Memory Management</h3>
+      <h4 className="text-base sm:text-lg">Memory Management</h4>
       <p className="text-sm">Organizing and protecting system memory</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -929,7 +929,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Virtual Memory</h3>
+      <h4 className="text-base sm:text-lg">Virtual Memory</h4>
       <p className="text-sm">Creating the illusion of unlimited memory</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -952,7 +952,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">File Systems</h3>
+      <h4 className="text-base sm:text-lg">File Systems</h4>
       <p className="text-sm">Organizing and storing persistent data</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -984,7 +984,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Synchronization</h3>
+      <h4 className="text-base sm:text-lg">Synchronization</h4>
       <p className="text-sm">Coordinating access to shared resources</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -1007,7 +1007,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Deadlocks</h3>
+      <h4 className="text-base sm:text-lg">Deadlocks</h4>
       <p className="text-sm">Preventing and resolving resource conflicts</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -1030,7 +1030,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Interrupt Handling</h3>
+      <h4 className="text-base sm:text-lg">Interrupt Handling</h4>
       <p className="text-sm">Managing hardware events efficiently</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -1053,7 +1053,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">System Calls</h3>
+      <h4 className="text-base sm:text-lg">System Calls</h4>
       <p className="text-sm">Providing controlled access to kernel services</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -1076,7 +1076,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Boot Process</h3>
+      <h4 className="text-base sm:text-lg">Boot Process</h4>
       <p className="text-sm">Initializing the system from power-on</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -1099,7 +1099,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Kernel Architectures</h3>
+      <h4 className="text-base sm:text-lg">Kernel Architectures</h4>
       <p className="text-sm">Different approaches to OS design</p>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
@@ -1122,7 +1122,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Linux and Terminal</h3>
+      <h4 className="text-base sm:text-lg">Linux and Terminal</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Get familiar with the terminal (Force yourself to use the terminal for
@@ -1169,9 +1169,9 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         <Highlight>System Design</Highlight>
-      </h2>
+      </h3>
       <p>Pre-requisite - Networking + OS + DSA</p>
       <p>
         Just follow this:{" "}
@@ -1196,7 +1196,7 @@ export function CsGuideForAutisticNerds() {
         </Link>
       </p>
 
-      <h3 className="text-base sm:text-lg">Caching</h3>
+      <h4 className="text-base sm:text-lg">Caching</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           <Link
@@ -1220,9 +1220,9 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         <Highlight>Data Structure and Algorithm / Core Programming</Highlight>
-      </h2>
+      </h3>
 
       <p>To start with - solve these questions:</p>
       <GalleryImage
@@ -1319,12 +1319,12 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         <Highlight>Cryptography</Highlight>
-      </h2>
+      </h3>
       <p>There are going to be a lot of jargon - don&apos;t be scared.</p>
 
-      <h3 className="text-base sm:text-lg">Hashing</h3>
+      <h4 className="text-base sm:text-lg">Hashing</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           What is a HASH/CHECKSUM:{" "}
@@ -1348,7 +1348,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">SHA-256 Deep Dive</h3>
+      <h4 className="text-base sm:text-lg">SHA-256 Deep Dive</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Details of SHA-256 (Not required for SANS):{" "}
@@ -1420,7 +1420,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Caesar Cipher</h3>
+      <h4 className="text-base sm:text-lg">Caesar Cipher</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Simple Caesar Cipher:{" "}
@@ -1444,7 +1444,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Cryptography Basics</h3>
+      <h4 className="text-base sm:text-lg">Cryptography Basics</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Very basic of cryptography:{" "}
@@ -1468,7 +1468,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">RSA</h3>
+      <h4 className="text-base sm:text-lg">RSA</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           RSA:{" "}
@@ -1502,7 +1502,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Authentication & Authorization</h3>
+      <h4 className="text-base sm:text-lg">Authentication & Authorization</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Authentication & Authorization:{" "}
@@ -1525,7 +1525,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">JWT Auth Tokens</h3>
+      <h4 className="text-base sm:text-lg">JWT Auth Tokens</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           JWT Auth Tokens:{" "}
@@ -1557,7 +1557,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Exercises</h3>
+      <h4 className="text-base sm:text-lg">Exercises</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Understand how bitcoin uses cryptography:{" "}
@@ -1593,11 +1593,11 @@ export function CsGuideForAutisticNerds() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         <Highlight>AI and Machine Learning</Highlight>
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Great Resources</h3>
+      <h4 className="text-base sm:text-lg">Great Resources</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Welch Labs:{" "}
@@ -1641,9 +1641,9 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Neural Nets Watch List - Welch Labs
-      </h3>
+      </h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           <Link
@@ -1710,7 +1710,7 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">Interesting Videos</h3>
+      <h4 className="text-base sm:text-lg">Interesting Videos</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           <Link
@@ -1777,9 +1777,9 @@ export function CsGuideForAutisticNerds() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Deep Learning - LLM - Neural Nets
-      </h3>
+      </h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           What is Neural Network:{" "}
@@ -1907,7 +1907,7 @@ export function CsGuideForAutisticNerds() {
         </Link>
       </p>
 
-      <h3 className="text-base sm:text-lg">Reinforcement Learning</h3>
+      <h4 className="text-base sm:text-lg">Reinforcement Learning</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Great intro blog to Reinforcement Learning:{" "}
@@ -1952,7 +1952,7 @@ export function CsGuideForAutisticNerds() {
         </Link>
       </p>
 
-      <h3 className="text-base sm:text-lg">Diffusion Models</h3>
+      <h4 className="text-base sm:text-lg">Diffusion Models</h4>
       <p>
         <strong>The Breakthrough Behind Modern AI Image Generators:</strong>{" "}
         <Link
@@ -1964,7 +1964,7 @@ export function CsGuideForAutisticNerds() {
         </Link>
       </p>
 
-      <h3 className="text-base sm:text-lg">Fourier Transform</h3>
+      <h4 className="text-base sm:text-lg">Fourier Transform</h4>
       <ul className="space-y-2 text-sm sm:text-base">
         <li>
           Fourier Basics:{" "}

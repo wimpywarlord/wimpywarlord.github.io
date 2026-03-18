@@ -36,11 +36,11 @@ export function MacosOnSteroids() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">Initial System Setup</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">Initial System Setup</h3>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Step 1: Basic macOS Configuration
-      </h3>
+      </h4>
       <p>
         Before installing any applications, let's configure macOS for optimal
         productivity:
@@ -137,11 +137,11 @@ export function MacosOnSteroids() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Wallpapers & Visual Setup
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Desktop Wallpapers</h3>
+      <h4 className="text-base sm:text-lg">Desktop Wallpapers</h4>
       <p>My collection of desktop wallpapers:</p>
 
       <GalleryImage
@@ -166,7 +166,7 @@ export function MacosOnSteroids() {
         className="w-full rounded-lg my-3 sm:my-4"
       />
 
-      <h3 className="text-base sm:text-lg">Twitter Banners</h3>
+      <h4 className="text-base sm:text-lg">Twitter Banners</h4>
       <p>For your Twitter account banners and social media:</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -207,7 +207,7 @@ export function MacosOnSteroids() {
         />
       </div>
 
-      <h3 className="text-base sm:text-lg">Profile Pictures</h3>
+      <h4 className="text-base sm:text-lg">Profile Pictures</h4>
       <p>For consistency across all your accounts:</p>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 my-4">
@@ -243,11 +243,11 @@ export function MacosOnSteroids() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Installing Homebrew & Core Applications
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Step 1: Install Homebrew</h3>
+      <h4 className="text-base sm:text-lg">Step 1: Install Homebrew</h4>
       <p>
         Homebrew is the <Highlight>essential package manager</Highlight> for
         macOS. It simplifies installing and managing applications.
@@ -271,15 +271,15 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Step 2: Install Essential Applications
-      </h3>
+      </h4>
       <p>
         Now let's install all the applications you'll need. I've organized them
         by category with detailed explanations:
       </p>
 
-      <h3 className="text-base sm:text-lg">One-Command Installation</h3>
+      <h4 className="text-base sm:text-lg">One-Command Installation</h4>
       <p>Install everything at once with this single command:</p>
 
       <CommandBox>
@@ -294,9 +294,9 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">
+      <h5 className="text-primary text-sm sm:text-base">
         Core Command Line Tools
-      </h4>
+      </h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -462,7 +462,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">Browsers</h4>
+      <h5 className="text-primary text-sm sm:text-base">Browsers</h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -496,7 +496,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">Development Tools</h4>
+      <h5 className="text-primary text-sm sm:text-base">Development Tools</h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -566,9 +566,9 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">
+      <h5 className="text-primary text-sm sm:text-base">
         Productivity & System Tools
-      </h4>
+      </h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -700,7 +700,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">File Management</h4>
+      <h5 className="text-primary text-sm sm:text-base">File Management</h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -718,7 +718,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">Office & Documents</h4>
+      <h5 className="text-primary text-sm sm:text-base">Office & Documents</h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -772,7 +772,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">Communication</h4>
+      <h5 className="text-primary text-sm sm:text-base">Communication</h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -806,9 +806,9 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">
+      <h5 className="text-primary text-sm sm:text-base">
         Creative & Media Tools
-      </h4>
+      </h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -874,7 +874,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">Media Players</h4>
+      <h5 className="text-primary text-sm sm:text-base">Media Players</h5>
 
       <CommandBox>
         <p className="text-xs sm:text-sm">
@@ -904,7 +904,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">Audio Utilities</h4>
+      <h5 className="text-primary text-sm sm:text-base">Audio Utilities</h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -938,7 +938,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm sm:text-base">Security & Privacy</h4>
+      <h5 className="text-primary text-sm sm:text-base">Security & Privacy</h5>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -974,11 +974,11 @@ export function MacosOnSteroids() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Terminal Setup with Oh My Zsh
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Step 1: Install Oh My Zsh</h3>
+      <h4 className="text-base sm:text-lg">Step 1: Install Oh My Zsh</h4>
       <p>
         Oh My Zsh is a framework for managing your Zsh configuration with{" "}
         <Highlight>tons of helpful features</Highlight>.
@@ -991,9 +991,9 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Step 2: Install Powerlevel10k Theme
-      </h3>
+      </h4>
       <p>The most powerful and customizable Zsh theme:</p>
 
       <CommandBox>
@@ -1016,11 +1016,11 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Step 3: Install Essential Zsh Plugins
-      </h3>
+      </h4>
 
-      <h4 className="text-primary text-sm">zsh-autosuggestions</h4>
+      <h5 className="text-primary text-sm">zsh-autosuggestions</h5>
       <p className="text-sm">
         Suggests commands as you type based on your history:
       </p>
@@ -1031,7 +1031,7 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">zsh-syntax-highlighting</h4>
+      <h5 className="text-primary text-sm">zsh-syntax-highlighting</h5>
       <p className="text-sm">
         Provides syntax highlighting for your shell commands:
       </p>
@@ -1042,7 +1042,7 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">zsh-fast-syntax-highlighting</h4>
+      <h5 className="text-primary text-sm">zsh-fast-syntax-highlighting</h5>
       <p className="text-sm">
         Faster and more feature-rich syntax highlighting:
       </p>
@@ -1055,7 +1055,7 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">zsh-autocomplete</h4>
+      <h5 className="text-primary text-sm">zsh-autocomplete</h5>
       <p className="text-sm">Real-time auto-completion as you type:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary break-all">
@@ -1065,7 +1065,7 @@ export function MacosOnSteroids() {
         </code>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">Enabling the Plugins</h4>
+      <h5 className="text-primary text-sm">Enabling the Plugins</h5>
       <p className="text-sm">
         Edit your <code className="text-xs">~/.zshrc</code> file and update the
         plugins line:
@@ -1099,13 +1099,13 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Step 4: Advanced Terminal Tools Setup
-      </h3>
-
-      <h4 className="text-primary text-sm">
-        Initialize Shell History with Atuin
       </h4>
+
+      <h5 className="text-primary text-sm">
+        Initialize Shell History with Atuin
+      </h5>
       <p className="text-sm">Set up magical shell history sync:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
@@ -1116,9 +1116,9 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">
+      <h5 className="text-primary text-sm">
         Configure Zoxide for Smart Navigation
-      </h4>
+      </h5>
       <p className="text-sm">Initialize zoxide in your shell:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary break-all">
@@ -1131,7 +1131,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">Setup FZF Integration</h4>
+      <h5 className="text-primary text-sm">Setup FZF Integration</h5>
       <p className="text-sm">Add fuzzy finding to your shell:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
@@ -1142,9 +1142,9 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">
+      <h5 className="text-primary text-sm">
         macOS UI Customization (Advanced)
-      </h4>
+      </h5>
       <p className="text-sm">
         For power users who want to customize the macOS interface:
       </p>
@@ -1193,12 +1193,12 @@ export function MacosOnSteroids() {
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">iTerm2 Configuration</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">iTerm2 Configuration</h3>
 
-      <h3 className="text-base sm:text-lg">Essential iTerm2 Settings</h3>
+      <h4 className="text-base sm:text-lg">Essential iTerm2 Settings</h4>
       <p>Configure iTerm2 for the optimal terminal experience:</p>
 
-      <h4 className="text-primary text-sm">Enable Natural Text Editing</h4>
+      <h5 className="text-primary text-sm">Enable Natural Text Editing</h5>
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary">
           iTerm2 → Preferences → Profiles → Keys → Key Mappings
@@ -1208,7 +1208,7 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h4 className="text-primary text-sm">Transparency and Blur Settings</h4>
+      <h5 className="text-primary text-sm">Transparency and Blur Settings</h5>
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary">
           iTerm2 → Preferences → Profiles → Window
@@ -1219,9 +1219,9 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Auto-Activate Python Virtual Environments
-      </h3>
+      </h4>
       <p>
         Add this to your <code className="text-xs sm:text-sm">~/.zshrc</code>{" "}
         for automatic virtual environment activation:
@@ -1259,17 +1259,17 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Ghostty Terminal Configuration
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Essential Ghostty Settings</h3>
+      <h4 className="text-base sm:text-lg">Essential Ghostty Settings</h4>
       <p>
         Configure Ghostty for an optimal terminal experience with persistent
         window state:
       </p>
 
-      <h4 className="text-primary text-sm">Window State Persistence</h4>
+      <h5 className="text-primary text-sm">Window State Persistence</h5>
       <p className="text-sm">
         Enable automatic saving and restoring of window state (position, size,
         tabs, splits):
@@ -1303,11 +1303,11 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Hyper Key Setup & Macros
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Ultimate Productivity Shortcuts</h3>
+      <h4 className="text-base sm:text-lg">Ultimate Productivity Shortcuts</h4>
       <p>
         Using BetterTouchTool's Hyper Key (⌘⌥⌃⇧).{" "}
         <Highlight>
@@ -1380,11 +1380,11 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Development Environment Setup
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Bun - Fast JavaScript Runtime</h3>
+      <h4 className="text-base sm:text-lg">Bun - Fast JavaScript Runtime</h4>
       <p>
         Install <Highlight>Bun</Highlight>, a fast all-in-one JavaScript runtime
         and toolkit:
@@ -1403,9 +1403,9 @@ esac
         </p>
       </InfoBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Python Environment with uv
-      </h3>
+      </h4>
       <p>
         We already installed <Highlight>uv</Highlight> via Homebrew earlier. Now
         let's use it to manage Python versions:
@@ -1428,7 +1428,7 @@ esac
         </p>
       </InfoBox>
 
-      <h3 className="text-base sm:text-lg">Git Configuration</h3>
+      <h4 className="text-base sm:text-lg">Git Configuration</h4>
       <p>Set up your Git identity and preferences:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
@@ -1445,7 +1445,7 @@ esac
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">SSH Keys for GitHub</h3>
+      <h4 className="text-base sm:text-lg">SSH Keys for GitHub</h4>
       <p>Generate and add SSH keys for secure GitHub access:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary break-all">
@@ -1467,9 +1467,9 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">System Maintenance</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">System Maintenance</h3>
 
-      <h3 className="text-base sm:text-lg">Regular Updates</h3>
+      <h4 className="text-base sm:text-lg">Regular Updates</h4>
       <p>Keep your system and applications up to date:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
@@ -1501,11 +1501,11 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">
+      <h3 className="text-primary text-xl sm:text-2xl">
         Essential Extensions & Productivity Tools
-      </h2>
+      </h3>
 
-      <h3 className="text-base sm:text-lg">Raycast Extensions</h3>
+      <h4 className="text-base sm:text-lg">Raycast Extensions</h4>
       <p>
         Supercharge your macOS workflow with these{" "}
         <Highlight>must-have Raycast extensions</Highlight>:
@@ -1534,12 +1534,12 @@ esac
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg">VS Code Extensions</h3>
+      <h4 className="text-base sm:text-lg">VS Code Extensions</h4>
       <p>
         These are some very useful <Highlight>VScode Extensions</Highlight>:
       </p>
 
-      <h3>Core Productivity Extensions</h3>
+      <h4>Core Productivity Extensions</h4>
       <ul className="space-y-1 text-sm">
         <li>
           <strong>All Autocomplete</strong> - Enhanced autocomplete across all
@@ -1573,7 +1573,7 @@ esac
         </li>
       </ul>
 
-      <h3>Theme & Icons</h3>
+      <h4>Theme & Icons</h4>
       <ul className="space-y-1 text-sm">
         <li>
           <strong>Dracula Theme Official</strong> - The perfect dark theme for
@@ -1584,7 +1584,7 @@ esac
         </li>
       </ul>
 
-      <h3>Git Integration</h3>
+      <h4>Git Integration</h4>
       <ul className="space-y-1 text-sm">
         <li>
           <strong>GitLens</strong> - Supercharge Git capabilities with blame
@@ -1596,7 +1596,7 @@ esac
         </li>
       </ul>
 
-      <h3>Code Quality & Formatting</h3>
+      <h4>Code Quality & Formatting</h4>
       <ul className="space-y-1 text-sm">
         <li>
           <strong>ESLint</strong> - JavaScript/TypeScript linting
@@ -1607,7 +1607,7 @@ esac
         </li>
       </ul>
 
-      <h3>Python Development</h3>
+      <h4>Python Development</h4>
       <ul className="space-y-1 text-sm">
         <li>
           <strong>Python</strong> - Core Python language support
@@ -1623,7 +1623,7 @@ esac
         </li>
       </ul>
 
-      <h3>Web Development</h3>
+      <h4>Web Development</h4>
       <ul className="space-y-1 text-sm">
         <li>
           <strong>Live Server</strong> - Launch local development server with
@@ -1631,7 +1631,7 @@ esac
         </li>
       </ul>
 
-      <h3>Data & Documentation</h3>
+      <h4>Data & Documentation</h4>
       <ul className="space-y-1 text-sm">
         <li>
           <strong>Rainbow CSV</strong> - Highlight CSV files with colors
@@ -1644,9 +1644,9 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">Final Tips & Tricks</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">Final Tips & Tricks</h3>
 
-      <h3 className="text-base sm:text-lg">Quick Look Enhancements</h3>
+      <h4 className="text-base sm:text-lg">Quick Look Enhancements</h4>
       <p>Enhance Quick Look (spacebar preview) with plugins:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary break-all">
@@ -1654,7 +1654,7 @@ esac
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">Touch ID for sudo</h3>
+      <h4 className="text-base sm:text-lg">Touch ID for sudo</h4>
       <p>Enable Touch ID for sudo commands:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
@@ -1666,7 +1666,7 @@ esac
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">Faster Dock Auto-Hide</h3>
+      <h4 className="text-base sm:text-lg">Faster Dock Auto-Hide</h4>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
           defaults write com.apple.dock autohide-delay -float 0
@@ -1679,9 +1679,9 @@ esac
         </code>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Paste Without Formatting (Essential for Cursor)
-      </h3>
+      </h4>
       <p>
         Set up ⌘⇧V for paste without formatting - crucial when working in
         Cursor:
@@ -1716,7 +1716,7 @@ esac
         </Link>
       </p>
 
-      <h3 className="text-base sm:text-lg">CleanShot X Auto Copy Setup</h3>
+      <h4 className="text-base sm:text-lg">CleanShot X Auto Copy Setup</h4>
       <p>
         Enable auto copy to clipboard in CleanShot X for seamless screenshot
         workflow:
@@ -1730,9 +1730,9 @@ esac
         </p>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         Remove Full Screen Shortcut Conflict
-      </h3>
+      </h4>
       <p>
         Disable ⌘⇧F full screen shortcut to avoid conflicts with code search:
       </p>
@@ -1745,7 +1745,7 @@ esac
         </p>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">VS Code Auto Close Tags</h3>
+      <h4 className="text-base sm:text-lg">VS Code Auto Close Tags</h4>
       <p>
         Enable automatic tag closing in VS Code for faster HTML/JSX editing:
       </p>
@@ -1756,9 +1756,9 @@ esac
         <p className="text-xs sm:text-sm">Enable "Auto Close Tags" setting</p>
       </CommandBox>
 
-      <h3 className="text-base sm:text-lg">
+      <h4 className="text-base sm:text-lg">
         VS Code Block Highlighting & Bracket Colorization
-      </h3>
+      </h4>
       <p>
         Enhanced code readability with Dracula-themed bracket colors and block
         highlighting:
@@ -1833,13 +1833,13 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">Shortcuts to Live By</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">Shortcuts to Live By</h3>
 
       <p>
         These keyboard shortcuts will <Highlight>save you time</Highlight>:
       </p>
 
-      <h3 className="text-base sm:text-lg">VS Code / Cursor Shortcuts</h3>
+      <h4 className="text-base sm:text-lg">VS Code / Cursor Shortcuts</h4>
 
       <ul className="list-none text-xs sm:text-sm text-center">
         <li>
@@ -1849,7 +1849,7 @@ esac
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
-      <h2 className="text-primary text-xl sm:text-2xl">Dracula Theme Setup</h2>
+      <h3 className="text-primary text-xl sm:text-2xl">Dracula Theme Setup</h3>
 
       <p>
         For complete Dracula theming across all your applications, check out my

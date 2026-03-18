@@ -155,7 +155,7 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Cursor Workflows</h2>
+      <h3 className="text-primary">Cursor Workflows</h3>
       <p>
         Master the art of building beautiful UIs with Cursor AI. These tutorials
         will show you how to leverage AI to 10x your development speed.
@@ -196,9 +196,9 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Design Resources</h2>
+      <h3 className="text-primary">Design Resources</h3>
 
-      <h3>Design Systems Theory</h3>
+      <h4>Design Systems Theory</h4>
       <p>Learn the principles behind great design systems:</p>
       <ul className="space-y-2">
         <li>
@@ -223,7 +223,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>Website Backgrounds</h3>
+      <h4>Website Backgrounds</h4>
       <p>
         Creating stunning backgrounds is crucial for that{" "}
         <Highlight>polished</Highlight> look:
@@ -261,7 +261,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>Thumbnail & Visual Tools</h3>
+      <h4>Thumbnail & Visual Tools</h4>
       <p>Create eye-catching thumbnails and visuals:</p>
       <ul className="space-y-2">
         <li>
@@ -408,7 +408,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>Component Libraries</h3>
+      <h4>Component Libraries</h4>
       <p>
         Why reinvent the wheel? Use these <Highlight>premium</Highlight>{" "}
         component libraries:
@@ -490,7 +490,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>Shadcn UI Extension Libraries</h3>
+      <h4>Shadcn UI Extension Libraries</h4>
       <p>
         If you use Shadcn UI, these libraries will{" "}
         <Highlight>supercharge</Highlight> your component toolkit:
@@ -558,7 +558,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>Color & Theming</h3>
+      <h4>Color & Theming</h4>
       <ul className="space-y-2">
         <li>
           <Link
@@ -582,7 +582,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>Icons</h3>
+      <h4>Icons</h4>
       <p>Only two libraries you need for icons:</p>
       <ul className="space-y-2">
         <li>
@@ -641,9 +641,9 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">AI Development Tools</h2>
+      <h3 className="text-primary">AI Development Tools</h3>
 
-      <h3>Claude Code Tips</h3>
+      <h4>Claude Code Tips</h4>
 
       <p>
         <code className="bg-muted px-2 py-1 rounded text-sm">Ctrl+S</code> to
@@ -660,7 +660,7 @@ export function CrackedReactDev() {
         </GalleryVideo>
       </div>
 
-      <h4 className="text-base font-semibold mt-6">Jitter Fix</h4>
+      <h5 className="text-base font-semibold mt-6">Jitter Fix</h5>
       <div className="my-6">
         <GalleryImage
           src="/blog/cracked_react_dev/claude_code_jitter_fix.jpg"
@@ -754,7 +754,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h4 className="text-base font-semibold mt-6">Prevent Haiku Sub-Agents</h4>
+      <h5 className="text-base font-semibold mt-6">Prevent Haiku Sub-Agents</h5>
       <p>
         If you've been burned by Claude Code default sub-agents using{" "}
         <Highlight>Haiku</Highlight> models, there's an easy workaround to
@@ -774,9 +774,9 @@ export function CrackedReactDev() {
         </code>
       </pre>
 
-      <h4 className="text-base font-semibold mt-6">
+      <h5 className="text-base font-semibold mt-6">
         Even Better: Use Sonnet 1M Context
-      </h4>
+      </h5>
       <p>
         The best thing I've done with Claude Code — by measure of ranting less
         to my agent sessions this past week. Use the{" "}
@@ -794,7 +794,7 @@ export function CrackedReactDev() {
         </code>
       </pre>
 
-      <h3>My Claude Code Settings</h3>
+      <h4>My Claude Code Settings</h4>
       <ClaudeCodeSettingsToggle />
 
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -814,7 +814,7 @@ export function CrackedReactDev() {
         </GalleryVideo>
       </div>
 
-      <h3>Spec-Based Development with Claude Code</h3>
+      <h4>Spec-Based Development with Claude Code</h4>
       <p>
         My favorite way to build large features with Claude Code is{" "}
         <Highlight>spec-based</Highlight>. Start with a minimal spec or prompt
@@ -842,7 +842,7 @@ export function CrackedReactDev() {
       </p>
       <CopyableText text="Interview me using the AskUserQuestionTool. Let it ask about technical implementation, UI & UX, concerns, tradeoffs—but make sure the questions are not obvious." />
 
-      <h3>Browser Automation</h3>
+      <h4>Browser Automation</h4>
       <ul className="space-y-2">
         <li>
           <Link
@@ -878,7 +878,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>AI Image Generation</h3>
+      <h4>AI Image Generation</h4>
       <p>
         Generate stunning visuals with <Highlight>AI-powered</Highlight> image
         generation tools:
@@ -908,9 +908,9 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Knowledge Management</h2>
+      <h3 className="text-primary">Knowledge Management</h3>
 
-      <h3>Obsidian - Your Second Brain</h3>
+      <h4>Obsidian - Your Second Brain</h4>
       <p>
         Every cracked dev needs a <Highlight>second brain</Highlight> to store
         knowledge:
@@ -940,9 +940,9 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Dev Workflow Optimization</h2>
+      <h3 className="text-primary">Dev Workflow Optimization</h3>
 
-      <h3>Developer Utilities</h3>
+      <h4>Developer Utilities</h4>
       <ul className="space-y-2">
         <li>
           <Link
@@ -966,7 +966,7 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
-      <h3>yt-dlp Commands</h3>
+      <h4>yt-dlp Commands</h4>
       <p>
         <Link
           href="https://github.com/yt-dlp/yt-dlp"
@@ -990,7 +990,7 @@ export function CrackedReactDev() {
         </code>
       </pre>
 
-      <h3>Terminal Music Player</h3>
+      <h4>Terminal Music Player</h4>
       <p>
         <Link
           href="https://github.com/bjarneo/cliamp"
@@ -1003,7 +1003,7 @@ export function CrackedReactDev() {
       </p>
       <CopyableText text="curl -fsSL https://raw.githubusercontent.com/bjarneo/cliamp/HEAD/install.sh | sh" />
 
-      <h3>The Primeagen Way</h3>
+      <h4>The Primeagen Way</h4>
       <p>
         Learn from one of the most <Highlight>efficient</Highlight> developers
         in the game:
@@ -1033,7 +1033,7 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Startup Quick Setup</h2>
+      <h3 className="text-primary">Startup Quick Setup</h3>
       <p>
         Need to ship <Highlight>FAST</Highlight>? These are premium resources:
       </p>
@@ -1072,9 +1072,9 @@ export function CrackedReactDev() {
       </ul>
 
       <Card className="bg-muted/50 p-4 my-6">
-        <h4 className="text-primary text-sm uppercase tracking-wider font-semibold mb-3">
+        <h5 className="text-primary text-sm uppercase tracking-wider font-semibold mb-3">
           Paid Resources
-        </h4>
+        </h5>
         <ul className="space-y-2">
           <li>
             <Link
@@ -1121,9 +1121,9 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">Tips & Tricks</h2>
+      <h3 className="text-primary">Tips & Tricks</h3>
 
-      <h3>DevTools: Inspect Disappearing Elements</h3>
+      <h4>DevTools: Inspect Disappearing Elements</h4>
       <p>
         Ever struggled to inspect tooltips or dropdowns that disappear when you
         move your mouse? Here's a <Highlight>pro tip</Highlight> from{" "}
@@ -1167,7 +1167,7 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h3>Design System Prompt</h3>
+      <h4>Design System Prompt</h4>
       <p>Use this prompt to extract design systems from any website:</p>
 
       <pre className="bg-muted/50 border border-border rounded-lg p-4 my-6 overflow-x-auto">
@@ -1181,7 +1181,7 @@ and anything that'll help an AI replicate such designs.`}
         </code>
       </pre>
 
-      <h3>Meta Tags & SEO</h3>
+      <h4>Meta Tags & SEO</h4>
       <ul className="space-y-2">
         <li>
           <Link
@@ -1215,7 +1215,7 @@ and anything that'll help an AI replicate such designs.`}
         </li>
       </ul>
 
-      <h3>Verification & Testing Tools</h3>
+      <h4>Verification & Testing Tools</h4>
       <p>
         After deploying, test your metadata with these tools:
       </p>
@@ -1272,7 +1272,7 @@ and anything that'll help an AI replicate such designs.`}
         </li>
       </ul>
 
-      <h3>Performance Optimization</h3>
+      <h4>Performance Optimization</h4>
       <ul className="space-y-2">
         <li>
           <Link
@@ -1306,7 +1306,7 @@ and anything that'll help an AI replicate such designs.`}
         </li>
       </ul>
 
-      <h3>Fonts That Hit Different</h3>
+      <h4>Fonts That Hit Different</h4>
       <p>
         If you want to take your website typography to the next level, check out
         these 2 websites for fonts:

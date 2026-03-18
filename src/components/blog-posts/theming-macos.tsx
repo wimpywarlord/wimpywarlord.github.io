@@ -21,9 +21,9 @@ export function DraculaTheming() {
         editor, and even Discord. Let's get spooky!
       </p>
 
-      <h2 className="text-primary">Step 1: Theming Your Browser & Web Apps</h2>
+      <h3 className="text-primary">Step 1: Theming Your Browser & Web Apps</h3>
 
-      <h3>Stylus: The Powerhouse for Custom Styles</h3>
+      <h4>Stylus: The Powerhouse for Custom Styles</h4>
       <p>
         <Link
           href="https://add0n.com/stylus.html"
@@ -134,9 +134,9 @@ export function DraculaTheming() {
         personalize your look.
       </p>
 
-      <h2 className="text-primary">Step 2: Theming Your Code & Notes</h2>
+      <h3 className="text-primary">Step 2: Theming Your Code & Notes</h3>
 
-      <h3>Obsidian: Dracula Gemini</h3>
+      <h4>Obsidian: Dracula Gemini</h4>
       <p>
         <Link
           href="https://obsidian.md/"
@@ -164,9 +164,9 @@ export function DraculaTheming() {
         className="rounded-lg my-4"
       />
 
-      <h2 className="text-primary">Step 3: iTerm2 & Shell</h2>
+      <h3 className="text-primary">Step 3: iTerm2 & Shell</h3>
 
-      <h3>iTerm2 + Dracula + Powerlevel10k + Oh My Zsh</h3>
+      <h4>iTerm2 + Dracula + Powerlevel10k + Oh My Zsh</h4>
       <p>
         <Link
           href="https://iterm2.com/"
@@ -238,9 +238,9 @@ export function DraculaTheming() {
         </li>
       </ul>
 
-      <h2 className="text-primary">Step 4: Discord</h2>
+      <h3 className="text-primary">Step 4: Discord</h3>
 
-      <h3>BetterDiscord + Refactor Midnight</h3>
+      <h4>BetterDiscord + Refactor Midnight</h4>
       <p>
         <Link
           href="https://betterdiscord.app/"
@@ -288,7 +288,7 @@ button.buttonWrapper-3YFQGJ {
         </code>
       </pre>
 
-      <h2 className="text-primary">Step 5: Wallpapers</h2>
+      <h3 className="text-primary">Step 5: Wallpapers</h3>
       <p>
         No theme is complete without a matching wallpaper. Here are some
         Dracula-inspired options:
@@ -437,9 +437,9 @@ button.buttonWrapper-3YFQGJ {
         .
       </p>
 
-      <h2 className="text-primary">Step 6: macOS UI Customization</h2>
+      <h3 className="text-primary">Step 6: macOS UI Customization</h3>
 
-      <h3>SketchyBar & JankyBorders</h3>
+      <h4>SketchyBar & JankyBorders</h4>
       <p>
         For advanced users,{" "}
         <Link
@@ -476,7 +476,7 @@ button.buttonWrapper-3YFQGJ {
         className="rounded-lg my-4"
       />
 
-      <h2 className="text-primary">Resources & More Dracula</h2>
+      <h3 className="text-primary">Resources & More Dracula</h3>
       <ul className="space-y-2">
         <li>
           <Link
@@ -500,7 +500,7 @@ button.buttonWrapper-3YFQGJ {
         </li>
       </ul>
 
-      <h3 className="text-primary mt-10">Dracula Color Palette</h3>
+      <h4 className="text-primary mt-10">Dracula Color Palette</h4>
       <p>The Dracula theme color palette - reference:</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 my-6">

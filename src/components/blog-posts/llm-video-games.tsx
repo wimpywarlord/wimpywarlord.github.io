@@ -16,7 +16,7 @@ const Highlight = ({
 export function LlmWukong() {
   return (
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
-      <h2 className="text-primary">What did I build?</h2>
+      <h3 className="text-primary">What did I build?</h3>
 
       <div className="my-4 sm:my-6">
         <GalleryVideo className="w-full rounded-lg mb-2">
@@ -74,7 +74,7 @@ export function LlmWukong() {
 
       <div className="my-8 border-b border-border" />
 
-      <h2 className="text-primary">How did I build it?</h2>
+      <h3 className="text-primary">How did I build it?</h3>
 
       <p>
         The number 1 problem you will run into while building something like this is - Latency. Ideal total latency for video games: 20–60 ms (that pretty FAST{" "}
@@ -103,7 +103,7 @@ export function LlmWukong() {
         {" "}great attempts, but latency and LLM agency is a long way out.
       </p>
 
-      <h3>Can you engineer your way through this?</h3>
+      <h4>Can you engineer your way through this?</h4>
 
       <p>
         Short answer <Highlight>Yes</Highlight>. Here is how:
@@ -193,7 +193,7 @@ You must respond with 'action_type' field with one of these values.
         Your browser does not support the video tag.
       </GalleryVideo>
 
-      <h3>Optimizations</h3>
+      <h4>Optimizations</h4>
 
       <div className="flex justify-center my-4 sm:my-6">
         <GalleryImage src="/blog/llm_wukong/assets/optimization.jpg" alt="Yo Dawg Optimization Meme" width={600} height={400} className="max-w-full rounded-lg" />

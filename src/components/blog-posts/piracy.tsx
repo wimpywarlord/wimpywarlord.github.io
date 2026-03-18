@@ -4,13 +4,13 @@
 export function Piracy() {
   return (
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
-      <h2 className="text-primary">Display Technology: The Visual Interface</h2>
+      <h3 className="text-primary">Display Technology: The Visual Interface</h3>
       <p>
         How we see digital content is defined by the interface between light and
         our eyes. Here's how modern display technologies work:
       </p>
 
-      <h3 className="text-primary/80">LED, Mini LED & QLED</h3>
+      <h4 className="text-primary/80">LED, Mini LED & QLED</h4>
       <p>
         These are all variations of the same concept: shine light through an LCD
         layer of pixels which have color to make an image.
@@ -32,7 +32,7 @@ export function Piracy() {
         </li>
       </ul>
 
-      <h3 className="text-primary/80">OLED</h3>
+      <h4 className="text-primary/80">OLED</h4>
       <p>
         OLED pixels glow colors all by themselves—they don't need any LEDs
         behind them. This means effectively infinite contrast because an OLED
@@ -41,7 +41,7 @@ export function Piracy() {
         it. More contrast means a better looking picture.
       </p>
 
-      <h3 className="text-primary/80">Micro LED: The Best of All</h3>
+      <h4 className="text-primary/80">Micro LED: The Best of All</h4>
       <p>
         Micro LED uses regular LEDs which are very bright and colorful, but they
         are very very tiny—so you can use three of them to make a pixel without
@@ -51,7 +51,7 @@ export function Piracy() {
         it's affordable because OLED keeps getting better.
       </p>
 
-      <h2 className="text-primary">Free Streaming: Stremio + Torrentio + Real Debrid</h2>
+      <h3 className="text-primary">Free Streaming: Stremio + Torrentio + Real Debrid</h3>
       <p>
         The holy trinity of free streaming. Works on smart TVs, Fire Sticks, or
         any platform with a Stremio client. Real Debrid is optional but
@@ -178,9 +178,9 @@ export function Piracy() {
         </p>
       </details>
 
-      <h2 className="text-primary">E-Books</h2>
+      <h3 className="text-primary">E-Books</h3>
 
-      <h3 className="text-primary/80">Free E-Book Sources</h3>
+      <h4 className="text-primary/80">Free E-Book Sources</h4>
       <p>
         Download any book in .epub or .pdf format for free:
       </p>
@@ -211,7 +211,7 @@ export function Piracy() {
         </li>
       </ul>
 
-      <h3 className="text-primary/80">Anna's Archive</h3>
+      <h4 className="text-primary/80">Anna's Archive</h4>
       <p>
         The largest, truly open library in human history.
       </p>
@@ -269,9 +269,9 @@ export function Piracy() {
         None of the above require VPN. The original .li suffix URLs are defunct.
       </p>
 
-      <h2 className="text-primary">E-Readers & Digital Reading</h2>
+      <h3 className="text-primary">E-Readers & Digital Reading</h3>
 
-      <h3 className="text-primary/80">KOReader AI Assistant Plugin</h3>
+      <h4 className="text-primary/80">KOReader AI Assistant Plugin</h4>
       <p>
         An AI helper plugin for KOReader that lets you interact with language
         models (Claude, GPT-4, Gemini, DeepSeek, Ollama etc.) while reading.
@@ -293,7 +293,7 @@ export function Piracy() {
         </li>
       </ul>
 
-      <h3 className="text-primary/80">Kindle Jailbreaking & Modding</h3>
+      <h4 className="text-primary/80">Kindle Jailbreaking & Modding</h4>
       <p>
         Jailbreaking a Kindle opens up KOReader, custom fonts, better PDF
         rendering, and full control over your device.
@@ -361,9 +361,9 @@ export function Piracy() {
         </li>
       </ul>
 
-      <h2 className="text-primary">VPN</h2>
+      <h3 className="text-primary">VPN</h3>
 
-      <h3 className="text-primary/80">VPN Quality Matters</h3>
+      <h4 className="text-primary/80">VPN Quality Matters</h4>
       <p>
         What matters is the quality of the VPN.{" "}
         <a
@@ -391,7 +391,7 @@ export function Piracy() {
         {" "}— a low fraud score means the IP is clean and less likely to get flagged.
       </p>
 
-      <h3 className="text-primary/80">Resolution: SD, HD, UHD</h3>
+      <h4 className="text-primary/80">Resolution: SD, HD, UHD</h4>
       <p>
         These describe how many pixels are in the image. More pixels means more
         detail:
