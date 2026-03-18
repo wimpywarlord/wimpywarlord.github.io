@@ -223,6 +223,33 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h4>CSS Design Experts</h4>
+      <p>
+        These writers deeply understand <Highlight>CSS</Highlight> and web design at a craft level:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://www.userinterface.wiki/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            User Interface Wiki
+          </Link>
+          {" - Deep dives into interface design patterns and CSS techniques"}
+        </li>
+        <li>
+          <Link
+            href="https://jakub.kr/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Jakub.kr
+          </Link>
+          {" - Jakub's writing on CSS, design systems, and crafting beautiful web interfaces"}
+        </li>
+      </ul>
+
       <h4>Website Backgrounds</h4>
       <p>
         Creating stunning backgrounds is crucial for that{" "}
