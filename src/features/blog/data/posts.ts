@@ -11,10 +11,24 @@ import { Piracy } from "@/components/blog-posts/piracy"
 import { RealizedMan } from "@/components/blog-posts/realized-man"
 import { SovereignIndividual } from "@/components/blog-posts/sovereign_individual"
 import { Taste } from "@/components/blog-posts/taste"
+import { SoulfulCss } from "@/components/blog-posts/soulful-css"
 import { DraculaTheming } from "@/components/blog-posts/theming-macos"
 import type { Post } from "@/features/blog/types/post"
 
 const postsRaw: Post[] = [
+  {
+    slug: "soulful-css",
+    metadata: {
+      title: "Soulful CSS",
+      description:
+        "CSS that doesn't just work — it feels right. Subtle differences that separate functional from beautiful.",
+      image: "/assets/blog/blog_thum_soulful_css.gif",
+      createdAt: "2026-03-17",
+      updatedAt: "2026-03-17",
+      pinned: false,
+    },
+    component: SoulfulCss,
+  },
   {
     slug: "cracked-react-dev",
     metadata: {

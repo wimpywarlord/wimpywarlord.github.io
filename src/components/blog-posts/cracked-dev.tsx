@@ -1123,61 +1123,6 @@ export function CrackedReactDev() {
 
       <h2 className="text-primary">Tips & Tricks</h2>
 
-      <h3>CSS: Increase Click Area Without Messing Up Layout</h3>
-      <p>
-        Want to increase the click area without messing up your layout? Try{" "}
-        <code className="bg-muted px-2 py-1 rounded text-sm">:after</code> with{" "}
-        <code className="bg-muted px-2 py-1 rounded text-sm">
-          position: absolute
-        </code>{" "}
-        +{" "}
-        <code className="bg-muted px-2 py-1 rounded text-sm">
-          inset: -&#123;value&#125;px
-        </code>
-      </p>
-      <p>
-        This creates a larger, invisible hit area around the element, making it
-        easier to click without changing the layout.
-      </p>
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source
-            src="/blog/cracked_react_dev/click_area_increase.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
-      <h3>CSS: Fix Hover Bugs with Group Classes</h3>
-      <p>
-        You can achieve parent-child hover interactions using the Tailwind{" "}
-        <code className="bg-muted px-2 py-1 rounded text-sm">group</code> class
-        on parent and{" "}
-        <code className="bg-muted px-2 py-1 rounded text-sm">group-hover</code>{" "}
-        variant on target:
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
-        <code className="text-sm">
-          {`<div class="group">
-  <div class="group-hover:translate-y-6"/>
-</div>`}
-        </code>
-      </pre>
-      <p>
-        Here is a breakdown of the target element within an exaggerated
-        oversized parent wrapper:
-      </p>
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source
-            src="/blog/cracked_react_dev/hover_bug_fix_css.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
       <h3>DevTools: Inspect Disappearing Elements</h3>
       <p>
         Ever struggled to inspect tooltips or dropdowns that disappear when you
@@ -1361,37 +1306,6 @@ and anything that'll help an AI replicate such designs.`}
         </li>
       </ul>
 
-      <h3>CSS: Fix Dead Zones Between Stacked Elements</h3>
-      <p>
-        Ever notice small dead zones between closely stacked elements where
-        clicks or hovers don't register? Fix it with a{" "}
-        <code className="bg-muted px-2 py-1 rounded text-sm">::before</code>{" "}
-        pseudo element that extends the hit area vertically:
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
-        <code className="text-sm">
-          {`::before {
-  content: "";
-  position: absolute;
-  inset: -10px 0; /* extends 10px vertically */
-}`}
-        </code>
-      </pre>
-      <p>
-        This creates an invisible buffer zone that eliminates those annoying
-        gaps between list items, nav links, or any tightly stacked interactive
-        elements.
-      </p>
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source
-            src="/blog/cracked_react_dev/dead_zones_css_trick.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
       <h3>Fonts That Hit Different</h3>
       <p>
         If you want to take your website typography to the next level, check out
@@ -1420,92 +1334,6 @@ and anything that'll help an AI replicate such designs.`}
         </li>
       </ul>
 
-      <h3>CSS Typography Tip</h3>
-      <p>
-        Improve text readability and avoid awkward single words on the last
-        line:
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-6 overflow-x-auto">
-        <code className="text-sm">
-          {`text-wrap: pretty;`}
-        </code>
-      </pre>
-      <p>
-        This CSS property makes text line breaks look more natural and
-        professional, especially in headings and paragraphs.
-      </p>
-
-      <h3>CSS: Fix Ugly Autofill Backgrounds</h3>
-      <p>
-        <code className="bg-muted px-2 py-1 rounded text-sm">autofill</code> on
-        inputs is ugly by default — the background bleed ruins clean design
-        systems, especially in dark mode. Fix it with a pure CSS inset shadow
-        hack:
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
-        <code className="text-sm">
-          {`autofill:shadow-[inset_0_0_0px_1000px_var(--color-background)]`}
-        </code>
-      </pre>
-      <p>
-        This forces the background color and kills the native blue.
-      </p>
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source
-            src="/blog/cracked_react_dev/autofill_inset_shadow_fix.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
-      <h3>CSS: Transitions vs Keyframe Animations</h3>
-      <p>
-        When it comes to interruptibility, CSS transitions and keyframe animations
-        behave differently. Transitions interpolate toward the latest state and can
-        be interrupted, while keyframe animations run on a fixed timeline and
-        don&apos;t retarget once started.
-      </p>
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source
-            src="/blog/cracked_react_dev/css_transitions_vs_keyframes.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
-      <h3>CSS: Nested Border Radii</h3>
-      <p>
-        Nested border radii look funky when they're the same value. The correct formula is{" "}
-        <code className="bg-muted px-2 py-1 rounded text-sm">outer r = inner r + padding</code>.
-      </p>
-      <div className="my-6">
-        <GalleryImage
-          src="/blog/cracked_react_dev/nested_border_radii.png"
-          alt="Nested border radii tip - outer radius should equal inner radius plus padding"
-          width={800}
-          height={600}
-          className="w-full max-w-2xl rounded-lg mx-auto"
-        />
-      </div>
-
-      <h3>CSS: Prevent Page Bounce with Multiple Scroll Containers</h3>
-      <p>
-        If your app contains multiple scroll containers, add this to your
-        html/body to prevent the annoying "page bounce" effect:
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-6 overflow-x-auto">
-        <code className="text-sm">
-          {`overscroll-behavior: none;`}
-        </code>
-      </pre>
-      <p>
-        This prevents the browser's default overscroll behavior (like elastic
-        scrolling on macOS) from interfering with your nested scrollable areas.
-      </p>
     </div>
   );
 }

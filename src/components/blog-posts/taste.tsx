@@ -734,6 +734,37 @@ setTransform(
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
+
+      <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <GalleryImage
+          src="/blog/taste/retro_art_bulldog_basketball.jpg"
+          alt="Retro extreme art - bulldog with sneakers on basketball court"
+          width={800}
+          height={1000}
+          className="w-full rounded-lg"
+        />
+        <GalleryImage
+          src="/blog/taste/retro_art_croc_skater.jpg"
+          alt="Retro extreme art - giant crocodile chasing inline skater"
+          width={800}
+          height={1000}
+          className="w-full rounded-lg"
+        />
+        <GalleryImage
+          src="/blog/taste/retro_art_baseball_kid.jpg"
+          alt="Retro extreme art - kid smashing baseball"
+          width={800}
+          height={1000}
+          className="w-full rounded-lg"
+        />
+        <GalleryImage
+          src="/blog/taste/retro_art_skateboard_girl.jpg"
+          alt="Retro extreme art - skateboarder grinding through destruction"
+          width={800}
+          height={1000}
+          className="w-full rounded-lg"
+        />
+      </div>
     </div>
   );
 }
