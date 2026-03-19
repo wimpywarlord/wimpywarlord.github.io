@@ -555,16 +555,6 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
-            href="https://tailark.com"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Tailark
-          </Link>
-          {" - Modern UI components with Tailwind"}
-        </li>
-        <li>
-          <Link
             href="https://smoothui.dev"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
