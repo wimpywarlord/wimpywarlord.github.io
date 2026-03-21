@@ -209,6 +209,19 @@ export function Piracy() {
             Z-Library
           </a>
         </li>
+        <li>
+          <a
+            href="https://www.gutenberg.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+            tabIndex={0}
+            aria-label="Project Gutenberg"
+          >
+            Project Gutenberg
+          </a>{" "}
+          — 70,000+ free public domain ebooks
+        </li>
       </ul>
 
       <h4 className="text-primary/80">Anna's Archive</h4>
