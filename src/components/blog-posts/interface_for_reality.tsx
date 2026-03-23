@@ -38,6 +38,16 @@ export function InterfaceForReality() {
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
+            src="/blog/interface_for_reality/copernicus_heliocentrism.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
             src="/blog/interface_for_reality/movement_of_solar_system.mp4"
             type="video/mp4"
           />

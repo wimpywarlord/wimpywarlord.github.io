@@ -573,6 +573,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Animation primitives for React & Tailwind"}
         </li>
+        <li>
+          <Link
+            href="https://www.chainlift.io"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Chainlift
+          </Link>
+          {" - Polished, copy-paste UI components"}
+        </li>
       </ul>
 
       <h4>Color & Theming</h4>

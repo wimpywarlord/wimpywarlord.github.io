@@ -35,6 +35,13 @@ export function Taste() {
       </div>
 
       <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/custom_scrollbar_portfolio.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
         <GalleryImage
           src="/blog/taste/side_vertical_nav_bar.png"
           alt="Vertical sidebar navigation example"
@@ -362,6 +369,13 @@ export function Taste() {
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/delete_button.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/success_state_animation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
