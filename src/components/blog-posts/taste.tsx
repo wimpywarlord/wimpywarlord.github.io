@@ -503,6 +503,40 @@ setTransform(
 
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/shader_orb_webgl.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://playground.davidumoru.me/experiments/shader-orb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          David Umoru - Shader Orb Experiment
+        </a>
+      </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/fuma_svg_art_fumadocs.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://www.fuma-nama.dev/blog/svg-art-2"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Fuma Nama - SVG Art & Fumadocs TOC
+        </a>
+      </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/1_k_follwers.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>

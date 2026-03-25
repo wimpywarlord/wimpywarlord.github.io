@@ -248,6 +248,26 @@ export function CrackedReactDev() {
           </Link>
           {" - Jakub's writing on CSS, design systems, and crafting beautiful web interfaces"}
         </li>
+        <li>
+          <Link
+            href="https://davidumoru.me/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            David Umoru
+          </Link>
+          {" - Clean, tasteful portfolio with great CSS craft"}
+        </li>
+        <li>
+          <Link
+            href="https://www.fuma-nama.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Fuma Nama
+          </Link>
+          {" - Elegant dev portfolio with polished design and smooth interactions"}
+        </li>
       </ul>
 
       <h4>Website Backgrounds</h4>
@@ -651,6 +671,16 @@ export function CrackedReactDev() {
             Its Hover
           </Link>
           {" - Motion-first animated icons that trigger on hover. Built with Motion.dev, works with shadcn via CLI"}
+        </li>
+        <li>
+          <Link
+            href="https://www.thiings.co/things"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Thiings
+          </Link>
+          {" - Massive collection of free design resources, icons, illustrations & more"}
         </li>
       </ul>
 
