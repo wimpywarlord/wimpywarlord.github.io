@@ -27,7 +27,7 @@ export const USER = {
     },
   ],
   about: `
-- Part of projects [shortsbro.com](https://shortsbro.com), [gradmits.com](https://gradmits.com), and [gradbro.com](https://gradbro.com).
+- Part of projects [ghostfeed.ai](https://ghostfeed.ai), [gradmits.com](https://gradmits.com), and [gradbro.com](https://gradbro.com).
 - Started coding to help my grandfather fight Alzheimer's — built [this](https://journals.sagepub.com/doi/10.1177/14604582211052848).
 - Cooked up:
   - AI agent that plays — [Black Myth Wukong](/blog/llm-video-games).
