@@ -1184,6 +1184,26 @@ outline-offset: -1px;
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h3>CSS Custom Highlight API</h3>
+      <p>
+        The CSS Custom Highlight API lets you highlight search results — without
+        affecting the DOM structure.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/soulful_css/css_custom_highlight_api.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">{`::highlight(search-results) {
+  background-color: #ff0066;
+  color: white;
+}`}</code>
+      </pre>
     </div>
   );
 }

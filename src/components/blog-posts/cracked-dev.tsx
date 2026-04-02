@@ -577,6 +577,28 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/cracked_react_dev/math_curve_thinking_indicator.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p>
+        This thinking indicator is just two lines of math:{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">x = 7cos(t) - d·cos(7t)</code>,{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">y = 7sin(t) - d·sin(7t)</code>
+      </p>
+      <p className="mt-2">
+        <a
+          href="https://x.com/xin_pai88825/status/2039540901752774668"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Original post by Paidax
+        </a>
+      </p>
+
       <h4>Shadcn UI Extension Libraries</h4>
       <p>
         If you use Shadcn UI, these libraries will{" "}
