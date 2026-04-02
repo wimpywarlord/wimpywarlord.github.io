@@ -1162,6 +1162,28 @@ outline-offset: -1px;
   flex-shrink: 0;
 }`}</code>
       </pre>
+
+      <div className="my-8 border-b border-border" />
+
+      <h3>Scroll Fade Masks with @property</h3>
+      <p>
+        Use masks for your scrollable areas. Use the CSS at-rule{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">@property</code>{" "}
+        to register stops as animatable values. The browser treats your custom
+        property as a{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">percentage</code>,
+        so the mask edges transition smoothly.
+      </p>
+      <p>
+        Result: scroll lists that fade at the edges, revealing content
+        underneath. No JavaScript needed.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/soulful_css/css_mask_scroll_fade.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
     </div>
   );
 }
