@@ -306,6 +306,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Dynamic ASCII patterns for unique backgrounds"}
         </li>
+        <li>
+          <Link
+            href="https://bg-layers.vercel.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            BG Layers
+          </Link>
+          {" - CSS background layer generator"}
+        </li>
       </ul>
 
       <h4>Thumbnail & Visual Tools</h4>
@@ -453,6 +463,26 @@ export function CrackedReactDev() {
           </Link>
           {" - Photoshop for making memes"}
         </li>
+        <li>
+          <Link
+            href="https://www.ultramock.io/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            UltraMock
+          </Link>
+          {" - Create beautiful UI mockups"}
+        </li>
+        <li>
+          <Link
+            href="https://www.gameuidatabase.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Game UI Database
+          </Link>
+          {" - Massive collection of game UI references and assets"}
+        </li>
       </ul>
 
       <h4>Component Libraries</h4>
@@ -524,6 +554,16 @@ export function CrackedReactDev() {
             Micro Interactions
           </Link>
           {" - Beautiful, modern, responsive micro interactions optimized for performance and UX"}
+        </li>
+        <li>
+          <Link
+            href="https://motion-core.dev/docs/introduction"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Motion Core
+          </Link>
+          {" - Lightweight animation component library"}
         </li>
         <li>
           <Link
