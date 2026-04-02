@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
+import { GalleryVideo } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -16,6 +17,65 @@ export function MemeCollection() {
         effects, and tools for when you need to add that perfect comedic timing
         to your content.
       </p>
+
+      <div className="my-8 border-b border-border" />
+
+      <h3 className="text-primary">Meme Videos</h3>
+
+      <h4>Life after switching from ChatGPT to Claude</h4>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/memes/chatgpt_to_claude.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <h4>Figma weathering the AI storm</h4>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/memes/figma_ai_storm.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <h4>Frontend devs realising AI can do what they learnt in years</h4>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/memes/frontend_devs_vs_ai.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <h4>"Frontend developers wake up" — Cursor's new feature</h4>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/memes/frontend_devs_wake_up_cursor.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <h4>Dropping a perfect "arigato gozaimasu"</h4>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/memes/perfect_arigato.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <div className="my-8 border-b border-border" />
 
@@ -60,14 +120,6 @@ export function MemeCollection() {
           {" - Goated meme editor for creating and editing memes"}
         </li>
       </ul>
-
-      <div className="my-8 border-b border-border" />
-
-      <h3 className="text-primary">More Coming Soon</h3>
-      <p>
-        This collection is just getting started. More meme resources, templates,
-        and tools will be added as I find them.
-      </p>
     </div>
   );
 }

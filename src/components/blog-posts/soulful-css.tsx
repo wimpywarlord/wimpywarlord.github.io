@@ -1119,6 +1119,49 @@ outline-offset: -1px;
 /* Dark mode */
 .dark { outline-color: rgba(255, 255, 255, 0.1); }`}</code>
       </pre>
+
+      <div className="my-8 border-b border-border" />
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/soulful_css/curved_scrollbars.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/soulful_css/css_scroll_snap_images.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <h3>CSS-Only Carousel with Scroll Snap</h3>
+      <p>
+        You can create a CSS-only carousel with{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">scroll-snap</code>.
+        When you scroll, it snaps exactly in the center of the card.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/soulful_css/css_scroll_snap_carousel.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">{`.scroller {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1.5rem; /* matches your scroll-pl/pr */
+}
+
+.card {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}`}</code>
+      </pre>
     </div>
   );
 }
