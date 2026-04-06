@@ -597,6 +597,15 @@ export function CrackedReactDev() {
         >
           Original post by Paidax
         </a>
+        {" | "}
+        <a
+          href="https://paidax01.github.io/math-curve-loaders/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Math Curve Loaders Tool
+        </a>
       </p>
 
       <h4>Shadcn UI Extension Libraries</h4>
