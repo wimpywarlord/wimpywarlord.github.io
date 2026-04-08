@@ -11,15 +11,6 @@ const Highlight = ({ children }: { children: React.ReactNode }) => {
 export function SovereignIndividual() {
   return (
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
-      <p>
-        The <Highlight>Sovereign Individual</Highlight> thesis predicts a future
-        where technology empowers individuals to operate outside traditional
-        nation-state constraints. Privacy, financial sovereignty, and
-        decentralization are the pillars of this new paradigm.
-      </p>
-
-      <div className="my-8 border-b border-border" />
-
       <h3 className="text-primary">Zcash Shielded Pool</h3>
       <p>
         The <Highlight>shielded pool</Highlight> in Zcash represents the total
@@ -58,6 +49,23 @@ export function SovereignIndividual() {
           allowFullScreen
           title="Tweet by @mert"
         />
+      </div>
+
+      <div className="my-8 border-b border-border" />
+
+      <div className="my-6">
+        <video
+          controls
+          className="w-full rounded-lg border border-border"
+          preload="metadata"
+          aria-label="Milton Friedman on eCash and internet payments"
+        >
+          <source
+            src="/blog/sovereign_individual/milton_friedman_ecash.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <div className="my-8 border-b border-border" />
