@@ -1204,6 +1204,37 @@ outline-offset: -1px;
   color: white;
 }`}</code>
       </pre>
+
+      <div className="my-8 border-b border-border" />
+
+      <h3>::selection</h3>
+      <p>
+        You can override native text selection on a website with CSS using{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">::selection</code>.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/soulful_css/css_selection.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">{`::selection {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* Firefox (older) */
+::-moz-selection {
+  background: #dbeafe;
+  color: #1e3a8a;
+}`}</code>
+      </pre>
+      <p>
+        For Tailwind CSS, use the{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">selection:</code>{" "}
+        modifier to achieve the same result.
+      </p>
     </div>
   );
 }
