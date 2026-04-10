@@ -1090,6 +1090,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Deep clean and optimize your Mac. Install via: brew install tw93/tap/mole"}
         </li>
+        <li>
+          <Link
+            href="https://mesurer.ibelick.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Mesurer
+          </Link>
+          {" - Measure and align everything on localhost. Pixel-perfect overlay tool for your browser"}
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>
