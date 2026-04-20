@@ -743,6 +743,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Massive collection of free design resources, icons, illustrations & more"}
         </li>
+        <li>
+          <Link
+            href="https://quiver.ai/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Quiver
+          </Link>
+          {" - Custom SVG generation tool. Generate unique SVGs on demand for your designs"}
+        </li>
       </ul>
 
       <p>was looking for brand icons today</p>
