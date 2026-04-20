@@ -1100,6 +1100,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Measure and align everything on localhost. Pixel-perfect overlay tool for your browser"}
         </li>
+        <li>
+          <Link
+            href="https://www.mail-tester.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Mail Tester
+          </Link>
+          {" - Test the health of an email and get a spam score. Send your email to their address and get a full deliverability report"}
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>
