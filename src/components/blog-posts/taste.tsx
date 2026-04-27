@@ -667,6 +667,20 @@ setTransform(
         </GalleryVideo>
       </div>
 
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/canva_codex_migration_1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/canva_codex_migration_2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <GalleryImage
           src="/blog/taste/retro_art_bulldog_basketball.jpg"
