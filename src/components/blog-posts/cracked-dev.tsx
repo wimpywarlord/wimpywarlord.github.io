@@ -525,6 +525,26 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://chanhdai.com/components"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ChanhDai Components
+          </Link>
+          {" - Pixel-perfect, uniquely crafted components"}
+        </li>
+        <li>
+          <Link
+            href="https://www.devl.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Devl.dev
+          </Link>
+          {" - 158 design experiments, two years deep. Built on coss-ui with raw CSS, shaders, weird SVGs, and the odd canvas thrown in"}
+        </li>
+        <li>
+          <Link
             href="https://reactbits.dev/text-animations/falling-text"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -584,6 +604,26 @@ export function CrackedReactDev() {
             Loading UI
           </Link>
           {" - Huge gallery of copy-paste loading spinners and skeleton states"}
+        </li>
+        <li>
+          <Link
+            href="https://dotmatrix.zzzzshawn.cloud/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Dotmatrix
+          </Link>
+          {" - 55+ free, open-source loaders built with React, TypeScript, Tailwind, and shadcn. Install one, copy the code, make it yours"}
+        </li>
+        <li>
+          <Link
+            href="https://transitions.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Transitions.dev
+          </Link>
+          {" - Collection of the most essential transitions for web apps"}
         </li>
       </ul>
 
@@ -673,6 +713,16 @@ export function CrackedReactDev() {
             Motion Primitives
           </Link>
           {" - Animation primitives for React & Tailwind"}
+        </li>
+        <li>
+          <Link
+            href="https://evilcharts.com/docs"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            EvilCharts
+          </Link>
+          {" - Open-source chart UI built with shadcn and Recharts. Beautifully designed and handcrafted"}
         </li>
       </ul>
 
@@ -1156,6 +1206,16 @@ export function CrackedReactDev() {
             123apps
           </Link>
           {" - Free online suite of audio, video, and PDF tools. Convert, edit, trim, merge, and compress files right in the browser - no installs, no signups"}
+        </li>
+        <li>
+          <Link
+            href="https://sci-bot.ru/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Sci-Bot
+          </Link>
+          {" - Find and download research papers by DOI, title, or URL. The tool you wish your university had"}
         </li>
       </ul>
 
