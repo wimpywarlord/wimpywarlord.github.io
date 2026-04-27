@@ -575,6 +575,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Animation easing curve visualizer and generator for JavaScript"}
         </li>
+        <li>
+          <Link
+            href="https://loading-ui.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Loading UI
+          </Link>
+          {" - Huge gallery of copy-paste loading spinners and skeleton states"}
+        </li>
       </ul>
 
       <div className="my-6">
@@ -753,7 +763,24 @@ export function CrackedReactDev() {
           </Link>
           {" - Custom SVG generation tool. Generate unique SVGs on demand for your designs"}
         </li>
+        <li>
+          <Link
+            href="https://3dsvg.design/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            3dsvg
+          </Link>
+          {" - Drop in any SVG and turn it into a 3D extruded model. Tweak depth, lighting, and angle, then export"}
+        </li>
       </ul>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/cracked_react_dev/3dsvg_design_demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <p>was looking for brand icons today</p>
       <p>
