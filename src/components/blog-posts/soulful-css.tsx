@@ -1235,6 +1235,45 @@ outline-offset: -1px;
         <code className="bg-muted px-2 py-1 rounded text-sm">selection:</code>{" "}
         modifier to achieve the same result.
       </p>
+
+      <div className="my-8 border-b border-border" />
+
+      <h3>width: 100% vs width: stretch</h3>
+      <p>
+        With{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">width: 100%</code>,
+        a margin pushes the element past its parent — you end up writing{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">
+          calc(100% - 20px)
+        </code>{" "}
+        to claw the space back.{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">
+          width: stretch
+        </code>{" "}
+        fills the remaining space after margins are accounted for. No math.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/soulful_css/css_width_100_vs_stretch.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">{`/* Before — overflows by the margin amount */
+.box {
+  width: 100%;
+  margin: 0 10px;
+}
+
+/* After — fits the remaining space, no calc() needed */
+.box {
+  width: stretch;
+  margin: 0 10px;
+}`}</code>
+      </pre>
     </div>
   );
 }
