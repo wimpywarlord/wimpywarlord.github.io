@@ -1120,6 +1120,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Test the health of an email and get a spam score. Send your email to their address and get a full deliverability report"}
         </li>
+        <li>
+          <Link
+            href="https://123apps.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            123apps
+          </Link>
+          {" - Free online suite of audio, video, and PDF tools. Convert, edit, trim, merge, and compress files right in the browser - no installs, no signups"}
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>
