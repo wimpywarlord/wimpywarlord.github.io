@@ -92,6 +92,16 @@ export function MemeCollection() {
         </GalleryVideo>
       </div>
 
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/memes/tiktok_slideshow_algorithm_cracked.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
       <div className="my-8 border-b border-border" />
 
       <h3 className="text-primary">Sound Effects</h3>
