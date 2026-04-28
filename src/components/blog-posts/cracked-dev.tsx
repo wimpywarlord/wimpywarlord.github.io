@@ -155,47 +155,6 @@ export function CrackedReactDev() {
 
       <div className="my-8 border-b border-border" />
 
-      <h3 className="text-primary">Cursor Workflows</h3>
-      <p>
-        Master the art of building beautiful UIs with Cursor AI. These tutorials
-        will show you how to leverage AI to 10x your development speed.
-      </p>
-
-      <ul className="space-y-2">
-        <li>
-          <Link
-            href="https://m.youtube.com/watch?v=djDZHAi75dk&pp=0gcJCfwAo7VqN5tD"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            How to make beautiful UI with Cursor
-          </Link>
-          {" - Essential techniques"}
-        </li>
-        <li>
-          <Link
-            href="https://www.youtube.com/watch?v=U1_nzjWUpL4"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Advanced Cursor Workflows
-          </Link>
-          {" - Next-level productivity"}
-        </li>
-        <li>
-          <Link
-            href="https://youtu.be/OwgRJStlrQQ?si=hial_OMFD-0ZEKI4"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Figma MCP for Cursor
-          </Link>
-          {" - Design to code workflow"}
-        </li>
-      </ul>
-
-      <div className="my-8 border-b border-border" />
-
       <h3 className="text-primary">Design Resources</h3>
 
       <h4>Design Systems Theory</h4>
