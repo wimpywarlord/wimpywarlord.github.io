@@ -2,6 +2,7 @@ import { cache } from "react"
 
 import { CrackedReactDev } from "@/components/blog-posts/cracked-dev"
 import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-autistic-nerds"
+import { GhostfeedYcApplication } from "@/components/blog-posts/ghostfeed-yc-application"
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality"
 import { LlmWukong } from "@/components/blog-posts/llm-video-games"
 import { MacosOnSteroids } from "@/components/blog-posts/macos-setup-guide"
@@ -9,13 +10,25 @@ import { MemeCollection } from "@/components/blog-posts/meme-collection"
 import { Mindset } from "@/components/blog-posts/mindset"
 import { Piracy } from "@/components/blog-posts/piracy"
 import { RealizedMan } from "@/components/blog-posts/realized-man"
+import { SoulfulCss } from "@/components/blog-posts/soulful-css"
 import { SovereignIndividual } from "@/components/blog-posts/sovereign_individual"
 import { Taste } from "@/components/blog-posts/taste"
-import { SoulfulCss } from "@/components/blog-posts/soulful-css"
 import { DraculaTheming } from "@/components/blog-posts/theming-macos"
 import type { Post } from "@/features/blog/types/post"
 
 const postsRaw: Post[] = [
+  {
+    slug: "ghostfeed-yc-application",
+    metadata: {
+      title: "Ghostfeed AI YC Application",
+      description: "YC Summer 2026 application for Ghostfeed AI.",
+      image: "/assets/blog/blog_thum_13.gif",
+      createdAt: "2026-04-30",
+      updatedAt: "2026-04-30",
+      new: true,
+    },
+    component: GhostfeedYcApplication,
+  },
   {
     slug: "soulful-css",
     metadata: {
