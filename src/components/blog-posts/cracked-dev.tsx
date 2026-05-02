@@ -180,6 +180,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Discover real-world brand identities. Curated database of logos, color palettes, typography, and brand guidelines from 37+ major brands"}
         </li>
+        <li>
+          <Link
+            href="https://before.click/?view=icons"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Before Click
+          </Link>
+          {" - Browse curated App Store screenshots from the best designed iOS apps and icons"}
+        </li>
       </ul>
 
       <h4>CSS Design Experts</h4>
@@ -1354,6 +1364,28 @@ export function CrackedReactDev() {
       <div className="my-8 border-b border-border" />
 
       <h3 className="text-primary">Tips & Tricks</h3>
+
+      <h4>Ghostty Liquid Glass</h4>
+      <p>
+        Make Ghostty a floating <Highlight>Liquid Glass</Highlight> panel over
+        whatever&apos;s behind it. Drop this in your config:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`background-opacity = 0.0
+background-blur = macos-glass-clear
+macos-titlebar-style = transparent`}
+        </code>
+      </pre>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/ghostty_liquid_glass.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h4>DevTools: Inspect Disappearing Elements</h4>
       <p>
