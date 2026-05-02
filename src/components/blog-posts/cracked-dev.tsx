@@ -1186,6 +1186,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Find and download research papers by DOI, title, or URL. The tool you wish your university had"}
         </li>
+        <li>
+          <Link
+            href="https://amverge.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            AMVerge
+          </Link>
+          {" - All-in-one scene selection tool. Auto-segments any video into scenes via I-frame detection, hover-preview clips, merge into montages, MP4 export"}
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>

@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="793" height="394" viewBox="0 0 793 394">
+  <defs>
+    <style>
+      .outline{stroke:#221c18;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+      .soft-outline{stroke:#221c18;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .fur{fill:#c9b797}
+      .fur-dark{fill:#9f886d}
+      .fur-light{fill:#e3d4b9}
+      .mask{fill:#292521}
+      .mask-soft{fill:#403934}
+      .ear{fill:#171515}
+      .eye{fill:#11100f}
+      .shine{fill:#fff8eb}
+      .tongue{fill:#f08ca0}
+      .tongue-dark{fill:none;stroke:#a85262;stroke-width:2;stroke-linecap:round}
+      .collar{fill:#d7373a}
+      .vest{fill:#c92d32}
+      .vest-trim{fill:none;stroke:#174b8f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .wrinkle{fill:none;stroke:#3d342d;stroke-width:2.5;stroke-linecap:round}
+      .tiny-wrinkle{fill:none;stroke:#5b4b3f;stroke-width:1.7;stroke-linecap:round}
+    </style>
+
+    <symbol id="walk-0" viewBox="0 0 128 128">
+      <path d="M32 60c-10-2-15 7-11 14 4 6 14 2 12-5" fill="none" stroke="#221c18" stroke-width="11" stroke-linecap="round"/>
+      <path d="M32 60c-10-2-15 7-11 14 4 6 14 2 12-5" fill="none" stroke="#c9b797" stroke-width="7" stroke-linecap="round"/>
+      <ellipse class="fur outline" cx="59" cy="74" rx="36" ry="24"/>
+      <path class="fur-dark" d="M31 80c11 12 48 20 68 3-6 16-24 25-47 22-15-2-25-11-21-25z" opacity=".35"/>
+      <path class="fur outline" d="M39 85c-2 12-1 23 8 25 7 2 12-3 8-8-4-5-3-12 1-19z"/>
+      <path class="fur outline" d="M72 84c1 12 4 23 13 22 7-1 10-7 5-11-5-4-6-11-4-17z"/>
+      <path class="fur outline" d="M74 38c18-4 36 7 38 26 2 20-12 32-31 31-18-1-30-14-29-31 1-12 9-23 22-26z"/>
+      <path class="ear outline" d="M71 39c-11 0-18 7-18 16 9 4 20 2 27-7z"/>
+      <path class="ear outline" d="M97 43c12 2 18 11 15 23-9 1-18-5-20-16z"/>
+      <path class="mask outline" d="M72 54c16-11 36-1 37 17 1 15-12 23-28 20-16-2-25-13-22-25 1-5 5-9 13-12z"/>
+      <ellipse class="mask-soft" cx="91" cy="72" rx="16" ry="11"/>
+      <ellipse class="eye" cx="83" cy="58" rx="4" ry="5"/>
+      <circle class="shine" cx="84" cy="56" r="1.4"/>
+      <path class="wrinkle" d="M70 47c5-4 13-5 20-2"/>
+      <path class="tiny-wrinkle" d="M77 51c4-3 9-3 14-1"/>
+      <path class="soft-outline" fill="#161412" d="M96 69c4 0 7 2 7 5 0 4-5 5-8 3-3 2-8 1-8-3 0-3 4-5 9-5z"/>
+      <path class="collar outline" d="M66 83c8 6 18 8 29 6l-3 9c-12 2-24-1-32-8z"/>
+    </symbol>
+
+    <symbol id="walk-1" viewBox="0 0 128 128">
+      <path d="M32 58c-11-4-17 4-14 12 3 7 14 5 13-3" fill="none" stroke="#221c18" stroke-width="11" stroke-linecap="round"/>
+      <path d="M32 58c-11-4-17 4-14 12 3 7 14 5 13-3" fill="none" stroke="#c9b797" stroke-width="7" stroke-linecap="round"/>
+      <ellipse class="fur outline" cx="59" cy="72" rx="36" ry="24"/>
+      <path class="fur-dark" d="M31 79c12 11 49 18 68 1-6 17-27 25-49 21-14-2-23-10-19-22z" opacity=".35"/>
+      <path class="fur outline" d="M42 82c-7 10-12 20-4 25 6 4 13 1 11-5-2-6 2-12 8-17z"/>
+      <path class="fur outline" d="M75 82c7 9 14 18 22 14 6-3 6-10 0-12-6-2-10-8-12-14z"/>
+      <path class="fur outline" d="M75 36c18-4 36 7 38 26 2 20-12 32-31 31-18-1-30-14-29-31 1-12 9-23 22-26z"/>
+      <path class="ear outline" d="M72 37c-11 0-18 7-18 16 9 4 20 2 27-7z"/>
+      <path class="ear outline" d="M98 41c12 2 18 11 15 23-9 1-18-5-20-16z"/>
+      <path class="mask outline" d="M73 52c16-11 36-1 37 17 1 15-12 23-28 20-16-2-25-13-22-25 1-5 5-9 13-12z"/>
+      <ellipse class="mask-soft" cx="92" cy="70" rx="16" ry="11"/>
+      <ellipse class="eye" cx="84" cy="56" rx="4" ry="5"/>
+      <circle class="shine" cx="85" cy="54" r="1.4"/>
+      <path class="wrinkle" d="M71 45c5-4 13-5 20-2"/>
+      <path class="tiny-wrinkle" d="M78 49c4-3 9-3 14-1"/>
+      <path class="soft-outline" fill="#161412" d="M97 67c4 0 7 2 7 5 0 4-5 5-8 3-3 2-8 1-8-3 0-3 4-5 9-5z"/>
+      <path class="collar outline" d="M67 81c8 6 18 8 29 6l-3 9c-12 2-24-1-32-8z"/>
+    </symbol>
+
+    <symbol id="walk-2" viewBox="0 0 128 128">
+      <path d="M31 59c-10-2-15 7-11 14 4 6 14 2 12-5" fill="none" stroke="#221c18" stroke-width="11" stroke-linecap="round"/>
+      <path d="M31 59c-10-2-15 7-11 14 4 6 14 2 12-5" fill="none" stroke="#c9b797" stroke-width="7" stroke-linecap="round"/>
+      <ellipse class="fur outline" cx="59" cy="73" rx="36" ry="24"/>
+      <path class="fur-dark" d="M31 80c11 12 48 20 68 3-6 16-24 25-47 22-15-2-25-11-21-25z" opacity=".35"/>
+      <path class="fur outline" d="M43 84c-5 10-7 20 1 24 6 3 12-1 10-7-3-6 0-12 5-17z"/>
+      <path class="fur outline" d="M73 84c3 11 8 21 17 20 7-1 9-8 3-11-5-3-8-9-8-16z"/>
+      <path class="fur outline" d="M74 37c18-4 36 7 38 26 2 20-12 32-31 31-18-1-30-14-29-31 1-12 9-23 22-26z"/>
+      <path class="ear outline" d="M71 38c-11 0-18 7-18 16 9 4 20 2 27-7z"/>
+      <path class="ear outline" d="M97 42c12 2 18 11 15 23-9 1-18-5-20-16z"/>
+      <path class="mask outline" d="M72 53c16-11 36-1 37 17 1 15-12 23-28 20-16-2-25-13-22-25 1-5 5-9 13-12z"/>
+      <ellipse class="mask-soft" cx="91" cy="71" rx="16" ry="11"/>
+      <ellipse class="eye" cx="83" cy="57" rx="4" ry="5"/>
+      <circle class="shine" cx="84" cy="55" r="1.4"/>
+      <path class="wrinkle" d="M70 46c5-4 13-5 20-2"/>
+      <path class="tiny-wrinkle" d="M77 50c4-3 9-3 14-1"/>
+      <path class="soft-outline" fill="#161412" d="M96 68c4 0 7 2 7 5 0 4-5 5-8 3-3 2-8 1-8-3 0-3 4-5 9-5z"/>
+      <path class="collar outline" d="M66 82c8 6 18 8 29 6l-3 9c-12 2-24-1-32-8z"/>
+    </symbol>
+
+    <symbol id="walk-3" viewBox="0 0 128 128">
+      <path d="M32 58c-11-4-17 4-14 12 3 7 14 5 13-3" fill="none" stroke="#221c18" stroke-width="11" stroke-linecap="round"/>
+      <path d="M32 58c-11-4-17 4-14 12 3 7 14 5 13-3" fill="none" stroke="#c9b797" stroke-width="7" stroke-linecap="round"/>
+      <ellipse class="fur outline" cx="59" cy="72" rx="36" ry="24"/>
+      <path class="fur-dark" d="M31 79c12 11 49 18 68 1-6 17-27 25-49 21-14-2-23-10-19-22z" opacity=".35"/>
+      <path class="fur outline" d="M39 82c6 10 13 18 21 14 6-3 6-9 0-12-6-2-9-8-10-14z"/>
+      <path class="fur outline" d="M76 82c-7 10-11 20-3 25 6 4 13 1 11-5-2-6 2-12 8-17z"/>
+      <path class="fur outline" d="M75 36c18-4 36 7 38 26 2 20-12 32-31 31-18-1-30-14-29-31 1-12 9-23 22-26z"/>
+      <path class="ear outline" d="M72 37c-11 0-18 7-18 16 9 4 20 2 27-7z"/>
+      <path class="ear outline" d="M98 41c12 2 18 11 15 23-9 1-18-5-20-16z"/>
+      <path class="mask outline" d="M73 52c16-11 36-1 37 17 1 15-12 23-28 20-16-2-25-13-22-25 1-5 5-9 13-12z"/>
+      <ellipse class="mask-soft" cx="92" cy="70" rx="16" ry="11"/>
+      <ellipse class="eye" cx="84" cy="56" rx="4" ry="5"/>
+      <circle class="shine" cx="85" cy="54" r="1.4"/>
+      <path class="wrinkle" d="M71 45c5-4 13-5 20-2"/>
+      <path class="tiny-wrinkle" d="M78 49c4-3 9-3 14-1"/>
+      <path class="soft-outline" fill="#161412" d="M97 67c4 0 7 2 7 5 0 4-5 5-8 3-3 2-8 1-8-3 0-3 4-5 9-5z"/>
+      <path class="collar outline" d="M67 81c8 6 18 8 29 6l-3 9c-12 2-24-1-32-8z"/>
+    </symbol>
+
+    <symbol id="walk-4" viewBox="0 0 128 128">
+      <path d="M32 61c-10-1-15 8-10 15 5 6 14 1 11-6" fill="none" stroke="#221c18" stroke-width="11" stroke-linecap="round"/>
+      <path d="M32 61c-10-1-15 8-10 15 5 6 14 1 11-6" fill="none" stroke="#c9b797" stroke-width="7" stroke-linecap="round"/>
+      <ellipse class="fur outline" cx="59" cy="75" rx="36" ry="24"/>
+      <path class="fur-dark" d="M31 82c11 12 48 20 68 3-6 16-24 25-47 22-15-2-25-11-21-25z" opacity=".35"/>
+      <path class="fur outline" d="M39 86c-2 12-1 23 8 25 7 2 12-3 8-8-4-5-3-12 1-19z"/>
+      <path class="fur outline" d="M72 85c1 12 4 23 13 22 7-1 10-7 5-11-5-4-6-11-4-17z"/>
+      <path class="fur outline" d="M74 39c18-4 36 7 38 26 2 20-12 32-31 31-18-1-30-14-29-31 1-12 9-23 22-26z"/>
+      <path class="ear outline" d="M71 40c-11 0-18 7-18 16 9 4 20 2 27-7z"/>
+      <path class="ear outline" d="M97 44c12 2 18 11 15 23-9 1-18-5-20-16z"/>
+      <path class="mask outline" d="M72 55c16-11 36-1 37 17 1 15-12 23-28 20-16-2-25-13-22-25 1-5 5-9 13-12z"/>
+      <ellipse class="mask-soft" cx="91" cy="73" rx="16" ry="11"/>
+      <ellipse class="eye" cx="83" cy="59" rx="4" ry="5"/>
+      <circle class="shine" cx="84" cy="57" r="1.4"/>
+      <path class="wrinkle" d="M70 48c5-4 13-5 20-2"/>
+      <path class="tiny-wrinkle" d="M77 52c4-3 9-3 14-1"/>
+      <path class="soft-outline" fill="#161412" d="M96 70c4 0 7 2 7 5 0 4-5 5-8 3-3 2-8 1-8-3 0-3 4-5 9-5z"/>
+      <path class="collar outline" d="M66 84c8 6 18 8 29 6l-3 9c-12 2-24-1-32-8z"/>
+    </symbol>
+
+    <symbol id="sit-0" viewBox="0 0 128 128">
+      <ellipse class="fur outline" cx="64" cy="89" rx="34" ry="27"/>
+      <path class="vest outline" d="M34 82c12 18 47 23 61 2 5 12 3 25-8 31-12 7-34 8-49 1-12-6-14-21-4-34z"/>
+      <path class="vest-trim" d="M36 84c13 16 43 20 59 2"/>
+      <path class="fur outline" d="M29 89c-5 15 1 27 14 26 9-1 10-10 2-14-5-3-6-8-4-15z"/>
+      <path class="fur outline" d="M99 87c6 15 2 27-11 28-9 0-12-8-4-14 5-3 6-8 3-15z"/>
+      <ellipse class="fur outline" cx="64" cy="48" rx="32" ry="31"/>
+      <path class="ear outline" d="M38 39c-12 3-18 16-14 28 12 2 22-8 25-22z"/>
+      <path class="ear outline" d="M90 39c12 3 18 16 14 28-12 2-22-8-25-22z"/>
+      <path class="mask outline" d="M42 45c8-10 36-10 44 0 9 11 9 30-5 39-10 7-25 7-35 0-14-9-13-28-4-39z"/>
+      <ellipse class="mask-soft" cx="64" cy="67" rx="20" ry="15"/>
+      <ellipse class="eye" cx="52" cy="52" rx="4" ry="5"/>
+      <ellipse class="eye" cx="76" cy="52" rx="4" ry="5"/>
+      <circle class="shine" cx="53" cy="50" r="1.4"/>
+      <circle class="shine" cx="77" cy="50" r="1.4"/>
+      <path class="wrinkle" d="M51 33c7-5 19-5 26 0"/>
+      <path class="tiny-wrinkle" d="M47 41c6-4 13-4 18-1"/>
+      <path class="tiny-wrinkle" d="M64 40c6-3 13-3 17 1"/>
+      <path class="soft-outline" fill="#151312" d="M64 62c6 0 10 3 10 7 0 5-6 7-10 4-4 3-10 1-10-4 0-4 4-7 10-7z"/>
+      <path class="tiny-wrinkle" d="M53 78c6 5 16 5 22 0"/>
+      <path class="collar outline" d="M42 77c13 9 31 9 44 0l2 10c-16 10-33 10-48 0z"/>
+    </symbol>
+
+    <symbol id="sit-1" viewBox="0 0 128 128">
+      <g transform="translate(0 2)">
+        <ellipse class="fur outline" cx="64" cy="89" rx="34" ry="27"/>
+        <path class="vest outline" d="M34 82c12 18 47 23 61 2 5 12 3 25-8 31-12 7-34 8-49 1-12-6-14-21-4-34z"/>
+        <path class="vest-trim" d="M36 84c13 16 43 20 59 2"/>
+        <path class="fur outline" d="M29 89c-5 15 1 27 14 26 9-1 10-10 2-14-5-3-6-8-4-15z"/>
+        <path class="fur outline" d="M99 87c6 15 2 27-11 28-9 0-12-8-4-14 5-3 6-8 3-15z"/>
+      </g>
+      <g transform="rotate(-3 64 52)">
+        <ellipse class="fur outline" cx="64" cy="48" rx="32" ry="31"/>
+        <path class="ear outline" d="M38 39c-12 3-18 16-14 28 12 2 22-8 25-22z"/>
+        <path class="ear outline" d="M90 39c12 3 18 16 14 28-12 2-22-8-25-22z"/>
+        <path class="mask outline" d="M42 45c8-10 36-10 44 0 9 11 9 30-5 39-10 7-25 7-35 0-14-9-13-28-4-39z"/>
+        <ellipse class="mask-soft" cx="64" cy="67" rx="20" ry="15"/>
+        <path class="eye soft-outline" fill="none" d="M48 52c3 2 7 2 10 0"/>
+        <ellipse class="eye" cx="76" cy="52" rx="4" ry="5"/>
+        <circle class="shine" cx="77" cy="50" r="1.4"/>
+        <path class="wrinkle" d="M51 33c7-5 19-5 26 0"/>
+        <path class="tiny-wrinkle" d="M47 41c6-4 13-4 18-1"/>
+        <path class="tiny-wrinkle" d="M64 40c6-3 13-3 17 1"/>
+        <path class="soft-outline" fill="#151312" d="M64 62c6 0 10 3 10 7 0 5-6 7-10 4-4 3-10 1-10-4 0-4 4-7 10-7z"/>
+        <path class="tiny-wrinkle" d="M53 78c6 5 16 5 22 0"/>
+        <path class="collar outline" d="M42 77c13 9 31 9 44 0l2 10c-16 10-33 10-48 0z"/>
+      </g>
+    </symbol>
+
+    <symbol id="sit-2" viewBox="0 0 128 128">
+      <g transform="translate(0 1)">
+        <ellipse class="fur outline" cx="64" cy="89" rx="34" ry="27"/>
+        <path class="vest outline" d="M34 82c12 18 47 23 61 2 5 12 3 25-8 31-12 7-34 8-49 1-12-6-14-21-4-34z"/>
+        <path class="vest-trim" d="M36 84c13 16 43 20 59 2"/>
+        <path class="fur outline" d="M29 89c-5 15 1 27 14 26 9-1 10-10 2-14-5-3-6-8-4-15z"/>
+        <path class="fur outline" d="M99 87c6 15 2 27-11 28-9 0-12-8-4-14 5-3 6-8 3-15z"/>
+      </g>
+      <g transform="rotate(3 64 52)">
+        <ellipse class="fur outline" cx="64" cy="48" rx="32" ry="31"/>
+        <path class="ear outline" d="M38 39c-12 3-18 16-14 28 12 2 22-8 25-22z"/>
+        <path class="ear outline" d="M90 39c12 3 18 16 14 28-12 2-22-8-25-22z"/>
+        <path class="mask outline" d="M42 45c8-10 36-10 44 0 9 11 9 30-5 39-10 7-25 7-35 0-14-9-13-28-4-39z"/>
+        <ellipse class="mask-soft" cx="64" cy="67" rx="20" ry="15"/>
+        <ellipse class="eye" cx="52" cy="52" rx="4" ry="5"/>
+        <path class="eye soft-outline" fill="none" d="M72 52c3 2 7 2 10 0"/>
+        <circle class="shine" cx="53" cy="50" r="1.4"/>
+        <path class="wrinkle" d="M51 33c7-5 19-5 26 0"/>
+        <path class="tiny-wrinkle" d="M47 41c6-4 13-4 18-1"/>
+        <path class="tiny-wrinkle" d="M64 40c6-3 13-3 17 1"/>
+        <path class="soft-outline" fill="#151312" d="M64 62c6 0 10 3 10 7 0 5-6 7-10 4-4 3-10 1-10-4 0-4 4-7 10-7z"/>
+        <path class="tiny-wrinkle" d="M53 78c6 5 16 5 22 0"/>
+        <path class="collar outline" d="M42 77c13 9 31 9 44 0l2 10c-16 10-33 10-48 0z"/>
+      </g>
+    </symbol>
+
+    <symbol id="happy-0" viewBox="0 0 128 128">
+      <use href="#sit-0"/>
+      <path class="tongue outline" d="M61 74c7 3 14 2 18-4 2 12-2 26-10 28-8 2-13-9-8-24z"/>
+      <path class="tongue-dark" d="M70 76c-1 6-1 12 0 18"/>
+    </symbol>
+
+    <symbol id="happy-1" viewBox="0 0 128 128">
+      <g transform="translate(0 -1)">
+        <use href="#sit-0"/>
+      </g>
+      <path class="tongue outline" d="M60 74c8 4 16 1 20-5 3 17-3 32-14 32-8 0-12-11-6-27z"/>
+      <path class="tongue-dark" d="M70 77c-2 7-2 14-1 20"/>
+    </symbol>
+
+    <symbol id="happy-2" viewBox="0 0 128 128">
+      <g transform="rotate(-2 64 52)">
+        <use href="#sit-0"/>
+      </g>
+      <path class="tongue outline" d="M58 74c8 4 16 2 21-5 5 14 1 30-9 34-9 3-16-10-12-29z"/>
+      <path class="tongue-dark" d="M69 78c-1 7 0 15 2 21"/>
+    </symbol>
+
+    <symbol id="happy-3" viewBox="0 0 128 128">
+      <g transform="rotate(2 64 52)">
+        <use href="#sit-0"/>
+      </g>
+      <path class="tongue outline" d="M61 74c7 4 15 2 19-5 4 13-1 28-11 30-8 1-13-10-8-25z"/>
+      <path class="tongue-dark" d="M70 77c-1 7-1 13 0 19"/>
+    </symbol>
+  </defs>
+
+  <use href="#walk-0" transform="translate(0 0)"/>
+  <use href="#walk-1" transform="translate(133 0)"/>
+  <use href="#walk-2" transform="translate(266 0)"/>
+  <use href="#walk-3" transform="translate(399 0)"/>
+  <use href="#walk-4" transform="translate(532 0)"/>
+
+  <use href="#sit-0" transform="translate(0 133)"/>
+  <use href="#sit-1" transform="translate(133 133)"/>
+  <use href="#sit-2" transform="translate(266 133)"/>
+  <use href="#sit-1" transform="translate(399 133)"/>
+  <use href="#sit-0" transform="translate(532 133)"/>
+  <use href="#sit-2" transform="translate(665 133)"/>
+
+  <use href="#happy-0" transform="translate(0 266)"/>
+  <use href="#happy-1" transform="translate(133 266)"/>
+  <use href="#happy-2" transform="translate(266 266)"/>
+  <use href="#happy-1" transform="translate(399 266)"/>
+  <use href="#happy-3" transform="translate(532 266)"/>
+  <use href="#happy-0" transform="translate(665 266)"/>
+</svg>

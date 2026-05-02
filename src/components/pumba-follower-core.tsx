@@ -15,7 +15,7 @@ type AnimationConfig = {
   loopCount?: number
 }
 
-type AnimationName = "walking" | "sitting" | "quack"
+type AnimationName = "walking" | "sitting" | "happy"
 
 const CONFIG = {
   frameWidth: 128,
@@ -23,7 +23,7 @@ const CONFIG = {
   gutter: 5,
   renderedWidth: 64,
   renderedHeight: 64,
-  spriteSheet: "https://assets.chanhdai.com/images/sprites/duck.webp?v=2",
+  spriteSheet: "/assets/pumba/pumba-sprite.svg",
   animations: {
     walking: {
       row: 0,
@@ -37,10 +37,10 @@ const CONFIG = {
       duration: 2,
       loop: false,
     },
-    quack: {
+    happy: {
       row: 2,
       frames: 6,
-      duration: 2,
+      duration: 1.6,
       loopCount: 3,
     },
   } as const satisfies Record<AnimationName, AnimationConfig>,
@@ -56,7 +56,7 @@ const CONFIG = {
   idleDeadZone: 50,
 } as const
 
-const IDLE_ANIMATIONS: AnimationName[] = ["sitting", "quack"]
+const IDLE_ANIMATIONS: AnimationName[] = ["sitting", "happy"]
 
 const SCALED_SPRITE_SIZE = (() => {
   const {
@@ -96,7 +96,7 @@ const ANIMATION_STYLES: Record<
 > = {
   walking: generateAnimationStyle("walking"),
   sitting: generateAnimationStyle("sitting"),
-  quack: generateAnimationStyle("quack"),
+  happy: generateAnimationStyle("happy"),
 }
 
 function generateAnimationStyle(animationName: AnimationName) {
@@ -123,14 +123,15 @@ function generateAnimationStyle(animationName: AnimationName) {
     backgroundImage: `url(${CONFIG.spriteSheet})`,
     backgroundSize: `${SCALED_SPRITE_SIZE.width}px ${SCALED_SPRITE_SIZE.height}px`,
     backgroundPosition: `0 -${yOffset * (renderedHeight / frameHeight)}px`,
-    animation: `sprite-${animationName} ${animation.duration}s steps(${animation.frames}) ${iterationCount}`,
+    backgroundRepeat: "no-repeat",
+    animation: `pumba-sprite-${animationName} ${animation.duration}s steps(${animation.frames}) ${iterationCount}`,
   }
 }
 
-function useDuckState() {
+function usePumbaState() {
   const [position, setPosition] = useState<Position>(() => ({
     x: window.innerWidth - CONFIG.renderedWidth - 20,
-    y: 20,
+    y: window.innerHeight - CONFIG.renderedHeight - 20,
   }))
   const [targetPosition, setTargetPosition] = useState<Position>(position)
   const [animation, setAnimation] = useState<AnimationName>("sitting")
@@ -355,7 +356,7 @@ const KEYFRAMES_CSS = (() => {
       const scaledYPos = yPos * scaleY
 
       return `
-        @keyframes sprite-${name} {
+        @keyframes pumba-sprite-${name} {
           from { background-position: 0 -${scaledYPos}px; }
           to { background-position: -${frameWidthWithGutter * scaleX}px -${scaledYPos}px; }
         }
@@ -364,8 +365,8 @@ const KEYFRAMES_CSS = (() => {
     .join("\n")
 })()
 
-export default function DuckFollowerCore() {
-  const { position, animation, direction, onAnimationEnd } = useDuckState()
+export default function PumbaFollowerCore() {
+  const { position, animation, direction, onAnimationEnd } = usePumbaState()
 
   const animationStyle = ANIMATION_STYLES[animation]
   const transform =
@@ -377,7 +378,7 @@ export default function DuckFollowerCore() {
     <>
       <style>{KEYFRAMES_CSS}</style>
       <div
-        className="duck-follower dark:drop-shadow-sm dark:drop-shadow-amber-300"
+        className="pumba-follower dark:drop-shadow-sm dark:drop-shadow-stone-300"
         style={{ ...animationStyle, transform }}
         onAnimationEnd={onAnimationEnd}
         aria-hidden="true"

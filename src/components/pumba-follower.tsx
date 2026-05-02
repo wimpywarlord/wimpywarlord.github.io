@@ -4,21 +4,21 @@ import { useReducedMotion } from "motion/react"
 import dynamic from "next/dynamic"
 import { useMemo } from "react"
 
-import { useDuckFollowerVisibility } from "@/hooks/use-duck-follower-visibility"
 import { useIsClient } from "@/hooks/use-is-client"
+import { usePumbaFollowerVisibility } from "@/hooks/use-pumba-follower-visibility"
 
 function isTouchDevice(): boolean {
   if (typeof window === "undefined") return false
   return "ontouchstart" in window || navigator.maxTouchPoints > 0
 }
 
-const DuckFollowerCore = dynamic(() => import("./duck-follower-core"), {
+const PumbaFollowerCore = dynamic(() => import("./pumba-follower-core"), {
   ssr: false,
 })
 
-export function DuckFollower() {
+export function PumbaFollower() {
   const isClient = useIsClient()
-  const [isDuckFollowerVisible] = useDuckFollowerVisibility()
+  const [isPumbaFollowerVisible] = usePumbaFollowerVisibility()
   const shouldReduceMotion = useReducedMotion()
 
   const isTouch = useMemo(() => {
@@ -27,9 +27,9 @@ export function DuckFollower() {
   }, [isClient])
 
   const shouldRender =
-    isClient && isDuckFollowerVisible && !shouldReduceMotion && !isTouch
+    isClient && isPumbaFollowerVisible && !shouldReduceMotion && !isTouch
 
   if (!shouldRender) return null
 
-  return <DuckFollowerCore />
+  return <PumbaFollowerCore />
 }

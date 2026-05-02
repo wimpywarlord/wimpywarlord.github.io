@@ -28,7 +28,7 @@ import {
 } from "@/components/ui/command"
 import type { PostPreview } from "@/features/blog/types/post"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
-import { useDuckFollowerVisibility } from "@/hooks/use-duck-follower-visibility"
+import { usePumbaFollowerVisibility } from "@/hooks/use-pumba-follower-visibility"
 import { cn } from "@/lib/utils"
 
 import { Icons } from "./icons"
@@ -82,7 +82,7 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
   const router = useRouter()
   const { setTheme } = useTheme()
   const [open, setOpen] = useState(false)
-  const [, setIsDuckFollowerVisible] = useDuckFollowerVisibility()
+  const [, setIsPumbaFollowerVisible] = usePumbaFollowerVisibility()
 
   useHotkeys("mod+k, slash", (e) => {
     e.preventDefault()
@@ -109,10 +109,10 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
     [setTheme]
   )
 
-  const handleToggleDuckFollower = useCallback(() => {
+  const handleTogglePumbaFollower = useCallback(() => {
     setOpen(false)
-    setIsDuckFollowerVisible((isVisible) => !isVisible)
-  }, [setIsDuckFollowerVisible])
+    setIsPumbaFollowerVisible((isVisible) => !isVisible)
+  }, [setIsPumbaFollowerVisible])
 
   const blogLinks = useMemo(
     () =>
@@ -206,9 +206,9 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
           </CommandGroup>
 
           <CommandGroup heading="Interactive Features">
-            <CommandItem onSelect={handleToggleDuckFollower}>
+            <CommandItem onSelect={handleTogglePumbaFollower}>
               <MousePointer2Icon />
-              Toggle Duck Follower
+              Toggle Pumba
             </CommandItem>
           </CommandGroup>
         </CommandList>
@@ -275,7 +275,7 @@ function buildCommandMetaMap() {
   commandMetaMap.set("Light", { commandKind: "command" })
   commandMetaMap.set("Dark", { commandKind: "command" })
   commandMetaMap.set("Auto", { commandKind: "command" })
-  commandMetaMap.set("Toggle Duck Follower", { commandKind: "command" })
+  commandMetaMap.set("Toggle Pumba", { commandKind: "command" })
 
   SOCIAL_LINK_ITEMS.forEach((item) => {
     commandMetaMap.set(item.title, { commandKind: "link" })
