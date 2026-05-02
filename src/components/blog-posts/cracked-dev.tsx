@@ -821,7 +821,7 @@ export function CrackedReactDev() {
         >
           https://svgl.app/
         </Link>
-        {" "}and{" "}
+        {", "}
         <Link
           href="https://www.brandbird.app/tools/svg-company-logos"
           target="_blank"
@@ -829,6 +829,15 @@ export function CrackedReactDev() {
         >
           brandbird.app/svg-company-logos
         </Link>
+        {", and "}
+        <Link
+          href="https://thesvg.org/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          thesvg.org
+        </Link>
+        {" (free, open-source brand SVGs, no attribution required)"}
       </p>
 
       <div className="my-8 border-b border-border" />

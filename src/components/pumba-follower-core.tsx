@@ -41,6 +41,7 @@ const CONFIG = {
       row: 2,
       frames: 6,
       duration: 1.6,
+      loop: false,
       loopCount: 3,
     },
   } as const satisfies Record<AnimationName, AnimationConfig>,
