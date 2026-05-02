@@ -576,6 +576,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://muload.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Muload
+          </Link>
+          {" - 38 specialized loading animations designed for AI apps — token streaming, attention flow, and more"}
+        </li>
+        <li>
+          <Link
             href="https://transitions.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
