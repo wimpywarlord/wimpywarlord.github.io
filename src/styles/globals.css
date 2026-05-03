@@ -430,9 +430,7 @@
     z-index: 50;
 
     pointer-events: none;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+    image-rendering: auto;
 
     will-change: transform;
     transition: none;

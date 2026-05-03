@@ -15,40 +15,90 @@ type AnimationConfig = {
   loopCount?: number
 }
 
-type AnimationName = "walking" | "sitting" | "happy"
+type AnimationName =
+  | "idle"
+  | "runRight"
+  | "runLeft"
+  | "waving"
+  | "jumping"
+  | "failed"
+  | "waiting"
+  | "working"
+  | "review"
 
 const CONFIG = {
-  frameWidth: 128,
-  frameHeight: 128,
-  gutter: 5,
-  renderedWidth: 64,
-  renderedHeight: 64,
-  spriteSheet: "/assets/pumba/pumba-sprite.svg",
+  frameWidth: 192,
+  frameHeight: 208,
+  gutter: 0,
+  renderedWidth: 96,
+  renderedHeight: 104,
+  spriteSheet: "/assets/pumba/pumba-codex-spritesheet.webp",
   animations: {
-    walking: {
+    idle: {
       row: 0,
-      frames: 5,
-      duration: 0.5,
+      frames: 8,
+      duration: 1.6,
       loop: true,
     },
-    sitting: {
+    runRight: {
       row: 1,
-      frames: 6,
-      duration: 2,
-      loop: false,
+      frames: 8,
+      duration: 0.75,
+      loop: true,
     },
-    happy: {
+    runLeft: {
       row: 2,
-      frames: 6,
+      frames: 8,
+      duration: 0.75,
+      loop: true,
+    },
+    waving: {
+      row: 3,
+      frames: 8,
+      duration: 1.4,
+      loop: false,
+      loopCount: 2,
+    },
+    jumping: {
+      row: 4,
+      frames: 8,
+      duration: 1,
+      loop: false,
+      loopCount: 2,
+    },
+    failed: {
+      row: 5,
+      frames: 8,
+      duration: 1.8,
+      loop: false,
+      loopCount: 2,
+    },
+    waiting: {
+      row: 6,
+      frames: 8,
+      duration: 1.8,
+      loop: false,
+      loopCount: 2,
+    },
+    working: {
+      row: 7,
+      frames: 8,
       duration: 1.6,
       loop: false,
-      loopCount: 3,
+      loopCount: 2,
+    },
+    review: {
+      row: 8,
+      frames: 8,
+      duration: 1.8,
+      loop: false,
+      loopCount: 2,
     },
   } as const satisfies Record<AnimationName, AnimationConfig>,
-  walkSpeed: 0.8,
+  walkSpeed: 1,
   cursorOffset: {
-    x: -12,
-    y: 32,
+    x: -18,
+    y: 48,
   },
   idleThreshold: 500,
   maxSpeedMultiplier: 5,
@@ -57,7 +107,15 @@ const CONFIG = {
   idleDeadZone: 50,
 } as const
 
-const IDLE_ANIMATIONS: AnimationName[] = ["sitting", "happy"]
+const IDLE_ANIMATIONS: AnimationName[] = [
+  "idle",
+  "waving",
+  "jumping",
+  "failed",
+  "waiting",
+  "working",
+  "review",
+]
 
 const SCALED_SPRITE_SIZE = (() => {
   const {
@@ -95,9 +153,15 @@ const ANIMATION_STYLES: Record<
   AnimationName,
   ReturnType<typeof generateAnimationStyle>
 > = {
-  walking: generateAnimationStyle("walking"),
-  sitting: generateAnimationStyle("sitting"),
-  happy: generateAnimationStyle("happy"),
+  idle: generateAnimationStyle("idle"),
+  runRight: generateAnimationStyle("runRight"),
+  runLeft: generateAnimationStyle("runLeft"),
+  waving: generateAnimationStyle("waving"),
+  jumping: generateAnimationStyle("jumping"),
+  failed: generateAnimationStyle("failed"),
+  waiting: generateAnimationStyle("waiting"),
+  working: generateAnimationStyle("working"),
+  review: generateAnimationStyle("review"),
 }
 
 function generateAnimationStyle(animationName: AnimationName) {
@@ -135,7 +199,7 @@ function usePumbaState() {
     y: window.innerHeight - CONFIG.renderedHeight - 20,
   }))
   const [targetPosition, setTargetPosition] = useState<Position>(position)
-  const [animation, setAnimation] = useState<AnimationName>("sitting")
+  const [animation, setAnimation] = useState<AnimationName>("idle")
   const [direction, setDirection] = useState<"left" | "right">("left")
   const [isIdle, setIsIdle] = useState(true)
   const [hasReachedTarget, setHasReachedTarget] = useState(true)
@@ -200,8 +264,11 @@ function usePumbaState() {
 
           if (distance < CONFIG.idleDeadZone) return
 
+          const nextDirection = dx > 0 ? "right" : "left"
+
           isPlayingIdleRef.current = false
-          setAnimation("walking")
+          setDirection(nextDirection)
+          setAnimation(nextDirection === "right" ? "runRight" : "runLeft")
         }
 
         setTargetPosition(newTarget)
@@ -297,13 +364,14 @@ function usePumbaState() {
 
   useEffect(() => {
     let nextAnimation: AnimationName | null = null
+    const runningAnimation = direction === "right" ? "runRight" : "runLeft"
 
     if (!isIdle || !hasReachedTarget) {
       if (isPlayingIdleRef.current) {
         isPlayingIdleRef.current = false
       }
-      if (animation !== "walking") {
-        nextAnimation = "walking"
+      if (animation !== runningAnimation) {
+        nextAnimation = runningAnimation
       }
     } else if (!isPlayingIdleRef.current) {
       isPlayingIdleRef.current = true
@@ -316,7 +384,7 @@ function usePumbaState() {
     if (nextAnimation) {
       queueMicrotask(() => setAnimation(nextAnimation))
     }
-  }, [isIdle, hasReachedTarget, animation, getRandomIdleAnimation])
+  }, [isIdle, hasReachedTarget, animation, direction, getRandomIdleAnimation])
 
   const handleAnimationEnd = useCallback(() => {
     if (!isPlayingIdleRef.current) return
@@ -325,9 +393,9 @@ function usePumbaState() {
       setAnimation(getRandomIdleAnimation())
     } else {
       isPlayingIdleRef.current = false
-      setAnimation("walking")
+      setAnimation(direction === "right" ? "runRight" : "runLeft")
     }
-  }, [isIdle, hasReachedTarget, getRandomIdleAnimation])
+  }, [isIdle, hasReachedTarget, direction, getRandomIdleAnimation])
 
   return {
     position,
@@ -367,13 +435,10 @@ const KEYFRAMES_CSS = (() => {
 })()
 
 export default function PumbaFollowerCore() {
-  const { position, animation, direction, onAnimationEnd } = usePumbaState()
+  const { position, animation, onAnimationEnd } = usePumbaState()
 
   const animationStyle = ANIMATION_STYLES[animation]
-  const transform =
-    direction === "left"
-      ? `translate3d(${position.x}px, ${position.y}px, 0) scaleX(-1)`
-      : `translate3d(${position.x}px, ${position.y}px, 0)`
+  const transform = `translate3d(${position.x}px, ${position.y}px, 0)`
 
   return (
     <>
