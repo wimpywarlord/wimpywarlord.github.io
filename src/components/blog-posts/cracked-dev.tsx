@@ -604,6 +604,46 @@ export function CrackedReactDev() {
           </Link>
           {" - Collection of the most essential transitions for web apps"}
         </li>
+        <li>
+          <Link
+            href="https://aliimam.in/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Ali Imam
+          </Link>
+          {" - Components, blocks, and design experiments by Ali Imam"}
+        </li>
+        <li>
+          <Link
+            href="https://ui.watermelon.sh"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Watermelon UI
+          </Link>
+          {" - Modern component library with a juicy aesthetic"}
+        </li>
+        <li>
+          <Link
+            href="https://ui.unlumen.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Unlumen UI
+          </Link>
+          {" - Crafted UI components for modern web apps"}
+        </li>
+        <li>
+          <Link
+            href="https://skiper-ui.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Skiper UI
+          </Link>
+          {" - Sleek, copy-paste components with smooth animations"}
+        </li>
       </ul>
 
       <div className="my-6">
@@ -1105,6 +1145,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Learn how to use ComfyUI effectively"}
         </li>
+        <li>
+          <Link
+            href="https://diffusion.studio/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Diffusion Studio
+          </Link>
+          {" - Browser-based AI video editor"}
+        </li>
       </ul>
 
       <div className="my-8 border-b border-border" />
@@ -1373,6 +1423,30 @@ export function CrackedReactDev() {
       <div className="my-8 border-b border-border" />
 
       <h3 className="text-primary">Tips & Tricks</h3>
+
+      <h4>Extend Hit Area Without Affecting Layout</h4>
+      <p>
+        Use a <Highlight>::before</Highlight> pseudo-element to grow a target&apos;s
+        clickable area without nudging anything around it:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`::before {
+  content: "";
+  position: absolute;
+  inset: -10px 0;
+}`}
+        </code>
+      </pre>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/extend_hit_area_pseudo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h4>Ghostty Liquid Glass</h4>
       <p>
