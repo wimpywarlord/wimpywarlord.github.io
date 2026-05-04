@@ -1265,6 +1265,16 @@ export function CrackedReactDev() {
           </Link>
           {" - All-in-one scene selection tool. Auto-segments any video into scenes via I-frame detection, hover-preview clips, merge into montages, MP4 export"}
         </li>
+        <li>
+          <Link
+            href="https://github.com/ronitsingh10/FineTune"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            FineTune
+          </Link>
+          {" - Free, open-source SoundSource alternative for Mac. Per-app volume control and audio routing in the menu bar"}
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>

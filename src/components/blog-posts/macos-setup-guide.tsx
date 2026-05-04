@@ -923,6 +923,19 @@ export function MacosOnSteroids() {
       </CommandBox>
 
       <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/ronitsingh10/FineTune"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            FineTune
+          </Link>
+          {" - Free, open-source SoundSource alternative. Per-app volume control and audio routing in the menu bar"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask background-music
         </code>
