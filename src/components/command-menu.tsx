@@ -6,7 +6,6 @@ import {
   CornerDownLeftIcon,
   LayersIcon,
   MoonStarIcon,
-  MousePointer2Icon,
   RssIcon,
   SunMediumIcon,
   TextIcon,
@@ -28,7 +27,6 @@ import {
 } from "@/components/ui/command"
 import type { PostPreview } from "@/features/blog/types/post"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
-import { usePumbaFollowerVisibility } from "@/hooks/use-pumba-follower-visibility"
 import { cn } from "@/lib/utils"
 
 import { Icons } from "./icons"
@@ -82,7 +80,6 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
   const router = useRouter()
   const { setTheme } = useTheme()
   const [open, setOpen] = useState(false)
-  const [, setIsPumbaFollowerVisible] = usePumbaFollowerVisibility()
 
   useHotkeys("mod+k, slash", (e) => {
     e.preventDefault()
@@ -108,11 +105,6 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
     },
     [setTheme]
   )
-
-  const handleTogglePumbaFollower = useCallback(() => {
-    setOpen(false)
-    setIsPumbaFollowerVisible((isVisible) => !isVisible)
-  }, [setIsPumbaFollowerVisible])
 
   const blogLinks = useMemo(
     () =>
@@ -205,12 +197,6 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
             </CommandItem>
           </CommandGroup>
 
-          <CommandGroup heading="Interactive Features">
-            <CommandItem onSelect={handleTogglePumbaFollower}>
-              <MousePointer2Icon />
-              Toggle Pumba
-            </CommandItem>
-          </CommandGroup>
         </CommandList>
 
         <CommandMenuFooter />
@@ -275,7 +261,6 @@ function buildCommandMetaMap() {
   commandMetaMap.set("Light", { commandKind: "command" })
   commandMetaMap.set("Dark", { commandKind: "command" })
   commandMetaMap.set("Auto", { commandKind: "command" })
-  commandMetaMap.set("Toggle Pumba", { commandKind: "command" })
 
   SOCIAL_LINK_ITEMS.forEach((item) => {
     commandMetaMap.set(item.title, { commandKind: "link" })
