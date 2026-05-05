@@ -2,7 +2,6 @@ import { cache } from "react"
 
 import { CrackedReactDev } from "@/components/blog-posts/cracked-dev"
 import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-autistic-nerds"
-import { GhostfeedYcApplication } from "@/components/blog-posts/ghostfeed-yc-application"
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality"
 import { LlmWukong } from "@/components/blog-posts/llm-video-games"
 import { MacosOnSteroids } from "@/components/blog-posts/macos-setup-guide"
@@ -17,18 +16,6 @@ import { DraculaTheming } from "@/components/blog-posts/theming-macos"
 import type { Post } from "@/features/blog/types/post"
 
 const postsRaw: Post[] = [
-  {
-    slug: "ghostfeed-yc-application",
-    metadata: {
-      title: "Ghostfeed AI YC Application",
-      description: "YC Summer 2026 application for Ghostfeed AI.",
-      image: "/assets/blog/blog_thum_13.gif",
-      createdAt: "2026-04-30",
-      updatedAt: "2026-04-30",
-      new: true,
-    },
-    component: GhostfeedYcApplication,
-  },
   {
     slug: "soulful-css",
     metadata: {
