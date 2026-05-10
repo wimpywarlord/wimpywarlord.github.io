@@ -1275,6 +1275,19 @@ export function CrackedReactDev() {
           </Link>
           {" - Free, open-source SoundSource alternative for Mac. Per-app volume control and audio routing in the menu bar"}
         </li>
+        <li>
+          <Link
+            href="https://trimmy.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Trimmy
+          </Link>
+          {" - Watches your clipboard and folds multi-line shell snippets (pipes, redirects, line continuations) into a single pasteable line. Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            brew install --cask steipete/tap/trimmy
+          </code>
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>
