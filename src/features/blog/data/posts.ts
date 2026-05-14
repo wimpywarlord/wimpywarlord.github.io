@@ -3,6 +3,7 @@ import { cache } from "react"
 import { CrackedReactDev } from "@/components/blog-posts/cracked-dev"
 import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-autistic-nerds"
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality"
+import { LinkedinSalesNavigatorScraping } from "@/components/blog-posts/linkedin-sales-navigator-scraping"
 import { LlmWukong } from "@/components/blog-posts/llm-video-games"
 import { MacosOnSteroids } from "@/components/blog-posts/macos-setup-guide"
 import { MemeCollection } from "@/components/blog-posts/meme-collection"
@@ -16,6 +17,19 @@ import { DraculaTheming } from "@/components/blog-posts/theming-macos"
 import type { Post } from "@/features/blog/types/post"
 
 const postsRaw: Post[] = [
+  {
+    slug: "linkedin-sales-navigator-scraping",
+    metadata: {
+      title: "State of LinkedIn Scraping in 2026",
+      description:
+        "A field report on LinkedIn Scraping for lead discovery.",
+      image: "/assets/blog/linkedin-scraping-thumb.jpg",
+      createdAt: "2026-05-14",
+      updatedAt: "2026-05-14",
+      new: true,
+    },
+    component: LinkedinSalesNavigatorScraping,
+  },
   {
     slug: "soulful-css",
     metadata: {
