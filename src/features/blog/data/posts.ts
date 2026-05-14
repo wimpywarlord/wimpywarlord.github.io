@@ -23,7 +23,7 @@ const postsRaw: Post[] = [
       title: "State of LinkedIn Scraping in 2026",
       description:
         "A field report on LinkedIn Scraping for lead discovery.",
-      image: "/assets/blog/linkedin-scraping-thumb.jpg",
+      image: "/assets/blog/linkedin-scraping-reserve-1.jpg",
       createdAt: "2026-05-14",
       updatedAt: "2026-05-14",
       new: true,
