@@ -1274,6 +1274,43 @@ outline-offset: -1px;
   margin: 0 10px;
 }`}</code>
       </pre>
+
+      <h3>Text Shine Effect in Pure CSS</h3>
+      <p>
+        A clean shine effect using a gradient clipped to text. Animate the
+        background position and the shine sweeps across.
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/soulful_css/text_shine_effect.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">{`.shine-text {
+  background: linear-gradient(
+    110deg,
+    rgba(39, 116, 245, 0.2) 20%,  /* Text color */
+    rgba(39, 116, 245, 0.9) 40%,  /* Shine glow */
+    rgba(39, 116, 245, 0.9) 60%,  /* Shine glow */
+    rgba(39, 116, 245, 0.2) 80%   /* Text color */
+  );
+  background-size: 200% auto;
+  animation: shine 2s linear infinite;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}`}</code>
+      </pre>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
-import { GalleryImage } from "@/components/gallery";
+import { GalleryImage, GalleryVideo } from "@/components/gallery";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -700,6 +700,48 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://apps.apple.com/us/app/amphetamine/id937984704"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Amphetamine
+          </Link>
+          {" - Keep your Mac awake. Free from the Mac App Store with advanced triggers and session control"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://apps.apple.com/us/app/klack/id6446206067"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Klack
+          </Link>
+          {" - Satisfying mechanical keyboard sounds for every keystroke. Available on the Mac App Store"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask steipete/tap/trimmy
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://trimmy.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Trimmy
+          </Link>
+          {" - Watches your clipboard and folds multi-line shell snippets (pipes, redirects, line continuations) into a single pasteable line. No dock icon, no network, no daemon"}
+        </p>
+      </CommandBox>
+
       <h5 className="text-primary text-sm sm:text-base">File Management</h5>
 
       <CommandBox>
@@ -1336,46 +1378,55 @@ esac
         </p>
         <ul className="space-y-1 text-xs sm:text-sm list-none">
           <li>
-            <strong>Hyper + ←</strong> → Act as Hyper Key
+            <strong>Caps Lock</strong> → Act as Hyper Key (⌘⌥⌃⇧)
           </li>
           <li>
             <strong>Hyper + Q</strong> → Launch VS Code
           </li>
           <li>
-            <strong>Hyper + W</strong> → Launch Ghostty
-          </li>
-          <li>
-            <strong>Hyper + X</strong> → Launch Notion Mail
+            <strong>Hyper + W</strong> → Launch Google Chrome
           </li>
           <li>
             <strong>Hyper + E</strong> → Launch Zen Browser
           </li>
           <li>
-            <strong>Hyper + R</strong> → Launch Figma
+            <strong>Hyper + R</strong> → Launch WhatsApp
           </li>
           <li>
-            <strong>Hyper + A</strong> → Launch WhatsApp
+            <strong>Hyper + S</strong> → Launch Ghostty
           </li>
           <li>
-            <strong>Hyper + Z</strong> → Launch ForkLift
+            <strong>Hyper + A</strong> → Launch Codex
           </li>
           <li>
-            <strong>Hyper + D</strong> → Launch Notion
+            <strong>Hyper + D</strong> → Launch Obsidian
+          </li>
+          <li>
+            <strong>Hyper + F</strong> → Launch Obsidian
           </li>
           <li>
             <strong>Hyper + G</strong> → Launch YouTube Music
           </li>
           <li>
-            <strong>Hyper + P</strong> → Launch Postman
+            <strong>Hyper + H</strong> → Launch Figma
+          </li>
+          <li>
+            <strong>Hyper + Z</strong> → Launch Finder
+          </li>
+          <li>
+            <strong>Hyper + X</strong> → Launch Notion Mail
+          </li>
+          <li>
+            <strong>Hyper + C</strong> → Launch Notion Calendar
+          </li>
+          <li>
+            <strong>Hyper + N</strong> → Launch Figma
           </li>
           <li>
             <strong>Hyper + M</strong> → Launch MongoDB Compass
           </li>
           <li>
-            <strong>Hyper + S</strong> → Launch Claude
-          </li>
-          <li>
-            <strong>Hyper + C</strong> → Launch Notion Calendar
+            <strong>Hyper + P</strong> → Launch Postman
           </li>
           <li>
             <strong>Hyper + 1-5</strong> → Switch to Desktop 1-5
@@ -1511,6 +1562,33 @@ esac
           important folders.
         </p>
       </CommandBox>
+
+      <h4 className="text-base sm:text-lg">Mole - Deep Clean Your Mac</h4>
+      <p>
+        <Highlight>Mole</Highlight> deep cleans and optimizes your Mac — find
+        large files, clear caches, and reclaim disk space with a clean, fast UI.
+      </p>
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install tw93/tap/mole
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://mole.fit/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Mole
+          </Link>
+          {" - Multi-language Mac cleaner and optimizer"}
+        </p>
+      </CommandBox>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/mac_os_setup/mole_demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 

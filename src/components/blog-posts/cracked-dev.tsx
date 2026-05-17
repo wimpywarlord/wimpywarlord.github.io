@@ -1189,6 +1189,20 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h4>Learning Resources</h4>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://brrrviz.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            BrrrViz
+          </Link>
+          {" - Interactive visualizations for learning GPU programming"}
+        </li>
+      </ul>
+
       <div className="my-8 border-b border-border" />
 
       <h3 className="text-primary">Dev Workflow Optimization</h3>
@@ -1382,6 +1396,16 @@ export function CrackedReactDev() {
             Visitors.now
           </Link>
           {" - Beautiful landing page inspiration"}
+        </li>
+        <li>
+          <Link
+            href="https://www.styleui.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            StyleUI
+          </Link>
+          {" - Curated landing page design inspiration"}
         </li>
         <li>
           <Link
