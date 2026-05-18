@@ -25,4 +25,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     subtitle: "PDF Download",
     href: "/KSHITIJ_DHYANI.pdf",
   },
+  {
+    icon: "/assets/social/calendly.svg",
+    title: "Calendly",
+    subtitle: "Book a 30min call",
+    href: "https://calendly.com/kshitijdhyani/30",
+  },
 ]
