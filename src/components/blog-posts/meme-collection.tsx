@@ -192,6 +192,215 @@ export function MemeCollection() {
         </GalleryVideo>
       </div>
 
+      <h3 className="text-primary">AI Marketing Era</h3>
+      <p>
+        The era where <Highlight>distribution becomes infrastructure</Highlight>{" "}
+        and marketing agencies get unbundled by software.
+      </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/marketing_is_software_problem_1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/marketing_is_software_problem_2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/marketing_replaced_by_software.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/distribution_is_infrastructure.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/deploy_accounts_like_servers.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/founder_builds_distribution.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/startups_die_no_distribution.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/product_quality_doesnt_matter.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/companies_winning_attention.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/million_dollar_solo_founder.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/pov_2026_founder_zero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/marketing_agency_retainers_cooked.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/era_of_5k_agency_retainer_over.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/agencies_charging_thousands_over.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/marketing_agencies_panic.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/software_dismantles_agencies.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/manual_ugc_teams_over.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/b2b_startup_video_content.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/solved_account_problem.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/real_unlock_not_content_gen.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/cmo_after_ai_did_job.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/cmo_discovers_fastlane.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/ai_cmo_replaced_half.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/ai_replaced_me_still_post.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/where_was_this_ai.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/ai_cheat_code.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/traditional_marketing_didnt_die.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/medvi_story.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/memes/consumer_app_launch_story.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
       <div className="my-8 border-b border-border" />
 
       <h3 className="text-primary">Sound Effects</h3>
