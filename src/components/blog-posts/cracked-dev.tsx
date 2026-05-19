@@ -1119,6 +1119,27 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h4>Agent Source Access</h4>
+      <p>
+        Give coding agents access to any package&apos;s{" "}
+        <Highlight>real source code</Highlight> — not just type signatures:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://www.npmjs.com/package/opensrc"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            opensrc
+          </Link>
+          {" - Use "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">opensrc path</code>
+          {" inside other commands to search, read, or explore package implementations"}
+        </li>
+      </ul>
+      <CopyableText text="npm install -g opensrc" />
+
       <h4>AI Image Generation</h4>
       <p>
         Generate stunning visuals with <Highlight>AI-powered</Highlight> image
