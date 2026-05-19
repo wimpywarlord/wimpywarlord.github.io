@@ -192,12 +192,6 @@ export function MemeCollection() {
         </GalleryVideo>
       </div>
 
-      <h3 className="text-primary">AI Marketing Era</h3>
-      <p>
-        The era where <Highlight>distribution becomes infrastructure</Highlight>{" "}
-        and marketing agencies get unbundled by software.
-      </p>
-
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/memes/marketing_is_software_problem_1.mp4" type="video/mp4" />
