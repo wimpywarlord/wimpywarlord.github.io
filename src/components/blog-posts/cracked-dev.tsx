@@ -1201,6 +1201,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Interactive visualizations for learning GPU programming"}
         </li>
+        <li>
+          <Link
+            href="https://fragcoord.xyz/explore"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Fragcoord
+          </Link>
+          {" - Browse and copy shader code snippets — a fragment shader gallery"}
+        </li>
       </ul>
 
       <div className="my-8 border-b border-border" />
