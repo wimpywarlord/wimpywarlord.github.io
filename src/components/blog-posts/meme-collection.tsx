@@ -201,13 +201,6 @@ export function MemeCollection() {
 
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source src="/blog/memes/marketing_is_software_problem_2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/memes/marketing_replaced_by_software.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </GalleryVideo>
