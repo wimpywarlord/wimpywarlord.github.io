@@ -3,6 +3,7 @@ import { cache } from "react"
 import { CrackedReactDev } from "@/components/blog-posts/cracked-dev"
 import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-autistic-nerds"
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality"
+import { LifeHacks } from "@/components/blog-posts/life-hacks"
 import { LinkedinSalesNavigatorScraping } from "@/components/blog-posts/linkedin-sales-navigator-scraping"
 import { LlmWukong } from "@/components/blog-posts/llm-video-games"
 import { MacosOnSteroids } from "@/components/blog-posts/macos-setup-guide"
@@ -18,6 +19,19 @@ import type { Post } from "@/features/blog/types/post"
 
 const postsRaw: Post[] = [
   {
+    slug: "life-hacks",
+    metadata: {
+      title: "Life Hacks",
+      description:
+        "Small things that compound — tools and shifts I've actually used and felt the difference from.",
+      image: "/assets/blog/blog_thum_14.gif",
+      createdAt: "2026-05-20",
+      updatedAt: "2026-05-20",
+      new: true,
+    },
+    component: LifeHacks,
+  },
+  {
     slug: "linkedin-sales-navigator-scraping",
     metadata: {
       title: "State of LinkedIn Scraping in 2026",
@@ -26,7 +40,6 @@ const postsRaw: Post[] = [
       image: "/assets/blog/linkedin-scraping-reserve-1.jpg",
       createdAt: "2026-05-14",
       updatedAt: "2026-05-14",
-      new: true,
     },
     component: LinkedinSalesNavigatorScraping,
   },
