@@ -742,6 +742,19 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://cotypist.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Cotypist
+          </Link>
+          {" - On-device AI that predicts your next words in every Mac app. Press Tab to accept. Open source — make your own version"}
+        </p>
+      </CommandBox>
+
       <h5 className="text-primary text-sm sm:text-base">File Management</h5>
 
       <CommandBox>

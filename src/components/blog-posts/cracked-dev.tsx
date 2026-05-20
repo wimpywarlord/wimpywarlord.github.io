@@ -1119,6 +1119,24 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h4>System-Wide AI Typing</h4>
+      <p>
+        Local AI predictions that show up in <Highlight>every Mac app</Highlight>.
+        Press Tab to accept:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://cotypist.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Cotypist
+          </Link>
+          {" - Predicts your next words in every Mac app — runs on-device, not in the cloud. Eerily good at picking up on what you're about to write. Open source — you can build your own version"}
+        </li>
+      </ul>
+
       <h4>Agent Source Access</h4>
       <p>
         Give coding agents access to any package&apos;s{" "}
