@@ -1440,6 +1440,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://landscapes.directory/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Landscapes Directory
+          </Link>
+          {" - Curated directory of landing pages and website inspiration"}
+        </li>
+        <li>
+          <Link
             href="https://www.startupperks.xyz/perks"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"

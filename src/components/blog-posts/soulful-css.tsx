@@ -1311,6 +1311,52 @@ outline-offset: -1px;
   to { background-position: 200% center; }
 }`}</code>
       </pre>
+
+      <h3>Viewport Units: vh vs svh vs dvh</h3>
+      <p>
+        On mobile, the URL bar and toolbar slide in and out as the user scrolls
+        — which means the "viewport height" actually changes. Picking the wrong
+        unit is what causes footers to get cut off or layouts to jump while
+        scrolling.
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">100vh</code> —
+          The classic. Ignores the mobile toolbar entirely, so footer content
+          gets cut off and you have to scroll to reach it.
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">100dvh</code> —{" "}
+          <strong className="text-primary">Dynamic</strong> viewport. Updates
+          live as the toolbar shows/hides. You see the whole footer, but the
+          layout shifts while scrolling.
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">100svh</code> —{" "}
+          <strong className="text-primary">Small</strong> viewport. Locked to
+          the smallest possible viewport (toolbar visible). No layout shift,
+          full footer always visible. Usually what you want.
+        </li>
+      </ul>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/soulful_css/viewport_units_vh_svh_dvh.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">{`/* Old — footer cut off behind mobile toolbar */
+.page { min-height: 100vh; }
+
+/* Live-updating — but layout jumps while scrolling */
+.page { min-height: 100dvh; }
+
+/* Best default — footer always visible, no shift */
+.page { min-height: 100svh; }`}</code>
+      </pre>
     </div>
   );
 }
