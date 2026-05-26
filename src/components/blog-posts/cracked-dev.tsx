@@ -285,6 +285,16 @@ export function CrackedReactDev() {
           </Link>
           {" - CSS background layer generator"}
         </li>
+        <li>
+          <Link
+            href="https://nucleoapp.com/svg-patterns/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Nucleo SVG Patterns
+          </Link>
+          {" - Free generator for seamless SVG background patterns — tweak colors, scale, and spacing, then copy the SVG"}
+        </li>
       </ul>
 
       <h4>Thumbnail & Visual Tools</h4>
