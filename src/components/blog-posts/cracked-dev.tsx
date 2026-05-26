@@ -695,6 +695,16 @@ export function CrackedReactDev() {
       <ul className="space-y-2">
         <li>
           <Link
+            href="https://www.diceui.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Dice UI
+          </Link>
+          {" - Composable, accessible components built on shadcn/Radix — data tables, kanban, sortable, and more. Copy-paste, free & open source"}
+        </li>
+        <li>
+          <Link
             href="https://kokonutui.com"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
