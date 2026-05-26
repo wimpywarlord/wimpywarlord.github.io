@@ -291,6 +291,7 @@ export function MacosOnSteroids() {
           bettertouchtool postman screen-studio flux forklift fork
           davinci-resolve \<br />
           discord cursor cleanshot chatgpt aldente raycast appcleaner rectangle
+          bartender jordanbaird-ice
         </code>
       </CommandBox>
 
@@ -566,6 +567,22 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask steipete/tap/codexbar
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://codexbar.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            CodexBar
+          </Link>
+          {" - Free, open-source menu bar app that keeps every AI coding usage window, credit balance, and reset timer in view across 40+ providers (Codex, Claude Code, Cursor, and more). No login required"}
+        </p>
+      </CommandBox>
+
       <h5 className="text-primary text-sm sm:text-base">
         Productivity & System Tools
       </h5>
@@ -697,6 +714,38 @@ export function MacosOnSteroids() {
             Rectangle
           </Link>
           {" - Window management made simple with keyboard shortcuts"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask bartender
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://www.macbartender.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Bartender 6
+          </Link>
+          {" - My go-to menu bar manager. Hide, reorder, and reveal menu bar items, with triggers, hotkeys, and per-item show/hide rules. Paid, the most polished option"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask jordanbaird-ice
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/jordanbaird/Ice"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Ice
+          </Link>
+          {" - Free, open-source alternative to Bartender. Hide, organize, and reorder menu bar items, with an Ice Bar that tucks overflow items below the notch"}
         </p>
       </CommandBox>
 
@@ -894,6 +943,22 @@ export function MacosOnSteroids() {
             Screen Studio
           </Link>
           {" - Professional screen recording with beautiful animations"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
+          brew install --cask aurorascharff/clicklight/clicklight
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/aurorascharff/ClickLight"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            ClickLight
+          </Link>
+          {" - Tiny menu bar app that highlights your clicks for live demos. Screen Studio and CleanShot add click effects in post; ClickLight is for the live moment, before there's a recording to polish"}
         </p>
       </CommandBox>
 

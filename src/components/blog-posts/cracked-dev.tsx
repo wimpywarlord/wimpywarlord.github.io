@@ -1158,6 +1158,27 @@ export function CrackedReactDev() {
       </ul>
       <CopyableText text="npm install -g opensrc" />
 
+      <h4>Track Your AI Usage Limits</h4>
+      <p>
+        Keep every AI coding <Highlight>usage window</Highlight> in your menu
+        bar — never get blindsided by a rate limit mid-session:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://codexbar.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            CodexBar
+          </Link>
+          {" - Tiny menu bar app that tracks usage windows, credits, costs, and resets across 40+ providers (Codex, Claude Code, Cursor, Gemini, Copilot, and more). Free, open-source, no login required. Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            brew install --cask steipete/tap/codexbar
+          </code>
+        </li>
+      </ul>
+
       <h4>AI Image Generation</h4>
       <p>
         Generate stunning visuals with <Highlight>AI-powered</Highlight> image
@@ -1349,6 +1370,19 @@ export function CrackedReactDev() {
           {" - Watches your clipboard and folds multi-line shell snippets (pipes, redirects, line continuations) into a single pasteable line. Install: "}
           <code className="bg-muted px-2 py-1 rounded text-sm">
             brew install --cask steipete/tap/trimmy
+          </code>
+        </li>
+        <li>
+          <Link
+            href="https://github.com/aurorascharff/ClickLight"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ClickLight
+          </Link>
+          {" - Tiny menu bar app that highlights your clicks for live demos and screen shares — for the live moment, before there's a recording to polish. Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            brew install --cask aurorascharff/clicklight/clicklight
           </code>
         </li>
       </ul>
