@@ -1504,22 +1504,22 @@ esac
             <strong>Caps Lock</strong> → Act as Hyper Key (⌘⌥⌃⇧)
           </li>
           <li>
-            <strong>Hyper + Q</strong> → Launch VS Code
+            <strong>Hyper + Q</strong> → Launch Google Chrome
           </li>
           <li>
-            <strong>Hyper + W</strong> → Launch Google Chrome
+            <strong>Hyper + W</strong> → Launch Zen Browser
           </li>
           <li>
-            <strong>Hyper + E</strong> → Launch Zen Browser
+            <strong>Hyper + E</strong> → Launch cmux
           </li>
           <li>
             <strong>Hyper + R</strong> → Launch WhatsApp
           </li>
           <li>
-            <strong>Hyper + S</strong> → Launch cmux
+            <strong>Hyper + A</strong> → Launch VS Code
           </li>
           <li>
-            <strong>Hyper + A</strong> → Launch Codex
+            <strong>Hyper + S</strong> → Launch Finder
           </li>
           <li>
             <strong>Hyper + D</strong> → Launch Obsidian
@@ -1532,9 +1532,6 @@ esac
           </li>
           <li>
             <strong>Hyper + H</strong> → Launch Figma
-          </li>
-          <li>
-            <strong>Hyper + Z</strong> → Launch Finder
           </li>
           <li>
             <strong>Hyper + X</strong> → Launch Notion Mail
