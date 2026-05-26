@@ -291,7 +291,7 @@ export function MacosOnSteroids() {
           bettertouchtool postman screen-studio flux forklift fork
           davinci-resolve \<br />
           discord cursor cleanshot chatgpt aldente raycast appcleaner rectangle
-          bartender jordanbaird-ice
+          bartender jordanbaird-ice betterdisplay alcove
         </code>
       </CommandBox>
 
@@ -801,6 +801,51 @@ export function MacosOnSteroids() {
             Cotypist
           </Link>
           {" - On-device AI that predicts your next words in every Mac app. Press Tab to accept. Open source — make your own version"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://www.cotabby.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Cotabby
+          </Link>
+          {" - Cotypist alternative. Free, open-source, on-device AI autocomplete in every Mac app, using Apple Intelligence or local GGUF models. Inline ghost text, Tab to accept"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask betterdisplay
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/waydabber/BetterDisplay"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            BetterDisplay
+          </Link>
+          {" - Turn any display into a fully scalable HiDPI screen, control brightness/color over DDC, create virtual screens, and push XDR/HDR brightness. Free for the essentials, Pro is a one-time unlock"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask alcove
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://tryalcove.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Alcove
+          </Link>
+          {" - Turns the notch into a Dynamic Island — music controls, notifications, and widgets in the dead space. Lightweight, one-time purchase"}
         </p>
       </CommandBox>
 
@@ -1471,7 +1516,7 @@ esac
             <strong>Hyper + R</strong> → Launch WhatsApp
           </li>
           <li>
-            <strong>Hyper + S</strong> → Launch Ghostty
+            <strong>Hyper + S</strong> → Launch cmux
           </li>
           <li>
             <strong>Hyper + A</strong> → Launch Codex
@@ -1606,6 +1651,51 @@ esac
           Now go to GitHub → Settings → SSH Keys and paste
         </p>
       </CommandBox>
+
+      <div className="my-6 sm:my-8 border-b border-border" />
+
+      <h3 className="text-primary text-xl sm:text-2xl">
+        My Global CLAUDE.md &amp; AGENTS.md
+      </h3>
+      <p>
+        Every coding agent I run inherits the same{" "}
+        <Highlight>thinking style</Highlight>. I keep this prompt in my global{" "}
+        <code className="text-xs sm:text-sm">~/.claude/CLAUDE.md</code> and a
+        matching <code className="text-xs sm:text-sm">AGENTS.md</code> so Claude
+        Code, Codex, and Cursor all reason the way I do by default:
+      </p>
+
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`Be organized, accurate, thorough, and detailed without unnecessary verbosity.
+
+Treat me as an expert. Do not dumb things down.
+
+Optimize for truth and correctness over approval, conformity, politeness, or harmony. If I'm wrong, say so directly.
+
+Value good arguments over authorities or sources. Consider serious contrarian arguments alongside consensus expert views.
+
+When useful, present the strongest counterargument to any position I appear to hold.
+
+Do not capitulate when I push back unless I provide new evidence or a better argument.
+
+Do not anchor on numbers, estimates, or assumptions I provide; generate your own independently.
+
+Be skeptical by default. Look for hidden assumptions, failure modes, and ways to improve the answer, product, argument, or system.
+
+My epistemology is the same as David Deutsch or Karl Popper. Naval Ravikant has serious resonance with my thinking loops.
+
+Be surprisingly resourceful. Suggest non-obvious solutions. Be proactive and anticipate my needs. Assume I am high-agency and can make practically anything happen.
+
+Cite sources. Use examples liberally.
+
+Open-minded and impossible to offend. Be provocative, argumentative, and pointed when useful.
+
+When copy editing, always mark changes inline.
+
+About me: Kshitij (tjay) Dhyani (@type_kshitij on X)
+
+Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.`}</code>
+      </pre>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 

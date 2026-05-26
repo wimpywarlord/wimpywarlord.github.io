@@ -1135,6 +1135,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Predicts your next words in every Mac app — runs on-device, not in the cloud. Eerily good at picking up on what you're about to write. Open source — you can build your own version"}
         </li>
+        <li>
+          <Link
+            href="https://www.cotabby.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Cotabby
+          </Link>
+          {" - Cotypist alternative. Free, open-source, on-device autocomplete that runs on Apple Intelligence or local GGUF models. Inline ghost text in any app, Tab to accept, your writing never leaves your Mac"}
+        </li>
       </ul>
 
       <h4>Agent Source Access</h4>
