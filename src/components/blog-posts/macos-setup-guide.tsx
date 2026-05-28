@@ -2000,6 +2000,60 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
       </CommandBox>
 
       <h4 className="text-base sm:text-lg">
+        Make CleanShot X the Default Image Viewer
+      </h4>
+      <p>
+        macOS keeps reverting image defaults back to Preview because the{" "}
+        <Highlight>"Open With → Change All"</Highlight> Finder dialog only
+        binds a single UTI at a time and silently breaks when LaunchServices
+        gets out of sync. Fix it permanently by setting every image UTI via{" "}
+        <code className="text-primary">duti</code>:
+      </p>
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install duti
+        </code>
+        <p className="text-xs sm:text-sm">
+          A CLI for binding default apps by UTI — what the macOS GUI should
+          have been
+        </p>
+      </CommandBox>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`# CleanShot X's bundle ID is pl.maketheweb.cleanshotx
+duti -s pl.maketheweb.cleanshotx public.jpeg all
+duti -s pl.maketheweb.cleanshotx public.png all
+duti -s pl.maketheweb.cleanshotx public.tiff all
+duti -s pl.maketheweb.cleanshotx public.heic all
+duti -s pl.maketheweb.cleanshotx public.heif all
+duti -s pl.maketheweb.cleanshotx public.webp all
+duti -s pl.maketheweb.cleanshotx com.compuserve.gif all
+duti -s pl.maketheweb.cleanshotx public.image all
+
+# Verify it stuck
+duti -x jpg
+duti -x png`}</code>
+      </pre>
+      <p>
+        If it <em>still</em> reverts, your LaunchServices database is corrupt
+        — rebuild it and re-run the binds:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+killall Finder`}</code>
+      </pre>
+      <InfoBox>
+        <p className="text-sm">
+          <strong>Why this works:</strong> Finder's "Change All" writes to a
+          per-extension preference that other apps (and macOS updates) can
+          stomp on.{" "}
+          <code className="text-primary">duti</code> writes directly to the
+          LaunchServices preferences plist using the canonical UTI, which is
+          the same mechanism macOS itself uses internally — so the binding
+          survives reboots, app updates, and OS upgrades.
+        </p>
+      </InfoBox>
+
+      <h4 className="text-base sm:text-lg">
         Remove Full Screen Shortcut Conflict
       </h4>
       <p>
