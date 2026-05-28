@@ -976,6 +976,19 @@ export function MacosOnSteroids() {
       </CommandBox>
 
       <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://pixelsnap.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            PixelSnap 2
+          </Link>
+          {" - Pixel-perfect on-screen measurement tool with edge detection. Measure distances, sizes, and grab colors anywhere on screen. Integrates with CleanShot for design and dev work"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask screen-studio
         </code>
@@ -1525,7 +1538,7 @@ esac
             <strong>Hyper + D</strong> → Launch Obsidian
           </li>
           <li>
-            <strong>Hyper + F</strong> → Launch Obsidian
+            <strong>Hyper + F</strong> → Launch PixelSnap
           </li>
           <li>
             <strong>Hyper + G</strong> → Launch YouTube Music
