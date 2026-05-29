@@ -955,6 +955,22 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask slack
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://slack.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Slack
+          </Link>
+          {" - Work and team communication"}
+        </p>
+      </CommandBox>
+
       <h5 className="text-primary text-sm sm:text-base">
         Creative & Media Tools
       </h5>
