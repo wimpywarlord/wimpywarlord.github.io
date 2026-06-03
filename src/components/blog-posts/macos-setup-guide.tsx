@@ -2070,6 +2070,75 @@ killall Finder`}</code>
       </InfoBox>
 
       <h4 className="text-base sm:text-lg">
+        Make IINA the Default Audio & Video Player
+      </h4>
+      <p>
+        Same playbook as CleanShot above, but for{" "}
+        <Link
+          href="https://iina.io/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          IINA
+        </Link>{" "}
+        — the only macOS video player worth running. Bind every common
+        audio/video UTI to <code className="text-primary">com.colliderli.iina</code>{" "}
+        so QuickTime and Music stop hijacking your double-clicks:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`IINA=com.colliderli.iina
+
+# --- Video UTIs ---
+for uti in \\
+  public.movie public.video public.audiovisual-content \\
+  public.mpeg-4 public.mpeg public.mpeg-2-video \\
+  public.avi public.3gpp public.3gpp2 \\
+  com.apple.quicktime-movie com.apple.m4v-video \\
+  com.microsoft.windows-media-wmv com.microsoft.advanced-systems-format \\
+  org.webmproject.webm public.flc-animation; do
+  duti -s "$IINA" "$uti" all
+done
+
+# --- Audio UTIs ---
+for uti in \\
+  public.audio public.mp3 public.mpeg-4-audio public.aac-audio \\
+  public.aifc-audio public.aiff-audio \\
+  com.apple.m4a-audio com.apple.coreaudio-format \\
+  com.microsoft.waveform-audio \\
+  org.xiph.flac org.xiph.ogg-audio com.real.realaudio; do
+  duti -s "$IINA" "$uti" all
+done
+
+# --- Extension fallbacks for formats with non-canonical UTIs ---
+for ext in mkv opus webm flac ogg ts m2ts mts mxf wv ape \\
+           rm rmvb ra asf vob flv f4v divx dv mp2 m3u m3u8; do
+  duti -s "$IINA" "$ext" all
+done
+
+# Force-register IINA so LaunchServices knows its claims
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/IINA.app"
+killall Finder`}</code>
+      </pre>
+      <p>
+        Verify with <code className="text-primary">duti -x mp4</code>,{" "}
+        <code className="text-primary">duti -x mkv</code>,{" "}
+        <code className="text-primary">duti -x mp3</code> — all three should
+        print <Highlight>IINA</Highlight>.
+      </p>
+      <InfoBox>
+        <p className="text-sm">
+          <strong>Gotchas:</strong> A few obscure formats (
+          <code className="text-primary">tak, amv, xvid</code>) have no
+          registered UTI on macOS and will fail silently — ignore them.{" "}
+          <code className="text-primary">.pls</code> playlists are aggressively
+          claimed by Apple Music and IINA doesn't even declare them; not worth
+          fighting since you'll likely never see one. Everything that matters
+          (<code className="text-primary">mp4 / mov / mkv / webm / mp3 / m4a /
+          flac / opus / wav</code>) sticks permanently.
+        </p>
+      </InfoBox>
+
+      <h4 className="text-base sm:text-lg">
         Remove Full Screen Shortcut Conflict
       </h4>
       <p>
