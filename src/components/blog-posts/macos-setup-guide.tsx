@@ -284,7 +284,8 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary break-all">
-          brew install node python tmux git uv zoxide atuin yt-dlp fzf eza \
+          brew install node python tmux git uv zoxide atuin yt-dlp gallery-dl
+          fzf eza \
           <br />
           --cask zen-browser superkey protonvpn notion libreoffice ghostty
           iterm2 \<br />
@@ -428,6 +429,24 @@ export function MacosOnSteroids() {
             yt-dlp
           </Link>
           {" - Download videos/images from YouTube and 1000+ other sites"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install gallery-dl
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/mikf/gallery-dl"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            gallery-dl
+          </Link>
+          {
+            " - Download image galleries and collections from Instagram, Twitter/X, Reddit, Pinterest, and hundreds of other sites"
+          }
         </p>
       </CommandBox>
 
