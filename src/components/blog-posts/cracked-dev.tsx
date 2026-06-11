@@ -1415,6 +1415,19 @@ export function CrackedReactDev() {
             brew install --cask aurorascharff/clicklight/clicklight
           </code>
         </li>
+        <li>
+          <Link
+            href="https://exiftool.org/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ExifTool
+          </Link>
+          {" - Phil Harvey's open-source metadata Swiss-army knife. A Perl library + CLI that reads, writes, and edits metadata in basically every media file format that exists. Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            brew install exiftool
+          </code>
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>
