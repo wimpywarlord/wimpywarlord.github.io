@@ -1188,6 +1188,20 @@ export function CrackedReactDev() {
       </ul>
       <CopyableText text="npm install -g opensrc" />
 
+      <h4>Kill AI Slop in Your Writing</h4>
+      <p>
+        <Link
+          href="https://github.com/hardikpandya/stop-slop"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Stop Slop
+        </Link>
+        {" - A Claude skill that teaches the model to spot and strip "}
+        <Highlight>AI-tell writing patterns</Highlight>
+        {" — throat-clearing openers, em-dash overuse, the rule of three, binary contrasts, hollow meta-commentary. Add it as a Claude Code skill, drop it into a Project, or paste it into a system prompt to make output sound human instead of robotic."}
+      </p>
+
       <h4>Track Your AI Usage Limits</h4>
       <p>
         Keep every AI coding <Highlight>usage window</Highlight> in your menu
