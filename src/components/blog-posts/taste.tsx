@@ -746,6 +746,27 @@ setTransform(
           className="w-full rounded-lg"
         />
       </div>
+
+      <p className="mt-4">
+        <a
+          href="https://loomix.harshsingh.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Loomix
+        </a>
+        {" — a lightweight, drop-in liquid glass replacement for the native HTML5 video element. React video player with a gorgeous frosted-glass control bar ("}
+        <a
+          href="https://x.com/haaarshsingh/status/2066315437504397613"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          via @haaarshsingh
+        </a>
+        {")"}
+      </p>
     </div>
   );
 }
