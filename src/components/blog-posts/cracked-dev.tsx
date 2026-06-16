@@ -1208,6 +1208,44 @@ export function CrackedReactDev() {
       </ul>
       <CopyableText text="npm install -g opensrc" />
 
+      <h4>Composable Skills for Coding Agents</h4>
+      <p>
+        <Link
+          href="https://github.com/BuilderIO/skills"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          BuilderIO/skills
+        </Link>
+        {" (from "}
+        <Link
+          href="https://x.com/Steve8708/status/2066906454704218337"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Steve Sewell
+        </Link>
+        {") - A set of "}
+        <Highlight>composable skills</Highlight>
+        {" that keep expensive frontier models doing high-value work (orchestration, planning, review) while cheaper agents handle token-heavy lifting. Highlights: "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">/efficient-fable</code>
+        {" (Fable orchestrates, light agents grind), "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">/stay-within-limits</code>
+        {" (pauses at 95% of your 5-hour/weekly usage so you never blow your budget mid-task), and "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">/visual-recap</code>
+        {" (turns branch/PR diffs into interactive visual recaps). Install: "}
+      </p>
+      <CopyableText text="npx @agent-native/skills@latest add" />
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/builderio_skills.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
       <h4>Kill AI Slop in Your Writing</h4>
       <p>
         <Link
