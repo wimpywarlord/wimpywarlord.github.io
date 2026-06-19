@@ -508,6 +508,26 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://www.beui.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            beUI
+          </Link>
+          {" ("}
+          <Link
+            href="https://x.com/saurra3h/status/2066622271624548521"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @saurra3h
+          </Link>
+          {") - Open-source motion components for React, built on Tailwind 4 + React 19 with spring-based Framer Motion animations. 15+ copy-paste components and blocks (tabs, tooltips, command palettes, dynamic islands). The "}
+          <Highlight>theme toggle is the best one</Highlight>
+          {" — a full-page clip-path reveal via the View Transition API, with rectangle, circle, and circle-blur variants (demo below)"}
+        </li>
+        <li>
+          <Link
             href="https://www.fancycomponents.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -691,6 +711,26 @@ export function CrackedReactDev() {
           {" - Sleek, copy-paste components with smooth animations"}
         </li>
       </ul>
+
+      <p className="mt-4">
+        <Link
+          href="https://www.beui.dev/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          beUI
+        </Link>
+        {"'s theme toggle — the best one out there. A full-page clip-path reveal via the View Transition API:"}
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/beui_theme_toggle.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
