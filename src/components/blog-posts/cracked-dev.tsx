@@ -295,16 +295,6 @@ export function CrackedReactDev() {
           </Link>
           {" - Free generator for seamless SVG background patterns — tweak colors, scale, and spacing, then copy the SVG"}
         </li>
-        <li>
-          <Link
-            href="https://fluid.krackeddevs.com/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Fluid
-          </Link>
-          {" - Premium generative art, rendered live in your browser"}
-        </li>
       </ul>
 
       <h4>Thumbnail & Visual Tools</h4>
@@ -391,6 +381,16 @@ export function CrackedReactDev() {
             Fluid Effects
           </Link>
           {" - Interactive fluid simulation effects for the web"}
+        </li>
+        <li>
+          <Link
+            href="https://fluid.krackeddevs.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Fluid
+          </Link>
+          {" - Premium generative art, rendered live in your browser"}
         </li>
         <li>
           <Link
