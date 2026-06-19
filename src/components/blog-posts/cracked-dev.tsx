@@ -482,6 +482,32 @@ export function CrackedReactDev() {
       <ul className="space-y-2">
         <li>
           <Link
+            href="https://www.npmjs.com/package/cmdk"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            cmdk
+          </Link>
+          {" - Fast, unstyled, composable command menu (⌘K) for React. Created by Paco Coursey, maintained by "}
+          <Link
+            href="https://benji.org/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Benji
+          </Link>
+          {" ("}
+          <Link
+            href="https://x.com/benjitaylor"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @benjitaylor
+          </Link>
+          {")"}
+        </li>
+        <li>
+          <Link
             href="https://www.fancycomponents.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
