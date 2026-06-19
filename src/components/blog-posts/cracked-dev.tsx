@@ -394,6 +394,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://valessa.riotters.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Valessa
+          </Link>
+          {" - Drop in an SVG and get 3D glass back in a second, right in your browser. No installs, fully free"}
+        </li>
+        <li>
+          <Link
             href="https://lego-pixellation.vercel.app/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
