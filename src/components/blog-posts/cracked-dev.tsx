@@ -1282,6 +1282,107 @@ export function CrackedReactDev() {
         </GalleryVideo>
       </div>
 
+      <h4>My Claude Code &amp; Codex Skills</h4>
+      <p>
+        The full set of <Highlight>skills</Highlight> I keep installed in{" "}
+        <code className="bg-muted px-2 py-1 rounded text-sm">~/.claude/skills/</code>
+        :
+      </p>
+      <p className="mt-4 mb-1 font-semibold">Code Quality</p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://github.com/cursor/plugins/blob/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review/SKILL.md"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            thermo-nuclear-code-quality-review
+          </Link>
+          {" - Brutally strict maintainability review. Blocks files past 1,000 lines, rejects ad-hoc spaghetti conditionals, kills thin abstractions and magical behavior, and enforces architectural boundaries. From Cursor's team kit — this is "}
+          <Highlight>not</Highlight>
+          {" a polite reviewer"}
+        </li>
+      </ul>
+      <p className="mt-4 mb-1 font-semibold">
+        Agent Orchestration &amp; Usage (
+        <Link
+          href="https://github.com/BuilderIO/skills"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          BuilderIO/skills
+        </Link>
+        )
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">efficient-fable</code>
+          {" - Claude Fable orchestrates while cheaper subagents grind through token-heavy work"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">efficient-frontier</code>
+          {" - Same pattern for any high-cost frontier model"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">stay-within-limits</code>
+          {" - Pauses near your 5-hour/weekly usage cap, resumes when clear"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">quick-recap</code>
+          {" - Red/yellow/green status block convention for responses"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">visual-plan</code>
+          {" - Text plans → interactive visual plans (diagrams, file maps, annotated code)"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">visual-recap</code>
+          {" - PR/branch/commit/diff → interactive visual recap"}
+        </li>
+      </ul>
+      <p className="mt-4 mb-1 font-semibold">Frontend &amp; Design</p>
+      <ul className="space-y-2">
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">frontend-design</code>
+          {" - Production-grade frontend interfaces that dodge generic AI aesthetics"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">ui-skills</code>
+          {" - Opinionated React/TS/Tailwind constraints and composition patterns"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">web-design-guidelines</code>
+          {" - Audits UI code against Web Interface Guidelines (a11y, UX)"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">vercel-react-best-practices</code>
+          {" - React/Next.js performance guidelines from Vercel Engineering"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">remotion-best-practices</code>
+          {" - Best practices for Remotion (video creation in React)"}
+        </li>
+      </ul>
+      <p className="mt-4 mb-1 font-semibold">Writing &amp; Content</p>
+      <ul className="space-y-2">
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">humanizer</code>
+          {" - Strips AI-writing tells, based on Wikipedia's \"Signs of AI writing\" guide"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">graphify</code>
+          {" - Any input → clustered knowledge graph (HTML + JSON + audit report)"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">tiktok-hooks</code>
+          {" - Gen-Z / college-apps TikTok hooks for the first 1-3 seconds of a video"}
+        </li>
+        <li>
+          <code className="bg-muted px-2 py-1 rounded text-sm">archive-conversation</code>
+          {" - Saves a chat as a clean, Obsidian-compatible note"}
+        </li>
+      </ul>
+
       <h4>Kill AI Slop in Your Writing</h4>
       <p>
         <Link

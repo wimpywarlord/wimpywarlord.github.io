@@ -1744,6 +1744,114 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
+      <h3 className="text-primary text-xl sm:text-2xl">
+        Claude Code &amp; Codex Skills
+      </h3>
+      <p>
+        <Highlight>Skills</Highlight> are reusable instruction packs that live in{" "}
+        <code className="text-xs sm:text-sm">~/.claude/skills/</code> and load on
+        demand. These are the ones I keep installed:
+      </p>
+
+      <h4 className="text-base sm:text-lg">Code Quality</h4>
+      <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
+        <li>
+          <Link
+            href="https://github.com/cursor/plugins/blob/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review/SKILL.md"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            thermo-nuclear-code-quality-review
+          </Link>
+          {" - Brutally strict maintainability review. Blocks files past 1,000 lines, rejects ad-hoc spaghetti conditionals, questions thin abstractions and magical behavior, and enforces architectural boundaries. From Cursor's team kit"}
+        </li>
+      </ul>
+
+      <h4 className="text-base sm:text-lg">Agent Orchestration &amp; Usage</h4>
+      <p className="text-xs sm:text-sm">
+        From{" "}
+        <Link
+          href="https://github.com/BuilderIO/skills"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline"
+        >
+          BuilderIO/skills
+        </Link>
+        :
+      </p>
+      <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
+        <li>
+          <code className="text-xs sm:text-sm">efficient-fable</code>
+          {" - Run Claude Fable as the orchestrator while cheaper subagents do token-heavy research, coding, and testing"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">efficient-frontier</code>
+          {" - Same orchestration pattern for any high-cost frontier model: delegate heavy lifting, keep planning and final review on the expensive model"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">stay-within-limits</code>
+          {" - Respects 5-hour and weekly usage limits — pauses near the cap and resumes when the window clears"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">quick-recap</code>
+          {" - Red/yellow/green status block convention for final agent responses"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">visual-plan</code>
+          {" - Turns text plans into interactive visual plans with diagrams, file maps, and annotated code"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">visual-recap</code>
+          {" - Turns a PR, branch, commit, or diff into an interactive visual recap"}
+        </li>
+      </ul>
+
+      <h4 className="text-base sm:text-lg">Frontend &amp; Design</h4>
+      <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
+        <li>
+          <code className="text-xs sm:text-sm">frontend-design</code>
+          {" - Distinctive, production-grade frontend interfaces that avoid generic AI aesthetics"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">ui-skills</code>
+          {" - Opinionated technical constraints for building interfaces (React, TypeScript, Tailwind, composition patterns)"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">web-design-guidelines</code>
+          {" - Reviews UI code for Web Interface Guidelines compliance — accessibility, UX, and design audits"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">vercel-react-best-practices</code>
+          {" - React and Next.js performance optimization guidelines from Vercel Engineering"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">remotion-best-practices</code>
+          {" - Best practices for Remotion (video creation in React)"}
+        </li>
+      </ul>
+
+      <h4 className="text-base sm:text-lg">Writing &amp; Content</h4>
+      <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
+        <li>
+          <code className="text-xs sm:text-sm">humanizer</code>
+          {" - Strips signs of AI-generated writing, based on Wikipedia's \"Signs of AI writing\" guide"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">graphify</code>
+          {" - Turns any input (code, docs, papers, images) into a clustered knowledge graph with HTML + JSON + audit report"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">tiktok-hooks</code>
+          {" - Generates Gen-Z / college-apps TikTok hooks for the first 1-3 seconds of a video"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">archive-conversation</code>
+          {" - Saves a chat as a clean, Obsidian-compatible note"}
+        </li>
+      </ul>
+
+      <div className="my-6 sm:my-8 border-b border-border" />
+
       <h3 className="text-primary text-xl sm:text-2xl">System Maintenance</h3>
 
       <h4 className="text-base sm:text-lg">Regular Updates</h4>
