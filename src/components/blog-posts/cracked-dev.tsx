@@ -1687,6 +1687,26 @@ export function CrackedReactDev() {
             brew install exiftool
           </code>
         </li>
+        <li>
+          <Link
+            href="https://portless.sh/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Portless
+          </Link>
+          {" - Replaces port numbers with stable, named .localhost URLs for local development. For humans and agents"}
+        </li>
+        <li>
+          <Link
+            href="https://agent-browser.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Agent Browser
+          </Link>
+          {" - Browser automation CLI designed for AI agents. Compact text output minimizes context usage. 100% native Rust"}
+        </li>
       </ul>
 
       <h4>yt-dlp Commands</h4>
