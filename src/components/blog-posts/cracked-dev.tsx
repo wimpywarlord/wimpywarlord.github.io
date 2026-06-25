@@ -430,6 +430,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://github.com/z3lka/cool-pixelation-effect"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Cool Pixelation Effect
+          </Link>
+          {" - A zero-dependency HTML/CSS/JS experiment that renders an image as animated pixel particles. Hovering pushes nearby pixels away from their positions, then eases them back into place"}
+        </li>
+        <li>
+          <Link
             href="https://cmyk.danielpetho.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
