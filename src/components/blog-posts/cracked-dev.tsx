@@ -374,6 +374,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://ascii.krackeddevs.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ASCII by KrackedDevs
+          </Link>
+          {" - A text-native generative art instrument where everything is characters. A phosphor-green CRT terminal that renders glyphs instead of pixels"}
+        </li>
+        <li>
+          <Link
             href="https://fluideffects.vercel.app/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
