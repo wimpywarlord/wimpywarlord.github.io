@@ -147,8 +147,9 @@ export function CrackedReactDev() {
   return (
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
-        Want to become an absolute <Highlight>beast</Highlight> at React
-        development? This is my curated collection of tools, workflows, and
+        Want to become an absolute <Highlight>beast</Highlight>{" "}
+        at React development? This is my curated collection of tools, workflows,
+        and
         resources that&apos;ll transform you from a regular dev into a{" "}
         <Highlight>cracked</Highlight> one.
       </p>
