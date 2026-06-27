@@ -191,7 +191,27 @@ export function CrackedReactDev() {
           </Link>
           {" - Browse curated App Store screenshots from the best designed iOS apps and icons"}
         </li>
+        <li>
+          <Link
+            href="https://www.arlan.me/vault"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Arlan&apos;s Vault
+          </Link>
+          {" - A curated vault of beautifully crafted UI interactions and product inspiration (Dia Browser, Figma, and more) — a goldmine for studying micro-interactions"}
+        </li>
       </ul>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/dia_vault.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h4>CSS Design Experts</h4>
       <p>
