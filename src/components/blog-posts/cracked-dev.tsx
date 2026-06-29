@@ -931,6 +931,16 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://iconinspo.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Icon Inspo
+          </Link>
+          {" - Curated gallery of icon design inspiration from real products — browse by style and use case when you need ideas, not just assets"}
+        </li>
+        <li>
+          <Link
             href="https://react-icons.github.io/react-icons/search/#q=ok"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
