@@ -1557,6 +1557,24 @@ export function CrackedReactDev() {
         </li>
       </ul>
 
+      <h4>AI Inference Benchmarks</h4>
+      <p>
+        Know what you&apos;re actually paying for in{" "}
+        <Highlight>tokens, cost, and watts</Highlight>:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://inferencex.semianalysis.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            InferenceX
+          </Link>
+          {" - Open-source benchmarking platform from SemiAnalysis that continuously measures AI inference across GPUs (NVIDIA, AMD), models (DeepSeek, Llama, Qwen), and frameworks — transparent, reproducible numbers on throughput, cost efficiency, and tokens per watt"}
+        </li>
+      </ul>
+
       <div className="my-8 border-b border-border" />
 
       <h3 className="text-primary">Knowledge Management</h3>
