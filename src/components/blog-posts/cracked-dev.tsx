@@ -201,6 +201,16 @@ export function CrackedReactDev() {
           </Link>
           {" - A curated vault of beautifully crafted UI interactions and product inspiration (Dia Browser, Figma, and more) — a goldmine for studying micro-interactions"}
         </li>
+        <li>
+          <Link
+            href="https://collectui.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            CollectUI
+          </Link>
+          {" - Daily UI design inspiration organized by category (sign-up forms, checkout, dashboards, 404s) — hand-picked from thousands of Dribbble shots when you need a reference for a specific screen"}
+        </li>
       </ul>
 
       <div className="my-6">
