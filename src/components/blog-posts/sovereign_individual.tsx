@@ -70,6 +70,26 @@ export function SovereignIndividual() {
 
       <div className="my-8 border-b border-border" />
 
+      <h3 className="text-primary">Global Situational Awareness</h3>
+      <p>
+        A sovereign individual needs their own{" "}
+        <Highlight>intelligence layer</Highlight>—not a curated feed handed to
+        them. Watching capital flows, geopolitical risk, and instability in real
+        time is how you stay ahead of the headlines instead of reacting to them.
+      </p>
+      <p className="mt-4">
+        <Link
+          href="https://github.com/koala73/worldmonitor"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          World Monitor
+        </Link>
+        {" - Open-source real-time global intelligence dashboard: 500+ curated news feeds across 15 categories synthesized by AI, dual map engines (3D globe + WebGL), financial markets across 29 exchanges, and a Country Instability Index for 31 countries. Runs AI locally via Ollama and ships as a desktop app—your own situation room, no surveillance attached."}
+      </p>
+
+      <div className="my-8 border-b border-border" />
+
       <h3 className="text-primary">Final Thoughts</h3>
       <p>
         Financial privacy isn't about having something to hide—it's about
