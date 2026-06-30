@@ -533,7 +533,27 @@ export function CrackedReactDev() {
           </Link>
           {" - Massive collection of game UI references and assets"}
         </li>
+        <li>
+          <Link
+            href="https://morflax.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Morflax
+          </Link>
+          {" - Browser-based 3D mockup & motion studio. Turn SVGs or text into animated 3D, drop your UI onto device mockups, export up to 4K — no 3D software required"}
+        </li>
       </ul>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/morflax_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h4>Component Libraries</h4>
       <p>
