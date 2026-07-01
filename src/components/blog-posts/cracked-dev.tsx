@@ -326,6 +326,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Free generator for seamless SVG background patterns — tweak colors, scale, and spacing, then copy the SVG"}
         </li>
+        <li>
+          <Link
+            href="https://shaders.paper.design/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Paper Shaders
+          </Link>
+          {" - Ultra-fast, zero-dependency shader effects for the web — animated gradients, noise, and distortions you can drop straight into a page"}
+        </li>
       </ul>
 
       <h4>Thumbnail & Visual Tools</h4>
