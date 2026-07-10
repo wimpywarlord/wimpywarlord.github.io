@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Card } from "@/components/ui/card";
 import { GalleryVideo, GalleryImage } from "@/components/gallery";
 import { Copy, Check, ChevronDown, ChevronRight } from "lucide-react";
 
@@ -763,16 +762,6 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
-            href="https://aliimam.in/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Ali Imam
-          </Link>
-          {" - Components, blocks, and design experiments by Ali Imam"}
-        </li>
-        <li>
-          <Link
             href="https://ui.watermelon.sh"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -889,16 +878,6 @@ export function CrackedReactDev() {
             Cult UI
           </Link>
           {" - Stunning UI components for modern apps"}
-        </li>
-        <li>
-          <Link
-            href="https://pro.cult-ui.com"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Cult UI Pro
-          </Link>
-          {" - Premium components and templates"}
         </li>
         <li>
           <Link
@@ -1942,54 +1921,6 @@ export function CrackedReactDev() {
           {" - Free perks and discounts for startups on tools, services, and credits"}
         </li>
       </ul>
-
-      <Card className="bg-muted/50 p-4 my-6">
-        <h5 className="text-primary text-sm uppercase tracking-wider font-semibold mb-3">
-          Paid Resources
-        </h5>
-        <ul className="space-y-2">
-          <li>
-            <Link
-              href="https://pro.magicui.design/?ref=muhammadadil"
-              target="_blank"
-              className="text-primary hover:text-primary/80 underline underline-offset-2"
-            >
-              Magic UI Pro
-            </Link>
-            {" - Beautiful component library"}
-          </li>
-          <li>
-            <Link
-              href="https://pro.alignui.com/blocks"
-              target="_blank"
-              className="text-primary hover:text-primary/80 underline underline-offset-2"
-            >
-              Align UI Pro
-            </Link>
-            {" - Production-ready blocks"}
-          </li>
-          <li>
-            <Link
-              href="https://bentogrids.com/"
-              target="_blank"
-              className="text-primary hover:text-primary/80 underline underline-offset-2"
-            >
-              Bento Grids
-            </Link>
-            {" - Modern grid layouts"}
-          </li>
-          <li>
-            <Link
-              href="https://reactbits.dev/text-animations/text-trail"
-              target="_blank"
-              className="text-primary hover:text-primary/80 underline underline-offset-2"
-            >
-              React Bits Pro
-            </Link>
-            {" - Premium animations"}
-          </li>
-        </ul>
-      </Card>
 
       <div className="my-8 border-b border-border" />
 
