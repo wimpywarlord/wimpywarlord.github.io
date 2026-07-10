@@ -940,16 +940,6 @@ export function CrackedReactDev() {
       <ul className="space-y-2">
         <li>
           <Link
-            href="https://iconsclub.vercel.app/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline underline-offset-2"
-          >
-            Icons Club
-          </Link>
-          {" - The largest App Store icon library — 508,041 real app icons, free to download. Search by name or category (YouTube, Spotify, Chase, ChatGPT, you name it)"}
-        </li>
-        <li>
-          <Link
             href="https://iconinspo.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -1029,16 +1019,6 @@ export function CrackedReactDev() {
           {" - Drop in any SVG and turn it into a 3D extruded model. Tweak depth, lighting, and angle, then export"}
         </li>
       </ul>
-
-      <div className="my-6">
-        <GalleryImage
-          src="/blog/cracked_react_dev/iconsclub.png"
-          alt="Icons Club — the largest App Store icon library with 508,041 free icons"
-          width={2000}
-          height={1156}
-          className="w-full rounded-lg"
-        />
-      </div>
 
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
