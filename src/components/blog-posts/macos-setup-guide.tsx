@@ -292,7 +292,7 @@ export function MacosOnSteroids() {
           bettertouchtool postman screen-studio flux forklift fork
           davinci-resolve \<br />
           discord cursor cleanshot chatgpt aldente raycast appcleaner rectangle
-          bartender jordanbaird-ice betterdisplay alcove
+          bartender jordanbaird-ice betterdisplay alcove readdle-spark
         </code>
       </CommandBox>
 
@@ -914,15 +914,25 @@ export function MacosOnSteroids() {
           >
             Notion Calendar
           </Link>
-          {" and "}
+          {" for scheduling."}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask readdle-spark
+        </code>
+        <p className="text-xs sm:text-sm">
           <Link
-            href="https://www.notion.com/product/mail"
+            href="https://sparkmailapp.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Notion Mail
+            Spark
           </Link>
-          {" for seamless integration with your workspace."}
+          {
+            " - Fast, AI-powered email client with smart inbox, snooze, and multi-account support. Daily driver for email"
+          }
         </p>
       </CommandBox>
 
@@ -1188,13 +1198,15 @@ export function MacosOnSteroids() {
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://openai.com/chatgpt/desktop"
+            href="https://openai.com/index/chatgpt-for-your-most-ambitious-work/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
             ChatGPT
           </Link>
-          {" - Official OpenAI ChatGPT desktop app"}
+          {
+            " - Official OpenAI desktop app. As of July 2026, the standalone Codex app has merged into ChatGPT: one app with Chat, Work, and Codex modes. No separate Codex desktop install — update ChatGPT (or your old Codex app) and switch to the Codex view for repos, diffs, PRs, and agent coding. You can set Codex as the default view / app icon if you live in the coding agent"
+          }
         </p>
       </CommandBox>
 
@@ -1567,13 +1579,10 @@ esac
             <strong>Hyper + A</strong> → Launch VS Code
           </li>
           <li>
-            <strong>Hyper + S</strong> → Launch Finder
+            <strong>Hyper + S</strong> → Launch ForkLift
           </li>
           <li>
             <strong>Hyper + D</strong> → Launch Obsidian
-          </li>
-          <li>
-            <strong>Hyper + F</strong> → Launch PixelSnap
           </li>
           <li>
             <strong>Hyper + G</strong> → Launch YouTube Music
@@ -1582,7 +1591,10 @@ esac
             <strong>Hyper + H</strong> → Launch Figma
           </li>
           <li>
-            <strong>Hyper + X</strong> → Launch Notion Mail
+            <strong>Hyper + Z</strong> → Launch Spark
+          </li>
+          <li>
+            <strong>Hyper + X</strong> → Launch ChatGPT (includes Codex)
           </li>
           <li>
             <strong>Hyper + C</strong> → Launch Notion Calendar
