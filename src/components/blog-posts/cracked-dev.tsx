@@ -940,6 +940,18 @@ export function CrackedReactDev() {
       <ul className="space-y-2">
         <li>
           <Link
+            href="https://lobehub.com/icons"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Lobe Icons
+          </Link>
+          {
+            " - 200+ AI/LLM brand logos as React components and static SVGs/PNGs. OpenAI, Claude, Gemini, DeepSeek, Meta, Mistral, and every other model/provider icon in mono, color, text, and avatar variants via @lobehub/icons"
+          }
+        </li>
+        <li>
+          <Link
             href="https://iconinspo.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
