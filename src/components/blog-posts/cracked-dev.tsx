@@ -702,6 +702,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://cuelume-site.pages.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Cuelume
+          </Link>
+          {
+            " - Tiny interaction sounds that make interfaces feel alive. Synthesizes every cue live with Web Audio — no files, no runtime deps. v0.1.0, 10 cues, bind via data-cuelume-* attributes or play() imperatively"
+          }
+        </li>
+        <li>
+          <Link
             href="https://motion-core.dev/docs/introduction"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
