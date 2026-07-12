@@ -1,0 +1,165 @@
+/*
+ * Faithful port of the pure-CSS 3D book demo.
+ * Original was 400×550; we use 160×220 (same ratio) for a 3-up grid.
+ * Each .book-cell owns its own perspective (critical).
+ */
+
+.book-shelf {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  row-gap: 3rem;
+  width: 100%;
+  padding: 1.5rem 0 3rem;
+  justify-items: center;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .book-shelf {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2.5rem;
+    row-gap: 3.5rem;
+  }
+}
+
+/* per-book perspective — matches original .container */
+.book-shelf .book-cell {
+  z-index: 1;
+  perspective: 3000px;
+  width: 160px;
+  height: 220px;
+  /* extra room left for spine + hover swing */
+  padding-left: 12px;
+  box-sizing: content-box;
+}
+
+.book-shelf .book {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 220px;
+  border-radius: 2px 4px 4px 2px;
+  background: linear-gradient(45deg, #dad5dc 0%, #f2ebf4 100%);
+  box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.35);
+  font-weight: 400;
+  color: #2b2b2b;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.book-shelf .book:hover {
+  transform: rotate3d(0, 1, 0, 35deg);
+  z-index: 10;
+}
+
+/* original: .book > div and .front > div are absolute */
+.book-shelf .book > div,
+.book-shelf .front > div {
+  display: block;
+  position: absolute;
+}
+
+.book-shelf .front {
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transition: transform 0.5s;
+  transform: translate3d(0, 0, 14px);
+  z-index: 10;
+}
+
+/* cover face — explicit px size matching book (not %) */
+.book-shelf .front > .cover {
+  width: 160px;
+  height: 220px;
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset 4px 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #1a1a1e;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.book-shelf .front:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: -1px;
+  width: 1px;
+}
+
+.book-shelf .cover:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8px;
+  bottom: 0;
+  width: 3px;
+  background: rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 0 3px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+/* spine — original left-side */
+.book-shelf .left-side {
+  width: 22px;
+  left: -11px;
+  height: 220px;
+  background-color: rgb(232, 229, 234);
+  transform: rotate3d(0, 1, 0, -90deg);
+}
+
+.book-shelf .left-side h2 {
+  width: 220px;
+  height: 22px;
+  margin: 0;
+  color: #2b2b2b;
+  font-size: 9px;
+  line-height: 22px;
+  padding-right: 6px;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: 0 0;
+  transform: rotate(90deg) translateY(-22px);
+  font-weight: 500;
+}
+
+.book-shelf .left-side h2 span:first-child {
+  font-weight: 400;
+  font-size: 8px;
+  padding-right: 10px;
+  opacity: 0.85;
+}
+
+.book-shelf .left-side h2 span:last-child {
+  font-weight: 600;
+}
+
+/* fallback when no cover art */
+.book-shelf .cover-fallback-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 0.65rem;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #2a2a2e 0%, #1a1a1e 100%);
+  color: #f5f5f5;
+}
+
+.book-shelf .cover-fallback-inner .fallback-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 0.3rem;
+}
+
+.book-shelf .cover-fallback-inner .fallback-author {
+  font-size: 0.55rem;
+  opacity: 0.75;
+  margin: 0;
+}

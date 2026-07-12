@@ -921,6 +921,18 @@ export function CrackedReactDev() {
           </Link>
           {" - Open-source chart UI built with shadcn and Recharts. Beautifully designed and handcrafted"}
         </li>
+        <li>
+          <Link
+            href="https://www.tripwire.sh/dither-kit"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            dither-kit
+          </Link>
+          {
+            " - Composable dithered charts on a tiny canvas engine — no Recharts. Ordered-dither fills that hold up in light and dark, entrance animations, scrub tooltips, selection, and colour bloom. shadcn-style install (area, pie, or the full kit)"
+          }
+        </li>
       </ul>
 
       <h4>Color & Theming</h4>

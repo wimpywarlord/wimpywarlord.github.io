@@ -10,6 +10,7 @@ import { MacosOnSteroids } from "@/components/blog-posts/macos-setup-guide"
 import { MemeCollection } from "@/components/blog-posts/meme-collection"
 import { Mindset } from "@/components/blog-posts/mindset"
 import { Piracy } from "@/components/blog-posts/piracy"
+import { ReadingList } from "@/components/blog-posts/reading-list"
 import { RealizedMan } from "@/components/blog-posts/realized-man"
 import { SoulfulCss } from "@/components/blog-posts/soulful-css"
 import { SovereignIndividual } from "@/components/blog-posts/sovereign_individual"
@@ -19,6 +20,19 @@ import type { Post } from "@/features/blog/types/post"
 
 const postsRaw: Post[] = [
   {
+    slug: "reading-list",
+    metadata: {
+      title: "Reading List",
+      description:
+        "Books and essays that compound judgment — how to think about power, markets, knowledge, and agency.",
+      image: "/blog/reading_list/covers/111.jpg",
+      createdAt: "2026-07-12",
+      updatedAt: "2026-07-12",
+      new: true,
+    },
+    component: ReadingList,
+  },
+  {
     slug: "life-hacks",
     metadata: {
       title: "Life Hacks",
@@ -27,7 +41,6 @@ const postsRaw: Post[] = [
       image: "/assets/blog/blog_thum_14.gif",
       createdAt: "2026-05-20",
       updatedAt: "2026-05-20",
-      new: true,
     },
     component: LifeHacks,
   },
