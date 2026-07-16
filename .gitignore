@@ -32,6 +32,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+# committed so PORT=4001 is always set for next (in addition to package.json --port)
+!.env.development
 
 # vercel
 .vercel

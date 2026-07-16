@@ -25,9 +25,9 @@ const postsRaw: Post[] = [
       title: "Reading List",
       description:
         "Books and essays that compound judgment — how to think about power, markets, knowledge, and agency.",
-      image: "/blog/reading_list/covers/111.jpg",
+      image: "/assets/blog/blog_thum_reading_list.jpg",
       createdAt: "2026-07-12",
-      updatedAt: "2026-07-12",
+      updatedAt: "2026-07-16",
       new: true,
     },
     component: ReadingList,

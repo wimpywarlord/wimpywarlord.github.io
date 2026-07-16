@@ -10,9 +10,9 @@
     "url": "https://github.com/wimpywarlord"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --port 4001",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 4001",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "check-types": "tsc --noEmit --pretty"

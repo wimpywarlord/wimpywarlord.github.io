@@ -5,16 +5,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4001](http://localhost:4001) with your browser to see the result.
+
+This project is pinned to **port 4001** (not 3000/3001) so it does not collide with other local apps. Enforced in `package.json` scripts (`--port 4001`) and `.env.development` (`PORT=4001`).
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
