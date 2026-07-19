@@ -702,6 +702,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://amicro.vercel.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Amicro
+          </Link>
+          {
+            " - Curated library of premium micro-interactions and transition components. Built with React and Motion"
+          }
+        </li>
+        <li>
+          <Link
             href="https://cuelume-site.pages.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
