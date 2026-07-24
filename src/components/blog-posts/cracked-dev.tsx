@@ -630,6 +630,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://canvasui.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Canvas UI
+          </Link>
+          {
+            " - Open-source html-in-canvas & WebGL components (particle reveal, liquid, glass, VHS, and more). React, Vue, Svelte, or vanilla — copy-paste via shadcn CLI"
+          }
+        </li>
+        <li>
+          <Link
             href="https://21st.dev/home"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
