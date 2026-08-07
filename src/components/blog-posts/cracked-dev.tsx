@@ -1120,6 +1120,21 @@ export function CrackedReactDev() {
 
       <h3 className="text-primary">AI Development Tools</h3>
 
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://canivibecodeit.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Can I Vibecode It?
+          </Link>
+          {
+            " - Directory of SaaS apps with one question each: can AI build you a replacement today, or is it still worth paying for? Verdicts (yes / kinda / not really) plus the death list ranked by \"I replaced this\" votes"
+          }
+        </li>
+      </ul>
+
       <h4>Claude Code Tips</h4>
 
       <p>
