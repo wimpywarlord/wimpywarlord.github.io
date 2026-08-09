@@ -1457,6 +1457,50 @@ export function CrackedReactDev() {
         </GalleryVideo>
       </div>
 
+      <h4>Kage — Three.js Skills</h4>
+      <p>
+        <Link
+          href="https://github.com/MengTo/kage"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Kage
+        </Link>
+        {" by "}
+        <Link
+          href="https://x.com/MengTo"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Meng To
+        </Link>
+        {" — open-source Three.js landing page + the skills that built it. Live: "}
+        <Link
+          href="https://mengto.github.io/kage/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          mengto.github.io/kage
+        </Link>
+        {" · Skills: "}
+        <Link
+          href="https://github.com/MengTo/skills"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          MengTo/skills
+        </Link>
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/kage_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
       <h4>My Claude Code &amp; Codex Skills</h4>
       <p>
         The full set of <Highlight>skills</Highlight> I keep installed in{" "}
