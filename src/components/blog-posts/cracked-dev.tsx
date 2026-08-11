@@ -788,6 +788,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://generativeloaders.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Generative Loaders
+          </Link>
+          {
+            " - Text, inline, and image loaders for React (decode, typewriter, terminal, dissolve, and more). npm install generative-loaders"
+          }
+        </li>
+        <li>
+          <Link
             href="https://transitions.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
