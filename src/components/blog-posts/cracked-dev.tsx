@@ -210,6 +210,18 @@ export function CrackedReactDev() {
           </Link>
           {" - Daily UI design inspiration organized by category (sign-up forms, checkout, dashboards, 404s) — hand-picked from thousands of Dribbble shots when you need a reference for a specific screen"}
         </li>
+        <li>
+          <Link
+            href="https://www.launchvideo.com/directory"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Global Launch Directory
+          </Link>
+          {
+            " - Reference library of product launches on X — browse by category, stage, format, and views. Study how the best launches look and land"
+          }
+        </li>
       </ul>
 
       <div className="my-6">
