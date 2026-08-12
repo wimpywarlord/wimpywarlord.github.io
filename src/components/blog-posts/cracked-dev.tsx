@@ -1799,6 +1799,17 @@ export function CrackedReactDev() {
             " - Custom folder icons for Mac. 50+ thoughtfully crafted icons for design, video, AI, finance, and more — native feel for macOS Tahoe"
           }
         </li>
+      </ul>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/flairy_folder_icons.webp"
+          alt="Flairy custom macOS folder icons grid"
+          width={1200}
+          height={800}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
+      <ul className="space-y-2">
         <li>
           <Link
             href="https://mesurer.ibelick.com/"
