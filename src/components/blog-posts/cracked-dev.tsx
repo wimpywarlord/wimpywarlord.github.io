@@ -1789,6 +1789,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://flairy-app.framer.website/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Flairy
+          </Link>
+          {
+            " - Custom folder icons for Mac. 50+ thoughtfully crafted icons for design, video, AI, finance, and more — native feel for macOS Tahoe"
+          }
+        </li>
+        <li>
+          <Link
             href="https://mesurer.ibelick.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
