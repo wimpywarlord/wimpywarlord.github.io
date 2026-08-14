@@ -178,6 +178,23 @@ export function Piracy() {
         </p>
       </details>
 
+      <h4 className="text-primary/80">Hindi serials &amp; Bollywood</h4>
+      <p>
+        For Indian TV and Bollywood, use{" "}
+        <a
+          href="https://apne.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+          tabIndex={0}
+          aria-label="Apne TV website"
+        >
+          Apne
+        </a>
+        {" "}
+        (apne.co) — Hindi serials, Bollywood movies, and related video.
+      </p>
+
       <h3 className="text-primary">E-Books</h3>
 
       <h4 className="text-primary/80">Free E-Book Sources</h4>
