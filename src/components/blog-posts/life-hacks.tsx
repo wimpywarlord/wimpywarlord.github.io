@@ -34,6 +34,26 @@ export function LifeHacks() {
         way better experience than the big hotel chains — more character, often
         cheaper, and the staff actually cares.
       </p>
+
+      <div className="my-8 border-b border-border" />
+
+      <h3 className="text-primary">SF connectivity</h3>
+
+      <h4>$10/mo Xfinity WiFi pass</h4>
+      <p>
+        In SF,{" "}
+        <Link
+          href="https://www.xfinity.com/learn/internet-service/wifi"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Xfinity&apos;s NOW WiFi Pass
+        </Link>{" "}
+        is <Highlight>$10 for 30 days</Highlight> — no contract, no gear. Hotspots
+        are everywhere (look for <code className="text-sm">xfinitywifi</code>), so
+        you can skip hunting cafe WiFi and random public networks. Great default
+        when you&apos;re moving around the city.
+      </p>
     </div>
   );
 }
