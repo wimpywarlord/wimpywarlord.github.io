@@ -1012,6 +1012,18 @@ export function CrackedReactDev() {
       <ul className="space-y-2">
         <li>
           <Link
+            href="https://www.iconsclub.xyz/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Icons Club
+          </Link>
+          {
+            " - The largest App Store icon library. Search real app icons by name or category — free to download"
+          }
+        </li>
+        <li>
+          <Link
             href="https://lobehub.com/icons"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
