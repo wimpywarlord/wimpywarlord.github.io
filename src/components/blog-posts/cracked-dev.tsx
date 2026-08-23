@@ -182,6 +182,29 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://ipaslogo.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            IP as Logo
+          </Link>
+          {
+            " - Turn any public IP into a unique generative logo. Claude Code skill — paste an IP, get a logo"
+          }
+        </li>
+      </ul>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/ipaslogo.jpg"
+          alt="IP as Logo — Claude Code skill generating logos from public IPs"
+          width={1600}
+          height={1033}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
+      <ul className="space-y-2">
+        <li>
+          <Link
             href="https://before.click/?view=icons"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
