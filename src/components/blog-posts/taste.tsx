@@ -545,6 +545,17 @@ setTransform(
         </a>
       </p>
 
+      <p className="mt-4">
+        <a
+          href="https://creature.company/eyes?swatch=cat-laser"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Creature — Lilguy Eyes (cat laser)
+        </a>
+      </p>
+
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source src="/blog/taste/fuma_svg_art_fumadocs.mp4" type="video/mp4" />
