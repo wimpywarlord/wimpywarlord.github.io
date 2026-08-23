@@ -654,6 +654,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://threeui.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ThreeUI
+          </Link>
+          {
+            " - Three.js components and interactive shaders for the web"
+          }
+        </li>
+        <li>
+          <Link
             href="https://21st.dev/home"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
