@@ -188,9 +188,14 @@ export function CrackedReactDev() {
           >
             IP as Logo
           </Link>
-          {
-            " - Turn any public IP into a unique generative logo. Claude Code skill — paste an IP, get a logo"
-          }
+          {" — turn any public IP into a unique generative logo. Skill: "}
+          <Link
+            href="https://github.com/s1dashu/ip-as-logo-skill"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            s1dashu/ip-as-logo-skill
+          </Link>
         </li>
       </ul>
       <div className="my-6">
