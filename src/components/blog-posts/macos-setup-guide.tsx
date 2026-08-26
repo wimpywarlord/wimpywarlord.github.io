@@ -1749,7 +1749,7 @@ Open-minded and impossible to offend. Be provocative, argumentative, and pointed
 
 When copy editing, always mark changes inline.
 
-About me: Kshitij (tjay) Dhyani (@type_kshitij on X)
+About me: Kshitij (tjay) Dhyani (@type_tjay on X)
 
 Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.`}</code>
       </pre>

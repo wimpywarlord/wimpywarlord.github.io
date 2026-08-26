@@ -4,8 +4,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "/assets/social/x.svg",
     title: "X",
-    subtitle: "@type_kshitij",
-    href: "https://x.com/type_kshitij",
+    subtitle: "@type_tjay",
+    href: "https://x.com/type_tjay",
   },
   {
     icon: "/assets/social/github.svg",

@@ -45,7 +45,7 @@ export const USER = {
     "wimpywarlord",
     "gradbro",
     "tjay",
-    "type_kshitij",
+    "type_tjay",
   ],
   dateCreated: "2024-01-01",
 } satisfies User
