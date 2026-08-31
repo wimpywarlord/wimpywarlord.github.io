@@ -724,6 +724,25 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://www.rege-dev.xyz/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Rege
+          </Link>
+          {
+            " - Deep-dive demos of bleeding-edge web platform features: view transitions, scroll-state queries, light-dark() theming, progressive blur headers. By "
+          }
+          <Link
+            href="https://x.com/rege_dev"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @rege_dev
+          </Link>
+        </li>
+        <li>
+          <Link
             href="https://www.devl.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
