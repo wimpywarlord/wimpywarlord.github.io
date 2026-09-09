@@ -1114,18 +1114,57 @@ export function MacosOnSteroids() {
       </CommandBox>
 
       <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew tap pear-devs/pear && brew install --cask pear-desktop
+        </code>
         <p className="text-xs sm:text-sm">
-          For music, try{" "}
           <Link
-            href="https://github.com/th-ch/youtube-music"
+            href="https://github.com/pear-devs/pear-desktop"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            YouTube Music Desktop
+            Pear Desktop
           </Link>
-          {" - Unofficial YouTube Music app with additional features"}
+          {
+            " - Unofficial YouTube Music desktop app (formerly th-ch/youtube-music) with ad-block, plugins, and a proper native window. Installs as YouTube Music.app"
+          }
         </p>
       </CommandBox>
+
+      <InfoBox>
+        <p className="text-xs sm:text-sm mb-2">
+          <Highlight>I'm pinned to 3.11.0.</Highlight> 3.12.0 was a
+          regression for my setup, so the brew cask (which tracks{" "}
+          <code className="text-xs">latest</code>) is not the way to restore
+          it. Pull the exact DMG from GitHub releases instead:
+        </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto">
+          {`cd ~/Downloads
+curl -LO https://github.com/pear-devs/pear-desktop/releases/download/v3.11.0/YouTube-Music-3.11.0-arm64.dmg
+MOUNT=$(hdiutil attach -nobrowse YouTube-Music-3.11.0-arm64.dmg | grep -o '/Volumes/.*')
+rm -rf "/Applications/YouTube Music.app"
+cp -R "$MOUNT/YouTube Music.app" /Applications/
+hdiutil detach "$MOUNT"
+defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShortVersionString   # → 3.11.0`}
+        </pre>
+        <p className="text-xs sm:text-sm mt-2">
+          Settings and plugins live in{" "}
+          <code className="text-xs">~/Library/Application Support/YouTube Music</code>{" "}
+          and survive a swap of the .app. Back that folder up if you care about
+          your config.
+        </p>
+        <p className="text-xs sm:text-sm mt-2">
+          <Highlight>Keeping it pinned:</Highlight> plain{" "}
+          <code className="text-xs">brew upgrade</code> skips this cask
+          (auto_updates), so the daily routine is safe. Never run{" "}
+          <code className="text-xs">brew upgrade --greedy</code> or{" "}
+          <code className="text-xs">brew reinstall --cask pear-desktop</code>{" "}
+          — both drag in latest. Inside the app, keep auto-update off (Options
+          menu, or set <code className="text-xs">"autoUpdates": false</code>{" "}
+          under <code className="text-xs">options</code> in config.json) and
+          decline the update prompt if it ever shows.
+        </p>
+      </InfoBox>
 
       <h5 className="text-primary text-sm sm:text-base">Audio Utilities</h5>
 
