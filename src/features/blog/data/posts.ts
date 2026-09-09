@@ -3,6 +3,7 @@ import { cache } from "react"
 import { CrackedReactDev } from "@/components/blog-posts/cracked-dev"
 import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-autistic-nerds"
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality"
+import { Journal } from "@/components/blog-posts/journal"
 import { LifeHacks } from "@/components/blog-posts/life-hacks"
 import { LinkedinSalesNavigatorScraping } from "@/components/blog-posts/linkedin-sales-navigator-scraping"
 import { LlmWukong } from "@/components/blog-posts/llm-video-games"
@@ -19,6 +20,18 @@ import { DraculaTheming } from "@/components/blog-posts/theming-macos"
 import type { Post } from "@/features/blog/types/post"
 
 const postsRaw: Post[] = [
+  {
+    slug: "journal",
+    metadata: {
+      title: "Journal",
+      description:
+        "A running log — one page per day. Unpolished, written for me first.",
+      createdAt: "2026-09-02",
+      updatedAt: "2026-09-02",
+      new: true,
+    },
+    component: Journal,
+  },
   {
     slug: "reading-list",
     metadata: {
