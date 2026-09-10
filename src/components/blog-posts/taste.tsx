@@ -883,6 +883,25 @@ setTransform(
           via @ayushsoni_io
         </a>
       </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/lenticular_card_gemini.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        {"Lenticular card made with Gemini ("}
+        <a
+          href="https://x.com/ohhdanqi/status/2085777273920086256"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          via @ohhdanqi
+        </a>
+        {")"}
+      </p>
     </div>
   );
 }
