@@ -19,6 +19,7 @@ import { PostShareMenu } from "@/features/blog/components/post-share-menu"
 import {
   findNeighbour,
   getAllPosts,
+  getAllPostsIncludingArchived,
   getPostBySlug,
 } from "@/features/blog/data/posts"
 import type { Post } from "@/features/blog/types/post"
@@ -26,7 +27,7 @@ import { USER } from "@/features/portfolio/data/user"
 import { cn } from "@/lib/utils"
 
 export async function generateStaticParams() {
-  const posts = getAllPosts()
+  const posts = getAllPostsIncludingArchived()
   return posts.map((post) => ({
     slug: post.slug,
   }))
@@ -44,12 +45,19 @@ export async function generateMetadata({
     return notFound()
   }
 
-  const { title, description, image, createdAt, updatedAt } = post.metadata
+  const { title, description, image, createdAt, updatedAt, archived } =
+    post.metadata
   const postUrl = `/blog/${slug}`
 
   return {
     title,
     description,
+    ...(archived && {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }),
     alternates: {
       canonical: postUrl,
     },
@@ -114,12 +122,14 @@ export default async function Page({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getPageJsonLd(post)).replace(/</g, "\\u003c"),
-        }}
-      />
+      {!post.metadata.archived && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getPageJsonLd(post)).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
 
       <PostKeyboardShortcuts basePath="/blog" previous={previous} next={next} />
 

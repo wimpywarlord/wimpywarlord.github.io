@@ -5,6 +5,7 @@ import { CsGuideForAutisticNerds } from "@/components/blog-posts/cs-guide-for-au
 import { InterfaceForReality } from "@/components/blog-posts/interface_for_reality"
 import { Journal } from "@/components/blog-posts/journal"
 import { LifeHacks } from "@/components/blog-posts/life-hacks"
+import { LinkedinSalesNavigatorScraping } from "@/components/blog-posts/linkedin-sales-navigator-scraping"
 import { LlmWukong } from "@/components/blog-posts/llm-video-games"
 import { MacosOnSteroids } from "@/components/blog-posts/macos-setup-guide"
 import { MemeCollection } from "@/components/blog-posts/meme-collection"
@@ -55,6 +56,19 @@ const postsRaw: Post[] = [
       updatedAt: "2026-05-20",
     },
     component: LifeHacks,
+  },
+  {
+    slug: "linkedin-sales-navigator-scraping",
+    metadata: {
+      title: "State of LinkedIn Scraping in 2026",
+      description:
+        "A field report on LinkedIn Scraping for lead discovery.",
+      image: "/assets/blog/linkedin-scraping-reserve-1.jpg",
+      createdAt: "2026-05-14",
+      updatedAt: "2026-05-14",
+      archived: true,
+    },
+    component: LinkedinSalesNavigatorScraping,
   },
   {
     slug: "soulful-css",
@@ -214,8 +228,8 @@ const postsRaw: Post[] = [
   },
 ]
 
-export const getAllPosts = cache(() => {
-  return [...postsRaw].sort((a, b) => {
+const sortPosts = (posts: Post[]) =>
+  [...posts].sort((a, b) => {
     if (a.metadata.pinned && !b.metadata.pinned) return -1
     if (!a.metadata.pinned && b.metadata.pinned) return 1
     return (
@@ -223,10 +237,15 @@ export const getAllPosts = cache(() => {
       new Date(a.metadata.createdAt).getTime()
     )
   })
-})
+
+export const getAllPosts = cache(() =>
+  sortPosts(postsRaw.filter((post) => !post.metadata.archived))
+)
+
+export const getAllPostsIncludingArchived = cache(() => sortPosts(postsRaw))
 
 export function getPostBySlug(slug: string) {
-  return getAllPosts().find((post) => post.slug === slug)
+  return getAllPostsIncludingArchived().find((post) => post.slug === slug)
 }
 
 export function findNeighbour(posts: Post[], slug: string) {

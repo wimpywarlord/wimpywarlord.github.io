@@ -8,6 +8,7 @@ export type PostMetadata = {
   updatedAt: string
   pinned?: boolean
   new?: boolean
+  archived?: boolean
 }
 
 export type Post = {
