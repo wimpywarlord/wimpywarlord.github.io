@@ -822,6 +822,23 @@ setTransform(
           via @Oriku175
         </a>
       </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/status_bar_icons_merge.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://x.com/anubhavitis/status/2097758099742576723"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          via @anubhavitis
+        </a>
+      </p>
     </div>
   );
 }
