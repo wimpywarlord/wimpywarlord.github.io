@@ -909,6 +909,25 @@ export function CrackedReactDev() {
           </Link>
           {" - Sleek, copy-paste components with smooth animations"}
         </li>
+        <li>
+          <Link
+            href="https://opensourceui.in/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Opensource UI
+          </Link>
+          {
+            " - 207 copy-paste React/Next.js components (TypeScript + Tailwind v4). No install, no shadcn, no Radix — device mockups, widgets, forms, social cards. Agent skill: "
+          }
+          <Link
+            href="https://github.com/bidyut10/opensourceui/tree/main/skills/opensource-ui"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            skills/opensource-ui
+          </Link>
+        </li>
       </ul>
 
       <p className="mt-4">
