@@ -928,6 +928,26 @@ export function CrackedReactDev() {
             skills/opensource-ui
           </Link>
         </li>
+        <li>
+          <Link
+            href="https://www.beautifului.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Beautiful UI
+          </Link>
+          {
+            " - Copy-paste primitives for AI-native products — thinking traces, streaming answers, HITL approvals, tool chips, prompt bars. shadcn CLI, MIT. Built by Turbo ("
+          }
+          <Link
+            href="https://x.com/theShaneLevine"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @theShaneLevine
+          </Link>
+          {")"}
+        </li>
       </ul>
 
       <p className="mt-4">
