@@ -866,6 +866,23 @@ setTransform(
         </a>
         {")"}
       </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/scanning_detecting_finding.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://x.com/ayushsoni_io/status/2087250942366539989"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          via @ayushsoni_io
+        </a>
+      </p>
     </div>
   );
 }
