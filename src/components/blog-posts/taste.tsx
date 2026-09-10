@@ -839,6 +839,33 @@ setTransform(
           via @anubhavitis
         </a>
       </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/immersive_grass_threejs.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://grass-six-weld.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          easylog
+        </a>
+        {" — immersive Three.js grass field you can pet with the cursor ("}
+        <a
+          href="https://x.com/viktoroddy/status/2088235091067838858"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          via @viktoroddy
+        </a>
+        {")"}
+      </p>
     </div>
   );
 }
