@@ -902,6 +902,23 @@ setTransform(
         </a>
         {")"}
       </p>
+
+      <div className="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <GalleryImage
+          src="/blog/taste/bento_app_icon.png"
+          alt="Dark bento card with a lime app icon of connected nodes"
+          width={970}
+          height={1076}
+          className="w-full rounded-lg"
+        />
+        <GalleryImage
+          src="/blog/taste/bento_algorithm_content.png"
+          alt="Dark bento card — create algorithm-friendly content in seconds"
+          width={774}
+          height={656}
+          className="w-full rounded-lg"
+        />
+      </div>
     </div>
   );
 }
