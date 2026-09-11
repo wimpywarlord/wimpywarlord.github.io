@@ -26,6 +26,7 @@ const postsRaw: Post[] = [
       title: "Journal",
       description:
         "A running log — one page per day. Unpolished, written for me first.",
+      image: "/assets/blog/blog_thum_journal.gif",
       createdAt: "2026-09-02",
       updatedAt: "2026-09-02",
       new: true,
