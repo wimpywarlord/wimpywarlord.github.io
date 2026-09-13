@@ -1212,6 +1212,18 @@ export function CrackedReactDev() {
           </Link>
           {" - Drop in any SVG and turn it into a 3D extruded model. Tweak depth, lighting, and angle, then export"}
         </li>
+        <li>
+          <Link
+            href="https://www.runeicons.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Rune Icons
+          </Link>
+          {
+            " - 900+ icons, each in five styles: outline, duotone, fill, pixel, glass. Edit paths in the browser, copy as SVG or JSX. Apache 2.0"
+          }
+        </li>
       </ul>
 
       <div className="my-6">
