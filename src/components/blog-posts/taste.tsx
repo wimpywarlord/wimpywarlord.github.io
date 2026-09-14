@@ -919,6 +919,33 @@ setTransform(
           className="w-full rounded-lg"
         />
       </div>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/hyperframes_carousel_blocks.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://hyperframes.heygen.com/catalog"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          HyperFrames
+        </a>
+        {" — 25 new carousel blocks in the catalog ("}
+        <a
+          href="https://x.com/Miguel07Code/status/2098527121702309905"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          via @Miguel07Code
+        </a>
+        {")"}
+      </p>
     </div>
   );
 }
