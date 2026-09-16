@@ -2149,6 +2149,32 @@ export function CrackedReactDev() {
       <p className="mt-4 mb-1 font-semibold">Frontend &amp; Design</p>
       <ul className="space-y-2">
         <li>
+          <Link
+            href="https://www.skills.sh/emilkowalski/skills/emil-design-eng"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            <code className="bg-muted px-2 py-1 rounded text-sm">emil-design-eng</code>
+          </Link>
+          {" - Emil Kowalski's design engineering philosophy as a skill: when to animate and when not to, easing and duration values, the invisible details that make software feel right. \"Taste is trained, not innate.\" 270K+ installs. Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx skills add https://github.com/emilkowalski/skills --skill emil-design-eng
+          </code>
+        </li>
+        <li>
+          <Link
+            href="https://www.skills.sh/jakubkrehel/skills/better-ui"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            <code className="bg-muted px-2 py-1 rounded text-sm">better-ui</code>
+          </Link>
+          {" - UI polish reference with exact values, not vibes: concentric border radius (outer = inner + padding), optical over geometric alignment, surface depth, contextual icons, hit areas, specific duration/curve/scale/blur numbers. Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx skills add https://github.com/jakubkrehel/skills --skill better-ui
+          </code>
+        </li>
+        <li>
           <code className="bg-muted px-2 py-1 rounded text-sm">frontend-design</code>
           {" - Production-grade frontend interfaces that dodge generic AI aesthetics"}
         </li>
