@@ -250,6 +250,18 @@ export function CrackedReactDev() {
             " - Reference library of product launches on X — browse by category, stage, format, and views. Study how the best launches look and land"
           }
         </li>
+        <li>
+          <Link
+            href="https://builtbydesigners.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Built by Designers
+          </Link>
+          {
+            " - Curated collection of apps, tools, websites, and experiments designed, built, and shipped by designers. Proof that design-to-product is a solo sport now. By Juliette and Phil"
+          }
+        </li>
       </ul>
 
       <div className="my-6">
@@ -375,7 +387,78 @@ export function CrackedReactDev() {
           </Link>
           {" - Ultra-fast, zero-dependency shader effects for the web — animated gradients, noise, and distortions you can drop straight into a page"}
         </li>
+        <li>
+          <Link
+            href="https://shaders.evilrabbit.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Evil Rabbit Shaders
+          </Link>
+          {
+            " - Series of shaders by Evil Rabbit: chrome, metal, glares, dither, particles, ripples, ASCII, lines, plus a liquid gold with rainbow edges. Upload your own SVG and watch it get treated"
+          }
+        </li>
+        <li>
+          <Link
+            href="https://cutting-mat-generator.vercel.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Cutting Mat BG Generator
+          </Link>
+          {
+            " - Fully customizable SVG cutting mat for backgrounds and wallpapers. Size, units, grid opacity, edge ticks, radius and angle guides, typography, nine color presets. By "
+          }
+          <Link
+            href="https://x.com/marijanapav"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @marijanapav
+          </Link>
+                </li>
+        <li>
+          <Link
+            href="https://www.gradientool.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Gradientool
+          </Link>
+          {
+            " - Gradient graphics studio with linear, radial, and orbit layouts, pyramid/V/wave/noise shapes, relief and grain, 3D depth, duotone, layers with blend modes, and animation. Exports PNG/JPG up to 8K, MP4, or code. By "
+          }
+          <Link
+            href="https://x.com/leobenzoni"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @leobenzoni
+          </Link>
+          {" (demo below)"}
+        </li>
       </ul>
+
+      <p className="mt-4">
+        <Link
+          href="https://www.gradientool.com/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Gradientool
+        </Link>
+        {" in action:"}
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/gradientool_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <h4>Thumbnail & Visual Tools</h4>
       <p>Create eye-catching thumbnails and visuals:</p>
@@ -451,6 +534,26 @@ export function CrackedReactDev() {
             Your ASCII
           </Link>
           {" - Turn any image into ASCII art"}
+        </li>
+        <li>
+          <Link
+            href="https://asciinator.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ASCIInator
+          </Link>
+          {
+            " - The cleanest ASCII art generator. Tune character ramps, density, sampling, tone, and color mode (mono, multi, original), then export to PNG, SVG, TXT, HTML, JSON, or ANSI at up to 6x. Everything runs in the browser, nothing uploaded. Free, by Juliette ("
+          }
+          <Link
+            href="https://x.com/shedsgns"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @shedsgns
+          </Link>
+          {")"}
         </li>
         <li>
           <Link
@@ -592,12 +695,169 @@ export function CrackedReactDev() {
           </Link>
           {" - Browser-based 3D mockup & motion studio. Turn SVGs or text into animated 3D, drop your UI onto device mockups, export up to 4K — no 3D software required"}
         </li>
+        <li>
+          <Link
+            href="https://bg0.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            BG0
+          </Link>
+          {
+            " - Local-in-browser background remover. Drop a photo, get a transparent PNG. BiRefNet on WebGPU (WASM fallback) — nothing is uploaded. Apache 2.0, plus "
+          }
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            @bg0/browser
+          </code>
+          {" if you want the same engine in your own app ("}
+          <Link
+            href="https://github.com/opencoredev/bg0"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {")"}
+        </li>
+        <li>
+          <Link
+            href="https://artkit.cc/baby-track"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            BabyTrack (Artkit)
+          </Link>
+          {
+            " - Blob-tracking visual effects in the browser: the surveillance-footage look with bounding boxes, IDs, and trails on whatever moves in your clip. Part of Artkit, a suite of browser tools for images, motion, and web graphics (demo below)"
+          }
+        </li>
+        <li>
+          <Link
+            href="https://cotool-dither.vercel.app"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Dither (cotool)
+          </Link>
+          {
+            " - Dot dither SVG generator. Drop an image, get a vector halftone you can scale forever (demo below)"
+          }
+        </li>
+        <li>
+          <Link
+            href="https://brand-generator.stoyanov.works/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Brand Assets Generator
+          </Link>
+          {
+            " - Yordan Stoyanov's personal tool for composed brand imagery: circle-mapping experiments, drawing studio, geo-generator, and hero compositions. The technical-drawing-over-photo look, generated (example below)"
+          }
+        </li>
+        <li>
+          <Link
+            href="https://particles.casberry.in"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            AI Particle Simulator
+          </Link>
+          {
+            " - Real-time 3D swarm of 20,000+ particles in Three.js. Presets, a live code editor, or paste a prompt into your LLM and drop the generated behavior in. Feeds on images, video, GLB/OBJ/PLY, drawings, and text. Exports vanilla/React/Three.js code, PLY/GLB/OBJ, or 4K wallpapers. Hand-gesture controls via webcam. By Casberry India "
+          }
+          <Link
+            href="https://x.com/Eswarprasaath_"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @Eswarprasaath_
+          </Link>
+          {" (demo below)"}
+        </li>
       </ul>
 
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/cracked_react_dev/morflax_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <p className="mt-4">
+        <Link
+          href="https://artkit.cc/baby-track"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          BabyTrack
+        </Link>
+        {" blob tracking:"}
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/artkit_babytrack_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <Link
+          href="https://cotool-dither.vercel.app"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Dither
+        </Link>
+        {" dot-dither SVG output:"}
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/cotool_dither_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <Link
+          href="https://brand-generator.stoyanov.works/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Brand Assets Generator
+        </Link>
+        {" output by Yordan Stoyanov:"}
+      </p>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/brand_generator_stoyanov.webp"
+          alt="Brand Assets Generator output by Yordan Stoyanov — X-ray flower with circle-mapping coordinates overlaid"
+          width={1200}
+          height={1600}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
+      <p className="mt-4">
+        <Link
+          href="https://particles.casberry.in"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          AI Particle Simulator
+        </Link>
+        {" swarm:"}
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/casberry_particles_demo.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -948,7 +1208,127 @@ export function CrackedReactDev() {
           </Link>
           {")"}
         </li>
+        <li>
+          <Link
+            href="https://aicss.dev"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            AICSS
+          </Link>
+          {
+            " - Copy-paste UI blocks for AI agent interfaces: thinking states, reasoning traces, tool calls, streaming text, file diffs, inline citations, approval cards. React, Vue, and Svelte. Free tier plus paid Pro blocks. By Kevin ("
+          }
+          <Link
+            href="https://x.com/kvnkld"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @kvnkld
+          </Link>
+          {")"}
+        </li>
+        <li>
+          <Link
+            href="https://ui.halaska.com"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            UI by Halaska
+          </Link>
+          {
+            " - Single-file React UI kit for AI products, built on shadcn/ui. 38 UX patterns and ~100 components, react + react-dom only. Made for founders prototyping with coding agents: paste one prompt and the output looks designed"
+          }
+        </li>
+        <li>
+          <Link
+            href="https://torph.lochie.me/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Torph
+          </Link>
+          {
+            " - Text continuity for interfaces on the web. Dependency-free text morphing so labels transition instead of snapping (Processing → Complete). React, Vue, Svelte, or vanilla. By Lochie ("
+          }
+          <Link
+            href="https://x.com/lochieaxon"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @lochieaxon
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npm i torph
+          </code>
+        </li>
+        <li>
+          <Link
+            href="https://typehug.aliszu.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Typehug
+          </Link>
+          {
+            " - Keep words together. Rule-based nonbreaking-space insertion for English and Polish: short words, numbers + units, initials, abbreviations, orphaned final pairs. Works on plain text, HTML, and formatted runs. TypeScript, MIT ("
+          }
+          <Link
+            href="https://github.com/alexszczurek/typehug"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npm install @typehug/en
+          </code>
+        </li>
+        <li>
+          <Link
+            href="https://orbkit.zzzzshawn.cloud/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Orbkit
+          </Link>
+          {
+            " - 33 free WebGL shader orbs for agent states (idle, thinking, speaking), each a React + TypeScript component installed via the shadcn CLI. 19 are ported from XorDev's shaders with permission, non-commercial with attribution. By "
+          }
+          <Link
+            href="https://x.com/zzzzshawn/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @zzzzshawn
+          </Link>
+          {" ("}
+          <Link
+            href="https://github.com/zzzzshawn/orbkit"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx shadcn@latest add zzzzshawn/orbkit/shdr-01
+          </code>
+          {" (demo below)"}
+        </li>
       </ul>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/orbkit_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
 
       <p className="mt-4">
         <Link
@@ -1090,6 +1470,34 @@ export function CrackedReactDev() {
           {
             " - Copy-paste React PDF components via the shadcn CLI. Invoices, reports, tables — same API on Takumi or Forme. Own the code, no lock-in"
           }
+        </li>
+        <li>
+          <Link
+            href="https://ui.spectrumhq.in"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Spectrum UI
+          </Link>
+          {
+            " - The component library your AI agents are missing. 250+ animated React components and blocks on shadcn/ui, Tailwind, and Framer Motion. Connect the MCP and ask Cursor or Claude for a component; it installs in one line, wired to your project. Commercial use OK, you own the code. By "
+          }
+          <Link
+            href="https://x.com/arihantcodes"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @arihantcodes
+          </Link>
+          {" ("}
+          <Link
+            href="https://github.com/arihantcodes/spectrum-ui"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {")"}
         </li>
       </ul>
 
@@ -2040,6 +2448,27 @@ export function CrackedReactDev() {
           {" - Tiny menu bar app that highlights your clicks for live demos and screen shares — for the live moment, before there's a recording to polish. Install: "}
           <code className="bg-muted px-2 py-1 rounded text-sm">
             brew install --cask aurorascharff/clicklight/clicklight
+          </code>
+        </li>
+        <li>
+          <Link
+            href="https://abue-ammar.github.io/tinycast/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Tinycast
+          </Link>
+          {" - Fully native, open-source Raycast alternative for Mac. App launcher, clipboard history, inline calculator (units, currency, time zones), window management, snippets, and BYO-key AI chat. Runs Raycast extensions in JavaScriptCore. Swift 6, zero dependencies, no Electron, under 100 MB, nothing leaves your Mac. AGPL-3.0 ("}
+          <Link
+            href="https://github.com/abue-ammar/tinycast"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            brew tap abue-ammar/tinycast && brew install --cask tinycast
           </code>
         </li>
         <li>
