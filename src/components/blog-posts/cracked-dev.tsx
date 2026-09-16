@@ -1262,6 +1262,7 @@ export function CrackedReactDev() {
           <code className="bg-muted px-2 py-1 rounded text-sm">
             npm i torph
           </code>
+          {" (demo below)"}
         </li>
         <li>
           <Link
@@ -1324,6 +1325,26 @@ export function CrackedReactDev() {
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source
             src="/blog/cracked_react_dev/orbkit_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+
+      <p className="mt-4">
+        <Link
+          href="https://torph.lochie.me/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Torph
+        </Link>
+        {" text morphing:"}
+      </p>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/torph_demo.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
