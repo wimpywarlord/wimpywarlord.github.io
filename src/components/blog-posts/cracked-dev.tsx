@@ -2006,6 +2006,35 @@ export function CrackedReactDev() {
       </ul>
       <CopyableText text="npm install -g opensrc" />
 
+      <h4>Agent Tool Catalog</h4>
+      <p>
+        Turn your coding agent into an SEO expert, a media buyer, an SDR. Give
+        it <Highlight>one key</Highlight> to paid APIs instead of 42 subscriptions:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://treg.to/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            treg
+          </Link>
+          {
+            " - OpenRouter for agent tools. 2,630 endpoints across 47 providers (Semrush, Moz, SerpApi, Hunter, Lusha, Postiz, Google Ads, Meta, image and video gen) behind a single trg_live key, billed per call at provider rates with 0% markup. Semrush at $139/mo becomes $0.006/call. BYOK routes through subscriptions you already pay for, unmetered. Credentials injected server-side, never on your machine. Works with Claude Code, Codex, OpenClaw, Hermes. Open source, AGPL ("
+          }
+          <Link
+            href="https://github.com/superdesigndev/treg"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {"). $1 free credit to start. Give this line to your agent:"}
+        </li>
+      </ul>
+      <CopyableText text="set up treg — https://treg.to/llms.txt" />
+
       <h4>Composable Skills for Coding Agents</h4>
       <p>
         <Link
