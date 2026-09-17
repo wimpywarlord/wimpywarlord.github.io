@@ -946,6 +946,32 @@ setTransform(
         </a>
         {")"}
       </p>
+
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source src="/blog/taste/aside_landing.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://heyaside.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Aside
+        </a>
+        {" — local meeting notes and dictation for Mac. The landing page sells a privacy-first transcription app with nothing but realistic in-app mockups, no bot, no hype. By "}
+        <a
+          href="https://x.com/dominikmartn"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          @dominikmartn
+        </a>
+      </p>
     </div>
   );
 }
