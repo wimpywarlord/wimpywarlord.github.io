@@ -319,6 +319,16 @@ export function CrackedReactDev() {
           </Link>
           {" - Elegant dev portfolio with polished design and smooth interactions"}
         </li>
+        <li>
+          <Link
+            href="https://craft.gustavofior.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Craft by Gustavo Fior
+          </Link>
+          {" - A design engineering collection: short, punchy notes on typography (optical alignment, tabular numbers), color (OKLCH, noise, shadows), layout (nested border radius, hit areas, squircles), motion (easings, stagger, interruptibility, hover restraint), interface sound, and living charts. Tricks and ideas, not an exhaustive reference \u2014 open-source and installable as a skill"}
+        </li>
       </ul>
 
       <h4>Website Backgrounds</h4>
