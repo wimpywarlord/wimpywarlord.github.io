@@ -952,6 +952,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://www.obsidianui.dev/components"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ObsidianUI
+          </Link>
+          {
+            " - \"Design less. Ship better.\" 40+ animated React components built with Tailwind plus Motion, GSAP, canvas, or WebGL depending on what the effect needs \u2014 cursor trails (rope, butterfly, magnetic image), scroll stacks and parallax galleries, text reveals, pixelated carousels, and 3D book flips. MIT licensed, installs via shadcn-style registry JSON, and ships CLI + MCP tooling so agents can pull components directly"
+          }
+        </li>
+        <li>
+          <Link
             href="https://threeui.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
