@@ -785,6 +785,25 @@ export function CrackedReactDev() {
           </Link>
           {" (demo below)"}
         </li>
+        <li>
+          <Link
+            href="https://geometric-art.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GEOMETRIC
+          </Link>
+          {
+            " - Turns photos and video into geometric line art in the browser: Sobel contours, Delaunay triangulation, topographic lines, flow engraving, dithering, face-mesh topology, and audio-reactive motion. EASY mode for presets, PRO for the full control surface. Exports PNG stills or MP4/WEBM with Reels and X presets, and every frame is processed on-device — nothing uploaded. Japanese UI, by SHINICHI "
+          }
+          <Link
+            href="https://www.instagram.com/shinichi_sisberry/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @shinichi_sisberry
+          </Link>
+        </li>
       </ul>
 
       <div className="my-6">
