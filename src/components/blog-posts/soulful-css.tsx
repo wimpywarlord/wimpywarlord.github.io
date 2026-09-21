@@ -790,6 +790,15 @@ export function SoulfulCss() {
         This creates a larger, invisible hit area around the element, making it
         easier to click without changing the layout.
       </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+        <code className="text-sm">
+          {`::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+}`}
+        </code>
+      </pre>
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
           <source

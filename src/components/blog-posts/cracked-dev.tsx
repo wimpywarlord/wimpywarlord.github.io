@@ -2776,30 +2776,6 @@ export function CrackedReactDev() {
 
       <h3 className="text-primary">Tips & Tricks</h3>
 
-      <h4>Extend Hit Area Without Affecting Layout</h4>
-      <p>
-        Use a <Highlight>::before</Highlight> pseudo-element to grow a target&apos;s
-        clickable area without nudging anything around it:
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
-        <code className="text-sm">
-          {`::before {
-  content: "";
-  position: absolute;
-  inset: -10px 0;
-}`}
-        </code>
-      </pre>
-      <div className="my-6">
-        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
-          <source
-            src="/blog/cracked_react_dev/extend_hit_area_pseudo.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </GalleryVideo>
-      </div>
-
       <h4>Ghostty Liquid Glass</h4>
       <p>
         Make Ghostty a floating <Highlight>Liquid Glass</Highlight> panel over
