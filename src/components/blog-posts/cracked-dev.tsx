@@ -964,6 +964,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://rareformlabs.github.io/thinking-orbs/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Thinking Orbs
+          </Link>
+          {
+            " - Dotted thought-orb loading indicators for AI & agent UIs. Six hand-tuned states — working, searching, solving, listening, composing, shaping — each shipped at two purpose-tuned sizes (64 for chat-avatar scale, 20 for inline text) with their own dot count and speed rather than a scale factor. Plain 2D canvas arcs, no WebGL and no filters, so it paints the same pixels in Chrome, Safari and Firefox. Theme resolves automatically from a data-theme ancestor or prefers-color-scheme, prefers-reduced-motion gets a static frame, and every instance pauses offscreen or on a hidden tab off one shared clock. Vue 3 only, MIT"
+          }
+        </li>
+        <li>
+          <Link
             href="https://threeui.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
