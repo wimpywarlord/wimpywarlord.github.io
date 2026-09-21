@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { GalleryVideo, GalleryImage } from "@/components/gallery";
-import { Copy, Check, ChevronDown, ChevronRight } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 
 // Helper component for text highlighting
 const Highlight = ({ children }: { children: React.ReactNode }) => {
@@ -35,109 +35,6 @@ const CopyableText = ({ text }: { text: string }) => {
         )}
       </button>
       <code className="text-sm pr-10 block">{text}</code>
-    </div>
-  );
-};
-
-// Toggle component for Claude Code settings
-const ClaudeCodeSettingsToggle = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const settingsJson = `{
-  "env": {
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-5-20250929"
-  },
-  "permissions": {
-    "allow": [
-      "mcp__plugin_playwright_playwright__*",
-      "Bash(git *)",
-      "Bash(npm *)",
-      "Bash(pip *)",
-      "Bash(pip3 *)",
-      "Bash(brew *)",
-      "Bash(curl *)",
-      "Bash(wget *)"
-    ],
-    "deny": []
-  },
-  "model": "opus",
-  "alwaysThinkingEnabled": true,
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "nohup afplay /Users/dhyani/.claude/yeah-boiii-i-i-i.mp3 >/dev/null 2>&1 &"
-          },
-          {
-            "type": "command",
-            "command": "open raycast://extensions/raycast/raycast/confetti"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "nohup afplay /Users/dhyani/.claude/someone-is-born-age-of-empires-1.mp3 >/dev/null 2>&1 &"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "nohup afplay /Users/dhyani/.claude/pluh.mp3 >/dev/null 2>&1 &"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound Blow -timeout 10"
-          }
-        ]
-      }
-    ]
-  },
-  "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "github@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true
-  }
-}`;
-
-  return (
-    <div className="my-4">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
-        aria-expanded={isOpen}
-        aria-label={isOpen ? "Hide settings" : "Show settings"}
-      >
-        {isOpen ? (
-          <ChevronDown className="h-4 w-4" />
-        ) : (
-          <ChevronRight className="h-4 w-4" />
-        )}
-        {isOpen ? "Hide" : "Show"} my settings.json
-      </button>
-      {isOpen && (
-        <pre className="bg-muted/50 border border-border rounded-lg p-4 mt-4 overflow-x-auto">
-          <code className="text-sm">{settingsJson}</code>
-        </pre>
-      )}
     </div>
   );
 };
