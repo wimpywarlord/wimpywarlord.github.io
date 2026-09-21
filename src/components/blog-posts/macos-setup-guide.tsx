@@ -210,7 +210,7 @@ export function MacosOnSteroids() {
       <h4 className="text-base sm:text-lg">Profile Pictures</h4>
       <p>For consistency across all your accounts:</p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 my-4">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 my-4">
         <GalleryImage
           src="/assets/pfp/original_pfp.jpg"
           alt="Original Profile Picture"
@@ -235,6 +235,13 @@ export function MacosOnSteroids() {
         <GalleryImage
           src="/assets/pfp/silver_surfer.jpg"
           alt="Silver Surfer Profile Picture"
+          width={400}
+          height={400}
+          className="w-full rounded-lg"
+        />
+        <GalleryImage
+          src="/assets/pfp/matrix_pfp.png"
+          alt="Matrix Agent Smith Pixel Art Profile Picture"
           width={400}
           height={400}
           className="w-full rounded-lg"
