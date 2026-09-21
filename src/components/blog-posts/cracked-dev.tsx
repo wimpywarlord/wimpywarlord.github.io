@@ -1528,6 +1528,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://www.mdxcn.dev"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            mdxcn
+          </Link>
+          {
+            " - ASCII-framed React diagrams you copy in with the shadcn CLI, not an npm package. Dashed-frame graphs for refactors, incident reports, and tradeoffs — and the same diagram degrades to plain ASCII, so it survives GitHub, Linear, and READMEs. Ships /llms.txt and a skill so agents emit them too"
+          }
+        </li>
+        <li>
+          <Link
             href="https://ui.spectrumhq.in"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
