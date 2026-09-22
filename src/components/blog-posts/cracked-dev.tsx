@@ -790,6 +790,26 @@ export function CrackedReactDev() {
         </GalleryVideo>
       </div>
 
+      <h4>Archival Footage</h4>
+      <p>
+        Public-domain film, cut into shots and searchable in plain English —
+        free b-roll for launch videos, landing pages, and thumbnails:
+      </p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://www.movingimagearchive.com/collection/technology"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Moving Image Archive — Technology
+          </Link>
+          {
+            " - 1,000 shots pulled from 331 public-domain films tracing the history of human technology: computing, robotics, cameras, recorded sound, industrial machines, space and flight, everyday inventions. Describe the shot you want (\"computer workers\") and it finds it; every clip downloads as MP4, free to reuse. Built by Cova, designed by Jean"
+          }
+        </li>
+      </ul>
+
       <h4>Component Libraries</h4>
       <p>
         Why reinvent the wheel? Use these <Highlight>premium</Highlight>{" "}

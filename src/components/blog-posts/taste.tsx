@@ -972,6 +972,35 @@ setTransform(
           @dominikmartn
         </a>
       </p>
+
+      <p className="mt-8">
+        <a
+          href="https://www.movingimagearchive.com/collection/technology"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Moving Image Archive — Technology
+        </a>
+        {" — 1,000 shots from 331 public-domain films, cut and tagged by what happens in them: dial phones, mainframes, robot arms, launch pads. Search it the way you'd describe a shot out loud, then download the MP4 and use it. Taste here is in the restraint — no stock-footage grid, no filters nobody touches, just the search bar, the frame, and the year. Built by "}
+        <a
+          href="https://x.com/covacut"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          @covacut
+        </a>
+        {", designed by "}
+        <a
+          href="https://x.com/jeanxcrj"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          @jeanxcrj
+        </a>
+      </p>
     </div>
   );
 }
