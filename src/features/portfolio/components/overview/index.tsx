@@ -29,7 +29,7 @@ export function Overview() {
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(USER.address)}`}
                 aria-label={`Location: ${USER.address}`}
               >
-                <span aria-hidden="true">🇮🇳</span> Delhi — <span aria-hidden="true">🇺🇸</span> Phoenix
+                <span aria-hidden="true">🇺🇸</span> Phoenix to <span aria-hidden="true">🇺🇸</span> SF
               </IntroItemLink>
             </IntroItemContent>
           </IntroItem>

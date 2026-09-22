@@ -14,7 +14,7 @@ export const USER = {
     "Work becomes flow at the limits of ability",
     "Happiness is a skill you identify and develop",
   ],
-  address: "Delhi — Phoenix",
+  address: "Phoenix to SF",
   phoneNumber: "", // not public
   email: "ZW1haWxvZmtzaGl0aWpkaHlhbmlAZ21haWwuY29t", // base64 encoded
   website: "https://kshitijdhyani.com",
@@ -27,7 +27,7 @@ export const USER = {
     },
   ],
   about: `
-- Shipped [ghostfeed.ai](https://ghostfeed.ai), [gradmits.com](https://gradmits.com), and [gradbro.com](https://gradbro.com).
+- [ghostfeed.ai](https://ghostfeed.ai) (exited 15K USD), [gradmits.com](https://gradmits.com/) (sold to [Yudi](https://www.youtube.com/@YudiJ/)).
 - Started coding to help my grandfather fight Alzheimer's — built [this](https://journals.sagepub.com/doi/10.1177/14604582211052848).
 - Experiments:
   - AI agent that plays — [Black Myth Wukong](/blog/llm-video-games).
@@ -37,7 +37,7 @@ export const USER = {
   avatar: "/assets/logo.jpg",
   ogImage: "/assets/logo.jpg",
   namePronunciationUrl: "/assets/my_name.mp3",
-  timeZone: "America/Phoenix",
+  timeZone: "America/Los_Angeles",
   keywords: [
     "kshitij dhyani",
     "kshitij",
