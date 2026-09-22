@@ -27,7 +27,7 @@ export const USER = {
     },
   ],
   about: `
-- [ghostfeed.ai](https://ghostfeed.ai) (exited 15K USD), [gradmits.com](https://gradmits.com/) (sold to [Yudi](https://www.youtube.com/@YudiJ/)).
+- [ghostfeed.ai](https://ghostfeed.ai) (exited 15K USD), [gradmits.com](https://gradmits.com/) (sold to [Yudi](https://www.youtube.com/@YudiJ/)), and [gradbro.com](https://gradbro.com/).
 - Started coding to help my grandfather fight Alzheimer's — built [this](https://journals.sagepub.com/doi/10.1177/14604582211052848).
 - Experiments:
   - AI agent that plays — [Black Myth Wukong](/blog/llm-video-games).
