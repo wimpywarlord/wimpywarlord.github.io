@@ -76,17 +76,17 @@ export function GlitchyAvatar({ className, alt }: GlitchyAvatarProps) {
         </div>
       </div>
 
-      {/* Gym selfie — keyed on glitchToken so the animation restarts on each trigger */}
+      {/* Real photo — keyed on glitchToken so the animation restarts on each trigger */}
       <img
         key={glitchToken}
         className={cn(
           "absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-100",
           glitchToken > 0 && "animate-glitch-flash"
         )}
-        style={{ objectPosition: "center 30%" }}
+        style={{ objectPosition: "center" }}
         alt=""
         aria-hidden="true"
-        src="/assets/pfp/gym_selfie.jpg"
+        src="/assets/pfp/geometric_selfie.png"
         draggable={false}
       />
 
