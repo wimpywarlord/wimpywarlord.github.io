@@ -1269,6 +1269,37 @@ export function CrackedReactDev() {
           </code>
           {" (demo below)"}
         </li>
+        <li>
+          <Link
+            href="https://loading.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            loading.dev
+          </Link>
+          {
+            " - \"Loading, made beautiful.\" 27 loading indicators for React \u2014 Arc, Atom, Orbit, Ripple, Snake, Wave and the rest \u2014 as one npm package with zero runtime dependencies and 78 KB unpacked. MIT, React 19+. By "
+          }
+          <Link
+            href="https://x.com/jakubkrehel"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @jakubkrehel
+          </Link>
+          {" and "}
+          <Link
+            href="https://x.com/paulfaivret"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @paulfaivret
+          </Link>
+          {". Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npm install loading-dev
+          </code>
+        </li>
       </ul>
 
       <div className="my-6">
