@@ -2730,7 +2730,8 @@ for uti in \\
 done
 
 # --- Extension fallbacks for formats with non-canonical UTIs ---
-for ext in mkv opus webm flac ogg ts m2ts mts mxf wv ape \\
+# (.ts is deliberately left out: it's TypeScript far more often than MPEG-TS video)
+for ext in mkv opus webm flac ogg m2ts mts mxf wv ape \\
            rm rmvb ra asf vob flv f4v divx dv mp2 m3u m3u8; do
   duti -s "$IINA" "$ext" all
 done
@@ -2764,6 +2765,78 @@ killall Finder`}</code>
           duti -s com.pdfeditor.pdfeditormac com.adobe.pdf all
         </code>
       </CommandBox>
+
+      <h4 className="text-base sm:text-lg">
+        Make VS Code the Default for Text & Code
+      </h4>
+      <p>
+        Out of the box, macOS scatters text files everywhere: Markdown into
+        whatever ebook app claimed it, JSON into the browser, CSV into ChatGPT,{" "}
+        <code className="text-primary">.ts</code> into a video player. One pass
+        fixes it, and routes Word docs to LibreOffice while we're at it:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`VSCODE=com.microsoft.VSCode
+
+# --- Text, code, config, and data UTIs ---
+for uti in public.plain-text public.source-code public.script public.shell-script \\
+  public.json public.xml public.yaml public.comma-separated-values-text \\
+  net.daringfireball.markdown com.apple.property-list com.apple.log; do
+  duti -s "$VSCODE" "$uti" all
+done
+
+# --- Extensions macOS knows ---
+for ext in md markdown txt log json yaml yml xml plist csv tsv \\
+           js mjs ts py sh zsh bash swift c h cpp hpp java rb php css svg; do
+  duti -s "$VSCODE" "$ext" all
+done
+
+# --- Word-processor docs -> LibreOffice (sheets and slides already go there) ---
+for ext in docx doc rtf odt; do
+  duti -s org.libreoffice.script "$ext" all
+done`}</code>
+      </pre>
+      <p>
+        Extensions no app registers a proper type for (
+        <code className="text-primary">tsx, jsx, go, rs, toml, scss, sql, env</code>
+        , …) make <code className="text-primary">duti</code> fail with{" "}
+        <code className="text-primary">error -50</code>. Write those the way
+        Finder's "Change All" does, as extension handlers, then restart
+        LaunchServices so it reloads them instead of saving over them:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`D=com.apple.LaunchServices/com.apple.launchservices.secure
+defaults export $D /tmp/ls.plist
+
+python3 - <<'EOF'
+import plistlib
+p = "/tmp/ls.plist"
+d = plistlib.load(open(p, "rb"))
+exts = ("mdx jsonc toml cjs tsx jsx go rs kt lua scss sass less env ini conf cfg "
+        "sql graphql vue svelte astro lock").split()
+hs = [h for h in d.get("LSHandlers", []) if h.get("LSHandlerContentTag") not in exts]
+hs += [{"LSHandlerContentTag": e,
+        "LSHandlerContentTagClass": "public.filename-extension",
+        "LSHandlerRoleAll": "com.microsoft.vscode",
+        "LSHandlerPreferredVersions": {"LSHandlerRoleAll": "-"}} for e in exts]
+d["LSHandlers"] = hs
+plistlib.dump(d, open(p, "wb"))
+EOF
+
+defaults import $D /tmp/ls.plist && killall lsd`}</code>
+      </pre>
+      <InfoBox>
+        <p className="text-sm">
+          <strong>Gotchas:</strong> Run the duti commands first, then this.
+          Editing the plist without the{" "}
+          <code className="text-primary">killall lsd</code> doesn't stick:
+          LaunchServices keeps its own copy in memory and writes it back over
+          your change. macOS may pop a confirmation for a type another app
+          already owns (<code className="text-primary">.ts</code> vs IINA);
+          click the VS Code option. Verify with{" "}
+          <code className="text-primary">duti -x tsx</code>.
+        </p>
+      </InfoBox>
 
       <h4 className="text-base sm:text-lg">
         Remove Full Screen Shortcut Conflict
