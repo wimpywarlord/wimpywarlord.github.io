@@ -135,6 +135,26 @@ export function MacosOnSteroids() {
         </p>
       </InfoBox>
 
+      <CommandBox>
+        <p>
+          <StepNumber number={8} />
+          Dock on the right edge, small icons, and a Quick Note hot corner
+          (bottom-right):
+        </p>
+        <code className="text-xs sm:text-sm block mt-2 text-primary">
+          defaults write com.apple.dock orientation -string right
+        </code>
+        <code className="text-xs sm:text-sm block mt-1 text-primary">
+          defaults write com.apple.dock tilesize -int 32
+        </code>
+        <code className="text-xs sm:text-sm block mt-1 text-primary">
+          defaults write com.apple.dock wvous-br-corner -int 14
+        </code>
+        <code className="text-xs sm:text-sm block mt-1 text-primary">
+          killall Dock
+        </code>
+      </CommandBox>
+
       <div className="my-6 sm:my-8 border-b border-border" />
 
       <h3 className="text-primary text-xl sm:text-2xl">
@@ -287,21 +307,50 @@ export function MacosOnSteroids() {
       </p>
 
       <h4 className="text-base sm:text-lg">One-Command Installation</h4>
-      <p>Install everything at once with this single command:</p>
+      <p>
+        Install everything at once. Formulae and casks go in two separate
+        commands, because a <code className="text-xs">--cask</code> anywhere
+        in a single <code className="text-xs">brew install</code> makes Homebrew
+        treat every name as a cask:
+      </p>
 
       <CommandBox>
+        <p className="text-xs sm:text-sm mb-2">CLI tools:</p>
         <code className="text-xs sm:text-sm block text-primary break-all">
-          brew install node python tmux git uv zoxide atuin yt-dlp gallery-dl
-          fzf eza \
-          <br />
-          --cask zen-browser superkey protonvpn notion libreoffice ghostty
-          iterm2 \<br />
-          bettertouchtool postman screen-studio flux forklift fork
-          davinci-resolve \<br />
-          discord cursor cleanshot chatgpt aldente raycast appcleaner rectangle
-          bartender jordanbaird-ice betterdisplay alcove readdle-spark
+          brew install node@24 python tmux git uv bun zoxide atuin yt-dlp
+          gallery-dl fzf eza gh duti \<br />
+          ffmpeg exiftool pandoc pngquant gifsicle poppler ghostscript
+          terminal-notifier watch \<br />
+          awscli azure-cli flyctl mongodb-atlas-cli sqlcmd
+          anomalyco/tap/opencode
         </code>
       </CommandBox>
+
+      <CommandBox>
+        <p className="text-xs sm:text-sm mb-2">Apps:</p>
+        <code className="text-xs sm:text-sm block text-primary break-all">
+          brew install --cask zen-browser arc google-chrome cmux ghostty
+          visual-studio-code cursor \<br />
+          claude-code@latest codex chatgpt orbstack dbeaver-community
+          mongodb-compass ngrok \<br />
+          notion notion-calendar obsidian bettertouchtool superkey appcleaner
+          flux-app rectangle bartender \<br />
+          alcove cotypist voiceink iloader forklift libreoffice calibre meru
+          \<br />
+          discord whatsapp slack telegram zoom cleanshot screen-studio figma
+          iina soundsource finetune \<br />
+          protonvpn little-snitch mole-app font-jetbrains-mono-nerd-font \
+          <br />
+          steipete/tap/codexbar steipete/tap/trimmy
+          abue-ammar/tinycast/tinycast kamillobinski/thock/thock
+        </code>
+      </CommandBox>
+
+      <p className="text-xs sm:text-sm">
+        Not in the one-liners on purpose: DaVinci Resolve (no cask, see
+        below), Pear Desktop (pinned version, see below), Mac App Store apps,
+        and the alternatives I list next to my picks.
+      </p>
 
       <h5 className="text-primary text-sm sm:text-base">
         Core Command Line Tools
@@ -309,7 +358,7 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install node
+          brew install node@24 && brew link --force node@24
         </code>
         <p className="text-xs sm:text-sm">
           <Link
@@ -319,7 +368,7 @@ export function MacosOnSteroids() {
           >
             Node.js
           </Link>
-          {" - JavaScript runtime for server-side development"}
+          {" - JavaScript runtime, pinned to the 24 LTS line. node@24 is keg-only, so link it to put node/npm on your PATH"}
         </p>
       </CommandBox>
 
@@ -489,6 +538,85 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install gh
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://cli.github.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            GitHub CLI
+          </Link>
+          {" - PRs, issues, releases, and auth from the terminal. Coding agents lean on it heavily"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
+          brew install ffmpeg exiftool pandoc pngquant gifsicle poppler
+          ghostscript
+        </code>
+        <p className="text-xs sm:text-sm mb-1">Media & document toolbelt:</p>
+        <ul className="text-xs sm:text-sm list-disc pl-5 space-y-1">
+          <li>
+            <strong>ffmpeg</strong> - convert, trim, and transcode any
+            audio/video
+          </li>
+          <li>
+            <strong>exiftool</strong> - read, write, and strip photo/video
+            metadata
+          </li>
+          <li>
+            <strong>pandoc</strong> - convert between Markdown, DOCX, HTML, PDF,
+            and friends
+          </li>
+          <li>
+            <strong>pngquant</strong> / <strong>gifsicle</strong> - shrink PNGs
+            and GIFs
+          </li>
+          <li>
+            <strong>poppler</strong> / <strong>ghostscript</strong> - PDF text
+            extraction, rendering, and compression
+          </li>
+        </ul>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
+          brew install awscli azure-cli flyctl mongodb-atlas-cli sqlcmd
+        </code>
+        <p className="text-xs sm:text-sm">
+          Cloud & database CLIs: AWS, Azure,{" "}
+          <Link
+            href="https://fly.io/docs/flyctl/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Fly.io
+          </Link>
+          , MongoDB Atlas, and SQL Server
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install terminal-notifier watch
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/julienXX/terminal-notifier"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            terminal-notifier
+          </Link>
+          {" - Native macOS notifications from the shell (powers my Claude Code \"task complete\" hook, see below). watch - rerun a command every N seconds"}
+        </p>
+      </CommandBox>
+
       <h5 className="text-primary text-sm sm:text-base">Browsers</h5>
 
       <CommandBox>
@@ -503,7 +631,23 @@ export function MacosOnSteroids() {
           >
             Zen Browser
           </Link>
-          {" - Privacy-focused browser with excellent customization"}
+          {" - Privacy-focused browser with excellent customization. My default browser"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask arc
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://arc.net/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Arc
+          </Link>
+          {" - Chromium browser with spaces and a vertical sidebar. My second browser, on Hyper + Q"}
         </p>
       </CommandBox>
 
@@ -545,19 +689,129 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask postman
+          brew install --cask visual-studio-code
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://www.postman.com/"
+            href="https://code.visualstudio.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Postman
+            VS Code
           </Link>
-          {
-            " - API development and testing platform with collaboration features"
-          }
+          {" - My main editor (Hyper + A), with the Claude Code extension docked in the panel"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask claude-code@latest
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://claude.com/product/claude-code"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Claude Code
+          </Link>
+          {" - Anthropic's terminal coding agent. The @latest cask tracks the fast release channel; plain claude-code is the stable channel. Skills, plugins, and config are covered further down"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask codex
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/openai/codex"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Codex CLI
+          </Link>
+          {" - OpenAI's terminal coding agent. The desktop Codex experience lives inside the ChatGPT app (below)"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install anomalyco/tap/opencode
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/anomalyco/opencode"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            opencode
+          </Link>
+          {" - Open-source, provider-agnostic terminal coding agent"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask orbstack
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://orbstack.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            OrbStack
+          </Link>
+          {" - Drop-in Docker Desktop replacement plus lightweight Linux VMs. Faster, lighter on battery, and the docker CLI just works"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask dbeaver-community
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://dbeaver.io/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            DBeaver
+          </Link>
+          {" - Universal SQL client for Postgres, MySQL, SQLite, SQL Server, and more"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask mongodb-compass
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://www.mongodb.com/products/compass"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            MongoDB Compass
+          </Link>
+          {" - GUI for exploring and querying MongoDB"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask ngrok
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://ngrok.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            ngrok
+          </Link>
+          {" - Expose a localhost port on a public URL for webhooks and demos"}
         </p>
       </CommandBox>
 
@@ -579,17 +833,17 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask fork
+          brew install --cask cmux
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://git-fork.com/"
+            href="https://www.cmux.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Fork
+            cmux
           </Link>
-          {" - Beautiful Git client with intuitive interface"}
+          {" - Ghostty-based terminal built for running coding agents: vertical tabs and per-agent notifications. My daily terminal (Hyper + E)"}
         </p>
       </CommandBox>
 
@@ -633,17 +887,33 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask raycast
+          brew install --cask obsidian
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://www.raycast.com/"
+            href="https://obsidian.md/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Raycast
+            Obsidian
           </Link>
-          {" - Blazingly fast launcher with extensions and modern interface"}
+          {" - Local-first Markdown knowledge base. Plain files on disk, so agents can read and write my notes too (Hyper + D)"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask abue-ammar/tinycast/tinycast
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/abue-ammar/tinycast"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Tinycast
+          </Link>
+          {" - Tiny, fully native launcher with hotkeys and clipboard history. My Raycast replacement"}
         </p>
       </CommandBox>
 
@@ -681,22 +951,6 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask aldente
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://apphousekitchen.com/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            AlDente
-          </Link>
-          {" - Battery health management to extend MacBook battery life"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask appcleaner
         </code>
         <p className="text-xs sm:text-sm">
@@ -713,7 +967,7 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask flux
+          brew install --cask flux-app
         </code>
         <p className="text-xs sm:text-sm">
           <Link
@@ -753,9 +1007,9 @@ export function MacosOnSteroids() {
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Bartender 6
+            Bartender
           </Link>
-          {" - My go-to menu bar manager. Hide, reorder, and reveal menu bar items, with triggers, hotkeys, and per-item show/hide rules. Paid, the most polished option"}
+          {" - My go-to menu bar manager. Hide, reorder, and reveal menu bar items, with triggers, hotkeys, and per-item show/hide rules. Paid, the most polished option. Heads-up: the cask now installs Bartender 7, so check your license covers it"}
         </p>
       </CommandBox>
 
@@ -803,6 +1057,22 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask kamillobinski/thock/thock
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/kamillobinski/thock"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Thock
+          </Link>
+          {" - Klack alternative. Free, open-source keyboard sounds, installable with brew"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask steipete/tap/trimmy
         </code>
         <p className="text-xs sm:text-sm">
@@ -818,6 +1088,9 @@ export function MacosOnSteroids() {
       </CommandBox>
 
       <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask cotypist
+        </code>
         <p className="text-xs sm:text-sm">
           <Link
             href="https://cotypist.app/"
@@ -845,17 +1118,17 @@ export function MacosOnSteroids() {
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask betterdisplay
+          brew install --cask voiceink
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://github.com/waydabber/BetterDisplay"
+            href="https://tryvoiceink.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            BetterDisplay
+            VoiceInk
           </Link>
-          {" - Turn any display into a fully scalable HiDPI screen, control brightness/color over DDC, create virtual screens, and push XDR/HDR brightness. Free for the essentials, Pro is a one-time unlock"}
+          {" - Voice-to-text dictation into any app, transcribed on-device. Much faster than typing long prompts to agents"}
         </p>
       </CommandBox>
 
@@ -872,6 +1145,22 @@ export function MacosOnSteroids() {
             Alcove
           </Link>
           {" - Turns the notch into a Dynamic Island — music controls, notifications, and widgets in the dead space. Lightweight, one-time purchase"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask iloader
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://iloader.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            iloader
+          </Link>
+          {" - iOS sideloading companion for getting apps onto your iPhone from the Mac"}
         </p>
       </CommandBox>
 
@@ -912,8 +1201,10 @@ export function MacosOnSteroids() {
       </CommandBox>
 
       <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask notion-calendar
+        </code>
         <p className="text-xs sm:text-sm">
-          Don't forget to set up{" "}
           <Link
             href="https://www.notion.com/product/calendar"
             target="_blank"
@@ -921,24 +1212,24 @@ export function MacosOnSteroids() {
           >
             Notion Calendar
           </Link>
-          {" for scheduling."}
+          {" - Calendar for scheduling, linked to Notion docs (Hyper + C)"}
         </p>
       </CommandBox>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask readdle-spark
+          brew install --cask meru
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://sparkmailapp.com/"
+            href="https://meru.so/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Spark
+            Meru
           </Link>
           {
-            " - Fast, AI-powered email client with smart inbox, snooze, and multi-account support. Daily driver for email"
+            " - Gmail as a proper desktop app: native notifications, unread badge, multiple accounts. My default mail app (Hyper + X)"
           }
         </p>
       </CommandBox>
@@ -953,7 +1244,23 @@ export function MacosOnSteroids() {
           >
             PDF Gear
           </Link>
-          {" - excellent free PDF editor with annotation tools."}
+          {" - excellent free PDF editor with annotation tools (also on the Mac App Store). My default PDF app."}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask calibre
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://calibre-ebook.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            calibre
+          </Link>
+          {" - Ebook library manager and converter. How books get onto my Kobo"}
         </p>
       </CommandBox>
 
@@ -1007,6 +1314,38 @@ export function MacosOnSteroids() {
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask telegram
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://macos.telegram.org/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Telegram
+          </Link>
+          {" - Fast messaging with a native macOS client"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask zoom
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://www.zoom.us/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Zoom
+          </Link>
+          {" - Video calls"}
+        </p>
+      </CommandBox>
+
       <h5 className="text-primary text-sm sm:text-base">
         Creative & Media Tools
       </h5>
@@ -1057,25 +1396,6 @@ export function MacosOnSteroids() {
       </CommandBox>
 
       <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
-          brew install --cask aurorascharff/clicklight/clicklight
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://github.com/aurorascharff/ClickLight"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            ClickLight
-          </Link>
-          {" - Tiny menu bar app that highlights your clicks for live demos. Screen Studio and CleanShot add click effects in post; ClickLight is for the live moment, before there's a recording to polish"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask davinci-resolve
-        </code>
         <p className="text-xs sm:text-sm">
           <Link
             href="https://www.blackmagicdesign.com/products/davinciresolve"
@@ -1084,7 +1404,7 @@ export function MacosOnSteroids() {
           >
             DaVinci Resolve
           </Link>
-          {" - Professional video editing and color grading"}
+          {" - Professional video editing and color grading. The Homebrew cask is gone, so download the installer from Blackmagic directly"}
         </p>
       </CommandBox>
 
@@ -1107,8 +1427,10 @@ export function MacosOnSteroids() {
       <h5 className="text-primary text-sm sm:text-base">Media Players</h5>
 
       <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask iina
+        </code>
         <p className="text-xs sm:text-sm">
-          For video playback, use{" "}
           <Link
             href="https://iina.io/"
             target="_blank"
@@ -1116,7 +1438,7 @@ export function MacosOnSteroids() {
           >
             IINA
           </Link>
-          {" - Modern media player designed specifically for macOS"}
+          {" - Modern media player designed specifically for macOS. My default for all audio and video (setup below)"}
         </p>
       </CommandBox>
 
@@ -1192,6 +1514,9 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
       </CommandBox>
 
       <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask finetune
+        </code>
         <p className="text-xs sm:text-sm">
           <Link
             href="https://github.com/ronitsingh10/FineTune"
@@ -1201,22 +1526,6 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
             FineTune
           </Link>
           {" - Free, open-source SoundSource alternative. Per-app volume control and audio routing in the menu bar"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask background-music
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://github.com/kyleneideck/BackgroundMusic"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Background Music
-          </Link>
-          {" - Auto-pause music, set per-app volumes, and record system audio (open source)"}
         </p>
       </CommandBox>
 
@@ -1235,6 +1544,22 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
             ProtonVPN
           </Link>
           {" - Secure VPN service with strong privacy focus"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask little-snitch
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://www.obdev.at/products/littlesnitch/index.html"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Little Snitch
+          </Link>
+          {" - Outbound firewall. See and block every connection every app tries to make"}
         </p>
       </CommandBox>
 
@@ -1298,6 +1623,17 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
         <code className="text-xs sm:text-sm block text-primary">
           ZSH_THEME="powerlevel10k/powerlevel10k"
         </code>
+      </CommandBox>
+
+      <p>Powerlevel10k's icons need a Nerd Font:</p>
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask font-jetbrains-mono-nerd-font
+        </code>
+        <p className="text-xs sm:text-sm">
+          Then pick <strong>JetBrainsMono Nerd Font</strong> as the terminal
+          font.
+        </p>
       </CommandBox>
 
       <h4 className="text-base sm:text-lg">
@@ -1392,11 +1728,18 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
       </h5>
       <p className="text-sm">Set up magical shell history sync:</p>
       <CommandBox>
+        <code className="text-xs sm:text-sm block mb-1 text-primary break-all">
+          echo 'eval "$(atuin init zsh)"' &gt;&gt; ~/.zshrc
+        </code>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
           atuin import auto
         </code>
         <p className="text-xs sm:text-sm">
-          Imports your existing shell history
+          The init line is what actually binds Ctrl+R and the up arrow to
+          Atuin; without it Atuin is installed but does nothing. fzf (below)
+          also claims Ctrl+R, and whichever loads last in{" "}
+          <code className="text-xs">~/.zshrc</code> wins, so keep this line
+          after the fzf one. The import pulls in your existing shell history
         </p>
       </CommandBox>
 
@@ -1426,93 +1769,21 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
         </p>
       </CommandBox>
 
+      <h4 className="text-base sm:text-lg">
+        Step 5: Handy ~/.zshrc Additions
+      </h4>
+
       <h5 className="text-primary text-sm">
-        macOS UI Customization (Advanced)
+        Auto-Activate Python Virtual Environments
       </h5>
       <p className="text-sm">
-        For power users who want to customize the macOS interface:
-      </p>
-      <ul className="space-y-2 text-sm">
-        <li>
-          <Link
-            href="https://github.com/FelixKratz/JankyBorders"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            <strong>JankyBorders</strong>
-          </Link>
-          {" - Add colored borders around windows"}
-        </li>
-        <li>
-          <Link
-            href="https://github.com/FelixKratz/SketchyBar"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            <strong>SketchyBar</strong>
-          </Link>
-          {" - Highly customizable status bar"}
-        </li>
-        <li>
-          <Link
-            href="https://github.com/Jean-Tinland/simple-bar"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            <strong>Simple Bar</strong>
-          </Link>
-          {" - Alternative clean status bar"}
-        </li>
-        <li>
-          <Link
-            href="https://github.com/junegunn/fzf-git.sh"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            <strong>fzf-git</strong>
-          </Link>
-          {" - Enhanced Git workflows with fuzzy finding"}
-        </li>
-      </ul>
-
-      <div className="my-6 sm:my-8 border-b border-border" />
-
-      <h3 className="text-primary text-xl sm:text-2xl">iTerm2 Configuration</h3>
-
-      <h4 className="text-base sm:text-lg">Essential iTerm2 Settings</h4>
-      <p>Configure iTerm2 for the optimal terminal experience:</p>
-
-      <h5 className="text-primary text-sm">Enable Natural Text Editing</h5>
-      <CommandBox>
-        <code className="text-xs sm:text-sm block text-primary">
-          iTerm2 → Preferences → Profiles → Keys → Key Mappings
-        </code>
-        <p className="text-xs sm:text-sm mt-2">
-          Set up natural text editing shortcuts for smooth cursor movement
-        </p>
-      </CommandBox>
-
-      <h5 className="text-primary text-sm">Transparency and Blur Settings</h5>
-      <CommandBox>
-        <code className="text-xs sm:text-sm block text-primary">
-          iTerm2 → Preferences → Profiles → Window
-        </code>
-        <p className="text-xs sm:text-sm mt-2">
-          Set Transparency to <strong>26</strong> and Blur to{" "}
-          <strong>32</strong> for the perfect aesthetic
-        </p>
-      </CommandBox>
-
-      <h4 className="text-base sm:text-lg">
-        Auto-Activate Python Virtual Environments
-      </h4>
-      <p>
-        Add this to your <code className="text-xs sm:text-sm">~/.zshrc</code>{" "}
-        for automatic virtual environment activation:
+        Activates the nearest <code className="text-xs">.venv</code> whenever
+        you <code className="text-xs">cd</code> into a project, plus pnpm on the
+        PATH:
       </p>
 
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`# Auto-activate Python virtual environment if .env or .venv exists (no auto-deactivate)
+        <code>{`# Auto-activate Python virtual environment if .venv exists (no auto-deactivate)
 
 function auto_activate_env() {
   local dir=$PWD
@@ -1533,7 +1804,7 @@ add-zsh-hook chpwd auto_activate_env
 auto_activate_env
 
 # pnpm
-export PNPM_HOME="/Users/wimpy/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -1549,39 +1820,38 @@ esac
 
       <h4 className="text-base sm:text-lg">Essential Ghostty Settings</h4>
       <p>
-        Configure Ghostty for an optimal terminal experience with persistent
-        window state:
+        My full Ghostty config. cmux is built on Ghostty and reads the same{" "}
+        <code className="text-xs sm:text-sm">~/.config/ghostty/config</code>,
+        so this one file covers both:
       </p>
 
-      <h5 className="text-primary text-sm">Window State Persistence</h5>
-      <p className="text-sm">
-        Enable automatic saving and restoring of window state (position, size,
-        tabs, splits):
-      </p>
-      <CommandBox>
-        <p className="text-xs sm:text-sm mb-2">
-          Add this to your Ghostty configuration file:
-        </p>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          window-save-state = always
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://ghostty.org/docs/config/reference#window-save-state"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Documentation reference
-          </Link>
-        </p>
-      </CommandBox>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`# Restore windows, tabs, and splits on relaunch
+window-save-state = always
+
+# ~75 MB of scrollback per terminal (the value is in bytes; agent logs get long)
+scrollback-limit = 75000000
+
+cursor-style = bar
+cursor-style-blink = true
+
+background-opacity = 0.95
+background-blur-radius = 20`}</code>
+      </pre>
 
       <InfoBox>
         <p className="text-sm sm:text-base">
-          <strong>What this does:</strong> Ghostty will automatically remember
-          your window positions, sizes, open tabs, and split configurations
-          across sessions. This ensures your terminal workspace is exactly as
-          you left it when you restart the app.
+          <strong>What this does:</strong> Ghostty remembers your window
+          positions, sizes, open tabs, and split configurations across
+          sessions, and keeps enough scrollback that long agent runs never fall
+          off the top.{" "}
+          <Link
+            href="https://ghostty.org/docs/config/reference"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Config reference
+          </Link>
         </p>
       </InfoBox>
 
@@ -1610,7 +1880,7 @@ esac
             <strong>Caps Lock</strong> → Act as Hyper Key (⌘⌥⌃⇧)
           </li>
           <li>
-            <strong>Hyper + Q</strong> → Launch Google Chrome
+            <strong>Hyper + Q</strong> → Launch Arc
           </li>
           <li>
             <strong>Hyper + W</strong> → Launch Zen Browser
@@ -1625,34 +1895,31 @@ esac
             <strong>Hyper + A</strong> → Launch VS Code
           </li>
           <li>
-            <strong>Hyper + S</strong> → Launch ForkLift
+            <strong>Hyper + S</strong> → Launch ChatGPT (includes Codex)
           </li>
           <li>
             <strong>Hyper + D</strong> → Launch Obsidian
           </li>
           <li>
+            <strong>Hyper + F</strong> → Launch Discord
+          </li>
+          <li>
             <strong>Hyper + G</strong> → Launch YouTube Music
           </li>
           <li>
-            <strong>Hyper + H</strong> → Launch Figma
+            <strong>Hyper + Z</strong> → Launch ForkLift
           </li>
           <li>
-            <strong>Hyper + Z</strong> → Launch Spark
-          </li>
-          <li>
-            <strong>Hyper + X</strong> → Launch ChatGPT (includes Codex)
+            <strong>Hyper + X</strong> → Launch Meru (Gmail)
           </li>
           <li>
             <strong>Hyper + C</strong> → Launch Notion Calendar
           </li>
           <li>
+            <strong>Hyper + V</strong> → Launch Splinter
+          </li>
+          <li>
             <strong>Hyper + N</strong> → Launch Figma
-          </li>
-          <li>
-            <strong>Hyper + M</strong> → Launch MongoDB Compass
-          </li>
-          <li>
-            <strong>Hyper + P</strong> → Launch Postman
           </li>
           <li>
             <strong>Hyper + 1-5</strong> → Switch to Desktop 1-5
@@ -1664,7 +1931,9 @@ esac
         <p className="text-xs sm:text-sm">
           <strong>Tip:</strong> The Hyper Key eliminates conflicts with existing
           shortcuts while giving you instant access to any app. It's the most
-          efficient way to navigate your Mac!
+          efficient way to navigate your Mac! On a new machine, export your
+          BetterTouchTool preset and import it instead of rebuilding these by
+          hand.
         </p>
       </CommandBox>
 
@@ -1681,8 +1950,14 @@ esac
       </p>
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary break-all">
-          curl -fsSL https://bun.sh/install | bash
+          brew install bun
         </code>
+        <p className="text-xs sm:text-sm mt-2">
+          Bun is in homebrew-core now, so <code className="text-xs">brew upgrade</code>{" "}
+          keeps it current. The old{" "}
+          <code className="text-xs">curl -fsSL https://bun.sh/install | bash</code>{" "}
+          installer still works if you prefer <code className="text-xs">~/.bun</code>
+        </p>
       </CommandBox>
 
       <InfoBox>
@@ -1702,11 +1977,14 @@ esac
       </p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-1 text-primary">
-          uv python install 3.11
+          uv python install 3.12
         </code>
-        <code className="text-xs sm:text-sm block text-primary">
-          uv python pin 3.11
-        </code>
+        <p className="text-xs sm:text-sm mt-2">
+          Homebrew already brings a current Python 3.13/3.14 for scripts; uv
+          manages the per-project versions. Run{" "}
+          <code className="text-xs">uv python pin 3.12</code> inside a project
+          to write its <code className="text-xs">.python-version</code>
+        </p>
       </CommandBox>
 
       <InfoBox>
@@ -1755,6 +2033,19 @@ esac
         </p>
       </CommandBox>
 
+      <p>Or let the GitHub CLI do the key upload and auth in one go:</p>
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-1 text-primary">
+          gh auth login
+        </code>
+        <p className="text-xs sm:text-sm mt-2">
+          Pick GitHub.com → SSH → your{" "}
+          <code className="text-xs">id_ed25519.pub</code>. This also gives
+          coding agents a working <code className="text-xs">gh</code> for PRs
+          and issues
+        </p>
+      </CommandBox>
+
       <div className="my-6 sm:my-8 border-b border-border" />
 
       <h3 className="text-primary text-xl sm:text-2xl">
@@ -1764,8 +2055,9 @@ esac
         Every coding agent I run inherits the same{" "}
         <Highlight>thinking style</Highlight>. I keep this prompt in my global{" "}
         <code className="text-xs sm:text-sm">~/.claude/CLAUDE.md</code> and a
-        matching <code className="text-xs sm:text-sm">AGENTS.md</code> so Claude
-        Code, Codex, and Cursor all reason the way I do by default:
+        matching <code className="text-xs sm:text-sm">~/.codex/AGENTS.md</code>{" "}
+        so Claude Code and Codex both reason the way I do by default. The block
+        at the bottom routes work to the skills below:
       </p>
 
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
@@ -1797,7 +2089,14 @@ When copy editing, always mark changes inline.
 
 About me: Kshitij (tjay) Dhyani (@type_tjay on X)
 
-Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.`}</code>
+Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
+
+<!-- BEGIN @agent-native/skills -->
+When operating as Claude Fable, use the /efficient-fable skill always.
+When using a high-cost frontier model for codebase-heavy work, use the /efficient-frontier skill always.
+When writing final response status indicators, use the /quick-recap skill always.
+When long-running or parallel work needs usage-limit checks, use the /stay-within-limits skill always.
+<!-- END @agent-native/skills -->`}</code>
       </pre>
 
       <div className="my-6 sm:my-8 border-b border-border" />
@@ -1810,6 +2109,19 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
         <code className="text-xs sm:text-sm">~/.claude/skills/</code> and load on
         demand. These are the ones I keep installed:
       </p>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          npx skills add remotion-dev/skills
+        </code>
+        <p className="text-xs sm:text-sm">
+          The <code className="text-xs">skills</code> CLI installs a skill repo
+          once into <code className="text-xs">~/.agents/skills/</code>, symlinks
+          it into Claude Code's and Codex's skill folders, and tracks sources in{" "}
+          <code className="text-xs">~/.agents/.skill-lock.json</code>. Swap in
+          any <code className="text-xs">owner/repo</code> below
+        </p>
+      </CommandBox>
 
       <h4 className="text-base sm:text-lg">Code Quality</h4>
       <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
@@ -1854,14 +2166,6 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
           <code className="text-xs sm:text-sm">quick-recap</code>
           {" - Red/yellow/green status block convention for final agent responses"}
         </li>
-        <li>
-          <code className="text-xs sm:text-sm">visual-plan</code>
-          {" - Turns text plans into interactive visual plans with diagrams, file maps, and annotated code"}
-        </li>
-        <li>
-          <code className="text-xs sm:text-sm">visual-recap</code>
-          {" - Turns a PR, branch, commit, or diff into an interactive visual recap"}
-        </li>
       </ul>
 
       <h4 className="text-base sm:text-lg">Frontend &amp; Design</h4>
@@ -1883,30 +2187,136 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
           {" - React and Next.js performance optimization guidelines from Vercel Engineering"}
         </li>
         <li>
-          <code className="text-xs sm:text-sm">remotion-best-practices</code>
-          {" - Best practices for Remotion (video creation in React)"}
+          <code className="text-xs sm:text-sm">better-ui</code>
+          {" - Polish pass for existing UI: concentric border radius, optical alignment, surface depth, contextual icons, hit areas"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">emil-design-eng</code>
+          {" - Emil Kowalski's philosophy on UI polish, component design, and when (not) to animate"}
+        </li>
+        <li>
+          <Link
+            href="https://github.com/jakubkrehel/make-interfaces-feel-better"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            make-interfaces-feel-better
+          </Link>
+          {" - Design-engineering details that make interfaces feel polished: micro-interactions, enter/exit animations, shadows, typography, tabular numbers"}
+        </li>
+        <li>
+          <Link
+            href="https://github.com/remotion-dev/skills"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            remotion-dev/skills
+          </Link>
+          {" - The full Remotion suite (video creation in React): remotion-best-practices is the router, plus create, markup, captions, maps, multimedia, interactivity, studio, render, docs, saas, and upgrade"}
         </li>
       </ul>
 
       <h4 className="text-base sm:text-lg">Writing &amp; Content</h4>
       <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
         <li>
-          <code className="text-xs sm:text-sm">humanizer</code>
+          <Link
+            href="https://github.com/blader/humanizer"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            humanizer
+          </Link>
           {" - Strips signs of AI-generated writing, based on Wikipedia's \"Signs of AI writing\" guide"}
         </li>
         <li>
-          <code className="text-xs sm:text-sm">graphify</code>
-          {" - Turns any input (code, docs, papers, images) into a clustered knowledge graph with HTML + JSON + audit report"}
+          <code className="text-xs sm:text-sm">seo-writer</code>
+          {" - Long-form posts built to rank on Google page 1 and show up in AI Overviews: meta titles, schema markup, snippet-ready structure"}
         </li>
         <li>
           <code className="text-xs sm:text-sm">tiktok-hooks</code>
           {" - Generates Gen-Z / college-apps TikTok hooks for the first 1-3 seconds of a video"}
         </li>
         <li>
-          <code className="text-xs sm:text-sm">archive-conversation</code>
-          {" - Saves a chat as a clean, Obsidian-compatible note"}
+          <Link
+            href="https://github.com/ghostfeed-ai/skills"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            ghostfeed-ai/skills
+          </Link>
+          {" - Drive Ghostfeed over MCP: ghostfeed-avatars, ghostfeed-slideshows (TikTok photo slideshows), and ghostfeed-ugc-reactions (UGC reaction videos)"}
         </li>
       </ul>
+
+      <h4 className="text-base sm:text-lg">Claude Code Plugins</h4>
+      <p className="text-xs sm:text-sm">
+        From the official{" "}
+        <code className="text-xs">claude-plugins-official</code> marketplace.
+        Install each inside Claude Code with{" "}
+        <code className="text-xs">/plugin install &lt;name&gt;@claude-plugins-official</code>:
+      </p>
+      <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
+        <li>
+          <code className="text-xs sm:text-sm">commit-commands</code>
+          {" - /commit and /commit-push-pr in one step"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">code-simplifier</code>
+          {" - Agent that simplifies recently changed code without changing behavior"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">context7</code>
+          {" - Pulls current library docs instead of relying on stale training data"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">playwright</code>
+          {" - Browser automation for testing and clicking through flows"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">github</code>,{" "}
+          <code className="text-xs sm:text-sm">figma</code>,{" "}
+          <code className="text-xs sm:text-sm">vercel</code>
+          {" - First-party integrations for repos, design files, and deploys"}
+        </li>
+        <li>
+          <code className="text-xs sm:text-sm">frontend-design</code>,{" "}
+          <code className="text-xs sm:text-sm">swift-lsp</code>
+          {" - Design guidance and Swift language server support"}
+        </li>
+      </ul>
+
+      <h4 className="text-base sm:text-lg">MCP Servers &amp; Hooks</h4>
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
+          claude mcp add --scope user --transport http linear
+          https://mcp.linear.app/mcp
+        </code>
+        <p className="text-xs sm:text-sm">
+          Linear issues and projects from inside any Claude Code session
+        </p>
+      </CommandBox>
+      <p className="text-sm">
+        And a desktop notification whenever Claude Code finishes a task, in{" "}
+        <code className="text-xs sm:text-sm">~/.claude/settings.json</code>{" "}
+        (uses <code className="text-xs">terminal-notifier</code> from the CLI
+        tools above):
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound Blow -timeout 10"
+          }
+        ]
+      }
+    ]
+  }
+}`}</code>
+      </pre>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
@@ -1949,7 +2359,7 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
       </p>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install tw93/tap/mole
+          brew install --cask mole-app
         </code>
         <p className="text-xs sm:text-sm">
           <Link
@@ -1959,7 +2369,7 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
           >
             Mole
           </Link>
-          {" - Multi-language Mac cleaner and optimizer"}
+          {" - Multi-language Mac cleaner and optimizer. Mole now lives in Homebrew proper: the mole-app cask is the desktop app, and brew install mole gets the CLI"}
         </p>
       </CommandBox>
       <div className="my-6">
@@ -1975,35 +2385,6 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
         Essential Extensions & Productivity Tools
       </h3>
 
-      <h4 className="text-base sm:text-lg">Raycast Extensions</h4>
-      <p>
-        Supercharge your macOS workflow with these{" "}
-        <Highlight>must-have Raycast extensions</Highlight>:
-      </p>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>GitHub</strong> - Search repos, issues, and PRs
-        </li>
-        <li>
-          <strong>Linear</strong> - Task management integration
-        </li>
-        <li>
-          <strong>Kill Process</strong> - Quickly terminate hanging processes
-        </li>
-        <li>
-          <strong>Clipboard History</strong> - Access your clipboard history
-        </li>
-        <li>
-          <strong>Window Management</strong> - Alternative to Rectangle
-        </li>
-        <li>
-          <strong>Speedtest</strong> - Quick internet speed tests
-        </li>
-        <li>
-          <strong>Color Picker</strong> - Pick colors from anywhere
-        </li>
-      </ul>
-
       <h4 className="text-base sm:text-lg">VS Code Extensions</h4>
       <p>
         These are some very useful <Highlight>VScode Extensions</Highlight>:
@@ -2012,24 +2393,15 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
       <h4>Core Productivity Extensions</h4>
       <ul className="space-y-1 text-sm">
         <li>
-          <strong>All Autocomplete</strong> - Enhanced autocomplete across all
-          files
-        </li>
-        <li>
-          <strong>AutoClose Find</strong> - Automatically close find dialog when
-          you stop typing
+          <strong>Claude Code</strong> - Anthropic's official extension; runs
+          Claude Code in the editor panel with inline diffs
         </li>
         <li>
           <strong>Better Comments</strong> - Styled comments with alerts, todos,
           and highlights
         </li>
         <li>
-          <strong>Code Spell Checker</strong> - Catch spelling errors in your
-          code
-        </li>
-        <li>
-          <strong>Color Highlighter</strong> - Highlight color values in your
-          code
+          <strong>Color Highlight</strong> - Highlight color values in your code
         </li>
         <li>
           <strong>Error Lens</strong> - See errors and warnings inline with your
@@ -2039,18 +2411,13 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
           <strong>Path Intellisense</strong> - Autocomplete for file paths
         </li>
         <li>
-          <strong>Todo Highlight</strong> - Highlight TODO, FIXME comments
-        </li>
-      </ul>
-
-      <h4>Theme & Icons</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>Dracula Theme Official</strong> - The perfect dark theme for
-          long coding sessions
+          <strong>TODO Highlight</strong> - Highlight TODO, FIXME comments
         </li>
         <li>
-          <strong>Material Icon Theme</strong> - Beautiful file and folder icons
+          <strong>DotENV</strong> - Syntax highlighting for .env files
+        </li>
+        <li>
+          <strong>EditorConfig</strong> - Respect each repo's .editorconfig
         </li>
       </ul>
 
@@ -2064,6 +2431,13 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
           <strong>Git History</strong> - View git log, file history, and compare
           branches
         </li>
+        <li>
+          <strong>Git Graph</strong> - Visual commit graph with branch actions
+        </li>
+        <li>
+          <strong>GitHub Actions</strong> - View runs and edit workflows with
+          validation
+        </li>
       </ul>
 
       <h4>Code Quality & Formatting</h4>
@@ -2074,6 +2448,10 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
         <li>
           <strong>Prettier - Code Formatter</strong> - Opinionated code
           formatter
+        </li>
+        <li>
+          <strong>Ruff</strong> - Rust-fast Python linter and formatter (also
+          sorts imports, so no separate isort)
         </li>
       </ul>
 
@@ -2089,15 +2467,38 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
           <strong>Python Debugger</strong> - Debug Python code with breakpoints
         </li>
         <li>
-          <strong>isort</strong> - Sort Python imports automatically
+          <strong>Python Environments</strong> - Pick and manage venvs and
+          interpreters
         </li>
       </ul>
 
       <h4>Web Development</h4>
       <ul className="space-y-1 text-sm">
         <li>
+          <strong>Tailwind CSS IntelliSense</strong> - Class autocomplete,
+          linting, and hover previews
+        </li>
+        <li>
+          <strong>ES7+ React Snippets</strong> - Component and hook snippets
+        </li>
+        <li>
+          <strong>Auto Rename Tag</strong> - Rename the paired HTML/JSX tag as
+          you type
+        </li>
+        <li>
           <strong>Live Server</strong> - Launch local development server with
           live reload
+        </li>
+      </ul>
+
+      <h4>Containers</h4>
+      <ul className="space-y-1 text-sm">
+        <li>
+          <strong>Container Tools</strong> - Manage images, containers, and
+          compose files (works with OrbStack)
+        </li>
+        <li>
+          <strong>Dev Containers</strong> - Open a repo inside a container
         </li>
       </ul>
 
@@ -2107,10 +2508,26 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
           <strong>Rainbow CSV</strong> - Highlight CSV files with colors
         </li>
         <li>
-          <strong>Markdown Preview Enhanced</strong> - Enhanced markdown preview
-          with math support
+          <strong>Office Viewer</strong> - Open Word, Excel, PDF, and Markdown
+          files right in VS Code
         </li>
       </ul>
+
+      <p className="text-sm">Install the whole set in one go:</p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`for ext in \\
+  anthropic.claude-code aaron-bond.better-comments naumovs.color-highlight \\
+  usernamehw.errorlens christian-kohler.path-intellisense wayou.vscode-todo-highlight \\
+  mikestead.dotenv editorconfig.editorconfig \\
+  eamodio.gitlens donjayamanne.githistory mhutchie.git-graph github.vscode-github-actions \\
+  dbaeumer.vscode-eslint esbenp.prettier-vscode charliermarsh.ruff \\
+  ms-python.python ms-python.vscode-pylance ms-python.debugpy ms-python.vscode-python-envs \\
+  bradlc.vscode-tailwindcss dsznajder.es7-react-js-snippets formulahendry.auto-rename-tag \\
+  ritwickdey.liveserver ms-azuretools.vscode-containers ms-vscode-remote.remote-containers \\
+  mechatroner.rainbow-csv cweijan.vscode-office; do
+  code --install-extension "$ext"
+done`}</code>
+      </pre>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
@@ -2120,20 +2537,29 @@ Co-founder of Ghostfeed, entrepreneur, technical, range of knowledge/experience.
       <p>Enhance Quick Look (spacebar preview) with plugins:</p>
       <CommandBox>
         <code className="text-xs sm:text-sm block text-primary break-all">
-          brew install --cask qlmarkdown qlstephen qlcolorcode quicklook-json
+          brew install --cask qlmarkdown syntax-highlight
         </code>
+        <p className="text-xs sm:text-sm mt-2">
+          QLMarkdown renders Markdown, Syntax Highlight previews source files.
+          Both are modern Quick Look extensions: open each app once so macOS
+          registers it. The old qlstephen, qlcolorcode, and quicklook-json
+          casks are disabled in Homebrew now
+        </p>
       </CommandBox>
 
       <h4 className="text-base sm:text-lg">Touch ID for sudo</h4>
       <p>Enable Touch ID for sudo commands:</p>
       <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          sudo nano /etc/pam.d/sudo
+        <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
+          sed "s/^#auth/auth/" /etc/pam.d/sudo_local.template | sudo tee
+          /etc/pam.d/sudo_local
         </code>
-        <p className="text-xs sm:text-sm mb-1">Add this line at the top:</p>
-        <code className="text-xs sm:text-sm block text-primary">
-          auth sufficient pam_tid.so
-        </code>
+        <p className="text-xs sm:text-sm">
+          Don't edit <code className="text-xs">/etc/pam.d/sudo</code> directly:
+          macOS updates overwrite it and silently turn Touch ID back off.{" "}
+          <code className="text-xs">sudo_local</code> is included by it and
+          survives updates
+        </p>
       </CommandBox>
 
       <h4 className="text-base sm:text-lg">Faster Dock Auto-Hide</h4>
@@ -2323,6 +2749,13 @@ killall Finder`}</code>
         </p>
       </InfoBox>
 
+      <p>Same trick for PDFs, pointing them at PDF Gear:</p>
+      <CommandBox>
+        <code className="text-xs sm:text-sm block text-primary break-all">
+          duti -s com.pdfeditor.pdfeditormac com.adobe.pdf all
+        </code>
+      </CommandBox>
+
       <h4 className="text-base sm:text-lg">
         Remove Full Screen Shortcut Conflict
       </h4>
@@ -2349,80 +2782,27 @@ killall Finder`}</code>
         <p className="text-xs sm:text-sm">Enable "Auto Close Tags" setting</p>
       </CommandBox>
 
-      <h4 className="text-base sm:text-lg">
-        VS Code Block Highlighting & Bracket Colorization
-      </h4>
+      <h4 className="text-base sm:text-lg">VS Code Settings</h4>
       <p>
-        Enhanced code readability with Dracula-themed bracket colors and block
-        highlighting:
+        The handful of settings I change, via Command Palette (⌘⇧P) →
+        "Preferences: Open User Settings (JSON)":
       </p>
-      <CommandBox>
-        <p className="text-xs sm:text-sm mb-2">
-          <strong>Step 1:</strong> Open Command Palette (⌘⇧P) → "Preferences:
-          Open User Settings (JSON)"
-        </p>
-        <p className="text-xs sm:text-sm">
-          <strong>Step 2:</strong> Add this configuration for perfect Dracula
-          integration:
-        </p>
-      </CommandBox>
 
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
         <code>{`{
-  // --- Block Highlighter core settings ---
-  // Semi-transparent Dracula purple (#bd93f9) with ~10% alpha
-  "blockHighlighter.background": [189, 147, 249, 0.10], // RGBA
-  "blockHighlighter.isWholeLine": true,
-  "blockHighlighter.omit": ["plain", "markdown"],
+  // File tree on the right, so opening it doesn't shift the code
+  "workbench.sideBar.location": "right",
 
-  // --- Bracket pair colorization (VS Code built-in) ---
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.guides.bracketPairsHorizontal": "active",
+  // Never lose work to a forgotten save
+  "files.autoSave": "afterDelay",
 
-  // --- Theme-scoped workbench colors for Dracula ---
-  "workbench.colorCustomizations": {
-    "[Dracula]": {
-      // Keep the highlight subtle against Dracula background
-      "editor.selectionHighlightBackground": "#bd93f933",
-      "editor.wordHighlightBackground": "#8be9fd22",
-      // Bracket highlights that echo Dracula palette
-      "editorBracketHighlight.foreground1": "#bd93f9",
-      "editorBracketHighlight.foreground2": "#50fa7b",
-      "editorBracketHighlight.foreground3": "#ff79c6",
-      "editorBracketHighlight.foreground4": "#8be9fd",
-      "editorBracketHighlight.foreground5": "#ffb86c",
-      "editorBracketHighlight.foreground6": "#f1fa8c",
-      "editorBracketHighlight.unexpectedBracket.foreground": "#ff5555"
-    }
-  },
+  // Claude Code lives in the bottom panel instead of a sidebar
+  "claudeCode.preferredLocation": "panel",
 
-  // Optional: fine-tune token colors only when Dracula is active
-  "editor.tokenColorCustomizations": {
-    "[Dracula]": {
-      "textMateRules": [
-        {
-          "scope": "punctuation.definition.block",
-          "settings": { "foreground": "#bd93f9" }
-        },
-        {
-          "scope": "punctuation.section.block",
-          "settings": { "foreground": "#bd93f9" }
-        }
-      ]
-    }
-  }
+  // Use Homebrew's Python by default
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3"
 }`}</code>
       </pre>
-
-      <InfoBox>
-        <p className="text-sm">
-          <strong>What this does:</strong> Adds subtle purple block
-          highlighting, colorized bracket pairs using Dracula colors, and
-          enhanced code structure visibility while maintaining the beautiful
-          Dracula aesthetic.
-        </p>
-      </InfoBox>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
@@ -2439,23 +2819,6 @@ killall Finder`}</code>
           <strong>⌘ + ←</strong> Collapse all folders in file explorer
         </li>
       </ul>
-
-      <div className="my-6 sm:my-8 border-b border-border" />
-
-      <h3 className="text-primary text-xl sm:text-2xl">Dracula Theme Setup</h3>
-
-      <p>
-        For complete Dracula theming across all your applications, check out my
-        detailed guide{" "}
-        <Highlight>
-          <Link href="/blog/dracula-theming">here.</Link>
-        </Highlight>
-      </p>
-
-      <p>
-        This guide covers theming for VS Code, iTerm2, browsers with Stylus,
-        Discord, Obsidian, and more!
-      </p>
     </div>
   );
 }

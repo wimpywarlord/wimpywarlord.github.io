@@ -141,7 +141,7 @@ const postsRaw: Post[] = [
         "The ultimate macOS setup guide for developers who want peak productivity.",
       image: "/assets/blog/blog_thum_4.gif",
       createdAt: "2025-03-25",
-      updatedAt: "2025-03-25",
+      updatedAt: "2026-09-28",
     },
     component: MacosOnSteroids,
   },
