@@ -138,21 +138,43 @@ export function MacosOnSteroids() {
       <CommandBox>
         <p>
           <StepNumber number={8} />
-          Dock on the right edge, small icons, and a Quick Note hot corner
-          (bottom-right):
+          Dock: right edge, small, instant auto-hide, a Quick Note hot corner
+          (bottom-right), and nothing pinned but Zen. The Hyper keys below
+          launch everything else, so the Dock barely needs to exist:
         </p>
-        <code className="text-xs sm:text-sm block mt-2 text-primary">
-          defaults write com.apple.dock orientation -string right
-        </code>
-        <code className="text-xs sm:text-sm block mt-1 text-primary">
-          defaults write com.apple.dock tilesize -int 32
-        </code>
-        <code className="text-xs sm:text-sm block mt-1 text-primary">
-          defaults write com.apple.dock wvous-br-corner -int 14
-        </code>
-        <code className="text-xs sm:text-sm block mt-1 text-primary">
-          killall Dock
-        </code>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`# Position, size, auto-hide
+defaults write com.apple.dock orientation -string right
+defaults write com.apple.dock tilesize -int 32
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.4
+
+# Bottom-right hot corner → Quick Note
+defaults write com.apple.dock wvous-br-corner -int 14
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+# Dock contents: wipe Apple's defaults, pin only Zen
+brew install dockutil
+dockutil --remove all --no-restart
+dockutil --add /Applications/Zen.app --no-restart
+
+killall Dock`}
+        </pre>
+      </CommandBox>
+
+      <CommandBox>
+        <p>
+          <StepNumber number={9} />
+          Turn off macOS's built-in window tiling so it doesn't fight
+          Rectangle:
+        </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false`}
+        </pre>
       </CommandBox>
 
       <div className="my-6 sm:my-8 border-b border-border" />
@@ -318,7 +340,7 @@ export function MacosOnSteroids() {
         <p className="text-xs sm:text-sm mb-2">CLI tools:</p>
         <code className="text-xs sm:text-sm block text-primary break-all">
           brew install node@24 python tmux git uv bun zoxide atuin yt-dlp
-          gallery-dl fzf eza gh duti \<br />
+          gallery-dl fzf eza gh duti dockutil \<br />
           ffmpeg exiftool pandoc pngquant gifsicle poppler ghostscript
           terminal-notifier watch \<br />
           awscli azure-cli flyctl mongodb-atlas-cli sqlcmd
@@ -2560,19 +2582,6 @@ done`}</code>
           <code className="text-xs">sudo_local</code> is included by it and
           survives updates
         </p>
-      </CommandBox>
-
-      <h4 className="text-base sm:text-lg">Faster Dock Auto-Hide</h4>
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-1 text-primary">
-          defaults write com.apple.dock autohide-delay -float 0
-        </code>
-        <code className="text-xs sm:text-sm block mb-1 text-primary break-all">
-          defaults write com.apple.dock autohide-time-modifier -float 0.4
-        </code>
-        <code className="text-xs sm:text-sm block text-primary">
-          killall Dock
-        </code>
       </CommandBox>
 
       <h4 className="text-base sm:text-lg">
