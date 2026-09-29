@@ -353,8 +353,8 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false`}
         <code className="text-xs sm:text-sm block text-primary break-all">
           brew install --cask zen-browser arc google-chrome cmux ghostty
           visual-studio-code cursor \<br />
-          claude-code@latest codex chatgpt orbstack dbeaver-community
-          mongodb-compass ngrok \<br />
+          claude-code@latest codex chatgpt orbstack mongodb-compass
+          ngrok \<br />
           notion notion-calendar obsidian bettertouchtool superkey appcleaner
           flux-app rectangle bartender \<br />
           alcove cotypist voiceink iloader forklift libreoffice calibre meru
@@ -786,22 +786,6 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false`}
             OrbStack
           </Link>
           {" - Drop-in Docker Desktop replacement plus lightweight Linux VMs. Faster, lighter on battery, and the docker CLI just works"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask dbeaver-community
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://dbeaver.io/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            DBeaver
-          </Link>
-          {" - Universal SQL client for Postgres, MySQL, SQLite, SQL Server, and more"}
         </p>
       </CommandBox>
 
