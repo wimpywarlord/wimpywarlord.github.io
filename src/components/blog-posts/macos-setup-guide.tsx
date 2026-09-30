@@ -187,6 +187,14 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false`}
       <p>My collection of desktop wallpapers:</p>
 
       <GalleryImage
+        src="/blog/mac_os_setup/assets/starship-launch-twid.jpg"
+        alt="SpaceX Starship lifting off through orange-lit smoke beneath a blue sky"
+        width={3456}
+        height={2234}
+        className="w-full rounded-lg my-3 sm:my-4"
+      />
+
+      <GalleryImage
         src="/blog/mac_os_setup/assets/dracula_mac_wallpaper.png"
         alt="Dracula Mac Wallpaper"
         width={1200}
