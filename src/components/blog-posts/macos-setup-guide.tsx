@@ -147,8 +147,9 @@ export function MacosOnSteroids() {
         <p>
           <StepNumber number={8} />
           Dock: right edge, small, instant auto-hide, a Quick Note hot corner
-          (bottom-right), and nothing pinned but Zen. The Hyper keys below
-          launch everything else, so the Dock barely needs to exist:
+          (bottom-right), and nothing in it but Zen, not even recent apps. The
+          Hyper keys below launch everything else, so the Dock barely needs to
+          exist:
         </p>
         <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
           {`# Position, size, auto-hide
@@ -157,6 +158,9 @@ defaults write com.apple.dock tilesize -int 32
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.4
+
+# No "suggested and recent apps" section
+defaults write com.apple.dock show-recents -bool false
 
 # Bottom-right hot corner → Quick Note
 defaults write com.apple.dock wvous-br-corner -int 14
@@ -202,10 +206,16 @@ defaults -currentHost write -g NSStatusItemSelectionPadding -int 3`}
       <CommandBox>
         <p>
           <StepNumber number={11} />
-          Free up system shortcuts: Tinycast takes ⌘Space, CleanShot takes
+          Free up system shortcuts: Raycast takes ⌘Space, CleanShot takes
           ⌘⇧3/4/5, and ⌃Space, ⌃←/⌃→ and ⌃1 stop switching input sources and
-          Spaces:
+          Spaces. Put Raycast on ⌘Space and start it first, so you're never
+          left without a launcher:
         </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`defaults write com.raycast.macos raycastGlobalHotkey -string "Command-49"   # 49 = Space
+open -a Raycast`}
+        </pre>
+        <p className="mt-2">Then take the shortcuts away from macOS:</p>
         <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
           {`# id:char,keycode,modifiers. Screenshots 28-31 + 184, input source 60-61,
 # Spotlight 64-65, move a Space left/right 79 + 81, Desktop 1 118
@@ -219,9 +229,8 @@ done
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u`}
         </pre>
         <p className="text-xs sm:text-sm mt-2">
-          Then, in each app's settings, set ⌘Space as Tinycast's hotkey and ⌘⇧3
-          / ⌘⇧4 / ⌘⇧5 as CleanShot's fullscreen, area, and all-in-one
-          shortcuts
+          Then, in CleanShot's settings, set ⌘⇧3 / ⌘⇧4 / ⌘⇧5 as its
+          fullscreen, area, and all-in-one shortcuts
         </p>
       </CommandBox>
 
@@ -254,6 +263,61 @@ defaults write $T KeyboardShortcuts_pasteOriginal -bool false
 
 defaults write pl.maketheweb.cleanshotx exportPath -string "$HOME/Downloads"`}
         </pre>
+      </CommandBox>
+
+      <CommandBox>
+        <p>
+          <StepNumber number={13} />
+          Keep the screen on. The display and the Mac never sleep on idle
+          (closing the lid still sleeps it), and there's no screen saver:
+        </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`sudo pmset -a displaysleep 0 sleep 0
+defaults -currentHost write com.apple.screensaver idleTime -int 0`}
+        </pre>
+      </CommandBox>
+
+      <CommandBox>
+        <p>
+          <StepNumber number={14} />
+          No widgets. A new Mac puts Calendar, Weather, and Photos widgets on
+          the desktop; hide the widget layer (log out to apply), and stop Photos
+          from opening whenever an iPhone is plugged in:
+        </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`# System Settings → Desktop & Dock → Show Widgets: off (desktop and Stage Manager)
+defaults write com.apple.WindowManager StandardHideWidgets -int 1
+defaults write com.apple.WindowManager StageManagerHideWidgets -int 1
+
+# Don't open Photos when an iPhone or camera is connected
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES`}
+        </pre>
+      </CommandBox>
+
+      <CommandBox>
+        <p>
+          <StepNumber number={15} />
+          Remove the stock apps I don't use. Only the App Store bundles can go:
+          GarageBand, iMovie, Keynote, Numbers, and Pages, about 8.5 GB with
+          GarageBand's sound library (skip the Logic folder if you use Logic
+          Pro). They go to the Trash, so this is undoable:
+        </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`for app in GarageBand iMovie Keynote Numbers Pages \\
+           "Keynote Creator Studio" "Numbers Creator Studio" "Pages Creator Studio"; do
+  [ -d "/Applications/$app.app" ] && sudo mv "/Applications/$app.app" ~/.Trash/
+done
+sudo mv "/Library/Application Support/GarageBand" "/Library/Application Support/Logic" \\
+        "/Library/Audio/Apple Loops" ~/.Trash/`}
+        </pre>
+        <p className="text-xs sm:text-sm mt-2">
+          Safari and everything in{" "}
+          <code className="text-xs">/System/Applications</code> (Mail, Music,
+          TV, Maps, News…) live on the sealed system volume and can't be deleted
+          without turning off SIP, which isn't worth it. They stay out of the
+          way anyway: the Dock holds only Zen, and the defaults further down
+          send every file type to my own apps.
+        </p>
       </CommandBox>
 
       <div className="my-6 sm:my-8 border-b border-border" />
@@ -439,7 +503,6 @@ cask "little-snitch"
 
 # Third-party taps (Homebrew only loads taps you trust)
 tap "steipete/tap"
-tap "abue-ammar/tinycast"
 
 # CLI tools
 brew "node@24", link: true
@@ -478,10 +541,8 @@ cask "claude"
 cask "chatgpt"
 cask "claude-code@latest"
 cask "codex"
-cask "cmux"
 cask "ghostty"
 cask "zed"
-cask "visual-studio-code"
 cask "orbstack"
 cask "ngrok"
 cask "steipete/tap/codexbar", trusted: true
@@ -490,7 +551,7 @@ cask "steipete/tap/codexbar", trusted: true
 cask "notion"
 cask "notion-calendar"
 cask "obsidian"
-cask "abue-ammar/tinycast/tinycast", trusted: true
+cask "raycast"
 cask "bettertouchtool"
 cask "rectangle"
 cask "bartender"
@@ -534,8 +595,8 @@ EOF`}</code>
         <code>{`# Mac App Store: sign in to the App Store app first (mas needs sudo)
 sudo mas install 937984704 6446206067 6469021132 310633997   # Amphetamine, Klack, PDFgear, WhatsApp
 
-# pnpm through corepack (respects each repo's packageManager pin), plus the Remotion CLI
-npm install -g corepack @remotion/cli && corepack enable pnpm
+# pnpm through corepack (respects each repo's packageManager pin)
+npm install -g corepack && corepack enable pnpm
 
 # Grok CLI
 curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
@@ -562,7 +623,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
           >
             Node.js
           </Link>
-          {" - JavaScript runtime, pinned to the 24 LTS line. node@24 is keg-only, so link it to put node/npm on your PATH"}
+          {" - JavaScript runtime, pinned to the 24 LTS line. node@24 is keg-only, so link it to put node/npm on your PATH. apify-cli pulls in the latest node as a dependency, and its npm files block the link; brew link --overwrite --force node@24 fixes it (apify-cli keeps its own Node)"}
         </p>
       </CommandBox>
 
@@ -810,7 +871,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
-          npm install -g corepack @remotion/cli && corepack enable pnpm
+          npm install -g corepack && corepack enable pnpm
         </code>
         <p className="text-xs sm:text-sm">
           <Link
@@ -820,15 +881,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
           >
             pnpm
           </Link>
-          {" through corepack, so each repo gets the pnpm version its packageManager field pins, plus the "}
-          <Link
-            href="https://www.remotion.dev/docs/cli"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Remotion CLI
-          </Link>
-          {" for rendering React videos"}
+          {" through corepack, so each repo gets the pnpm version its packageManager field pins"}
         </p>
       </CommandBox>
 
@@ -950,22 +1003,6 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask visual-studio-code
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://code.visualstudio.com/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            VS Code
-          </Link>
-          {" - Full IDE for heavier work, with the Claude Code extension docked in the panel"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask orbstack
         </code>
         <p className="text-xs sm:text-sm">
@@ -1008,23 +1045,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
           >
             Ghostty
           </Link>
-          {" - Fast, feature-rich terminal emulator"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask cmux
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://www.cmux.dev/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            cmux
-          </Link>
-          {" - Ghostty-based terminal built for running coding agents: vertical tabs and per-agent notifications"}
+          {" - Fast, feature-rich terminal emulator, and my default terminal (setup below)"}
         </p>
       </CommandBox>
 
@@ -1100,17 +1121,17 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask abue-ammar/tinycast/tinycast
+          brew install --cask raycast
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://github.com/abue-ammar/tinycast"
+            href="https://www.raycast.com/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Tinycast
+            Raycast
           </Link>
-          {" - Tiny, fully native launcher with hotkeys and clipboard history. My Raycast replacement, on ⌘Space (Step 11 takes that shortcut away from Spotlight)"}
+          {" - Launcher with clipboard history, snippets, window commands, and extensions. On ⌘Space (Step 11 takes that shortcut away from Spotlight)"}
         </p>
       </CommandBox>
 
@@ -1729,6 +1750,13 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
           sh -c "$(curl -fsSL
           https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         </code>
+        <p className="text-xs sm:text-sm">
+          The installer replaces <code className="text-xs">~/.zshrc</code>{" "}
+          (the old one is saved as{" "}
+          <code className="text-xs">~/.zshrc.pre-oh-my-zsh</code>), so run it
+          before anything else appends to that file, or re-run the Grok
+          installer afterwards
+        </p>
       </CommandBox>
 
       <h4 className="text-base sm:text-lg">
@@ -1846,7 +1874,11 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
         <p className="text-xs sm:text-sm">
           <strong>Configuration Wizard:</strong> After restarting your terminal,
           Powerlevel10k will run a configuration wizard. Choose options that
-          match your aesthetic preferences!
+          match your aesthetic preferences! Run it in Ghostty, which has the
+          Nerd Font icons built in; elsewhere it falls back to a plain ASCII
+          prompt. Moving from another Mac? Copy the old{" "}
+          <code className="text-xs">~/.p10k.zsh</code> over instead and skip
+          the wizard.
         </p>
       </CommandBox>
 
@@ -1871,7 +1903,19 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
           also claims Ctrl+R, and whichever loads last in{" "}
           <code className="text-xs">~/.zshrc</code> wins, so keep this line
           after the fzf one. The import pulls in your existing shell history
+          (on a fresh Mac there's none yet, so it errors harmlessly)
         </p>
+        <p className="text-xs sm:text-sm mt-2">
+          Moving from another Mac? Copy{" "}
+          <code className="text-xs">~/.local/share/atuin/history.db</code> and{" "}
+          <code className="text-xs">~/.config/atuin/config.toml</code> across,
+          but on the old Mac flush the write-ahead log first, or the copy comes
+          out malformed:
+        </p>
+        <code className="text-xs sm:text-sm block mt-1 text-primary break-all">
+          sqlite3 ~/.local/share/atuin/history.db &apos;pragma
+          wal_checkpoint(TRUNCATE)&apos;
+        </code>
       </CommandBox>
 
       <h5 className="text-primary text-sm">
@@ -1951,9 +1995,8 @@ esac
 
       <h4 className="text-base sm:text-lg">Essential Ghostty Settings</h4>
       <p>
-        My full Ghostty config. cmux is built on Ghostty and reads the same{" "}
-        <code className="text-xs sm:text-sm">~/.config/ghostty/config</code>,
-        so this one file covers both:
+        My full Ghostty config, in{" "}
+        <code className="text-xs sm:text-sm">~/.config/ghostty/config</code>:
       </p>
 
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
@@ -1985,6 +2028,34 @@ background-blur-radius = 20`}</code>
           </Link>
         </p>
       </InfoBox>
+
+      <h4 className="text-base sm:text-lg">Make Ghostty the Default Terminal</h4>
+      <p>
+        Ghostty is my default terminal. Point executables and{" "}
+        <code className="text-xs sm:text-sm">.command</code> /{" "}
+        <code className="text-xs sm:text-sm">.tool</code> scripts at it so a
+        double-click opens Ghostty instead of Terminal (needs{" "}
+        <code className="text-xs sm:text-sm">duti</code> from the Brewfile):
+      </p>
+
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`GHOSTTY=com.mitchellh.ghostty
+
+duti -s "$GHOSTTY" public.unix-executable all
+duti -s "$GHOSTTY" com.apple.terminal.shell-script all
+duti -s "$GHOSTTY" command all
+duti -s "$GHOSTTY" tool all
+
+# Verify: both should print Ghostty
+duti -x command
+duti -x tool`}</code>
+      </pre>
+
+      <p className="text-xs sm:text-sm text-muted-foreground">
+        <code className="text-xs">.sh</code> and{" "}
+        <code className="text-xs">.zsh</code> files stay with Zed for editing
+        (see the Zed defaults below).
+      </p>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
@@ -2237,7 +2308,7 @@ When long-running or parallel work needs usage-limit checks, use the /stay-withi
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
-          npx skills add remotion-dev/skills --skill '*' -g -a claude-code -a
+          npx skills add jakubkrehel/skills --skill '*' -g -a claude-code -a
           codex -y
         </code>
         <p className="text-xs sm:text-sm">
@@ -2267,6 +2338,9 @@ When long-running or parallel work needs usage-limit checks, use the /stay-withi
           {" - Brutally strict maintainability review. Blocks files past 1,000 lines, rejects ad-hoc spaghetti conditionals, questions thin abstractions and magical behavior, and enforces architectural boundaries. From Cursor's team kit"}
         </li>
       </ul>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`npx skills add https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review -g -a claude-code -a codex -y`}</code>
+      </pre>
 
       <h4 className="text-base sm:text-lg">Agent Orchestration &amp; Usage</h4>
       <p className="text-xs sm:text-sm">
@@ -2280,12 +2354,14 @@ When long-running or parallel work needs usage-limit checks, use the /stay-withi
         </Link>
         , which ships its own installer.{" "}
         <code className="text-xs">--update-instructions</code> also writes the
-        routing block at the bottom of the CLAUDE.md above:
+        routing block at the bottom of the CLAUDE.md above. Install all four in
+        one run: each run rewrites that block with only its own skills, so a
+        loop of single installs leaves just the last one:
       </p>
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`for s in efficient-fable efficient-frontier stay-within-limits quick-recap; do
-  npx @agent-native/skills@latest add --skill "$s" --update-instructions
-done`}</code>
+        <code>{`npx @agent-native/skills@latest add \\
+  --skill efficient-fable --skill efficient-frontier --skill stay-within-limits --skill quick-recap \\
+  --client claude-code --client codex --scope user --update-instructions --no-connect`}</code>
       </pre>
       <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
         <li>
@@ -2312,7 +2388,7 @@ done`}</code>
 npx skills add jakubkrehel/make-interfaces-feel-better -g -a claude-code -a codex -y
 npx skills add anthropics/skills --skill frontend-design -g -a claude-code -a codex -y
 npx skills add vercel-labs/agent-skills --skill vercel-react-best-practices --skill web-design-guidelines -g -a claude-code -a codex -y
-npx skills add emilkowalski/skills --skill emil-design-eng -g -a claude-code -a codex -y`}</code>
+npx skills add ibelick/ui-skills --skill '*' -g -a claude-code -a codex -y`}</code>
       </pre>
       <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
         <li>
@@ -2330,8 +2406,14 @@ npx skills add emilkowalski/skills --skill emil-design-eng -g -a claude-code -a 
           {" - Distinctive, production-grade frontend interfaces that avoid generic AI aesthetics (anthropics/skills)"}
         </li>
         <li>
-          <code className="text-xs sm:text-sm">ui-skills</code>
-          {" - Opinionated technical constraints for building interfaces (React, TypeScript, Tailwind, composition patterns)"}
+          <Link
+            href="https://github.com/ibelick/ui-skills"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            ibelick/ui-skills
+          </Link>
+          {" - Opinionated constraints for building interfaces. ui-skills-root routes to the smallest useful set: baseline-ui, improve-ui, fixing-accessibility, fixing-metadata, fixing-motion-performance, and create-design-md"}
         </li>
         <li>
           <code className="text-xs sm:text-sm">web-design-guidelines</code>
@@ -2340,10 +2422,6 @@ npx skills add emilkowalski/skills --skill emil-design-eng -g -a claude-code -a 
         <li>
           <code className="text-xs sm:text-sm">vercel-react-best-practices</code>
           {" - React and Next.js performance optimization guidelines from Vercel Engineering (vercel-labs/agent-skills)"}
-        </li>
-        <li>
-          <code className="text-xs sm:text-sm">emil-design-eng</code>
-          {" - Emil Kowalski's philosophy on UI polish, component design, and when (not) to animate (emilkowalski/skills)"}
         </li>
         <li>
           <Link
@@ -2355,22 +2433,11 @@ npx skills add emilkowalski/skills --skill emil-design-eng -g -a claude-code -a 
           </Link>
           {" - Design-engineering details that make interfaces feel polished: micro-interactions, enter/exit animations, shadows, typography, tabular numbers"}
         </li>
-        <li>
-          <Link
-            href="https://github.com/remotion-dev/skills"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            remotion-dev/skills
-          </Link>
-          {" - The full Remotion suite (video creation in React): remotion-best-practices is the router, plus create, markup, captions, maps, multimedia, interactivity, studio, render, docs, saas, and upgrade"}
-        </li>
       </ul>
 
       <h4 className="text-base sm:text-lg">Writing &amp; Content</h4>
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`npx skills add blader/humanizer -g -a claude-code -a codex -y
-npx skills add ghostfeed-ai/skills --skill '*' -g -a claude-code -a codex -y`}</code>
+        <code>{`npx skills add blader/humanizer -g -a claude-code -a codex -y`}</code>
       </pre>
       <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
         <li>
@@ -2384,79 +2451,29 @@ npx skills add ghostfeed-ai/skills --skill '*' -g -a claude-code -a codex -y`}</
           {" - Strips signs of AI-generated writing, based on Wikipedia's \"Signs of AI writing\" guide"}
         </li>
         <li>
-          <code className="text-xs sm:text-sm">seo-writer</code>
-          {" - Long-form posts built to rank on Google page 1 and show up in AI Overviews: meta titles, schema markup, snippet-ready structure"}
-        </li>
-        <li>
           <code className="text-xs sm:text-sm">tiktok-hooks</code>
           {" - Generates Gen-Z / college-apps TikTok hooks for the first 1-3 seconds of a video"}
         </li>
-        <li>
-          <Link
-            href="https://github.com/ghostfeed-ai/skills"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            ghostfeed-ai/skills
-          </Link>
-          {" - Drive Ghostfeed over MCP: ghostfeed-avatars, ghostfeed-slideshows (TikTok photo slideshows), and ghostfeed-ugc-reactions (UGC reaction videos)"}
-        </li>
-      </ul>
-
-      <h4 className="text-base sm:text-lg">Planning, Research &amp; Email</h4>
-      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`npx skills add mattpocock/skills --skill grilling --skill grill-with-docs --skill prototype --skill research --skill domain-modeling --skill to-spec --skill to-tickets --skill triage --skill wayfinder -g -a claude-code -a codex -y
-npx skills add resend/resend-skills --skill resend -g -a claude-code -a codex -y
-npx skills add resend/react-email --skill react-email -g -a claude-code -a codex -y
-npx skills add resend/email-best-practices -g -a claude-code -a codex -y
-npx skills add kepano/obsidian-skills --skill obsidian-markdown --skill obsidian-bases --skill obsidian-cli --skill json-canvas --skill defuddle -g -a claude-code -a codex -y`}</code>
-      </pre>
-      <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
-        <li>
-          <Link
-            href="https://github.com/mattpocock/skills"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            mattpocock/skills
-          </Link>
-          {" - grilling stress-tests a plan, prototype builds a throwaway to answer a design question, research digs through primary sources, and domain-modeling sharpens terminology and ADRs. Plus grill-with-docs, to-spec, to-tickets, triage, and wayfinder"}
-        </li>
-        <li>
-          <Link
-            href="https://github.com/resend/resend-skills"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Resend's skills
-          </Link>
-          {" - resend, react-email, and email-best-practices for anything that sends email"}
-        </li>
-        <li>
-          <Link
-            href="https://github.com/kepano/obsidian-skills"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            kepano/obsidian-skills
-          </Link>
-          {" - Obsidian-flavored Markdown, Bases, Canvas, and the Obsidian CLI, plus defuddle for pulling clean Markdown out of web pages"}
-        </li>
       </ul>
       <p className="text-xs sm:text-sm">
-        No public source for seo-writer, tiktok-hooks, ui-skills, create-plan,
-        and Codex's video-bucket-hooks: copy their folders from the previous
-        Mac's <code className="text-xs">~/.claude/skills</code> and{" "}
-        <code className="text-xs">~/.codex/skills</code>.
+        No public source for tiktok-hooks and create-plan (a concise read-only
+        planner): copy their folders from the previous Mac's{" "}
+        <code className="text-xs">~/.claude/skills</code>.
       </p>
 
       <h4 className="text-base sm:text-lg">Claude Code Plugins</h4>
       <p className="text-xs sm:text-sm">
         From the official{" "}
         <code className="text-xs">claude-plugins-official</code> marketplace.
-        Install each inside Claude Code with{" "}
-        <code className="text-xs">/plugin install &lt;name&gt;@claude-plugins-official</code>:
+        A fresh install only knows the built-in directory, so add the
+        marketplace first, then install each one:
       </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`claude plugin marketplace add anthropics/claude-plugins-official
+for p in commit-commands code-simplifier context7 playwright github figma vercel frontend-design swift-lsp; do
+  claude plugin install "$p@claude-plugins-official"
+done`}</code>
+      </pre>
       <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
         <li>
           <code className="text-xs sm:text-sm">commit-commands</code>
@@ -2606,156 +2623,6 @@ npx skills add kepano/obsidian-skills --skill obsidian-markdown --skill obsidian
           Your browser does not support the video tag.
         </GalleryVideo>
       </div>
-
-      <div className="my-6 sm:my-8 border-b border-border" />
-
-      <h3 className="text-primary text-xl sm:text-2xl">
-        Essential Extensions & Productivity Tools
-      </h3>
-
-      <h4 className="text-base sm:text-lg">VS Code Extensions</h4>
-      <p>
-        These are some very useful <Highlight>VScode Extensions</Highlight>:
-      </p>
-
-      <h4>Core Productivity Extensions</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>Claude Code</strong> - Anthropic's official extension; runs
-          Claude Code in the editor panel with inline diffs
-        </li>
-        <li>
-          <strong>Better Comments</strong> - Styled comments with alerts, todos,
-          and highlights
-        </li>
-        <li>
-          <strong>Color Highlight</strong> - Highlight color values in your code
-        </li>
-        <li>
-          <strong>Error Lens</strong> - See errors and warnings inline with your
-          code
-        </li>
-        <li>
-          <strong>Path Intellisense</strong> - Autocomplete for file paths
-        </li>
-        <li>
-          <strong>TODO Highlight</strong> - Highlight TODO, FIXME comments
-        </li>
-        <li>
-          <strong>DotENV</strong> - Syntax highlighting for .env files
-        </li>
-        <li>
-          <strong>EditorConfig</strong> - Respect each repo's .editorconfig
-        </li>
-      </ul>
-
-      <h4>Git Integration</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>GitLens</strong> - Supercharge Git capabilities with blame
-          annotations
-        </li>
-        <li>
-          <strong>Git History</strong> - View git log, file history, and compare
-          branches
-        </li>
-        <li>
-          <strong>Git Graph</strong> - Visual commit graph with branch actions
-        </li>
-        <li>
-          <strong>GitHub Actions</strong> - View runs and edit workflows with
-          validation
-        </li>
-      </ul>
-
-      <h4>Code Quality & Formatting</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>ESLint</strong> - JavaScript/TypeScript linting
-        </li>
-        <li>
-          <strong>Prettier - Code Formatter</strong> - Opinionated code
-          formatter
-        </li>
-        <li>
-          <strong>Ruff</strong> - Rust-fast Python linter and formatter (also
-          sorts imports, so no separate isort)
-        </li>
-      </ul>
-
-      <h4>Python Development</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>Python</strong> - Core Python language support
-        </li>
-        <li>
-          <strong>Pylance</strong> - Fast, feature-rich Python language server
-        </li>
-        <li>
-          <strong>Python Debugger</strong> - Debug Python code with breakpoints
-        </li>
-        <li>
-          <strong>Python Environments</strong> - Pick and manage venvs and
-          interpreters
-        </li>
-      </ul>
-
-      <h4>Web Development</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>Tailwind CSS IntelliSense</strong> - Class autocomplete,
-          linting, and hover previews
-        </li>
-        <li>
-          <strong>ES7+ React Snippets</strong> - Component and hook snippets
-        </li>
-        <li>
-          <strong>Auto Rename Tag</strong> - Rename the paired HTML/JSX tag as
-          you type
-        </li>
-        <li>
-          <strong>Live Server</strong> - Launch local development server with
-          live reload
-        </li>
-      </ul>
-
-      <h4>Containers</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>Container Tools</strong> - Manage images, containers, and
-          compose files (works with OrbStack)
-        </li>
-        <li>
-          <strong>Dev Containers</strong> - Open a repo inside a container
-        </li>
-      </ul>
-
-      <h4>Data & Documentation</h4>
-      <ul className="space-y-1 text-sm">
-        <li>
-          <strong>Rainbow CSV</strong> - Highlight CSV files with colors
-        </li>
-        <li>
-          <strong>Office Viewer</strong> - Open Word, Excel, PDF, and Markdown
-          files right in VS Code
-        </li>
-      </ul>
-
-      <p className="text-sm">Install the whole set in one go:</p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`for ext in \\
-  anthropic.claude-code aaron-bond.better-comments naumovs.color-highlight \\
-  usernamehw.errorlens christian-kohler.path-intellisense wayou.vscode-todo-highlight \\
-  mikestead.dotenv editorconfig.editorconfig \\
-  eamodio.gitlens donjayamanne.githistory mhutchie.git-graph github.vscode-github-actions \\
-  dbaeumer.vscode-eslint esbenp.prettier-vscode charliermarsh.ruff \\
-  ms-python.python ms-python.vscode-pylance ms-python.debugpy ms-python.vscode-python-envs \\
-  bradlc.vscode-tailwindcss dsznajder.es7-react-js-snippets formulahendry.auto-rename-tag \\
-  ritwickdey.liveserver ms-azuretools.vscode-containers ms-vscode-remote.remote-containers \\
-  mechatroner.rainbow-csv cweijan.vscode-office; do
-  code --install-extension "$ext"
-done`}</code>
-      </pre>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
@@ -2953,6 +2820,16 @@ killall Finder`}</code>
         </code>
       </CommandBox>
 
+      <p>
+        And Zen for web links (macOS asks you to confirm the browser change),
+        Meru for mail links:
+      </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`duti -s app.zen-browser.zen http
+duti -s app.zen-browser.zen https
+duti -s sh.zoid.meru mailto`}</code>
+      </pre>
+
       <h4 className="text-base sm:text-lg">
         Make Zed the Default for Text & Code
       </h4>
@@ -3030,44 +2907,6 @@ done`}</code>
           <code className="text-primary">duti -x tsx</code>.
         </p>
       </InfoBox>
-
-      <h4 className="text-base sm:text-lg">VS Code Settings</h4>
-      <p>
-        The handful of settings I change, via Command Palette (⌘⇧P) →
-        "Preferences: Open User Settings (JSON)":
-      </p>
-
-      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`{
-  // File tree on the right, so opening it doesn't shift the code
-  "workbench.sideBar.location": "right",
-
-  // Never lose work to a forgotten save
-  "files.autoSave": "afterDelay",
-
-  // Claude Code lives in the bottom panel instead of a sidebar
-  "claudeCode.preferredLocation": "panel",
-
-  // Use Homebrew's Python by default
-  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3"
-}`}</code>
-      </pre>
-
-      <div className="my-6 sm:my-8 border-b border-border" />
-
-      <h3 className="text-primary text-xl sm:text-2xl">Shortcuts to Live By</h3>
-
-      <p>
-        These keyboard shortcuts will <Highlight>save you time</Highlight>:
-      </p>
-
-      <h4 className="text-base sm:text-lg">VS Code Shortcuts</h4>
-
-      <ul className="list-none text-xs sm:text-sm text-center">
-        <li>
-          <strong>⌘ + ←</strong> Collapse all folders in file explorer
-        </li>
-      </ul>
     </div>
   );
 }
