@@ -138,8 +138,8 @@ export function MacosOnSteroids() {
           <strong>What this does:</strong> The path bar shows your current
           folder location at the bottom of Finder windows, while the status bar
           displays available disk space and item counts. Enabling the Quit menu
-          item allows you to fully quit Finder (useful when using ForkLift as
-          your primary file manager)!
+          item allows you to fully quit Finder (useful when Pumba's Panel is
+          your primary file browser)!
         </p>
       </InfoBox>
 
@@ -506,6 +506,7 @@ tap "steipete/tap"
 
 # CLI tools
 brew "node@24", link: true
+brew "fnm"
 brew "python"
 brew "git"
 brew "git-lfs"
@@ -548,25 +549,20 @@ cask "ngrok"
 cask "steipete/tap/codexbar", trusted: true
 
 # Productivity and system
-cask "notion"
-cask "notion-calendar"
 cask "obsidian"
 cask "raycast"
 cask "bettertouchtool"
 cask "rectangle"
-cask "bartender"
+cask "bartender"   # Bartender 7 = macOS 27 only; on macOS 26 install Bartender 6 (see below)
 cask "flux-app"
 cask "steipete/tap/trimmy", trusted: true
 cask "cotypist"
-cask "voiceink"
 cask "alcove"
 cask "iloader"
-cask "forklift"
 cask "mole-app"
 
-# Office, mail, reading
+# Office and reading (mail, calendar, dictation and files live in Pumba)
 cask "libreoffice"
-cask "meru"
 cask "calibre"
 
 # Communication
@@ -624,6 +620,22 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
             Node.js
           </Link>
           {" - JavaScript runtime, pinned to the 24 LTS line. node@24 is keg-only, so link it to put node/npm on your PATH. apify-cli pulls in the latest node as a dependency, and its npm files block the link; brew link --overwrite --force node@24 fixes it (apify-cli keeps its own Node)"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install fnm && fnm default system
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://github.com/Schniz/fnm"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            fnm
+          </Link>
+          {" - Per-project Node versions: cd into a repo and fnm switches to the version in its .nvmrc (installing one is fnm install <version>). fnm default system keeps Homebrew's node@24 everywhere else. Shell hook in the .zshrc additions below"}
         </p>
       </CommandBox>
 
@@ -1081,25 +1093,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
           >
             Pumba
           </Link>
-          {" - My own app (Hyper + A): a fully local meeting notetaker. It lives in the menu bar, notices when a meeting starts, records your mic and only the meeting app's audio, and writes notes where every point links back to the moment it was said. Transcription and summaries run on the Mac. Build and install it with scripts/install.sh; the README lists what that needs (Xcode 26.6 with the Metal Toolchain, a local signing identity, and the model download)"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask notion
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://www.notion.so/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Notion
-          </Link>
-          {
-            " - All-in-one workspace for notes, documents, and project management"
-          }
+          {" - My own app (Hyper + A): a fully local meeting notetaker. It lives in the menu bar, notices when a meeting starts, records your mic and only the meeting app's audio, and writes notes where every point links back to the moment it was said. Transcription and summaries run on the Mac. It also took over from four apps I used to install: Mail (Gmail) replaces Meru, Calendar replaces Notion Calendar, Dictation replaces VoiceInk, and Panel, a keyboard-first file browser, replaces ForkLift. Build and install it with scripts/install.sh; the README lists what that needs (Xcode 26.6 with the Metal Toolchain, a local signing identity, and the model download)"}
         </p>
       </CommandBox>
 
@@ -1195,8 +1189,13 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
           >
             Bartender
           </Link>
-          {" - My go-to menu bar manager. Hide, reorder, and reveal menu bar items, with triggers, hotkeys, and per-item show/hide rules. Paid, the most polished option. Heads-up: the cask now installs Bartender 7, so check your license covers it"}
+          {" - My go-to menu bar manager. Hide, reorder, and reveal menu bar items, with triggers, hotkeys, and per-item show/hide rules. Paid, the most polished option. Heads-up: the cask now installs Bartender 7, which only runs on macOS 27 (on macOS 26 it quits with \"macOS 26 compatibility isn't ready yet\"). On macOS 26, install the last Bartender 6 instead, checked against the hash Homebrew recorded for it:"}
         </p>
+        <pre className="text-xs bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`curl -fsSL -o /tmp/Bartender6.zip "https://downloads.macbartender.com/B2/updates/6-6-2/Bartender%206.zip"
+echo "e178616bc09956e39f0ab0ff9112b8fe89f744b406f8e417fb7b2aaf3524e064  /tmp/Bartender6.zip" | shasum -a 256 -c
+ditto -x -k /tmp/Bartender6.zip /Applications/`}
+        </pre>
       </CommandBox>
 
       <CommandBox>
@@ -1265,22 +1264,6 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask voiceink
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://tryvoiceink.com/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            VoiceInk
-          </Link>
-          {" - Voice-to-text dictation into any app, transcribed on-device. Much faster than typing long prompts to agents"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask alcove
         </code>
         <p className="text-xs sm:text-sm">
@@ -1311,24 +1294,6 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
         </p>
       </CommandBox>
 
-      <h5 className="text-primary text-sm sm:text-base">File Management</h5>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask forklift
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://binarynights.com/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            ForkLift
-          </Link>
-          {" - Advanced file manager and FTP client"}
-        </p>
-      </CommandBox>
-
       <h5 className="text-primary text-sm sm:text-base">Office & Documents</h5>
 
       <CommandBox>
@@ -1344,40 +1309,6 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
             LibreOffice
           </Link>
           {" - Free and powerful office suite"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask notion-calendar
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://www.notion.com/product/calendar"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Notion Calendar
-          </Link>
-          {" - Calendar for scheduling, linked to Notion docs"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask meru
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://meru.so/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Meru
-          </Link>
-          {
-            " - Gmail as a proper desktop app: native notifications, unread badge, multiple accounts. My default mail app"
-          }
         </p>
       </CommandBox>
 
@@ -1695,7 +1626,7 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
           >
             Little Snitch
           </Link>
-          {" - Outbound firewall. See and block every connection every app tries to make. Priority install: it's first in the Brewfile, and it needs admin rights plus a manual approval of its system extension"}
+          {" - Outbound firewall. See and block every connection every app tries to make. Priority install: it's first in the Brewfile, and it needs admin rights plus a manual approval of its system extension. The Network Monitor window is only the traffic viewer: quit it (⌘Q) to keep it out of the Dock and ⌘Tab, and the firewall keeps running"}
         </p>
       </CommandBox>
 
@@ -1953,8 +1884,8 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
       </h5>
       <p className="text-sm">
         Activates the nearest <code className="text-xs">.venv</code> whenever
-        you <code className="text-xs">cd</code> into a project, plus pnpm on the
-        PATH:
+        you <code className="text-xs">cd</code> into a project, puts pnpm on the
+        PATH, and lets fnm switch Node per project:
       </p>
 
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
@@ -1984,7 +1915,13 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end`}</code>
+# pnpm end
+
+# fnm: per-project Node versions from .nvmrc (Homebrew's node@24 stays the default)
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --log-level=error --shell zsh)"
+# zsh caches command paths; re-hash after fnm switches Node on cd
+_fnm_rehash() { rehash }
+add-zsh-hook chpwd _fnm_rehash`}</code>
       </pre>
 
       <div className="my-6 sm:my-8 border-b border-border" />
@@ -2507,8 +2444,13 @@ done`}</code>
         The github plugin's MCP server needs a{" "}
         <code className="text-xs">GITHUB_PERSONAL_ACCESS_TOKEN</code> in your
         environment, and figma and vercel sign in through{" "}
-        <code className="text-xs">/mcp</code> inside Claude Code.
+        <code className="text-xs">/mcp</code> inside Claude Code. Rather than
+        minting a separate token, I hand it the gh login from the Keychain, in{" "}
+        <code className="text-xs">~/.zshrc</code>:
       </p>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`export GITHUB_PERSONAL_ACCESS_TOKEN="$(/opt/homebrew/bin/gh auth token 2>/dev/null)"`}</code>
+      </pre>
 
       <h4 className="text-base sm:text-lg">MCP Servers &amp; Hooks</h4>
       <CommandBox>
@@ -2614,8 +2556,11 @@ done`}</code>
           >
             Mole
           </Link>
-          {" - Multi-language Mac cleaner and optimizer. Mole now lives in Homebrew proper: the mole-app cask is the desktop app, and brew install mole gets the CLI"}
+          {" - Multi-language Mac cleaner and optimizer. Mole now lives in Homebrew proper: the mole-app cask is the desktop app, and brew install mole gets the CLI. I keep it menu bar only, out of the Dock and ⌘Tab (quit Mole first):"}
         </p>
+        <code className="text-xs sm:text-sm block mt-2 text-primary break-all">
+          defaults write com.tw93.MoleApp hideDockIcon -bool true
+        </code>
       </CommandBox>
       <div className="my-6">
         <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
@@ -2821,13 +2766,11 @@ killall Finder`}</code>
       </CommandBox>
 
       <p>
-        And Zen for web links (macOS asks you to confirm the browser change),
-        Meru for mail links:
+        And Zen for web links (macOS asks you to confirm the browser change):
       </p>
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
         <code>{`duti -s app.zen-browser.zen http
-duti -s app.zen-browser.zen https
-duti -s sh.zoid.meru mailto`}</code>
+duti -s app.zen-browser.zen https`}</code>
       </pre>
 
       <h4 className="text-base sm:text-lg">
@@ -2904,7 +2847,13 @@ done`}</code>
           your change. macOS may pop a confirmation for a type another app
           already owns (<code className="text-primary">.ts</code> vs IINA); pick
           Zed. Verify with{" "}
-          <code className="text-primary">duti -x tsx</code>.
+          <code className="text-primary">duti -x tsx</code>. Installing Xcode later can
+          hand <code className="text-primary">.tsx</code> to IINA again; fix it
+          with{" "}
+          <code className="text-primary">
+            duti -s dev.zed.Zed com.microsoft.typescript all
+          </code>
+          .
         </p>
       </InfoBox>
     </div>
