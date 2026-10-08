@@ -192,14 +192,13 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false`}
       <CommandBox>
         <p>
           <StepNumber number={10} />
-          Dark mode, natural scrolling off, and tighter menu bar icons (log out
-          to apply):
+          Dark mode and natural scrolling off (log out to apply). Menu bar
+          icon spacing is left to Bartender, which resets the spacing keys
+          anyway:
         </p>
         <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
           {`defaults write -g AppleInterfaceStyle -string Dark
-defaults write -g com.apple.swipescrolldirection -bool false
-defaults -currentHost write -g NSStatusItemSpacing -int 3
-defaults -currentHost write -g NSStatusItemSelectionPadding -int 3`}
+defaults write -g com.apple.swipescrolldirection -bool false`}
         </pre>
       </CommandBox>
 
@@ -2055,6 +2054,12 @@ duti -x tool`}</code>
           <li>
             <strong>Hyper + 1 / 2</strong> → Switch to Desktop 1 / 2. Two
             desktops max: add the second one in Mission Control
+          </li>
+          <li>
+            <strong>Pumba's own</strong> (set in Pumba's settings, not
+            BetterTouchTool, or BetterTouchTool swallows them): Hyper + T
+            dictation, Y paste last dictation, C calendar, X mail, Z Panel, M
+            recording, V Splinter
           </li>
         </ul>
       </CommandBox>
