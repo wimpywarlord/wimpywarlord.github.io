@@ -480,8 +480,7 @@ cask "claude-code@latest"
 cask "codex"
 cask "cmux"
 cask "ghostty"
-cask "sublime-text"
-cask "sublime-merge"
+cask "zed"
 cask "visual-studio-code"
 cask "orbstack"
 cask "ngrok"
@@ -935,33 +934,17 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask sublime-text
+          brew install --cask zed
         </code>
         <p className="text-xs sm:text-sm">
           <Link
-            href="https://www.sublimetext.com/"
+            href="https://zed.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline"
           >
-            Sublime Text
+            Zed
           </Link>
-          {" - My default app for every text and code file (setup below). Opens instantly, and out of the box the gutter marks lines changed against git HEAD and the sidebar shows git status. subl . opens a folder"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask sublime-merge
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://www.sublimemerge.com/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Sublime Merge
-          </Link>
-          {" - Git client with the same feel, for full diffs, blame, and staging. smerge . from any repo"}
+          {" - Free, open-source editor written in Rust, and my default app for every text and code file (setup below). It opens fast, the gutter marks lines changed against git, Project Diff shows every uncommitted change, and the Git Panel stages hunks and commits, so it doubles as my git client. zed . opens a folder"}
         </p>
       </CommandBox>
 
@@ -2971,26 +2954,26 @@ killall Finder`}</code>
       </CommandBox>
 
       <h4 className="text-base sm:text-lg">
-        Make Sublime Text the Default for Text & Code
+        Make Zed the Default for Text & Code
       </h4>
       <p>
         Out of the box, macOS scatters text files everywhere: Markdown into
         whatever ebook app claimed it, JSON into the browser, CSV into ChatGPT,{" "}
         <code className="text-primary">.ts</code> into a video player. I want
-        all of it in Sublime Text: it opens instantly, and its gutter shows what
-        changed against git. One script fixes it, and routes Word docs to
-        LibreOffice while it's at it:
+        all of it in Zed: it opens fast, and its gutter shows what changed
+        against git. One script fixes it, and routes Word docs to LibreOffice
+        while it's at it:
       </p>
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`SUBL=com.sublimetext.4
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/Sublime Text.app"
+        <code>{`ZED=dev.zed.Zed
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/Zed.app"
 
 # --- Text, code, config, and data types, including ones other apps grab ---
 for uti in public.plain-text public.source-code public.script public.shell-script \\
   public.json public.xml public.yaml public.comma-separated-values-text \\
   net.daringfireball.markdown com.apple.property-list com.apple.log \\
   com.microsoft.typescript public.toml com.microsoft.ini org.iso.sql; do
-  duti -s "$SUBL" "$uti" all
+  duti -s "$ZED" "$uti" all
 done
 
 # --- Extensions: bind each through duti, and collect the ones it can't ---
@@ -2999,8 +2982,8 @@ for ext in md markdown mdx txt log json jsonc yaml yml toml xml plist csv tsv \\
            ini cfg conf env lock js mjs cjs ts tsx jsx py sh zsh bash swift \\
            c h cpp hpp java rb php go rs kt lua css scss sass less sql graphql \\
            vue svelte astro svg; do
-  duti -s "$SUBL" "$ext" all 2>/dev/null
-  duti -x "$ext" 2>/dev/null | grep -q "Sublime Text" || NOTYPE+=("$ext")
+  duti -s "$ZED" "$ext" all 2>/dev/null
+  duti -x "$ext" 2>/dev/null | head -1 | grep -qx "Zed" || NOTYPE+=("$ext")
 done
 
 # --- No registered type: write those as extension handlers, the way Finder's
@@ -3014,7 +2997,7 @@ d = plistlib.load(open(p, "rb"))
 hs = [h for h in d.get("LSHandlers", []) if h.get("LSHandlerContentTag") not in exts]
 hs += [{"LSHandlerContentTag": e,
         "LSHandlerContentTagClass": "public.filename-extension",
-        "LSHandlerRoleAll": "com.sublimetext.4",
+        "LSHandlerRoleAll": "dev.zed.zed",
         "LSHandlerPreferredVersions": {"LSHandlerRoleAll": "-"}} for e in exts]
 d["LSHandlers"] = hs
 plistlib.dump(d, open(p, "wb"))
@@ -3043,7 +3026,7 @@ done`}</code>
           LaunchServices keeps its own copy in memory and writes it back over
           your change. macOS may pop a confirmation for a type another app
           already owns (<code className="text-primary">.ts</code> vs IINA); pick
-          Sublime Text. Verify with{" "}
+          Zed. Verify with{" "}
           <code className="text-primary">duti -x tsx</code>.
         </p>
       </InfoBox>
