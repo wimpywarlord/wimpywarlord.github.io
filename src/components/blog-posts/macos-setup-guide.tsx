@@ -522,7 +522,6 @@ brew "exiftool"
 brew "pandoc"
 brew "poppler"
 brew "ghostscript"
-brew "terminal-notifier"
 brew "watch"
 brew "duti"
 brew "dockutil"
@@ -840,17 +839,10 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install terminal-notifier watch
+          brew install watch
         </code>
         <p className="text-xs sm:text-sm">
-          <Link
-            href="https://github.com/julienXX/terminal-notifier"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            terminal-notifier
-          </Link>
-          {" - Native macOS notifications from the shell (powers my Claude Code \"task complete\" hook, see below). watch - rerun a command every N seconds"}
+          {"watch - rerun a command every N seconds"}
         </p>
       </CommandBox>
 
@@ -2030,7 +2022,7 @@ duti -x tool`}</code>
             <strong>Hyper + R</strong> → Launch WhatsApp
           </li>
           <li>
-            <strong>Hyper + A</strong> → Launch Pumba
+            <strong>Hyper + A</strong> → Pumba on Notes / to-dos (BetterTouchTool "Open URL" with <code className="text-xs">pumba://notes</code>, which also launches it)
           </li>
           <li>
             <strong>Hyper + S</strong> → Launch ChatGPT (includes Codex)
@@ -2457,7 +2449,7 @@ done`}</code>
         <code>{`export GITHUB_PERSONAL_ACCESS_TOKEN="$(/opt/homebrew/bin/gh auth token 2>/dev/null)"`}</code>
       </pre>
 
-      <h4 className="text-base sm:text-lg">MCP Servers &amp; Hooks</h4>
+      <h4 className="text-base sm:text-lg">MCP Servers</h4>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
           claude mcp add --scope user --transport http linear
@@ -2479,36 +2471,14 @@ done`}</code>
       </CommandBox>
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
-          claude mcp add --scope user "DaVinci Resolve" -- "/Applications/DaVinci
+          claude mcp add --scope user davinci-resolve -- "/Applications/DaVinci
           Resolve/DaVinci Resolve.app/Contents/Applications/ResolveMCP"
         </code>
         <p className="text-xs sm:text-sm">
-          The MCP server built into DaVinci Resolve 21: scripting, LUTs, and
+          The MCP server built into DaVinci Resolve 21 (names can't contain spaces, hence davinci-resolve): scripting, LUTs, and
           DCTLs from inside Claude Code. Install Resolve first
         </p>
       </CommandBox>
-      <p className="text-sm">
-        And a desktop notification whenever Claude Code finishes a task, in{" "}
-        <code className="text-xs sm:text-sm">~/.claude/settings.json</code>{" "}
-        (uses <code className="text-xs">terminal-notifier</code> from the CLI
-        tools above):
-      </p>
-      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`{
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title \\"Claude Code\\" -subtitle \\"Task Complete\\" -message \\"Finished working in $(basename \\"$PWD\\")\\" -sound Blow -timeout 10"
-          }
-        ]
-      }
-    ]
-  }
-}`}</code>
-      </pre>
 
       <div className="my-6 sm:my-8 border-b border-border" />
 
