@@ -1812,6 +1812,24 @@ export function CrackedReactDev() {
       </ul>
       <CopyableText text="npm install -g opensrc" />
 
+      <h4>Reverse Engineering with Agents</h4>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://github.com/morluto/rea"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            REA — Reverse Engineer Anything
+          </Link>
+          {
+            " - Local MCP server and CLI for inspecting native binaries, JavaScript/Electron apps, .NET assemblies, and websites. Give Claude Code, Codex, or Cursor an app and a feature to investigate; it traces the implementation and returns findings with evidence. Native analysis uses Hopper, Ghidra, or IDA"
+          }
+        </li>
+      </ul>
+      <CopyableText text="npx rea-agents setup" />
+
       <h4>Agent Tool Catalog</h4>
       <p>
         Turn your coding agent into an SEO expert, a media buyer, an SDR. Give
