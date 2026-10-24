@@ -149,6 +149,18 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://motionvideo.xyz/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            MotionVideo
+          </Link>
+          {
+            " - Gallery of AI-made motion videos with the prompts and skills behind them. Browse product UI, kinetic typography, charts, and diagrams for launch-video inspiration"
+          }
+        </li>
+        <li>
+          <Link
             href="https://builtbydesigners.com"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
