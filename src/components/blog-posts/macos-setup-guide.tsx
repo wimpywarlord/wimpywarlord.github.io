@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Link from "next/link";
+
 import { GalleryImage, GalleryVideo } from "@/components/gallery";
 
 // Helper component for text highlighting
@@ -32,6 +33,9 @@ export function MacosOnSteroids() {
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
       <p>
         This is my almanac for setting up a new macOS machine to my workflows.
+      </p>
+      <p className="text-xs sm:text-sm text-muted-foreground">
+        App list and shortcuts checked against my Mac on October 24, 2026.
       </p>
 
       <InfoBox>
@@ -319,6 +323,22 @@ sudo mv "/Library/Application Support/GarageBand" "/Library/Application Support/
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <p>
+          <StepNumber number={16} />
+          Keep startup lean. In System Settings → General → Login Items &amp;
+          Extensions, my Open at Login list is CleanShot X, Cotypist, f.lux,
+          Pumba, Raycast, and Rectangle. Notion and PixelSnap stay installed but
+          launch on demand. Zoom's background activity is off, including its
+          updater; update it manually before you need it.
+        </p>
+        <p className="text-xs sm:text-sm mt-2">
+          Check menu bar apps' own Start at Login switches as well: installing
+          an app doesn't enable startup. Trimmy's switch is currently off.
+          SkillSync is removed, and its leftover background entry is disabled.
+        </p>
+      </CommandBox>
+
       <div className="my-6 sm:my-8 border-b border-border" />
 
       <h3 className="text-primary text-xl sm:text-2xl">
@@ -480,10 +500,10 @@ sudo mv "/Library/Application Support/GarageBand" "/Library/Application Support/
 
       <h4 className="text-base sm:text-lg">One-Command Installation</h4>
       <p>
-        Install everything at once with a Brewfile.{" "}
-        <code className="text-xs">brew bundle</code> installs each entry on its
-        own, so one renamed or broken cask doesn't sink the rest, and re-running
-        it only installs what's missing:
+        Install the Homebrew-managed tools with a Brewfile.{" "}
+        <code className="text-xs">--no-upgrade</code> leaves installed versions
+        alone when re-running it. Apps with separate installers are listed
+        below.
       </p>
 
       <InfoBox>
@@ -496,7 +516,7 @@ sudo mv "/Library/Application Support/GarageBand" "/Library/Application Support/
       </InfoBox>
 
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
-        <code>{`brew bundle --file=- <<'EOF'
+        <code>{`brew bundle --no-upgrade --file=- <<'EOF'
 # Priority: the outbound firewall goes in first
 cask "little-snitch"
 
@@ -528,11 +548,14 @@ brew "dockutil"
 brew "mas"
 brew "rclone"
 brew "apify-cli"
+brew "cloudflared"
+brew "flyctl"
+brew "sevenzip"
+brew "stockfish"
 cask "gcloud-cli"
 
 # Browsers
 cask "zen"
-cask "arc"
 cask "google-chrome"
 
 # AI and dev tools
@@ -547,11 +570,12 @@ cask "ngrok"
 cask "steipete/tap/codexbar", trusted: true
 
 # Productivity and system
+cask "notion"
 cask "obsidian"
 cask "raycast"
 cask "bettertouchtool"
 cask "rectangle"
-cask "bartender"   # Bartender 7 = macOS 27 only; on macOS 26 install Bartender 6 (see below)
+# Bartender 6: use the separate installer below
 cask "flux-app"
 cask "steipete/tap/trimmy", trusted: true
 cask "cotypist"
@@ -578,7 +602,6 @@ cask "iina"
 
 # Audio, privacy, fonts
 cask "finetune"
-cask "soundsource"
 cask "protonvpn"
 cask "font-jetbrains-mono-nerd-font"
 EOF`}</code>
@@ -597,9 +620,20 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
       </pre>
 
       <p className="text-xs sm:text-sm">
-        Not in the Brewfile on purpose: DaVinci Resolve (no cask), Pear Desktop
-        (pinned version), and Pumba (built from source), all below.
+        Separate installs below: Bartender 6, DaVinci Resolve, Pear Desktop
+        (pinned version), Looq, HyperFrames Studio, and my own apps Pumba and
+        Timon (built from source).
       </p>
+
+      <InfoBox>
+        <p className="text-sm sm:text-base">
+          <strong>Removed from my setup:</strong> Arc is replaced by Chrome on
+          Hyper + Q. FineTune handles per-app audio, so SoundSource is no longer
+          in the install list. SkillSync is removed too. Notion is still here;
+          it was only removed from startup. Pumba replaces Notion Calendar,
+          Meru, VoiceInk, and ForkLift.
+        </p>
+      </InfoBox>
 
       <h5 className="text-primary text-sm sm:text-base">
         Core Command Line Tools
@@ -847,6 +881,57 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
       </CommandBox>
 
       <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary break-all">
+          brew install cloudflared flyctl sevenzip stockfish
+        </code>
+        <p className="text-xs sm:text-sm mb-1">
+          Other tools installed on this machine:
+        </p>
+        <ul className="text-xs sm:text-sm list-disc pl-5 space-y-1">
+          <li>
+            <Link
+              href="https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/"
+              target="_blank"
+              className="text-primary hover:text-primary/80 underline"
+            >
+              cloudflared
+            </Link>
+            {" - Cloudflare Tunnel client"}
+          </li>
+          <li>
+            <Link
+              href="https://fly.io/docs/flyctl/"
+              target="_blank"
+              className="text-primary hover:text-primary/80 underline"
+            >
+              flyctl
+            </Link>
+            {" - Fly.io deployment CLI"}
+          </li>
+          <li>
+            <Link
+              href="https://7-zip.org/"
+              target="_blank"
+              className="text-primary hover:text-primary/80 underline"
+            >
+              sevenzip
+            </Link>
+            {" - 7-Zip archive tools"}
+          </li>
+          <li>
+            <Link
+              href="https://stockfishchess.org/"
+              target="_blank"
+              className="text-primary hover:text-primary/80 underline"
+            >
+              Stockfish
+            </Link>
+            {" - Chess engine used by Timon"}
+          </li>
+        </ul>
+      </CommandBox>
+
+      <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install apify-cli
         </code>
@@ -908,22 +993,6 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask arc
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://arc.net/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Arc
-          </Link>
-          {" - Chromium browser with spaces and a vertical sidebar. My second browser, on Hyper + Q"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask google-chrome
         </code>
         <p className="text-xs sm:text-sm">
@@ -934,7 +1003,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
           >
             Chrome
           </Link>
-          {" - Primary browser with excellent DevTools"}
+          {" - My second browser, on Hyper + Q. Chromium compatibility and DevTools alongside Zen as my default"}
         </p>
       </CommandBox>
 
@@ -1090,6 +1159,39 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
+          brew install --cask notion
+        </code>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://www.notion.so/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Notion
+          </Link>
+          {
+            " - All-in-one workspace for notes, documents, and project management"
+          }
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <p className="text-xs sm:text-sm mb-2">
+          <strong>Timon</strong> - My own Mac app for reviewing and studying
+          chess. It imports my Chess.com games and reviews them with move
+          badges, arrows, and sound (Hyper + J). Build it from the Timon source
+          checkout with Node 24, pnpm 12, Rust on PATH, and Stockfish:
+        </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto">
+          {`# Run from the Timon source directory
+brew install stockfish
+pnpm install
+pnpm install-app   # builds and installs /Applications/Timon.app`}
+        </pre>
+      </CommandBox>
+
+      <CommandBox>
+        <code className="text-xs sm:text-sm block mb-2 text-primary">
           brew install --cask obsidian
         </code>
         <p className="text-xs sm:text-sm">
@@ -1100,7 +1202,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
           >
             Obsidian
           </Link>
-          {" - Local-first Markdown knowledge base. Plain files on disk, so agents can read and write my notes too (Hyper + D)"}
+          {" - Local-first Markdown knowledge base. Plain files on disk, so agents can read and write my notes too. Hyper + D now belongs to Pumba Notes"}
         </p>
       </CommandBox>
 
@@ -1170,7 +1272,7 @@ curl -fsSL https://x.ai/cli/install.sh | bash`}</code>
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask bartender
+          Bartender 6 — install from the versioned archive below
         </code>
         <p className="text-xs sm:text-sm">
           <Link
@@ -1449,7 +1551,7 @@ ditto -x -k /tmp/Bartender6.zip /Applications/`}
           >
             PixelSnap 2
           </Link>
-          {" - Pixel-perfect on-screen measurement tool with edge detection. Measure distances, sizes, and grab colors anywhere on screen. Integrates with CleanShot for design and dev work (Hyper + P)"}
+          {" - Pixel-perfect on-screen measurement tool with edge detection. Measure distances, sizes, and grab colors anywhere on screen. Integrates with CleanShot for design and dev work (Hyper + K, configured in PixelSnap itself)"}
         </p>
       </CommandBox>
 
@@ -1466,6 +1568,40 @@ ditto -x -k /tmp/Bartender6.zip /Applications/`}
             Screen Studio
           </Link>
           {" - Professional screen recording with beautiful animations"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://hyperframes.heygen.com/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            HyperFrames Studio
+          </Link>
+          {" - Video editor built for agents. I use the desktop app for launch films and motion work. Download the macOS installer from HeyGen's site and move HyperFrames.app to Applications"}
+        </p>
+      </CommandBox>
+
+      <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <Link
+            href="https://parcse.com/looq"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Looq
+          </Link>
+          {" - Quick Look previews for Markdown, code, tables, SQLite databases, diffs, archives, and folders. Download from "}
+          <Link
+            href="https://parcse.com/download"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            Parcse
+          </Link>
+          {", install in Applications, and open it once. Check its Quick Look extensions in System Settings → General → Login Items & Extensions, then select a file in Finder and press Space"}
         </p>
       </CommandBox>
 
@@ -1518,7 +1654,7 @@ ditto -x -k /tmp/Bartender6.zip /Applications/`}
 
       <CommandBox>
         <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask pear-devs/pear/pear-desktop
+          YouTube Music.app — Pear Desktop, pinned to 3.11.0
         </code>
         <p className="text-xs sm:text-sm">
           <Link
@@ -1584,22 +1720,6 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
             FineTune
           </Link>
           {" - My pick. Free, open-source per-app volume control and audio routing in the menu bar"}
-        </p>
-      </CommandBox>
-
-      <CommandBox>
-        <code className="text-xs sm:text-sm block mb-2 text-primary">
-          brew install --cask soundsource
-        </code>
-        <p className="text-xs sm:text-sm">
-          <Link
-            href="https://rogueamoeba.com/soundsource/"
-            target="_blank"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            SoundSource
-          </Link>
-          {" - My backup, since I own a license. Advanced per-app volume control, audio routing, and system-wide EQ"}
         </p>
       </CommandBox>
 
@@ -1804,6 +1924,25 @@ defaults read "/Applications/YouTube Music.app/Contents/Info.plist" CFBundleShor
         </p>
       </CommandBox>
 
+      <CommandBox>
+        <p className="text-xs sm:text-sm">
+          <strong>Claude desktop&apos;s terminal panel:</strong> it has no Nerd
+          Font and no font setting, so the icons show up as boxes (the arrows
+          survive because xterm.js draws them itself). It sets{" "}
+          <code className="text-xs">TERM_PROGRAM=claude-desktop</code>, so add
+          this after <code className="text-xs">source ~/.p10k.zsh</code> in{" "}
+          <code className="text-xs">~/.zshrc</code>, and add{" "}
+          <code className="text-xs">$TERM_PROGRAM != claude-desktop &amp;&amp;</code>{" "}
+          to the instant-prompt <code className="text-xs">if</code> at the top:
+        </p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`if [[ $TERM_PROGRAM == claude-desktop ]]; then
+  typeset -g POWERLEVEL9K_MODE=powerline POWERLEVEL9K_VCS_BRANCH_ICON= POWERLEVEL9K_INSTANT_PROMPT=off
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(\${POWERLEVEL9K_LEFT_PROMPT_ELEMENTS:#os_icon})
+fi`}
+        </pre>
+      </CommandBox>
+
       <h4 className="text-base sm:text-lg">
         Step 4: Advanced Terminal Tools Setup
       </h4>
@@ -1909,7 +2048,7 @@ esac
 # pnpm end
 
 # fnm: per-project Node versions from .nvmrc (Homebrew's node@24 stays the default)
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --log-level=error --shell zsh)"
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --log-level=error --shell zsh 2>/dev/null)"  # stderr: fnm prints "Bypassing fnm" for the system default despite log-level
 # zsh caches command paths; re-hash after fnm switches Node on cd
 _fnm_rehash() { rehash }
 add-zsh-hook chpwd _fnm_rehash`}</code>
@@ -2010,7 +2149,7 @@ duti -x tool`}</code>
             <strong>Caps Lock</strong> → Act as Hyper Key (⌘⌥⌃⇧)
           </li>
           <li>
-            <strong>Hyper + Q</strong> → Launch Arc
+            <strong>Hyper + Q</strong> → Launch Google Chrome
           </li>
           <li>
             <strong>Hyper + W</strong> → Launch Zen Browser
@@ -2028,32 +2167,70 @@ duti -x tool`}</code>
             <strong>Hyper + S</strong> → Launch ChatGPT (includes Codex)
           </li>
           <li>
-            <strong>Hyper + D</strong> → Launch Obsidian
-          </li>
-          <li>
             <strong>Hyper + F</strong> → Launch Discord
           </li>
           <li>
             <strong>Hyper + G</strong> → Launch YouTube Music
           </li>
           <li>
+            <strong>Hyper + H</strong> → Launch Ghostty
+          </li>
+          <li>
+            <strong>Hyper + J</strong> → Launch Timon
+          </li>
+          <li>
             <strong>Hyper + N</strong> → Launch Figma
           </li>
           <li>
-            <strong>Hyper + P</strong> → PixelSnap (set this one in PixelSnap's
+            <strong>Hyper + K</strong> → PixelSnap (set this one in PixelSnap's
             own settings, not BetterTouchTool)
           </li>
           <li>
-            <strong>Hyper + 1 / 2</strong> → Switch to Desktop 1 / 2. Two
-            desktops max: add the second one in Mission Control
-          </li>
-          <li>
-            <strong>Pumba's own</strong> (set in Pumba's settings, not
-            BetterTouchTool, or BetterTouchTool swallows them): Hyper + T
-            dictation, Y paste last dictation, C calendar, X mail, Z Panel, M
-            recording, V Splinter
+            <strong>Hyper + 1–5</strong> → Switch to Desktop 1–5. Create the
+            desktops in Mission Control first; the shortcuts don't create them
           </li>
         </ul>
+      </CommandBox>
+
+      <CommandBox>
+        <p className="text-xs sm:text-sm mb-2">
+          Pumba owns these shortcuts. Set them in Pumba's settings and leave
+          them unassigned in BetterTouchTool so it doesn't intercept them:
+        </p>
+        <ul className="space-y-1 text-xs sm:text-sm list-none">
+          <li>
+            <strong>Hyper + D</strong> → Notes / vault
+          </li>
+          <li>
+            <strong>Hyper + T</strong> → Plain dictation
+          </li>
+          <li>
+            <strong>Hyper + Y</strong> → Enhanced dictation
+          </li>
+          <li>
+            <strong>Hyper + U</strong> → Paste last dictation
+          </li>
+          <li>
+            <strong>Hyper + C</strong> → Calendar
+          </li>
+          <li>
+            <strong>Hyper + X</strong> → Mail
+          </li>
+          <li>
+            <strong>Hyper + Z</strong> → Panel
+          </li>
+          <li>
+            <strong>Hyper + M</strong> → Toggle recording
+          </li>
+          <li>
+            <strong>Hyper + V</strong> → Splinter
+          </li>
+        </ul>
+        <p className="text-xs sm:text-sm mt-2">
+          Hyper + A remains the BTT launcher for Pumba's Notes URL; Hyper + D
+          opens Notes through Pumba itself. PixelSnap's Hyper + K is configured
+          in PixelSnap, separate from both lists.
+        </p>
       </CommandBox>
 
       <CommandBox>
@@ -2062,7 +2239,8 @@ duti -x tool`}</code>
           shortcuts while giving you instant access to any app. It's the most
           efficient way to navigate your Mac! On a new machine, export your
           BetterTouchTool preset and import it instead of rebuilding these by
-          hand.
+          hand. Configure Pumba and PixelSnap separately: their shortcuts aren't
+          included in a BTT preset.
         </p>
       </CommandBox>
 
