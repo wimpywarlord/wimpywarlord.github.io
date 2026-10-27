@@ -522,6 +522,7 @@ cask "little-snitch"
 
 # Third-party taps (Homebrew only loads taps you trust)
 tap "steipete/tap"
+tap "rakalex/mac-brightnessctl"
 
 # CLI tools
 brew "node@24", link: true
@@ -545,6 +546,7 @@ brew "ghostscript"
 brew "watch"
 brew "duti"
 brew "dockutil"
+brew "rakalex/mac-brightnessctl/mac-brightnessctl"
 brew "mas"
 brew "rclone"
 brew "apify-cli"
@@ -606,6 +608,36 @@ cask "protonvpn"
 cask "font-jetbrains-mono-nerd-font"
 EOF`}</code>
       </pre>
+
+      <CommandBox>
+        <p>MacBook: turn off the keyboard backlight:</p>
+        <pre className="text-xs sm:text-sm bg-background/50 p-2 sm:p-3 rounded overflow-x-auto mt-2">
+          {`# Disable automatic keyboard brightness, then set the backlight to zero
+mac-brightnessctl -a 0
+mac-brightnessctl 0`}
+        </pre>
+        <p className="text-xs sm:text-sm mt-2">
+          Run after the Brewfile above installs{" "}
+          <Link
+            href="https://github.com/rakalex/mac-brightnessctl"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            mac-brightnessctl
+          </Link>
+          . Skip this on desktop Macs. The tool uses a private macOS API; if it
+          doesn't work on your model or macOS version, go to{" "}
+          <Link
+            href="https://support.apple.com/guide/mac-help/mchlp2265/mac"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            System Settings → Keyboard
+          </Link>
+          , turn off “Adjust keyboard brightness in low light”, and drag
+          “Keyboard brightness” all the way left.
+        </p>
+      </CommandBox>
 
       <p>Then the few things Homebrew can't install:</p>
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
