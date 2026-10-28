@@ -1001,6 +1001,27 @@ setTransform(
           @jeanxcrj
         </a>
       </p>
+
+      <div className="my-6">
+        <GalleryVideo
+          aria-label="Rainbrand landing page with animated rainbow graphics"
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source src="/blog/taste/rainbrand_landing.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://www.rainbrand.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Rainbrand
+        </a>
+        {" — bold typography, shaped panels, and playful rainbow motion."}
+      </p>
     </div>
   );
 }
