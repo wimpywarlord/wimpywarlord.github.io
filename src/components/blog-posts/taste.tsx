@@ -1022,6 +1022,18 @@ setTransform(
         </a>
         {" — bold typography, shaped panels, and playful rainbow motion."}
       </p>
+
+      <p className="mt-4">
+        <a
+          href="https://notch.devsethi.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Notch Toast
+        </a>
+        {" — notch-style React notifications with smooth morphing between loading, success, and error states."}
+      </p>
     </div>
   );
 }
