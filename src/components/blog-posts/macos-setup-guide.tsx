@@ -2532,7 +2532,9 @@ When long-running or parallel work needs usage-limit checks, use the /stay-withi
 npx skills add jakubkrehel/make-interfaces-feel-better -g -a claude-code -a codex -y
 npx skills add anthropics/skills --skill frontend-design -g -a claude-code -a codex -y
 npx skills add vercel-labs/agent-skills --skill vercel-react-best-practices --skill web-design-guidelines -g -a claude-code -a codex -y
-npx skills add ibelick/ui-skills --skill '*' -g -a claude-code -a codex -y`}</code>
+npx skills add ibelick/ui-skills --skill '*' -g -a claude-code -a codex -y
+npx skills add benjitaylor/skills --skill stageshow -g -a claude-code -a codex -y
+(cd ~/.agents/skills/stageshow && npm install)`}</code>
       </pre>
       <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
         <li>
@@ -2576,6 +2578,16 @@ npx skills add ibelick/ui-skills --skill '*' -g -a claude-code -a codex -y`}</co
             make-interfaces-feel-better
           </Link>
           {" - Design-engineering details that make interfaces feel polished: micro-interactions, enter/exit animations, shadows, typography, tabular numbers"}
+        </li>
+        <li>
+          <Link
+            href="https://benji.org/stageshow"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            stageshow
+          </Link>
+          {" - Faux product UI for marketing pages and docs: stills, feature cards, cursor demos, and bento grids in React. The agent films its own output with playwright-core and local Chrome, so run npm install inside the skill folder once or the preview and filming scripts won't start (benjitaylor/skills)"}
         </li>
       </ul>
 

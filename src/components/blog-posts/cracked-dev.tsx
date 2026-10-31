@@ -1977,6 +1977,37 @@ export function CrackedReactDev() {
           <code className="bg-muted px-2 py-1 rounded text-sm">remotion-best-practices</code>
           {" - Best practices for Remotion (video creation in React)"}
         </li>
+        <li>
+          <Link
+            href="https://benji.org/stageshow"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            <code className="bg-muted px-2 py-1 rounded text-sm">stageshow</code>
+          </Link>
+          {
+            " - Faux product UI that reads like the real product: stills, feature cards, cursor demos, and bento grids in React and plain CSS. Ships composition and motion rules, a copyable kit, gold examples plus real-product studies (Linear, Figma, Gmail, iMessage, Finder), and a filming script so the agent records its own demo and checks every frame before handing it over. By "
+          }
+          <Link
+            href="https://x.com/benjitaylor/status/2116593247854453244"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @benjitaylor
+          </Link>
+          {" ("}
+          <Link
+            href="https://github.com/benjitaylor/skills"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx skills add benjitaylor/skills --skill stageshow
+          </code>
+        </li>
       </ul>
       <p className="mt-4 mb-1 font-semibold">Writing &amp; Content</p>
       <ul className="space-y-2">
