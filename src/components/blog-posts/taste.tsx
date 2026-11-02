@@ -1034,6 +1034,64 @@ setTransform(
         </a>
         {" — notch-style React notifications with smooth morphing between loading, success, and error states."}
       </p>
+
+      <p className="mt-4">
+        <a
+          href="https://www.boardui.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          BoardUI
+        </a>
+        {" — React design system for dashboards and agentic interfaces: 103 components (19 chart cards), 10 Pro templates, and 400+ design tokens, designed in Figma. Built on React 19, Tailwind v4, React Aria, and TanStack Table. Dashboards in that same quiet, dense style:"}
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          aria-label="A reports dashboard resized live across phone, tablet, and desktop"
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/taste/divan_raj_dashboard_devices.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://x.com/i/status/2116841282572361728"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Divan Raj
+        </a>
+        {" — one dashboard dragged across three device sizes without breaking."}
+      </p>
+      <div className="my-6">
+        <GalleryVideo
+          aria-label="Dark file library dashboard with folders, drag-to-move, and a bulk action bar"
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        >
+          <source
+            src="/blog/taste/sean_galt_clean_dashboard.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <p className="mt-4">
+        <a
+          href="https://x.com/i/status/2116888008393887744"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Sean Galt
+        </a>
+        {" — what a clean dashboard looks like."}
+      </p>
     </div>
   );
 }
