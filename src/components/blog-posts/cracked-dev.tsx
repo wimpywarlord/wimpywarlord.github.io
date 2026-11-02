@@ -39,6 +39,34 @@ const CopyableText = ({ text }: { text: string }) => {
   );
 };
 
+type ColdEmailTip = {
+  rule: string;
+  reason: string;
+};
+
+const coldEmailTips: ColdEmailTip[] = [
+  { rule: "Write 25-50 words", reason: "65% more replies than a 125-word email" },
+  { rule: "Stay under 75 words", reason: "readers scan an email for 11 seconds on average" },
+  { rule: "Write at a 3rd to 5th grade reading level", reason: "67% more replies" },
+  { rule: "Use 1-2 sentence paragraphs", reason: "first opens are 8x more likely on a phone" },
+  { rule: "Lead with an observation", reason: "show them the email is written for them" },
+  { rule: "Turn your research into a hypothesis", reason: "tie it to the problem you solve" },
+  { rule: "Double-check your research", reason: "wrong facts make the email feel disingenuous" },
+  { rule: "Focus on their problem", reason: "your buyer doesn't care about you" },
+  { rule: "Use a relevant customer story", reason: "similar size, industry, and problem" },
+  { rule: "Don't ask for the meeting", reason: "the only goal of a cold email is a reply" },
+  { rule: "Make your question easy to answer", reason: "skip open-ended questions" },
+  { rule: "Use hedge words", reason: "\"might,\" \"seems,\" and \"could\" invite a reply" },
+  { rule: "Drop the \"did you know\" stats", reason: "informative tones destroy reply rates" },
+  { rule: "Make one ask", reason: "multiple asks are on Lavender's \"not working\" list" },
+  { rule: "Lead with outcomes for execs", reason: "revenue, cost, or risk" },
+  { rule: "Keep subject lines to 1-3 words", reason: "boring is best" },
+  { rule: "Make the subject line sound internal", reason: "no verbs, numbers, questions, or first names" },
+  { rule: "Cut the clichés", reason: "\"I hope this finds you well\" wastes your preview text" },
+  { rule: "Leave out images and links", reason: "they hurt deliverability" },
+  { rule: "Send 50 cold emails a day or fewer", reason: "and space them out" },
+];
+
 export function CrackedReactDev() {
   return (
     <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none">
@@ -828,6 +856,60 @@ export function CrackedReactDev() {
         component libraries:
       </p>
       <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://uiarc.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Arc UI
+          </Link>
+          {" - "}
+          <Highlight>The most complete UI library for end-to-end product design</Highlight>
+          {
+            ". 237 animated React components and 138 blocks on shadcn and Next.js: the everyday pieces (command palette, dialogs, date picker, toast stack, tables) plus full flows and the hard stuff (revenue globe, horizon and choropleth charts, kanban, a streaming AI chat with reasoning and tools). Keyboard support and reduced motion built in. 120 components and 22 blocks are free; Pro is $249 once. Every component has a Markdown page, there's an llms.txt, and an MCP server lets Claude Code, Cursor, or Codex install components for you. By "
+          }
+          <Link
+            href="https://x.com/eliakuratli"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @eliakuratli
+          </Link>
+          {". Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx shadcn@latest add @uiarc/button
+          </code>
+          {" or "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            claude mcp add --transport http arc https://uiarc.dev/api/mcp
+          </code>
+        </li>
+        <li>
+          <Link
+            href="https://canvasui.dev/components"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Canvas UI
+          </Link>
+          {" - "}
+          <Highlight>Tasteful html-in-canvas components</Highlight>
+          {
+            ". 35 creative effects that run over real HTML: liquid, glass, shatter, cloth, VHS, ASCII, flame wrap, glyph rain, decrypt reveal. Ships for React, Vue, Svelte, Solid and Preact, with WebGPU variants. Some effects use Chrome's new HTML-in-Canvas API (flag or origin trial) and fall back to plain HTML elsewhere. By "
+          }
+          <Link
+            href="https://x.com/davidhaz"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @davidhaz
+          </Link>
+          {", the React Bits guy. Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx shadcn@latest add @canvas-ui/liquid-react
+          </code>
+        </li>
         <li>
           <Link
             href="https://www.npmjs.com/package/cmdk"
@@ -2009,6 +2091,24 @@ export function CrackedReactDev() {
           </code>
         </li>
       </ul>
+      <p className="mt-4 mb-1 font-semibold">Video &amp; Media</p>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://github.com/kajisho5/ffmpeg-skill"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            <code className="bg-muted px-2 py-1 rounded text-sm">ffmpeg-skill</code>
+          </Link>
+          {
+            " - Gives your coding agent a video editor. 42 tools on local FFmpeg: cut, join, silence removal, reframe 16:9 → 9:16, animated and karaoke captions, overlays, LUTs and HDR → SDR, loudness to -14 LUFS, multicam sync, and one-command exports for TikTok, Reels, Shorts, YouTube, X, and LinkedIn. The agent probes, edits, then checks its own output with a contact sheet. Also an MCP server. No cloud, no API keys, Python stdlib only, MIT. Install: "
+          }
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx skills add kajisho5/ffmpeg-skill
+          </code>
+        </li>
+      </ul>
       <p className="mt-4 mb-1 font-semibold">Writing &amp; Content</p>
       <ul className="space-y-2">
         <li>
@@ -2174,6 +2274,28 @@ export function CrackedReactDev() {
           </Link>
           {" - Browse and copy shader code snippets — a fragment shader gallery"}
         </li>
+        <li>
+          <Link
+            href="https://hackertube.org/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            HackerTube
+          </Link>
+          {" - "}
+          <Highlight>The YouTube videos Hacker News keeps telling each other to watch</Highlight>
+          {
+            ". Every HN comment was scanned for YouTube links, and a video only makes the cut if at least three people recommended it in at least three different months. That leaves roughly 7,000 conference talks, lectures and documentaries, ranked by staying power instead of watch time. Every video page shows what HN actually said about it, search works by topic, and the whole dataset is downloadable under ODC-By. Built by Claude Opus in Claude Code, prompted into existence by "
+          }
+          <Link
+            href="https://x.com/karpathy"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @karpathy
+          </Link>
+          {"."}
+        </li>
       </ul>
 
       <div className="my-8 border-b border-border" />
@@ -2214,7 +2336,52 @@ export function CrackedReactDev() {
             " - Custom folder icons for Mac. 50+ thoughtfully crafted icons for design, video, AI, finance, and more — native feel for macOS Tahoe"
           }
         </li>
+        <li>
+          <Link
+            href="https://tinyhand.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            TinyHand
+          </Link>
+          {
+            " - A toy hand on a stick that follows your cursor on screen. Clicks make a soft tap, drag to draw lines that fade after 3 seconds. ⌃⌥H toggles it, ⌃⌥X clears the drawing. 37 pointers, made for screen recordings, demos, and calls. Free, MIT, macOS 13+. By "
+          }
+          <Link
+            href="https://x.com/nilbuild"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @nilbuild
+          </Link>
+          {" ("}
+          <Link
+            href="https://github.com/nilbuild/tinyhand"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {", "}
+          <Link
+            href="https://x.com/i/status/2116514705254531072"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Tweet
+          </Link>
+          {") (demo below)"}
+        </li>
       </ul>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/tinyhand_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
       <div className="my-6">
         <GalleryImage
           src="/blog/cracked_react_dev/flairy_folder_icons.webp"
@@ -2491,6 +2658,28 @@ export function CrackedReactDev() {
           {" - Free perks and discounts for startups on tools, services, and credits"}
         </li>
       </ul>
+
+      <h4>Cold Emails That Get Replies</h4>
+      <p>
+        <Link
+          href="https://www.lavender.ai/"
+          target="_blank"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+        >
+          Lavender
+        </Link>
+        {"'s best advice for writing cold emails. The whole game is "}
+        <Highlight>getting a reply</Highlight>
+        {", not booking the meeting:"}
+      </p>
+      <ol className="space-y-1">
+        {coldEmailTips.map((tip) => (
+          <li key={tip.rule}>
+            <strong>{tip.rule}</strong>
+            {` - ${tip.reason}`}
+          </li>
+        ))}
+      </ol>
 
       <div className="my-8 border-b border-border" />
 

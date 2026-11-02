@@ -2591,6 +2591,25 @@ npx skills add benjitaylor/skills --skill stageshow -g -a claude-code -a codex -
         </li>
       </ul>
 
+      <h4 className="text-base sm:text-lg">Video &amp; Media</h4>
+      <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
+        <code>{`npx skills add kajisho5/ffmpeg-skill -g -a claude-code -a codex -y
+brew install ffmpeg-full   # captions, text overlays, stabilization, HDR → SDR
+npx ffmpeg-skill doctor`}</code>
+      </pre>
+      <ul className="space-y-2 text-sm sm:text-base list-disc pl-5">
+        <li>
+          <Link
+            href="https://github.com/kajisho5/ffmpeg-skill"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline"
+          >
+            ffmpeg-skill
+          </Link>
+          {" - A local video editor for the agent: 42 FFmpeg tools for cuts, silence removal, reframing, captions, loudness, and platform exports, each checked after it runs. The Brewfile's plain ffmpeg lacks the drawtext, subtitles, vidstab, and zscale filters, so captions and stabilization fail on it. ffmpeg-full is keg-only, and the skill picks it up from the same Homebrew prefix without touching PATH. doctor lists anything still missing"}
+        </li>
+      </ul>
+
       <h4 className="text-base sm:text-lg">Writing &amp; Content</h4>
       <pre className="bg-muted/50 border border-border rounded-lg p-3 sm:p-4 my-4 sm:my-6 overflow-x-auto text-xs">
         <code>{`npx skills add blader/humanizer -g -a claude-code -a codex -y`}</code>
