@@ -1924,6 +1924,34 @@ export function CrackedReactDev() {
       </ul>
       <CopyableText text="npx rea-agents setup" />
 
+      <h4>Stealth Browser for Agents</h4>
+      <ul className="space-y-2">
+        <li>
+          <Link
+            href="https://camoufox.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Camoufox
+          </Link>
+          {" - "}
+          <Highlight>An open source anti-detect browser built for AI agents</Highlight>
+          {
+            ". A patched Firefox that spoofs navigator, screen, WebGL, fonts and geolocation at the C++ level, with no JS injection for bot detectors to catch, and rotates fingerprints between sessions. Drop-in for your existing Playwright code. By "
+          }
+          <Link
+            href="https://github.com/daijro/camoufox"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            daijro
+          </Link>
+        </li>
+      </ul>
+      <CopyableText text='pip install -U "camoufox[geoip]" && python3 -m camoufox fetch' />
+
       <h4>Agent Tool Catalog</h4>
       <p>
         Turn your coding agent into an SEO expert, a media buyer, an SDR. Give
