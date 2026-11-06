@@ -938,6 +938,31 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://benji.org/liveline"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Liveline
+          </Link>
+          {" - "}
+          <Highlight>Real-time animated line charts for React</Highlight>
+          {
+            ". Polymarket-style live charts in a single <canvas> with zero dependencies beyond React 18. The line glides as new points stream in, with momentum arrows, a 60fps value overlay, time windows, reference lines, orderbook bid/ask labels, a candlestick toggle, multi-series, loading and paused states, and theming from one CSS colour. There's also an opt-in degen mode with chart shake and particles. MIT, by "
+          }
+          <Link
+            href="https://x.com/benjitaylor"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @benjitaylor
+          </Link>
+          {". Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npm i liveline
+          </code>
+        </li>
+        <li>
+          <Link
             href="https://www.beui.dev/"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
