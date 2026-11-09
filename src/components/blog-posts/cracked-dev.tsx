@@ -926,6 +926,60 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://glimm.dev"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            glimm
+          </Link>
+          {" - "}
+          <Highlight>Shader-driven page transitions for React and Next.js</Highlight>
+          {
+            ". A WebGL band sweeps across the screen on a route change (or any state change you pick) and reveals the new view behind it. About 11 KB, zero runtime deps, and the WebGL context is only created on the first sweep. 0.4 adds HTML-in-Canvas support so the sweep can interact with your actual page content in Chrome, GlimmScope to run the sweep on a whole page, one section or a single card, edge-aware fades for sweeps inside a container, a new default palette, and an agent skill that sets it up for you. MIT, by "
+          }
+          <Link
+            href="https://x.com/nomandsign"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @nomandsign
+          </Link>
+          {". Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npm i glimm
+          </code>
+          {" or let your agent do it: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx skills add nomanjack/glimm-skill
+          </code>
+        </li>
+        <li>
+          <Link
+            href="https://kamran.fyi/glyph-avatar/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            glyph-avatar
+          </Link>
+          {" - "}
+          <Highlight>Turn any text into an avatar</Highlight>
+          {
+            ". Seeded geometric SVGs, so the same text always gets the same avatar, with no images to store or serve. Zero dependencies, plus React components and a ready-made avatar picker. MIT, by "
+          }
+          <Link
+            href="https://kamranahmed.se"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Kamran Ahmed
+          </Link>
+          {". Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npm install glyph-avatar
+          </code>
+        </li>
+        <li>
+          <Link
             href="https://www.npmjs.com/package/cmdk"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
