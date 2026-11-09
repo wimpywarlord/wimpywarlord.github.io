@@ -884,6 +884,20 @@ export function CrackedReactDev() {
           <code className="bg-muted px-2 py-1 rounded text-sm">
             claude mcp add --transport http arc https://uiarc.dev/api/mcp
           </code>
+          {". Worth grabbing from the free tier: the "}
+          <Link
+            href="https://uiarc.dev/components/textarea"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Textarea
+          </Link>
+          {
+            ", with drag-to-resize, a real label, helper and error text that animate in, and character counts that roll their digits as they change. Install: "
+          }
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx shadcn@latest add @uiarc/textarea
+          </code>
         </li>
         <li>
           <Link
