@@ -980,6 +980,59 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://ramka.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            ramka
+          </Link>
+          {" - "}
+          <Highlight>The lightbox for React</Highlight>
+          {
+            ". Unstyled, accessible primitives (Trigger, Slides, Zoom, Captions, Thumbnails, Counter) built on native scrolling and View Transitions, so a thumbnail morphs straight into the lightbox instead of fading in. Pinch, double-tap, and ctrl+scroll zoom at the cursor, elastic pull-to-dismiss that stays aware of zoom and in-flight swipes, RTL, and a focus-trapped dialog with reduced motion. Handles photos, video, 3D models, or any React content, plus srcset and Next.js Image. Zero runtime deps, about 19 KB gzipped for a full gallery, and the API is modeled on Radix and Base UI so it sits right in a shadcn codebase. Already powering galleries at Mintlify, Whop, and Paper. MIT, by "
+          }
+          <Link
+            href="https://x.com/artur_bien"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @artur_bien
+          </Link>
+          {". Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            pnpm add @ramka/react
+          </code>
+          {" ("}
+          <Link
+            href="https://github.com/arturbien/ramka"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {", "}
+          <Link
+            href="https://x.com/artur_bien/status/2119827345481535743"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Tweet
+          </Link>
+          {") (demo below)"}
+        </li>
+      </ul>
+      <div className="my-6">
+        <GalleryVideo className="w-full max-w-2xl rounded-lg mx-auto">
+          <source
+            src="/blog/cracked_react_dev/ramka_demo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </GalleryVideo>
+      </div>
+      <ul className="space-y-2">
+        <li>
+          <Link
             href="https://www.npmjs.com/package/cmdk"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
