@@ -926,6 +926,75 @@ export function CrackedReactDev() {
         </li>
         <li>
           <Link
+            href="https://feralui.dev/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            FeralUI
+          </Link>
+          {" - "}
+          <Highlight>Playful, physics-driven React elements</Highlight>
+          {". Each one is its own MIT npm package, not a kit: "}
+          <Link
+            href="https://github.com/mortspace/playcaptcha"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            PlayCaptcha
+          </Link>
+          {" (a claw-machine human check: grab the right toy to pass), "}
+          <Link
+            href="https://github.com/mortspace/pullcord"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Pullcord
+          </Link>
+          {" (a ceiling pull-cord on a real Verlet rope), "}
+          <Link
+            href="https://github.com/mortspace/feral-blob"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            feral-blob
+          </Link>
+          {" (a jelly-blob mascot with moods, idle wobble and poke reactions), "}
+          <Link
+            href="https://github.com/mortspace/fur"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            fur
+          </Link>
+          {" (pettable fur for any shape, drawn strand by strand on canvas), "}
+          <Link
+            href="https://github.com/mortspace/stamp"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            Stamp
+          </Link>
+          {" (a date picker shaped like a desk stamp) and "}
+          <Link
+            href="https://github.com/mortspace/animaps"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            AniMaps
+          </Link>
+          {" (animated travel route maps). By Sarthak Navalekar ("}
+          <Link
+            href="https://x.com/SolutionB2u"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @SolutionB2u
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">npm install playcaptcha</code>
+        </li>
+        <li>
+          <Link
             href="https://glimm.dev"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
