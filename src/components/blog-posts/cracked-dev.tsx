@@ -2327,6 +2327,29 @@ export function CrackedReactDev() {
           </code>
         </li>
         <li>
+          <Link
+            href="https://kosta.fyi/skills/tactile-design"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            <code className="bg-muted px-2 py-1 rounded text-sm">tactile-design</code>
+          </Link>
+          {
+            " - Kills the flat default-agent UI. Three rules: tactile (\"controls look like objects\": a fine ring, a crisp drop shadow, a slight shrink on press), layered (\"every surface knows what it sits on, in light and in dark\"), and quiet (\"one type weight, a neutral palette, thin lines and very little colour\"). Covers tokens, buttons, inputs, dropdowns, drawers, tables, charts, layout, motion and mobile touch targets, for any typeface and colours, and the site shows every example built once by an agent alone and once with the skill. MIT, by Kosta, lead designer at steel.dev ("
+          }
+          <Link
+            href="https://github.com/kosta4a/tactile-design"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">
+            npx skills add kosta4a/tactile-design
+          </code>
+        </li>
+        <li>
           <code className="bg-muted px-2 py-1 rounded text-sm">frontend-design</code>
           {" - Production-grade frontend interfaces that dodge generic AI aesthetics"}
         </li>
