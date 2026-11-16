@@ -412,6 +412,50 @@ export function CrackedReactDev() {
       <ul className="space-y-2">
         <li>
           <Link
+            href="https://xeet-rs.vercel.app/"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            xeet
+          </Link>
+          {" - "}
+          <Highlight>X posts rendered to PNG without a browser</Highlight>
+          {
+            ". Paste an x.com link and get back a Retina PNG that matches what Chrome shows on x.com: same line breaks, emoji, fallback fonts and \"Show more\" cut. Instead of booting headless Chromium for a screenshot, it reimplements X's client rules, Blink and HarfBuzz text layout and the flexbox geometry in safe Rust, compiled to WebAssembly. A text post renders in about 3 ms, and it covers timeline and detail views on web and iOS, quotes, polls, carousels, video posters and CJK/RTL text. Great for thumbnails, decks and docs. Apache-2.0, by "
+          }
+          <Link
+            href="https://x.com/rauchg"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            @rauchg
+          </Link>
+          {" ("}
+          <Link
+            href="https://github.com/rauchg/xeet"
+            target="_blank"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          {"). Install: "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">npm i -g @xeet/cli</code>
+          {" or "}
+          <code className="bg-muted px-2 py-1 rounded text-sm">npm i @xeet/core</code>
+        </li>
+      </ul>
+      <div className="my-6">
+        <GalleryImage
+          src="/blog/cracked_react_dev/xeet_examples.webp"
+          alt="xeet playground rendering jack's first post (x.com/jack/status/20) as timeline and detail PNGs"
+          width={2000}
+          height={777}
+          className="w-full max-w-2xl rounded-lg mx-auto"
+        />
+      </div>
+      <ul className="space-y-2">
+        <li>
+          <Link
             href="https://x.com/adityaships/status/1960187782414098892?s=46"
             target="_blank"
             className="text-primary hover:text-primary/80 underline underline-offset-2"
